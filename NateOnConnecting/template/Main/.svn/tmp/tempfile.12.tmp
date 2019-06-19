@@ -1,0 +1,13 @@
+<script type="text/javascript">
+	addOnloadHandle(function() {
+		loadPeopleNoticeBox();
+	});
+</script>
+
+<h2 id="box_people_notice" style="display:none" class="cnting">
+	<a href="#" onclick="olapStat('CNT02'); openWindow('http://connect.nate.com'); return false;" style="text-decoration:none" onfocus="this.blur()">최근 3일, <strong id="number_people_notice_cnt">{$this->myUser->getReversePeopleCntFor3Days()}</strong>명이 <strong>{$this->myUser->getRealname()}</strong>님에게 커넥팅을 나누기 시작했어요.</a>
+	<a href="#" class="del" onclick="closePeopleNoticeBox(); return false;" onfocus="this.blur()">삭제</a>
+</h2>
+<h2 id="box_following_notice" style="display:none" class="cnting">
+</h2>
+

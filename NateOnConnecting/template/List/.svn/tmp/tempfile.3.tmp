@@ -1,0 +1,17 @@
+<script type="text/javascript">
+	try {
+		// podo:execute 로 처음 부르는 경우를 위해
+		// addOnloadHandle 도 하고 그냥 호출도 한다.
+		addOnloadHandle(function () {
+			//NOEmoticons.setEmoticons("real", "dd","");
+			setNextStartIdx({@ $this->nextStartIdx})
+		});
+
+		//NOEmoticons.setEmoticons("real", "dd","");
+		setNextStartIdx({@ $this->nextStartIdx})
+	} catch (e) { }
+
+</script>
+<dummy podo:foreach="$this->messages as $message">
+	<tpl:List_Message message="{$message}" />
+</dummy>

@@ -1,0 +1,125 @@
+<?php
+class MainController extends BaseController
+{
+	const NATEON_BRIDGE_CODE = 'G120';
+
+	/**
+	 * 네이트온 커넥팅 탭 메인
+	 * 
+	 * @param string $t 네이트온에서 전달해주는 토큰, 로그인을 유지하기 위해 필요하다.
+	 * @param int $listType 나의 커넥팅 보기 할 때 사용
+	 */
+	public function doIndex() /*{{{*/
+	{
+		$this->request->setDefault(array(
+		                               't' => '',
+		                               'listType' => '',
+		                           ));
+		$this->myUser->loadConnectingInfo();
+
+	} /*}}}*/
+
+	public function doNotFound() /*{{{*/
+	{
+	} /*}}}*/
+
+	/**
+	 * 네이트온 커넥팅 탭 메인 > IFRAME 내부 메시지 목록 창
+	 * 
+	 * @param int $sort 정렬 순서
+	 * @param int $listType 나의 커넥팅 보기 할 때 사용
+	 * @param int $senderCmn 특정 사용자가 보낸 커넥팅만 볼 때 사용
+	 */
+	public function doList() /*{{{*/
+	{
+		$this->request->setDefault(array(
+		                               'sort' => '',
+		                               'listType' => '',
+		                               'senderCmn' => '',
+		                           ));
+
+		if (strval($this->request->sort) === strval(ContainerAPI::SORT_BY_COMMENT_DT) && strval($this->request->listType) === strval(ContainerAPI::LIST_TYPE_SENT)) {
+			$currMenuTitle = '내 커넥팅의 최근 댓글 순';
+		}
+		else if (strval(trim($this->request->listType)) === strval(ContainerAPI::LIST_TYPE_SENT)) {
+			$currMenuTitle = '나의 커넥팅';
+		}
+		else if (strval($this->request->sort) === strval(ContainerAPI::SORT_BY_COMMENT_DT)) {
+			$currMenuTitle = '전체 최근 댓글 순';
+		}
+		else {
+			$currMenuTitle = '전체';
+		}
+
+		$sender = null;
+		if ($this->request->senderCmn) {
+			$sender = User::instance($this->request->senderCmn);
+		}
+		$messagesResult = ContainerAPI::getMessages($this->myUser, '', $this->request->sort, '', $this->request->listType, $sender);
+
+
+		$this->response->messages      = $messagesResult['messages'];
+		$this->response->currMenuTitle = $currMenuTitle;
+
+		ContainerAPI::getBalloonInfo($this->myUser);
+	} /*}}}*/
+
+	/**
+	 * 네이트온 커넥팅 탭 메인 > 나의 커넥팅 상태
+	 */
+	public function doMine() /*{{{*/
+	{
+		$this->myUser->loadConnectingInfo();
+		$this->myUser->getUserInfo();
+
+		$this->response->enableExtBlogs = ExtBlogPeer::retrieveEnableExtBlogs();
+
+		$myBlog = array();
+
+		foreach ($this->myUser->getMyExtBlogs() as $blog) {
+			$myBlog[] = $blog->getExtBlog()->getBlogId();
+		}
+
+		$this->response->myBlogs = $myBlog;
+	} /*}}}*/
+
+	public function doSsoRequired() /*{{{*/
+	{
+		if ($this->myUser->isNateAccount()) {
+			$this->response->setRedirect('/');
+		}
+	} /*}}}*/
+
+	public function doSsoComplete() /*{{{*/
+	{
+	} /*}}}*/
+
+	/**
+	 * 정기점검 페이지
+	 */
+	public function doRoutinCheck()/*{{{*/
+	{
+		$this->request->setDefault(array(
+		                               'startTime' => '',
+		                               'endTime' => '',
+		                           ));
+
+		$this->response->startTime = $this->request->startTime;
+		$this->response->endTime = $this->request->endTime;
+	}/*}}}*/
+
+	/**
+	 * 임시점검 페이지
+	 */
+	public function doTemperCheck()/*{{{*/
+	{
+		$this->request->setDefault(array(
+		                               'startTime' => '',
+		                               'endTime' => '',
+		                           ));
+		$this->response->startTime = $this->request->startTime;
+		$this->response->endTime = $this->request->endTime;
+
+	}/*}}}*/
+}
+?>

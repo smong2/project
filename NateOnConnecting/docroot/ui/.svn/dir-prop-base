@@ -1,0 +1,7 @@
+K 13
+svn:externals
+V 158
+css  svn://svn.stdev.cyworld.com/uidev/cywork/trunk/네이트온/커넥팅/css
+img  svn://svn.stdev.cyworld.com/uidev/cywork/trunk/네이트온/커넥팅/img
+
+END

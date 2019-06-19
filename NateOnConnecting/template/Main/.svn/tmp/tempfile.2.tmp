@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>네이트커넥트</title>
+<link rel="stylesheet" type="text/css" href="/ui/css/common.css" />
+<link rel="stylesheet" type="text/css" href="/ui/css/main.css" />
+<script type="text/javascript" src="/js/list.js"></script>
+<<<<<<< .mine
+<script type="text/javascript" src="/js/natenameui_body.js"></script>
+=======
+>>>>>>> .r14
+<script type="text/javascript" src="/js/prototype.js"></script>
+<script type="text/javascript">
+document.domain = 'nate.com';
+// <![CDATA[
+window.onload = function(){
+	resizeIFrame();
+}
+
+var lastViewId = null;// 로그인영역 ON친구 레이어	
+/*
+function layerOpen(layer) {
+	if (lastViewId != layer)
+	{
+		layerClose(lastViewId);
+	}
+	var obj = document.getElementById(layer);
+	obj.style.display = (obj.style.display == "none") ? "block" : "none";
+	lastViewId = layer;
+
+}
+
+function layerClose(id) {
+	if (id) {
+		var obj = document.getElementById(id);
+		obj.style.display = "none";
+	}
+}
+<<<<<<< .mine
+*/
+=======
+
+listQueryParams = {senderCmn: {@ $this->request->senderCmn}};
+>>>>>>> .r14
+// ]]>
+</script>
+</head>
+
+<body>
+<h1>커넥팅</h1>
+<div class="iwrap">
+	
+	<div class="title_cntingList">
+		<a href="#none" onclick="javascript:layerOpen('layer_select');" onfocus="blur();" class="sel_view">전체</a>
+	
+		<!-- 보기옵션 레이어 -->
+		<div id="layer_select" class="layer_select" style="display:none;"> 
+			<dl class="viewOpt">
+				<dt onclick="javascript:layerOpen('layer_select');"><a href="#none" onfocus="blur();">전체</a></dt>
+				<dd><a href="#">나의 커넥팅</a></dd>
+				<dd><a href="#">최근 댓글 순</a></dd>
+			</dl>
+			
+		</div>
+		<!-- /보기옵션 레이어 -->
+		<a href="#" class="connectGo">네이트커넥트 바로가기</a>
+	</div>
+
+	<ul id="box_messages" class="cntingList f_clear">
+		<podo:execute href="/list/messagesAjax" senderCmn="{$this->request->senderCmn}" />
+	</ul>
+
+	<div id="btn_more" class="cntMore"><a href="#" onclick="getMessagesMore(); return false;">더보기</a></div>
+</div> 
+</body>
+</html>

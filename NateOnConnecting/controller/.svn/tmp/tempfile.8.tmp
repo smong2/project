@@ -1,0 +1,155 @@
+<?php
+class MessageController extends BaseController
+{
+	/**
+	 * 커넥팅 글 삭제하기
+	 * 
+	 * @param string $senderCmn 커넥팅 글쓴이
+	 * @param string $messageId 메시지 ID
+	 */
+	public function doDelete() /*{{{*/
+	{
+		$this->request->setDefault(array(
+		                               'senderCmn' => null,
+		                               'messageKey' => null,
+		                               'listType' => null,
+		                               'sort' => null,
+		                           ));
+
+		try {
+			if (isset($this->request->senderCmn) === false || isset($this->request->messageKey) === false) {
+				throw new Exception();
+			}
+
+			$message = Message::instance($this->request->messageKey);
+			$message->setSender(User::instance($this->request->senderCmn));
+
+			if ($message->getSender()->getUserId() != $this->myUser->getUserId()) {
+				throw new Exception();
+			}
+
+			$this->json->result = $message->delete();
+		} catch (Exception $e) {
+			$this->json->result = false;
+		}
+	} /*}}}*/
+
+	/**
+	 * 댓글 목록 <ul> ... </ul> 
+	 * 
+	 * @param strign senderCmn 메시지 등록 사용자 ID
+	 * @param string messageId 메시지 ID
+	 * @param int page 페이지 번호
+	 */
+	public function doCommentsAjax() /*{{{*/
+	{
+		$this->request->setDefault(array(
+		                               'senderCmn' => null,
+		                               'messageKey' => null,
+		                               'page' => -1,
+		                           ));
+
+		if (isset($this->request->senderCmn) === false || isset($this->request->messageKey) === false) {
+			exit;
+		}
+
+		$page = $this->request->page;
+
+		$message = Message::instance($this->request->messageKey);
+		$message->setSender(User::instance($this->request->senderCmn));
+
+		$commentsResult = ContainerAPI::getComments($message, $page);
+
+		if ($page == -1) {
+			$page = $commentsResult['totalPages'];
+		}
+
+		if ($page > $commentsResult['totalPages'] && $page > 1) {
+			$commentsResult = ContainerAPI::getComments($message, $commentsResult['totalPages']);
+		}
+
+		$this->response->message       = $message;
+		$this->response->comments      = $commentsResult['comments'];
+		$this->response->totalPages    = $commentsResult['totalPages'];
+		$this->response->totalComments = $commentsResult['totalComments'];
+		$this->response->page          = $page;
+	} /*}}}*/
+
+	/**
+	 * 댓글 추가하기
+	 * 
+	 * @param string $senderCmn 메시지 작성자
+	 * @param string $messageId 메시지 ID
+	 * @param int $isSecret 비밀글 여부
+	 * @param string $content 댓글 내용
+	 */
+	public function doAddComment() /*{{{*/
+	{
+		$this->request->setDefault(array(
+		                               'senderCmn' => null,
+		                               'messageKey' => null,
+		                               'isSecret' => null,
+		                               'content' => null,
+									   'parent_id' => '',
+		                           ));
+
+		try {
+			if (isset($this->request->senderCmn) === false || isset($this->request->isSecret) === false || isset($this->request->content) === false) {
+				throw new Exception();
+			}
+
+			$message = Message::instance($this->request->messageKey);
+			$message->setSender(User::instance($this->request->senderCmn));
+
+			$commentResult = $message->addComment($this->myUser, $this->request->content, $this->request->isSecret, $this->request->parent_id);
+
+			$this->json->descript = '';
+
+			if ($commentResult === true) {
+				$this->json->result = true;
+			} elseif (strstr($commentResult, '273 CONTAINS_FORBID_WORD')) {
+				$this->json->result = '273';
+				$this->json->descript = str_replace('273 CONTAINS_FORBID_WORD','', $commentResult);
+			}
+		} catch (Exception $e) {
+			$this->json->result = false;
+		}
+	} /*}}}*/
+
+	/**
+	 * 리커넥팅 하기
+	 * 
+	 * @param string $reconnect_key 리커넥팅키
+	 * @param string $comment 댓글을 남기는지
+	 */
+	public function doReconnect() /*{{{*/
+	{
+		$this->request->setDefault(array(
+		                               'reconnect_key' => null,
+		                               'comment' => '',
+		                           ));
+
+		try {
+			if (isset($this->request->reconnect_key) === false || isset($this->request->comment) === false) {
+				throw new Exception();
+			}
+
+			$message = Message::instance($this->request->reconnect_key);
+			$message->setReconnectKey($this->request->reconnect_key);
+			$message->setComment($this->request->comment);
+			$result = $message->reconnect($this->myUser);
+
+			$this->json->descript = '';
+
+			if ($result === true) {
+				$this->json->result = true;
+			} elseif (strstr($result, '273 CONTAINS_FORBID_WORD')) {
+				$this->json->result = '273';
+				$this->json->descript = str_replace('273 CONTAINS_FORBID_WORD','', $result);
+			}
+		} catch (Exception $e) {
+			$this->json->result = false;
+		}
+	} /*}}}*/
+}
+?>

@@ -1,0 +1,67 @@
+<tpl:Common_Html>
+<tpl:Common_Head>
+<script type="text/javascript" src="http://connect.nate.com/js/common.js"></script>
+<script type="text/javascript" src="http://connect.nate.com/js/connecting.js"></script>
+<script type="text/javascript" src="/js/prototype.js"></script>
+<script type="text/javascript" src="/js/index.js"></script>
+<script type="text/javascript">
+addOnloadHandle(function() {/*{{{*/
+	loadChecker('memo', {@ Message::MAXLEN_MESSAGE}, 'len');
+	commonAttachEvent(document.getElementById('memo'), 'keyup', mBoxCheck);
+	commonAttachEvent(document.getElementById('memo'), 'click', function (e) {
+		if (isIE) {
+			document.getElementById("memo").disabled = false;
+		}
+		else {
+			document.getElementById("memo").readOnly = false;
+		}
+	});
+
+	loadPeopleNoticeBox();
+});/*}}}*/
+</script>
+</tpl:Common_Head>
+
+<body onresize="onResize();">
+<h1>커넥팅 네이트온 탭</h1>
+<div class="wrap">
+	<!-- 커넥팅 -->
+	<h2 id="box_people_notice" style="display:none;" class="cnting"><strong>{$this->myUser->getRealname()}</strong>님을 피플로 추가한 친구/일촌이 <strong id="number_people_notice_cnt">12</strong>명 입니다.<a href="#" class="del" onclick="closePeopleNoticeBox(); return false;">삭제</a></h2>
+
+	<div id="cnt_connecting">
+<<<<<<< .mine
+		<tpl:Main_Write/>	
+=======
+		<form id="fo_message" onsubmit="return false;">
+		<input type="hidden" id="profileType" name="profileType" value="{$this->myUser->getProfileImage() ? User::PROFILE_TYPE_CUSTOM : 1}">
+		<dl class="cntInput">
+			<dt><a href="http://connect.nate.com/index.nate?menu=81&send=1" onclick="openWindow('http://connect.nate.com/index.nate?menu=81&send=1'); return false;" target="_blank"><img src="{$this->myUser->getProfileImage() ? $this->myUser->getProfileImageUrl() : User::generateProfileImageUrl(1)}" width="56" height="56" alt="" /></a></dt>
+			<dd class="write"><textarea id="memo" name="memo" cols="50" rows="3"></textarea></dd>
+			<dd class="count">(<span id="len">0</span>/{Message::MAXLEN_MESSAGE})</dd>
+			<dd class="btn"><button onclick="sendToMessage();">보내기</button></dd>
+		</dl>
+		</form>
+>>>>>>> .r45
+
+		<div class="cntAdd"><a href="http://connect.nate.com/index.nate?menu=83" onclick="openWindow('http://connect.nate.com/index.nate?menu=83'); return false;" target="_blank">네이트온 친구를 피플로 추가하기</a></div>
+		<div class="tabConnect">
+			<ul>
+				<li id="tab_list" class="tab01 on"><a href="/list" target="id_frmMain" onfocus="this.blur();">커넥팅</a></li><!-- 활성화 상태일때만 on 처리 -->
+				<li id="tab_mine" class="tab02"><a href="/mine" target="id_frmMain" onfocus="this.blur();">나의 커넥팅 상태</a></li><!-- 활성화 상태일때만 on 처리 -->
+			</ul>
+		</div>
+	</div>
+
+	<div id="contents">
+		<iframe id="id_frmMain" name="id_frmMain" src="/list?listType={$this->request->listType}" title="컨텐츠 영역" frameborder="0" scrolling="no" width="100%" height="100%"></iframe>
+	</div>
+<!-- /커넥팅 -->
+</div>
+
+<form id="fo_bridge" name="bridgeForm" action="http://br.nate.com/index.php" method="post" target="_blank">
+	<input type="hidden" name="code" value="{MainController::NATEON_BRIDGE_CODE}">
+	<input type="hidden" name="r_url" value="http://connect.nate.com">
+	<input type="hidden" name="t" value="{$this->request->t}">
+</form>
+</body>
+</tpl:Common_Html>

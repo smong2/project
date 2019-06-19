@@ -1,0 +1,1032 @@
+
+===== [/~mong/NateOnConnecting/index.php 15:28:48] ============================================================
+
+
+..... Elapsed Time: TOTAL 6.70 msec, USR 3.00 msec (44.8%), SYS 4.00 msec (59.7%)
+
+===== [/~mong/NateOnConnecting/index.php 15:29:04] ============================================================
+
+
+..... Elapsed Time: TOTAL 8.02 msec, USR 5.00 msec (62.3%), SYS 3.00 msec (37.4%)
+
+===== [/~mong/NateOnConnecting/index.php 15:29:19] ============================================================
+
+
+..... Elapsed Time: TOTAL 2.72 msec, USR 3.00 msec (110.3%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/NateOnConnecting/index.php 15:29:19] ============================================================
+
+ACTION: /dfsdf/asfdsafsdf/dddd
+
+
+..... Elapsed Time: TOTAL 2.72 msec, USR 3.00 msec (110.3%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/NateOnConnecting/index.php 17:42:08] ============================================================
+
+
+..... Elapsed Time: TOTAL 739.71 msec, USR 154.98 msec (21.0%), SYS 26.00 msec (3.5%)
+
+===== [/~mong/NateOnConnecting/index.php 17:42:10] ============================================================
+
+
+..... Elapsed Time: TOTAL 186.15 msec, USR 135.98 msec (73.0%), SYS 10.00 msec (5.4%)
+
+===== [/~mong/NateOnConnecting/index.php 17:42:10] ============================================================
+
+ACTION: /list
+
+
+..... Elapsed Time: TOTAL 186.15 msec, USR 134.98 msec (72.5%), SYS 10.00 msec (5.4%)
+
+===== [/~mong/NateOnConnecting/index.php 17:42:13] ============================================================
+
+
+..... Elapsed Time: TOTAL 135.20 msec, USR 51.99 msec (38.5%), SYS 2.00 msec (1.5%)
+
+===== [/~mong/NateOnConnecting/index.php 17:42:13] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 135.22 msec, USR 51.99 msec (38.4%), SYS 2.00 msec (1.5%)
+
+===== [/~mong/NateOnConnecting/index.php 17:42:22] ============================================================
+
+
+..... Elapsed Time: TOTAL 91.16 msec, USR 41.99 msec (46.1%), SYS 6.00 msec (6.6%)
+
+===== [/~mong/NateOnConnecting/index.php 17:42:22] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 91.18 msec, USR 41.99 msec (46.1%), SYS 6.00 msec (6.6%)
+
+===== [/~mong/NateOnConnecting/index.php 17:13:05] ============================================================
+
+
+..... Elapsed Time: TOTAL 3.22 msec, USR 2.00 msec (62.1%), SYS 1.00 msec (31.1%)
+
+===== [/~mong/NateOnConnecting/index.php 17:13:33] ============================================================
+
+
+..... Elapsed Time: TOTAL 42.35 msec, USR 16.00 msec (37.8%), SYS 7.00 msec (16.5%)
+
+===== [/~mong/NateOnConnecting/index.php 17:13:33] ============================================================
+
+User Notice: Undefined request index: sort in /skcomms/frw/kiwi-connecting/podo/class/Podo/Controller/Request.php on line 74
+
+#0  Podo_Controller_Request->get('sort') called at [/skcomms/frw/kiwi-connecting/podo/class/Podo/Controller/Request.php:189]
+#1  Podo_Controller_Request->__get('sort') called at [controller/MainController.php:19]
+#2  MainController->doIndex() called at [/skcomms/frw/kiwi-connecting/podo/class/Podo.php:87]
+#3  Podo::_executeAction(Array ( [CONTROLLER] => MainController,  [ACTION] => doIndex,  [VIEW] => Main_Index ) , Array ( [t] => 448911E981A192AECF97702053484D2D78B024D5B92BFC900174F2A22A2F37B9C5F69809ED08B0B3533B5B1854642BF6CC309CD27D31B42DB645B3B515FA6074AD16F15807D1F9F3BA17F658B747733E0AA058D16436EE26155A0BFA936D286BF8CFD3A68DE90692FF82C17DD842FBCC32446413FDA35C221C5D0305774371CB64D143648152EB2414F603D099660FE02B71D573EE27466EB9E414863D26CC27EE4683E61E98BAB905A36CEACCDE2EF4410AC44F42AE9322A0B2B7A65DA9C26FC9FBCEABAA321DDDE4C51FF8DC1234EE8288598F104154DA4AD1CF02653216C56E05FCE83BE3FF1F ) ) called at [/skcomms/frw/kiwi-connecting/podo/class/Podo.php:75]
+#4  Podo::execute() called at [docroot/index.php:4]
+
+
+..... Elapsed Time: TOTAL 1.11 msec, USR 1.00 msec (90.1%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/NateOnConnecting/index.php 17:13:57] ============================================================
+
+
+..... Elapsed Time: TOTAL 926.24 msec, USR 18.00 msec (1.9%), SYS 7.00 msec (0.8%)
+
+===== [/~mong/NateOnConnecting/index.php 17:13:59] ============================================================
+
+
+..... Elapsed Time: TOTAL 105.16 msec, USR 54.99 msec (52.3%), SYS 1.00 msec (1.0%)
+
+===== [/~mong/NateOnConnecting/index.php 17:13:59] ============================================================
+
+ACTION: /list
+
+
+..... Elapsed Time: TOTAL 105.18 msec, USR 54.99 msec (52.3%), SYS 1.00 msec (1.0%)
+
+===== [/~mong/NateOnConnecting/index.php 17:14:06] ============================================================
+
+
+..... Elapsed Time: TOTAL 87.87 msec, USR 57.99 msec (66.0%), SYS 8.00 msec (9.1%)
+
+===== [/~mong/NateOnConnecting/index.php 17:14:06] ============================================================
+
+ACTION: /message/commentsAjax
+
+
+..... Elapsed Time: TOTAL 87.87 msec, USR 57.99 msec (66.0%), SYS 8.00 msec (9.1%)
+
+===== [/~mong/NateOnConnecting/index.php 17:14:09] ============================================================
+
+
+..... Elapsed Time: TOTAL 33.26 msec, USR 14.00 msec (42.1%), SYS 5.00 msec (15.0%)
+
+===== [/~mong/NateOnConnecting/index.php 17:14:09] ============================================================
+
+ACTION: /message/commentsAjax
+
+
+..... Elapsed Time: TOTAL 33.29 msec, USR 14.00 msec (42.1%), SYS 5.00 msec (15.0%)
+
+===== [/~mong/NateOnConnecting/index.php 17:29:12] ============================================================
+
+
+..... Elapsed Time: TOTAL 139.75 msec, USR 73.99 msec (52.9%), SYS 5.00 msec (3.6%)
+
+===== [/~mong/NateOnConnecting/index.php 17:29:12] ============================================================
+
+ACTION: /list
+
+
+..... Elapsed Time: TOTAL 139.76 msec, USR 73.99 msec (52.9%), SYS 5.00 msec (3.6%)
+
+===== [/~mong/NateOnConnecting/index.php 17:29:13] ============================================================
+
+
+..... Elapsed Time: TOTAL 117.73 msec, USR 51.99 msec (44.2%), SYS 3.00 msec (2.5%)
+
+===== [/~mong/NateOnConnecting/index.php 17:29:13] ============================================================
+
+ACTION: /list
+
+
+..... Elapsed Time: TOTAL 117.73 msec, USR 51.99 msec (44.2%), SYS 3.00 msec (2.5%)
+
+===== [/~mong/NateOnConnecting/index.php 17:29:14] ============================================================
+
+
+..... Elapsed Time: TOTAL 75.75 msec, USR 41.99 msec (55.4%), SYS 4.00 msec (5.3%)
+
+===== [/~mong/NateOnConnecting/index.php 17:29:14] ============================================================
+
+ACTION: /list
+
+
+..... Elapsed Time: TOTAL 75.75 msec, USR 40.99 msec (54.1%), SYS 4.00 msec (5.3%)
+
+===== [/~mong/NateOnConnecting/index.php 17:29:17] ============================================================
+
+
+..... Elapsed Time: TOTAL 22.53 msec, USR 10.00 msec (44.4%), SYS 2.00 msec (8.9%)
+
+===== [/~mong/NateOnConnecting/index.php 17:29:17] ============================================================
+
+ACTION: /message/commentsAjax
+
+
+..... Elapsed Time: TOTAL 22.51 msec, USR 10.00 msec (44.4%), SYS 3.00 msec (13.3%)
+
+===== [/~mong/NateOnConnecting/index.php 17:29:26] ============================================================
+
+
+..... Elapsed Time: TOTAL 62.95 msec, USR 12.00 msec (19.1%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/NateOnConnecting/index.php 17:29:26] ============================================================
+
+ACTION: /message/addComment
+
+
+..... Elapsed Time: TOTAL 62.95 msec, USR 12.00 msec (19.1%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/NateOnConnecting/index.php 17:29:26] ============================================================
+
+
+..... Elapsed Time: TOTAL 31.55 msec, USR 10.00 msec (31.7%), SYS 3.00 msec (9.5%)
+
+===== [/~mong/NateOnConnecting/index.php 17:29:26] ============================================================
+
+ACTION: /message/commentsAjax
+
+
+..... Elapsed Time: TOTAL 31.54 msec, USR 11.00 msec (34.9%), SYS 3.00 msec (9.5%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:15] ============================================================
+
+
+..... Elapsed Time: TOTAL 844.96 msec, USR 19.00 msec (2.2%), SYS 4.00 msec (0.5%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:16] ============================================================
+
+
+..... Elapsed Time: TOTAL 99.44 msec, USR 49.99 msec (50.3%), SYS 5.00 msec (5.0%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:16] ============================================================
+
+ACTION: /list
+
+
+..... Elapsed Time: TOTAL 99.44 msec, USR 49.99 msec (50.3%), SYS 5.00 msec (5.0%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:17] ============================================================
+
+
+..... Elapsed Time: TOTAL 86.86 msec, USR 44.99 msec (51.8%), SYS 1.00 msec (1.2%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:17] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 86.85 msec, USR 44.99 msec (51.8%), SYS 1.00 msec (1.2%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:18] ============================================================
+
+
+..... Elapsed Time: TOTAL 88.35 msec, USR 43.99 msec (49.8%), SYS 4.00 msec (4.5%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:18] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 88.37 msec, USR 43.99 msec (49.8%), SYS 4.00 msec (4.5%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:18] ============================================================
+
+
+..... Elapsed Time: TOTAL 93.92 msec, USR 47.99 msec (51.1%), SYS 4.00 msec (4.3%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:18] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 93.91 msec, USR 47.99 msec (51.1%), SYS 4.00 msec (4.3%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:19] ============================================================
+
+
+..... Elapsed Time: TOTAL 114.96 msec, USR 42.99 msec (37.4%), SYS 6.00 msec (5.2%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:19] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 114.99 msec, USR 42.99 msec (37.4%), SYS 6.00 msec (5.2%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:22] ============================================================
+
+
+..... Elapsed Time: TOTAL 92.61 msec, USR 45.99 msec (49.7%), SYS 2.00 msec (2.2%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:22] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 92.64 msec, USR 45.99 msec (49.6%), SYS 2.00 msec (2.2%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:22] ============================================================
+
+
+..... Elapsed Time: TOTAL 90.90 msec, USR 43.99 msec (48.4%), SYS 3.00 msec (3.3%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:22] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 90.89 msec, USR 44.99 msec (49.5%), SYS 3.00 msec (3.3%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:23] ============================================================
+
+
+..... Elapsed Time: TOTAL 95.54 msec, USR 46.99 msec (49.2%), SYS 5.00 msec (5.2%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:23] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 95.57 msec, USR 46.99 msec (49.2%), SYS 5.00 msec (5.2%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:23] ============================================================
+
+
+..... Elapsed Time: TOTAL 90.08 msec, USR 47.99 msec (53.3%), SYS 1.00 msec (1.1%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:23] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 90.06 msec, USR 47.99 msec (53.3%), SYS 1.00 msec (1.1%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:24] ============================================================
+
+
+..... Elapsed Time: TOTAL 93.92 msec, USR 51.99 msec (55.4%), SYS 2.00 msec (2.1%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:24] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 93.95 msec, USR 51.99 msec (55.3%), SYS 2.00 msec (2.1%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:24] ============================================================
+
+
+..... Elapsed Time: TOTAL 90.39 msec, USR 44.99 msec (49.8%), SYS 5.00 msec (5.5%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:24] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 90.41 msec, USR 44.99 msec (49.8%), SYS 5.00 msec (5.5%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:25] ============================================================
+
+
+..... Elapsed Time: TOTAL 101.54 msec, USR 48.99 msec (48.2%), SYS 2.00 msec (2.0%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:25] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 101.52 msec, USR 48.99 msec (48.3%), SYS 2.00 msec (2.0%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:25] ============================================================
+
+
+..... Elapsed Time: TOTAL 94.25 msec, USR 46.99 msec (49.9%), SYS 5.00 msec (5.3%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:25] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 94.28 msec, USR 47.99 msec (50.9%), SYS 5.00 msec (5.3%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:27] ============================================================
+
+
+..... Elapsed Time: TOTAL 92.53 msec, USR 43.99 msec (47.5%), SYS 6.00 msec (6.5%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:27] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 92.55 msec, USR 42.99 msec (46.5%), SYS 6.00 msec (6.5%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:28] ============================================================
+
+
+..... Elapsed Time: TOTAL 86.62 msec, USR 46.99 msec (54.2%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:28] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 86.60 msec, USR 46.99 msec (54.3%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:28] ============================================================
+
+
+..... Elapsed Time: TOTAL 88.33 msec, USR 44.99 msec (50.9%), SYS 3.00 msec (3.4%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:28] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 88.31 msec, USR 44.99 msec (50.9%), SYS 3.00 msec (3.4%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:29] ============================================================
+
+
+..... Elapsed Time: TOTAL 92.18 msec, USR 47.99 msec (52.1%), SYS 3.00 msec (3.3%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:29] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 92.17 msec, USR 47.99 msec (52.1%), SYS 3.00 msec (3.3%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:29] ============================================================
+
+
+..... Elapsed Time: TOTAL 90.33 msec, USR 45.99 msec (50.9%), SYS 3.00 msec (3.3%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:29] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 90.31 msec, USR 45.99 msec (50.9%), SYS 3.00 msec (3.3%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:30] ============================================================
+
+
+..... Elapsed Time: TOTAL 98.04 msec, USR 47.99 msec (48.9%), SYS 1.00 msec (1.0%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:30] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 98.02 msec, USR 47.99 msec (49.0%), SYS 1.00 msec (1.0%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:31] ============================================================
+
+
+..... Elapsed Time: TOTAL 95.55 msec, USR 50.99 msec (53.4%), SYS 1.00 msec (1.0%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:31] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 95.57 msec, USR 50.99 msec (53.4%), SYS 1.00 msec (1.0%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:32] ============================================================
+
+
+..... Elapsed Time: TOTAL 293.51 msec, USR 49.99 msec (17.0%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:32] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 293.49 msec, USR 48.99 msec (16.7%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:32] ============================================================
+
+
+..... Elapsed Time: TOTAL 242.36 msec, USR 44.99 msec (18.6%), SYS 5.00 msec (2.1%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:32] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 242.34 msec, USR 44.99 msec (18.6%), SYS 6.00 msec (2.5%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:33] ============================================================
+
+
+..... Elapsed Time: TOTAL 88.25 msec, USR 47.99 msec (54.4%), SYS 3.00 msec (3.4%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:33] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 88.22 msec, USR 46.99 msec (53.3%), SYS 3.00 msec (3.4%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:33] ============================================================
+
+
+..... Elapsed Time: TOTAL 89.50 msec, USR 47.99 msec (53.6%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:33] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 89.48 msec, USR 47.99 msec (53.6%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:34] ============================================================
+
+
+..... Elapsed Time: TOTAL 210.83 msec, USR 46.99 msec (22.3%), SYS 2.00 msec (0.9%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:34] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 210.81 msec, USR 46.99 msec (22.3%), SYS 2.00 msec (0.9%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:34] ============================================================
+
+
+..... Elapsed Time: TOTAL 96.50 msec, USR 47.99 msec (49.7%), SYS 2.00 msec (2.1%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:34] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 96.47 msec, USR 46.99 msec (48.7%), SYS 2.00 msec (2.1%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:36] ============================================================
+
+
+..... Elapsed Time: TOTAL 88.25 msec, USR 44.99 msec (51.0%), SYS 4.00 msec (4.5%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:36] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 88.23 msec, USR 43.99 msec (49.9%), SYS 4.00 msec (4.5%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:36] ============================================================
+
+
+..... Elapsed Time: TOTAL 90.57 msec, USR 45.99 msec (50.8%), SYS 1.00 msec (1.1%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:36] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 90.55 msec, USR 46.99 msec (51.9%), SYS 1.00 msec (1.1%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:37] ============================================================
+
+
+..... Elapsed Time: TOTAL 89.36 msec, USR 45.99 msec (51.5%), SYS 1.00 msec (1.1%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:37] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 89.36 msec, USR 44.99 msec (50.3%), SYS 1.00 msec (1.1%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:38] ============================================================
+
+
+..... Elapsed Time: TOTAL 89.09 msec, USR 48.99 msec (55.0%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:38] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 89.07 msec, USR 48.99 msec (55.0%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:38] ============================================================
+
+
+..... Elapsed Time: TOTAL 115.55 msec, USR 49.99 msec (43.3%), SYS 1.00 msec (0.9%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:38] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 115.53 msec, USR 49.99 msec (43.3%), SYS 1.00 msec (0.9%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:39] ============================================================
+
+
+..... Elapsed Time: TOTAL 101.53 msec, USR 51.99 msec (51.2%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:39] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 101.53 msec, USR 51.99 msec (51.2%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:40] ============================================================
+
+
+..... Elapsed Time: TOTAL 88.98 msec, USR 42.99 msec (48.3%), SYS 4.00 msec (4.5%)
+
+===== [/~mong/NateOnConnecting/index.php 17:38:40] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 88.96 msec, USR 42.99 msec (48.3%), SYS 4.00 msec (4.5%)
+
+===== [/~mong/NateOnConnecting/index.php 17:52:25] ============================================================
+
+
+..... Elapsed Time: TOTAL 560.02 msec, USR 16.00 msec (2.9%), SYS 4.00 msec (0.7%)
+
+===== [/~mong/NateOnConnecting/index.php 17:52:25] ============================================================
+
+
+..... Elapsed Time: TOTAL 109.43 msec, USR 50.99 msec (46.6%), SYS 3.00 msec (2.7%)
+
+===== [/~mong/NateOnConnecting/index.php 17:52:25] ============================================================
+
+ACTION: /list
+
+
+..... Elapsed Time: TOTAL 109.42 msec, USR 50.99 msec (46.6%), SYS 3.00 msec (2.7%)
+
+===== [/~mong/NateOnConnecting/index.php 17:52:54] ============================================================
+
+
+..... Elapsed Time: TOTAL 2.52 msec, USR 3.00 msec (119.0%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/NateOnConnecting/index.php 17:53:03] ============================================================
+
+
+..... Elapsed Time: TOTAL 933.38 msec, USR 22.00 msec (2.4%), SYS 2.00 msec (0.2%)
+
+===== [/~mong/NateOnConnecting/index.php 17:53:04] ============================================================
+
+
+..... Elapsed Time: TOTAL 97.81 msec, USR 51.99 msec (53.2%), SYS 1.00 msec (1.0%)
+
+===== [/~mong/NateOnConnecting/index.php 17:53:04] ============================================================
+
+ACTION: /list
+
+
+..... Elapsed Time: TOTAL 97.81 msec, USR 51.99 msec (53.2%), SYS 2.00 msec (2.0%)
+
+===== [/~mong/NateOnConnecting/index.php 17:53:29] ============================================================
+
+
+..... Elapsed Time: TOTAL 569.12 msec, USR 19.00 msec (3.3%), SYS 2.00 msec (0.4%)
+
+===== [/~mong/NateOnConnecting/index.php 17:53:30] ============================================================
+
+
+..... Elapsed Time: TOTAL 101.36 msec, USR 48.99 msec (48.3%), SYS 4.00 msec (3.9%)
+
+===== [/~mong/NateOnConnecting/index.php 17:53:30] ============================================================
+
+ACTION: /list
+
+
+..... Elapsed Time: TOTAL 101.36 msec, USR 48.99 msec (48.3%), SYS 4.00 msec (3.9%)
+
+===== [/~mong/NateOnConnecting/index.php 17:39:32] ============================================================
+
+
+..... Elapsed Time: TOTAL 435.99 msec, USR 27.00 msec (6.2%), SYS 1.00 msec (0.2%)
+
+===== [/~mong/NateOnConnecting/index.php 17:39:36] ============================================================
+
+
+..... Elapsed Time: TOTAL 118.85 msec, USR 49.99 msec (42.1%), SYS 4.00 msec (3.4%)
+
+===== [/~mong/NateOnConnecting/index.php 17:39:36] ============================================================
+
+ACTION: /list
+
+
+..... Elapsed Time: TOTAL 118.89 msec, USR 48.99 msec (41.2%), SYS 5.00 msec (4.2%)
+
+===== [/~mong/NateOnConnecting/index.php 17:44:52] ============================================================
+
+
+..... Elapsed Time: TOTAL 415.23 msec, USR 17.00 msec (4.1%), SYS 2.00 msec (0.5%)
+
+===== [/~mong/NateOnConnecting/index.php 17:44:53] ============================================================
+
+
+..... Elapsed Time: TOTAL 100.33 msec, USR 45.99 msec (45.8%), SYS 10.00 msec (10.0%)
+
+===== [/~mong/NateOnConnecting/index.php 17:44:53] ============================================================
+
+ACTION: /list
+
+
+..... Elapsed Time: TOTAL 100.35 msec, USR 45.99 msec (45.8%), SYS 10.00 msec (10.0%)
+
+===== [/~mong/NateOnConnecting/index.php 17:44:55] ============================================================
+
+
+..... Elapsed Time: TOTAL 841.39 msec, USR 42.99 msec (5.1%), SYS 8.00 msec (1.0%)
+
+===== [/~mong/NateOnConnecting/index.php 17:44:55] ============================================================
+
+ACTION: /mine
+
+
+..... Elapsed Time: TOTAL 841.37 msec, USR 42.99 msec (5.1%), SYS 8.00 msec (1.0%)
+
+===== [/~mong/NateOnConnecting/index.php 17:45:02] ============================================================
+
+
+..... Elapsed Time: TOTAL 1,253.22 msec, USR 18.00 msec (1,800.0%), SYS 3.00 msec (300.0%)
+
+===== [/~mong/NateOnConnecting/index.php 17:45:02] ============================================================
+
+ACTION: /mine
+
+
+..... Elapsed Time: TOTAL 1,253.21 msec, USR 17.00 msec (1,700.0%), SYS 3.00 msec (300.0%)
+
+===== [/~mong/NateOnConnecting/index.php 17:50:24] ============================================================
+
+
+..... Elapsed Time: TOTAL 630.96 msec, USR 16.00 msec (2.5%), SYS 7.00 msec (1.1%)
+
+===== [/~mong/NateOnConnecting/index.php 17:50:25] ============================================================
+
+
+..... Elapsed Time: TOTAL 97.81 msec, USR 51.99 msec (53.2%), SYS 5.00 msec (5.1%)
+
+===== [/~mong/NateOnConnecting/index.php 17:50:25] ============================================================
+
+ACTION: /list
+
+
+..... Elapsed Time: TOTAL 97.84 msec, USR 50.99 msec (52.1%), SYS 5.00 msec (5.1%)
+
+===== [/~mong/NateOnConnecting/index.php 17:54:25] ============================================================
+
+
+..... Elapsed Time: TOTAL 25.39 msec, USR 10.00 msec (39.4%), SYS 4.00 msec (15.8%)
+
+===== [/~mong/NateOnConnecting/index.php 17:54:25] ============================================================
+
+ACTION: /message/commentsAjax
+
+
+..... Elapsed Time: TOTAL 25.42 msec, USR 11.00 msec (43.3%), SYS 4.00 msec (15.7%)
+
+===== [/~mong/NateOnConnecting/index.php 17:54:26] ============================================================
+
+
+..... Elapsed Time: TOTAL 126.25 msec, USR 44.99 msec (35.6%), SYS 9.00 msec (7.1%)
+
+===== [/~mong/NateOnConnecting/index.php 17:54:26] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 126.28 msec, USR 44.99 msec (35.6%), SYS 9.00 msec (7.1%)
+
+===== [/~mong/NateOnConnecting/index.php 17:58:48] ============================================================
+
+
+..... Elapsed Time: TOTAL 97.95 msec, USR 48.99 msec (50.0%), SYS 7.00 msec (7.1%)
+
+===== [/~mong/NateOnConnecting/index.php 17:58:48] ============================================================
+
+ACTION: /list
+
+
+..... Elapsed Time: TOTAL 97.98 msec, USR 48.99 msec (50.0%), SYS 7.00 msec (7.1%)
+
+===== [/~mong/NateOnConnecting/index.php 17:58:50] ============================================================
+
+
+..... Elapsed Time: TOTAL 95.78 msec, USR 47.99 msec (50.1%), SYS 4.00 msec (4.2%)
+
+===== [/~mong/NateOnConnecting/index.php 17:58:50] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 95.77 msec, USR 47.99 msec (50.1%), SYS 4.00 msec (4.2%)
+
+===== [/~mong/NateOnConnecting/index.php 17:58:50] ============================================================
+
+
+..... Elapsed Time: TOTAL 102.20 msec, USR 43.99 msec (43.0%), SYS 5.00 msec (4.9%)
+
+===== [/~mong/NateOnConnecting/index.php 17:58:50] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 102.25 msec, USR 43.99 msec (43.0%), SYS 5.00 msec (4.9%)
+
+===== [/~mong/NateOnConnecting/index.php 17:58:52] ============================================================
+
+
+..... Elapsed Time: TOTAL 491.78 msec, USR 37.99 msec (7.7%), SYS 6.00 msec (1.2%)
+
+===== [/~mong/NateOnConnecting/index.php 17:58:53] ============================================================
+
+
+..... Elapsed Time: TOTAL 99.17 msec, USR 49.99 msec (50.4%), SYS 5.00 msec (5.0%)
+
+===== [/~mong/NateOnConnecting/index.php 17:58:53] ============================================================
+
+ACTION: /list
+
+
+..... Elapsed Time: TOTAL 99.19 msec, USR 50.99 msec (51.4%), SYS 5.00 msec (5.0%)
+
+===== [/~mong/NateOnConnecting/index.php 17:58:54] ============================================================
+
+
+..... Elapsed Time: TOTAL 499.26 msec, USR 19.00 msec (3.8%), SYS 4.00 msec (0.8%)
+
+===== [/~mong/NateOnConnecting/index.php 17:58:54] ============================================================
+
+
+..... Elapsed Time: TOTAL 96.63 msec, USR 48.99 msec (50.7%), SYS 2.00 msec (2.1%)
+
+===== [/~mong/NateOnConnecting/index.php 17:58:54] ============================================================
+
+ACTION: /list
+
+
+..... Elapsed Time: TOTAL 96.64 msec, USR 48.99 msec (50.7%), SYS 3.00 msec (3.1%)
+
+===== [/~mong/NateOnConnecting/index.php 17:59:04] ============================================================
+
+
+..... Elapsed Time: TOTAL 95.14 msec, USR 48.99 msec (51.5%), SYS 9.00 msec (9.5%)
+
+===== [/~mong/NateOnConnecting/index.php 17:59:04] ============================================================
+
+ACTION: /list
+
+
+..... Elapsed Time: TOTAL 95.15 msec, USR 48.99 msec (51.5%), SYS 9.00 msec (9.5%)
+
+===== [/~mong/NateOnConnecting/index.php 17:59:06] ============================================================
+
+
+..... Elapsed Time: TOTAL 979.79 msec, USR 34.99 msec (3.6%), SYS 7.00 msec (0.7%)
+
+===== [/~mong/NateOnConnecting/index.php 17:59:07] ============================================================
+
+
+..... Elapsed Time: TOTAL 92.69 msec, USR 48.99 msec (52.9%), SYS 3.00 msec (3.2%)
+
+===== [/~mong/NateOnConnecting/index.php 17:59:07] ============================================================
+
+ACTION: /list
+
+
+..... Elapsed Time: TOTAL 92.68 msec, USR 48.99 msec (52.9%), SYS 3.00 msec (3.2%)
+
+===== [/~mong/NateOnConnecting/index.php 17:59:08] ============================================================
+
+
+..... Elapsed Time: TOTAL 211.47 msec, USR 47.99 msec (22.7%), SYS 2.00 msec (0.9%)
+
+===== [/~mong/NateOnConnecting/index.php 17:59:08] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 211.47 msec, USR 47.99 msec (22.7%), SYS 2.00 msec (0.9%)
+
+===== [/~mong/NateOnConnecting/index.php 17:59:09] ============================================================
+
+
+..... Elapsed Time: TOTAL 87.90 msec, USR 45.99 msec (52.3%), SYS 1.00 msec (1.1%)
+
+===== [/~mong/NateOnConnecting/index.php 17:59:09] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 87.89 msec, USR 45.99 msec (52.3%), SYS 1.00 msec (1.1%)
+
+===== [/~mong/NateOnConnecting/index.php 17:59:10] ============================================================
+
+
+..... Elapsed Time: TOTAL 83.36 msec, USR 43.99 msec (52.8%), SYS 2.00 msec (2.4%)
+
+===== [/~mong/NateOnConnecting/index.php 17:59:10] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 83.35 msec, USR 43.99 msec (52.8%), SYS 2.00 msec (2.4%)
+
+===== [/~mong/NateOnConnecting/index.php 17:59:10] ============================================================
+
+
+..... Elapsed Time: TOTAL 87.75 msec, USR 46.99 msec (53.5%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/NateOnConnecting/index.php 17:59:10] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 87.75 msec, USR 46.99 msec (53.5%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/NateOnConnecting/index.php 17:59:11] ============================================================
+
+
+..... Elapsed Time: TOTAL 115.93 msec, USR 45.99 msec (39.7%), SYS 4.00 msec (3.5%)
+
+===== [/~mong/NateOnConnecting/index.php 17:59:11] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 115.92 msec, USR 45.99 msec (39.7%), SYS 4.00 msec (3.5%)
+
+===== [/~mong/NateOnConnecting/index.php 17:59:11] ============================================================
+
+
+..... Elapsed Time: TOTAL 90.78 msec, USR 45.99 msec (50.7%), SYS 2.00 msec (2.2%)
+
+===== [/~mong/NateOnConnecting/index.php 17:59:11] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 90.76 msec, USR 45.99 msec (50.7%), SYS 2.00 msec (2.2%)
+
+===== [/~mong/NateOnConnecting/index.php 17:59:12] ============================================================
+
+
+..... Elapsed Time: TOTAL 85.90 msec, USR 44.99 msec (52.4%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/NateOnConnecting/index.php 17:59:12] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 85.88 msec, USR 44.99 msec (52.4%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/NateOnConnecting/index.php 17:59:12] ============================================================
+
+
+..... Elapsed Time: TOTAL 87.43 msec, USR 45.99 msec (52.6%), SYS 5.00 msec (5.7%)
+
+===== [/~mong/NateOnConnecting/index.php 17:59:12] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 87.41 msec, USR 44.99 msec (51.5%), SYS 5.00 msec (5.7%)
+
+===== [/~mong/NateOnConnecting/index.php 17:59:13] ============================================================
+
+
+..... Elapsed Time: TOTAL 92.51 msec, USR 45.99 msec (49.7%), SYS 2.00 msec (2.2%)
+
+===== [/~mong/NateOnConnecting/index.php 17:59:13] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 92.50 msec, USR 46.99 msec (50.8%), SYS 2.00 msec (2.2%)
+
+===== [/~mong/NateOnConnecting/index.php 17:59:16] ============================================================
+
+
+..... Elapsed Time: TOTAL 95.54 msec, USR 45.99 msec (48.1%), SYS 5.00 msec (5.2%)
+
+===== [/~mong/NateOnConnecting/index.php 17:59:16] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 95.54 msec, USR 45.99 msec (48.1%), SYS 5.00 msec (5.2%)
+
+===== [/~mong/NateOnConnecting/index.php 17:59:16] ============================================================
+
+
+..... Elapsed Time: TOTAL 87.35 msec, USR 45.99 msec (52.7%), SYS 3.00 msec (3.4%)
+
+===== [/~mong/NateOnConnecting/index.php 17:59:16] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 87.33 msec, USR 45.99 msec (52.7%), SYS 3.00 msec (3.4%)
+
+===== [/~mong/NateOnConnecting/index.php 17:59:17] ============================================================
+
+
+..... Elapsed Time: TOTAL 88.16 msec, USR 47.99 msec (54.4%), SYS 1.00 msec (1.1%)
+
+===== [/~mong/NateOnConnecting/index.php 17:59:17] ============================================================
+
+ACTION: /list/messagesAjax
+
+
+..... Elapsed Time: TOTAL 88.15 msec, USR 47.99 msec (54.4%), SYS 1.00 msec (1.1%)
+
+===== [/~mong/NateOnConnecting/index.php 18:04:54] ============================================================
+
+
+..... Elapsed Time: TOTAL 753.73 msec, USR 20.00 msec (2.7%), SYS 5.00 msec (0.7%)
+
+===== [/~mong/NateOnConnecting/index.php 18:04:55] ============================================================
+
+
+..... Elapsed Time: TOTAL 99.95 msec, USR 49.99 msec (50.0%), SYS 2.00 msec (2.0%)
+
+===== [/~mong/NateOnConnecting/index.php 18:04:55] ============================================================
+
+ACTION: /list
+
+
+..... Elapsed Time: TOTAL 99.95 msec, USR 49.99 msec (50.0%), SYS 2.00 msec (2.0%)
+
+===== [/~mong/NateOnConnecting/index.php 18:06:00] ============================================================
+
+
+..... Elapsed Time: TOTAL 539.60 msec, USR 18.00 msec (3.3%), SYS 5.00 msec (0.9%)
+
+===== [/~mong/NateOnConnecting/index.php 18:06:01] ============================================================
+
+
+..... Elapsed Time: TOTAL 99.05 msec, USR 48.99 msec (49.5%), SYS 5.00 msec (5.0%)
+
+===== [/~mong/NateOnConnecting/index.php 18:06:01] ============================================================
+
+ACTION: /list
+
+
+..... Elapsed Time: TOTAL 99.06 msec, USR 48.99 msec (49.5%), SYS 4.00 msec (4.0%)

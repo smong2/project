@@ -1,0 +1,65 @@
+<?php
+class User Extends BaseObject
+{
+	protected $__userId; // CMN
+
+	// NATE 정보
+	protected $__nateId;     // 네이트 ID
+	protected $__email;      // 이메일
+	protected $__gender;     // M: Male, F: Female
+	protected $__birthday;   // YYYYMMDD
+	protected $__lunar;      // 0: 음력, 1: 양력
+	protected $__realAge;    // 만 나이
+	protected $__realname;   // 실명
+	protected $__realnameCd; // Y: 실명인증, N: 실명인증안됨
+	protected $__cyworldId;  // 싸이월드 아이디
+	protected $__nateNick;   // 네이트 닉네임
+	protected $__connectedFl; // 커넥팅 된 유저인지 확인
+
+	public static function instance($pk) /*{{{*/
+	{
+		static $sInstance = array();
+
+		$pk = strval($pk);
+
+		if (isset($sInstance[$pk]) === false) {
+			$className      = __CLASS__;
+			$obj            = new $className($pk);
+			$sInstance[$pk] = $obj;
+		}
+
+		return $sInstance[$pk];
+	} /*}}}*/
+
+	protected function __construct($userId) /*{{{*/
+	{
+		$this->__userId = $userId;
+	} /*}}}*/
+
+	/***************************************************************************** 
+	 ***** HTML 을 위한 GET 함수들 *********************************************** 
+	 *****************************************************************************/
+
+	/**
+	 * 네이트 계정인지 여부를 반환한다.
+	 *
+	 * @return bool 네이트 게정일 경우 true를 반환한다.
+	 */
+	public function isNateAccount()/*{{{*/
+	{
+		if ($this->__userId != '') {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}/*}}}*/
+	/** 
+	 * 피플로 추가하기
+	 */
+	public function addPeople() /*{{{*/
+	{
+		$this->getConnectedFl = 1;
+	} /*}}}*/
+}
+?>

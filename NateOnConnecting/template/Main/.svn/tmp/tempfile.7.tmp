@@ -1,0 +1,82 @@
+<tpl:Common_Html>
+<tpl:Common_Head>
+<script type="text/javascript">
+// <![CDATA[
+window.onload = function(){
+	try {
+		parent.resizeIFrame("id_frmMain", document.body.scrollHeight );
+		parent.selectPage('tab_mine');
+	} catch (e) { }
+}
+// ]]>
+</script>
+</tpl:Common_Head>
+
+<body>
+<h1>커넥팅</h1>
+<div id="layer_blogReg1" class="blogReg" style="display:none">
+	<div class="l_cnt_wrap" id="layer_blogReg_i" >
+		<iframe name="frmExtBlogLayer" id="frmExtBlogLayer" src="" title="외부블로그등록" frameborder="0" scrolling="no" width="400" height="325"></iframe>
+		<a href="javascript:layerClose()" class="layerClose">레이어 닫기</a>
+	</div>
+</div>
+<div class="iwrap">
+<div class="tit_cntingList">
+	<strong>{$this->myUser->getRealname()}님의 커넥팅</strong>
+		<span class="url">http://connect.nate.com/</span>
+		<input type="text" value="{$this->myUser->getIsTempDomain()?'도메인입력':$this->myUser->getDomain()}" />
+		<a href="#" onfocus="blur()">EDIT</a>
+</div>
+
+<h2 class="tit_myCnting">
+	전체 공개 커넥팅
+	<a href="#" class="manage" onfocus="blur()">관리바로가기</a>
+</h2>
+<ul class="list_myCnting f_clear">
+	<li><a href="#none" onfocus="blur()">Following  : <strong>{number_format($this->myUser->getFollowingCnt())}</strong>명</a></li>
+	<li><a href="#none" onfocus="blur()">Follower   : <strong>{number_format($this->myUser->getFollowerCnt())}</strong>명</a></li>
+</ul>
+	 
+<h2 class="tit_myCnting">
+	친구 공개 커넥팅
+	<a href="http://connect.nate.com/index.nate?menu=81" target="_blank" class="manage" onclick="openWindow('http://connect.nate.com/index.nate?menu=81'); return false;" onfocus="blur()">관리바로가기</a>
+	<a href="http://connect.nate.com/connecting/setting/popAddPeopleForm.nate?type=1" target="_blank" class="buddyAdd" onclick="openPopupWindow('http://connect.nate.com/connecting/setting/popAddPeopleForm.nate?type=1',550,610); return false;" onfocus="blur()">친구 공개 커넥팅 수신자 추가하기</a>
+</h2>
+<ul class="list_myCnting f_clear">
+	<li><a href="http://connect.nate.com/index.nate?menu=81" target="_blank" onclick="openWindow('http://connect.nate.com/index.nate?menu=81'); return false;" onfocus="blur()">To  : <strong>{number_format($this->myUser->getFriendCnt())}</strong>명</a></li>
+	<li><a href="http://connect.nate.com/index.nate?menu=86" target="_blank" onclick="openWindow('http://connect.nate.com/index.nate?menu=86'); return false;" onfocus="blur()">From   : <strong>{number_format($this->myUser->getReverseFriendCnt())}</strong>명</a></li>
+</ul>
+				 
+<h2 class="tit_myCnting">
+	네이트온 알림 설정
+	<a href="http://connect.nate.com/index.nate?menu=88" target="_blank" onclick="openWindow('http://connect.nate.com/index.nate?menu=88'); return false;" class="manage" onfocus="blur()">관리바로가기</a>
+</h2>
+<ul class="list_myCnting f_clear">
+	<li>네이트온 토스트 알림 <strong>{$this->myUser->getToastYN() == 'y'?'수신중':'수신 거부 중'}</strong></li>
+</ul>
+																					 
+<h2 class="tit_myCnting">
+	외부 블로그 등록
+	<a href="http://connect.nate.com/index.nate?menu=87" target="_blank" onclick="openWindow('http://connect.nate.com/index.nate?menu=87'); return false;" class="manage" onfocus="blur()">관리바로가기</a>
+</h2>
+<ul class="list_myCnting f_clear">
+	<dummy podo:foreach="$this->enableExtBlogs as $blog">
+		<li>
+			<dl>
+				<dt>{$blog->getBlogNm()}</dt>
+				<dd>					
+					<dummy podo:if="in_array($blog->getBlogId(), $this->myBlogs)">
+						등록완료
+					</dummy>
+					<dummy podo:else>
+						<a href="http://connect.nate.com/index.nate?menu=87" target="_blank" onclick="openWindow('http://connect.nate.com/index.nate?menu=87'); return false;" class="entry" onfocus="blur()">등록하기</a>
+					</dummy>
+				</dd>
+			</dl>
+		</li>
+	</dummy>
+</ul>
+</div>
+<tpl:Main_BridgeForm />
+</body>
+</tpl:Common_Html>

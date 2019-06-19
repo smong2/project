@@ -1,0 +1,30 @@
+<li id="box_message_{$this->message->getMessageId()}">
+	<div class="pfImg">
+		<a href="?senderCmn={$this->message->getSender()->getUserId()}" title="{$this->message->getWriterNm()}님의 커넥팅 모아보기"><img src="{$this->message->getProfileImageUrl()}" width="56" height="56" alt="" /></a>
+		<a href="#" class="addProf" id="{$this->message->getMessageId()}" onclick="addPeople({@ $this->message->getSender()->getUserId()}); return false;" podo:if="1==1">ADD</a>
+	</div>
+	<div class="cntView">
+		<dl>
+			<dt>
+				<span><a href="#" onclick="return false;">{Logger::debug($this->message)}{$this->message->getWriterNm()}</a></span> 
+				<span title="{date('Y.m/d H:i', $this->message->getWriteDt())}">{$this->message->getWriteDtDiffStr()} from {$this->message->getSourceTitleStr()}</span>
+			</dt>
+			<dd class="{$this->message->isClipped() && $this->message->getThumbUrl() ? 'rcnt' : ''}">
+				<dummy podo:if="$this->message->isClipped() && $this->message->getThumbUrl()">
+					<a href="{$this->message->getSourceUrl()}" target="_blank"><img src="{$this->message->getThumbUrl()}" attr-if:onerror="$this->message->getAttachType() == Message::ATTACH_TYPE_CLIPPED_VIDEO" onerror="this.src='http://connect.nate.com/img_ver2/n_play_icon.jpg';" width="49" alt="{$this->message->getMessage()}" /></a>
+				</dummy>
+				<a href="{$this->message->getSourceUrl()}" target="_blank" podo:cond="$this->message->getSourceUrl()">{HTML($this->message->getMessageHTML())}</a>
+			</dd>
+		</dl>
+		<div class="scrapAlim" podo:if="$this->message->isClipped()">외부사이트에서 커넥팅한 글입니다.<br/><a href="http://connect.nate.com/index.nate?menu=7" target="_blank">싸이월드스크랩보기</a></div>
+		<div class="subTxt">
+			<a href="javascript:;" onclick="javascript:openComments({@ $this->message->getSender()->getUserId()}, {@ $this->message->getMessageId()}); return false;" ondblclick="javascript:openComments({@ $this->message->getSender()->getUserId()}, {@ $this->message->getMessageId()}); return false;" class="reply" onfocus="blur();">댓글 <i id="number_totalComments_{$this->message->getMessageId()}">{number_format($this->message->getCommentCnt())}</i></a>
+			<span id="icon_isNew_{$this->message->getMessageId()}" class="new" style="display:{$this->message->hasNewComments() ? '' : 'none'}">new</span>
+			<dummy podo:if="true || $this->myUser->getUserId() == $this->message->getSender()->getUserId()">
+				<a href="#" onclick="deleteMessage({@ $this->message->getSender()->getUserId()}, {@ $this->message->getMessageId()}); return false;" class="del" onfocus="blur();">삭제</a>
+			</dummy>
+		</div>
+	</div>
+
+	<div id="box_comments_{$this->message->getMessageId()}" class="replyBox" style="display:none;"></div>
+</li>

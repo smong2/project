@@ -1,0 +1,98 @@
+<tpl:Common_Html>
+<tpl:Common_Head>
+<script type="text/javascript" src="/js/list.js"></script>
+<script type="text/javascript" src="/js/prototype.js"></script>
+<<<<<<< .mine
+<script src="http://connect.nate.com/js/connecting_write.js" type="text/javascript"></script>
+=======
+<script src="http://connect.nate.com/js/connecting_write.js" type="text/javascript"></script>
+<script src="http://connect.nate.com/js/utility.js" type="text/javascript"></script>
+>>>>>>> .r201
+<script type="text/javascript">
+	// <![CDATA[
+	addOnloadHandle(function () {
+		try {
+			parent.selectPage('tab_list');
+			// onScroll 은 setNextStartIdx() 다음에 호출되어야 정상적으로 동작한다.
+			// 그래서 addOnloadHandle() 의 우선순위는 9로 설정되어있다.
+			parent.onScroll();
+		} catch (e) {}
+		resizeSelf();
+	}, 9);
+
+	commonAttachEvent(document, 'click', function () {
+		closeAllOfLayers();
+	});
+
+	var lastViewId = null; // 로그인영역 ON친구 레이어	
+	function layerOpen(layer) {
+		if (lastViewId != layer)
+		{
+			layerClose(lastViewId);
+		}
+		var obj = document.getElementById(layer);
+		obj.style.display = (obj.style.display == "none") ? "block" : "none";
+		lastViewId = layer;
+
+	}
+
+	function layerClose(id) {
+		if (id) {
+			var obj = document.getElementById(id);
+			obj.style.display = "none";
+		}
+	}
+
+	listQueryParams = {
+		sort: {@ $this->request->sort},
+		listType: {@ $this->request->listType},
+		senderCmn: {@ $this->request->senderCmn}
+	};
+	// ]]>
+</script>
+</tpl:Common_Head>
+
+<body>
+<h1>커넥팅</h1>
+<div class="iwrap">
+	<tpl:Main_Start podo:if="$this->myUser->isFirstVisit() && $this->request->getCookie('disable_startPage') != 1"/>
+	<div class="title_cntingList">
+		<a href="javascript:layerOpen('layer_select');" ondblclick="layerOpen('layer_select'); return false;" onfocus="blur();" class="sel_view">{$this->currMenuTitle}</a>
+	
+		<!-- 보기옵션 레이어 -->
+		<div id="layer_select" class="layer_select" style="display:none;">
+			<dl class="viewOpt">
+				<dt onclick="layerOpen('layer_select'); return false;" ondblclick="layerOpen('layer_select'); return false;"><a href="#" onclick="return false;" onfocus="blur();">{$this->currMenuTitle}</a></dt>
+				<dd onclick="olapStat('CNT08'); document.location.href = '?'; return false;" podo:if="(strval($this->request->listType) === '' && strval($this->request->sort) === '') === false"><a href="?">전체</a></dd>
+				<dd onclick="olapStat('CNT09'); document.location.href = '?listType={ContainerAPI::LIST_TYPE_SENT}'; return false;" podo:if="(strval($this->request->listType) === strval(ContainerAPI::LIST_TYPE_SENT) && strval($this->request->sort) === '') == false"><a href="?listType={ContainerAPI::LIST_TYPE_SENT}">나의 커넥팅</a></dd>
+				<dd onclick="olapStat('CNT09'); document.location.href = '?open_yn=y'; return false;" podo:if="(strval($this->request->listType) === '' && strval($this->request->sort) === false) == false"><a href="?listType={ContainerAPI::LIST_TYPE_SENT}">일촌+친구의 커넥팅</a></dd>
+				<dd onclick="olapStat('CNT10'); document.location.href = '?sort={ContainerAPI::SORT_BY_COMMENT_DT}'; return false;" podo:if="(strval($this->request->listType) === '' && strval($this->request->sort) === strval(ContainerAPI::SORT_BY_COMMENT_DT)) == false"><a href="?sort={ContainerAPI::SORT_BY_COMMENT_DT}">전체 최근 댓글 순</a></dd>
+				<dd onclick="olapStat('CNT10'); document.location.href = '?sort={ContainerAPI::SORT_BY_COMMENT_DT}&listType={ContainerAPI::LIST_TYPE_SENT}'; return false;" podo:if="(strval($this->request->sort) == strval(ContainerAPI::SORT_BY_COMMENT_DT) && strval($this->request->listType) == strval(ContainerAPI::LIST_TYPE_SENT)) === false"><a href="?sort={ContainerAPI::SORT_BY_COMMENT_DT}&listType={ContainerAPI::LIST_TYPE_SENT}">내 커넥팅의 최근 댓글 순</a></dd>
+			</dl>
+		</div>
+		<!-- /보기옵션 레이어 -->
+		<!--a href="http://connect.nate.com/" onclick="olapStat('CNT11'); openWindow('http://connect.nate.com/'); return false;" target="_blank" class="connectGo">네이트커넥팅 바로가기</a-->
+	</div>
+
+	<dummy podo:if="count($this->messages) > 0" >
+		<ul id="box_messages" class="cntingList f_clear">
+			<podo:execute href="/list/messagesAjax" senderCmn="{$this->request->senderCmn}" listType="{$this->request->listType}" sort="{$this->request->sort}" />
+		</ul>
+
+		<div id="btn_more" class="cntMore" style="display:none;"><a href="javascript:getMessagesMore();" onclick="olapStat('CNT18');" onfocus="this.blur();">더보기</a></div>
+	</dummy>
+
+	<div id="box_none_msg" class="noneMsg" style="display:{count($this->messages) > 0 ? 'none' : ''};">
+		<dummy podo:if="$this->request->listType == strval(ContainerAPI::LIST_TYPE_SENT)">
+			작성한 커넥팅이 없습니다.
+		</dummy>
+		<dummy podo:elseif="$this->request->sort == strval(ContainerAPI::SORT_BY_COMMENT_DT)">
+			최근에 댓글이 등록된 커넥팅이 없습니다.
+		</dummy>
+		<dummy podo:else="else">
+			도착한 커넥팅이 없습니다.
+		</dummy>
+	</div>
+</div> 
+</body>
+</tpl:Common_Html>

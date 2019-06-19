@@ -1,0 +1,29 @@
+<li style="white-space:normal; word-break:break-all; word-wrap:break-word;">
+	<dummy podo:if="$this->comment->getIsSecret()">
+		<em id="icon_secret_{$this->comment->getCommentId()}" class="secret" title="귓속말 댓글입니다.">비밀</em>
+	</dummy>
+	<dummy podo:else="else">
+		<em id="icon_secret_{$this->comment->getCommentId()}">공개</em>
+	</dummy>
+	<u podo:if="$this->comment->isReadable($this->myUser)">
+	  <a href="javascript:openWindow('http://connect.nate.com/{$this->comment->getDomain()}');" onclick="javascript:openWindow('http://connect.nate.com/{$this->comment->getDomain()}'); olapStat('CIM27'); return false" onfocus="blur();">{$this->comment->getWriterNm()}</a></u>
+	<span class="{$this->comment->isReadable($this->myUser) == false ? 'secretTxt' : ''}">
+		<dummy podo:if="$this->comment->isReadable($this->myUser)">
+			{HTML($this->comment->getContentHTML())}
+		</dummy>
+		<dummy podo:else="else">
+			귓속말 댓글입니다.
+		</dummy>
+		<b title="{date('Y.m/d H:i', $this->comment->getWriteDt())}">{HTML($this->comment->getWriteDtDiffHTML())}</b>
+
+		<a href="openAddReComment({@ $this->comment->getCommentKey()}); return false;" id="re_reply" onclick="openAddReComment({@ $this->comment->getCommentKey()}); return false;" podo:if="$this->comment->isReComment() == false" onfocus="blur();">재댓글</a>
+		<a href="#" onclick="deleteComment({@ $this->comment->getMessage()->getSender()->getUserId()}, {@ $this->comment->getMessage()->getMessageKey()}, {@ $this->comment->getCommentKey()}, {@ $this->page}, {@ $this->totalPages}, {@ $this->totalComments});olapStat('CIM28'); return false;" class="re_del" title="댓글삭제" podo:if="$this->comment->isRemovable($this->myUser)" onfocus="blur();">삭제</a>
+		<img src="/ui/img/ic_n.gif" width="8" height="8" alt="new" podo:if="$this->comment->isNew()" />
+	</span>
+	
+	<dummy podo:if="$this->comment->isReComment() == false && $this->comment->getIsSecret() == false">
+		<div class="rereply" id="box_recomments_{$this->comment->getCommentKey()}" style="display:none">
+			<tpl:Message_ReComment comment="{$this->comment}" mode="re"/>
+		</div>
+	</dummy>
+</li>

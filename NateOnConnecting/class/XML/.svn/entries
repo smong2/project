@@ -1,0 +1,79 @@
+8
+
+dir
+333
+svn://svn.stdev.cyworld.com/NateOnConnecting/trunk/class/XML
+svn://svn.stdev.cyworld.com/NateOnConnecting
+
+
+
+2010-08-09T08:26:17.137093Z
+174
+mong
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+4df1d86d-343d-424f-8be4-50454cfd1abc
+
+Serializer.php
+file
+
+
+
+
+2010-04-19T02:05:20.000000Z
+a300747824d58d395ac55dbba2c4621e
+2010-04-15T04:41:19.837206Z
+8
+teeroz
+
+Parser.php
+file
+
+
+
+
+2010-07-28T09:33:37.000000Z
+dac8c3fe67f794060ee1d001a08c1fe2
+2010-08-09T08:26:17.137093Z
+174
+mong
+
+Unserializer.php
+file
+
+
+
+
+2010-04-19T02:05:20.000000Z
+63f2fc43a60cc863e561654e653ac0b9
+2010-04-15T04:41:19.837206Z
+8
+teeroz
+
+Util.php
+file
+
+
+
+
+2010-04-19T02:05:20.000000Z
+9bb265dafaaf06c86ca5c48f50368ded
+2010-04-15T04:41:19.837206Z
+8
+teeroz
+
+Parser
+dir
+

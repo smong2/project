@@ -1,0 +1,42 @@
+<?php
+class ListController extends BaseController
+{
+	/**
+	 * 메시지 목록 <ul> ... </ul>
+	 *
+	 * @param string $startIdx 이 번호 다음에 해당하는 메시지부터 읽어온다.
+	 * @param int $sort 정렬 순서
+	 * @param int $listType 나의 커넥팅 보기 할 때 사용
+	 * @param string $senderCmn 이 사용자가 등록한 메시지만 읽어온다.
+	 */
+	public function doMessagesAjax() /*{{{*/
+	{
+		$this->request->setDefault(array(
+		                               'startIdx' => '',
+		                               'sort' => '',
+		                               'listType' => '',
+		                               'senderCmn' => '',
+		                           ));
+
+		$sender = null;
+		if ($this->request->senderCmn) {
+			$sender = User::instance($this->request->senderCmn);
+		}
+		$messagesResult = ContainerAPI::getMessages($this->myUser, $this->request->startIdx, $this->request->sort, '', $this->request->listType, $sender);
+
+		$this->response->messages     = $messagesResult['messages'];
+		$this->response->nextStartIdx = $messagesResult['nextStartIdx'];
+	} /*}}}*/
+
+	public function doAddPeopleProc()
+	{
+		$this->request->setDefault(array(
+									'targetCmn' => ''
+								  ));
+
+		User::instance($this->request->targetCmn)->addPeople();
+
+		$this->json->result = 1;
+	}
+}
+?>

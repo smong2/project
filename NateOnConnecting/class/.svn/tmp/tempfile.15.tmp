@@ -1,0 +1,216 @@
+<?php
+class Comment Extends BaseObject
+{
+	protected $__commentKey;
+	protected $__commentId;
+	protected $__parentId;
+	protected $__content;
+	protected $__message;
+	protected $__writer;
+	protected $__writeDt;
+	protected $__writerNm;
+	protected $__isSecret;
+	protected $__domain;
+	protected $__nickname;
+
+	const MAXLEN_CONTENT = 150;
+
+	public static function instance($pk) /*{{{*/
+	{
+		static $sInstance = array();
+
+		$pk = strval($pk);
+
+		if (isset($sInstance[$pk]) === false) {
+			$className      = __CLASS__;
+			$obj            = new $className($pk);
+			$sInstance[$pk] = $obj;
+		}
+
+		return $sInstance[$pk];
+	} /*}}}*/
+
+	protected function __construct($commentKey) /*{{{*/
+	{
+		$this->__commentKey = $commentKey;
+	} /*}}}*/
+
+	/************************************************************************** 
+	 ***** ACTION ************************************************************* 
+	 **************************************************************************/
+
+	/**
+	 * 댓글을 비밀글로 변경한다.
+	 *
+	 * @return bool 성공할 경우 true 를 반환한다.
+	 */
+	public function secret()/*{{{*/
+	{
+		return ContainerAPI::secretComment($this);
+	}/*}}}*/
+
+	/**
+	 * 댓글을 삭제한다.
+	 *
+	 * @param User $myUser 삭제하는 사용자의 객체를 전달한다.
+	 *
+	 * @return bool 성공할 경우 true 를 반환한다.
+	 */
+	public function delete(User $myUser)/*{{{*/
+	{
+		return ContainerAPI::deleteComment($this, $myUser);
+	}/*}}}*/
+
+	/***************************************************************************** 
+	 ***** HTML 을 위한 GET 함수들 *********************************************** 
+	 *****************************************************************************/
+
+	/**
+	 * 댓글을 볼 권한이 있는지 여부를 반환한다.
+	 * 
+	 * 다음의 조건 중에 1가지라도 해당한다면 읽을 수 있다.
+	 * 1. 귓속말 댓글이 아닌 경우
+	 * 2. 커넥팅 글을 본인이 작성한 경우
+	 * 3. 댓글을 본인이 작성한 경우
+	 * 
+	 * @param User $myUser 본인에 해당하는 User 객체를 전달한다.
+	 * 
+	 * @return bool 댓글을 볼 권한이 있으면 true 를 반환한다.
+	 */
+	public function isReadable(User $myUser) /*{{{*/
+	{
+		if ($this->getIsSecret() == false) {
+			return true;
+		}
+
+		if ($this->getMessage()->getSender()->getUserId() == $myUser->getUserId()) {
+			return true;
+		}
+
+		if ($this->getWriter()->getUserId() == $myUser->getUserId()) {
+			return true;
+		}
+
+		return false;
+	} /*}}}*/
+
+	/**
+	 * 댓글을 삭제할 권한이 있는지 여부를 반환한다.
+	 *
+	 * 댓글을 작성한 본인만 삭제할 수 있다.
+	 *
+	 * @param User $myUser 본인에 해당하는 User 객체를 전달한다.
+	 *
+	 * @return bool 댓글을 삭제할 권한이 있으면 true 를 반환한다.
+	 */
+	public function isRemovable(User $myUser) /*{{{*/
+	{
+		if ($this->getWriter()->getUserId() == $myUser->getUserId()) {
+			return true;
+		}
+
+		// 자기글의 댓글은 지울 수 있다
+		if ($this->getMessage()->getSender()->getUserId() == $myUser->getUserId()) {
+			return true;
+		}
+
+		return false;
+	} /*}}}*/
+
+	/**
+	 * 댓글을 귓속말 댓글로 변경할 수 있는 권한이 있는지 여부를 반환한다.
+	 *
+	 * 귓속말 댓글이 아니면서 커넥팅 글 작성자만 변경할 수 있다.
+	 *
+	 * @param User $myUser 본인에 해당하는 User 객체를 전달한다.
+	 *
+	 * @return bool 권한이 있으면 true 를 반환한다.
+	 */
+	public function isSecretable(User $myUser) /*{{{*/
+	{
+		if ($this->getIsSecret()) {
+			return false;
+		}
+
+		if ($this->getMessage()->getSender()->getUserId() != $myUser->getUserId()) {
+			return false;
+		}
+
+		return true;
+	} /*}}}*/
+
+	/**
+	 * 댓글의 재댓글 여부
+	 */
+	public function isReComment()/*{{{*/
+	{
+		if ($this->getCommentId() == $this->getParentId()) {
+			return false;
+		}
+
+		return true;
+	}/*}}}*/
+
+
+	/**
+	 * $writeDt를 기획에 맞게 변환하여 반환한다.
+	 * 
+	 * 1분 이내일 경우, 지금 막
+	 * 1시간 이내일 경우, X분 전
+	 * 1일 이내일 경우, X시간 전
+	 * 그 외의 경우는 YYYY.MM/DD HH:MM 형식으로 반환한다.
+	 * 
+	 * @return string
+	 */
+	public function getWriteDtDiffHTML() /*{{{*/
+	{
+		$diff = time() - $this->getWriteDt();
+
+		if ($diff < 60) {
+			return '지금 막';
+		}
+		else if ($diff < 60*60) {
+			return '<i>' . (int)($diff/60) . '</i>분 전';
+		}
+		else if ($diff < 24*60*60) {
+			return '<i>' . (int)($diff/(60*60)) . '</i>시간 전';
+		}
+		else {
+			return date('Y.m/d H:i', $this->getWriteDt());
+		}
+	} /*}}}*/
+
+	/**
+	 * 댓글 내용 중 URL은 링크로 연결한다
+	 *
+	 * @return string
+	 */
+	public function getContentHTML() /*{{{*/
+	{
+		static $exprUrl = '(?:http(?:s?)\:\/\/)(?:\w+:\w+@)?(?:(?:[-\w]+\.)+(?:com|org|net|gov|mil|biz|info|mobi|name|aero|jobs|museum|travel|[a-z]{2}))(?::[\d]{1,5})?(?:(?:(?:\/(?:[-\w~!$+|.,=]|%[a-f\d]{2})+)+|\/)+|\?|#)?(?:(?:\?(?:[-\w~!$+|.,*:]|%[a-f\d{2}])+=(?:[-\w~!$+|.,*:=]|%[a-f\d]{2})*)(?:\&amp;(?:[-\w~!$+|.,*:]|%[a-f\d{2}])+=(?:[-\w~!$+|.,*:=]|%[a-f\d]{2})*)*)*(?:#(?:[-\w~!$+|.,*:=]|%[a-f\d]{2})*)?';
+
+		$html = $this->getContent();
+		$html = htmlspecialchars($html);
+		$html = str_replace('%3D','=',$html);
+		$html = str_replace('%26','&',$html);
+		$html = preg_replace('/('.$exprUrl.')/i', '<a href="\1" class="link" target="_blank" onclick="olapStat(\'CNT14\');">\1</a>', $html);
+		$html = nl2br($html);
+		$html = str_replace('<br',' <br', $html);
+
+
+		return $html;
+	} /*}}}*/
+
+	/**
+	 * 새 댓글인지 여부를 반환한다.
+	 * 
+	 * 댓글이 작성한지 1일 이내일 경우 새 댓글로 판단한다.
+	 * 
+	 * @return bool 새 댓글일 경우 true 를 반환한다.
+	 */
+	public function isNew() /*{{{*/
+	{
+		return (time()-$this->getWriteDt() < 24*60*60);
+	} /*}}}*/
+}
+?>

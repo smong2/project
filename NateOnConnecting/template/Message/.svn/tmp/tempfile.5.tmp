@@ -1,0 +1,35 @@
+<script type="text/javascript">
+	try { 
+		document.getElementById('textbox_comment_'+{@ $this->message->getMessageKey()}).focus(); 
+	} catch (e) { }
+	try { 
+		setTotalComments({@ $this->message->getMessageKey()}, {@ $this->totalComments}, {@ number_format($this->totalComments)}); 
+	} catch (e) { }
+</script>
+<ul class="viewReply">
+	<dummy podo:foreach="$this->comments as $comment">
+			<div class="rereply" podo:cond="$comment->isReComment()">
+				<ul class="viewrereply" podo:cond="$comment->isReComment()">
+					<tpl:Message_Comment comment="{$comment}" message="{$this->message}" />
+				</ul>
+			</div>
+	</dummy>
+</ul>
+
+<dummy podo:if="$this->totalPages > 1">
+	<podo:execute href="/message/comment/pageNavigator" max="{$this->totalPages}" curr="{$this->page}" senderCmn="{$this->request->senderCmn}" messageKey="{$this->request->messageKey}" />
+</dummy>
+
+<fieldset class="innerReply">
+	<form id="fo_comment_{$this->message->getMessageKey()}" onsubmit="addComment({@ $this->message->getMessageKey()}, ''); return false;">
+	<input type="hidden" name="messageKey" value="{$this->message->getMessageKey()}" />
+	<input type="hidden" name="comment_length_{$this->message->getMessageKey()}"/>
+	<input type="hidden" name="senderCmn" value="{$this->message->getSender()->getUserId()}" />
+	<input type="hidden" name="parent_id" value="" />
+	<div class="reSecret"><input type="checkbox" name="isSecret" id="secret01" value="1" onclick="olapStat('CIM29');"  onfocus="blur();"/> <label for="secret01">귓속말하기</label></div>
+	<div class="reInput">
+		<span class="txtbox"><input id="textbox_comment_{$this->message->getMessageKey()}" name="content" type="text" maxlength="150"  value="" onkeyUp="CONNECTINGIns.commentUrlCheck('textbox_comment_{$this->message->getMessageKey()}','comment_length_{$this->message->getMessageKey()}', event)" /></span>
+		<button class="reply" onclick="olapStat('CIM30'); addComment({@ $this->message->getMessageKey()}, ''); return false;">댓글</button>
+	</div>
+	</form>
+</fieldset>

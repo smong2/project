@@ -1,0 +1,47 @@
+<script type="text/javascript">
+	try {
+		// podo:execute 로 처음 부르는 경우를 위해
+		// addOnloadHandle 도 하고 그냥 호출도 한다.
+		addOnloadHandle(function () {
+<<<<<<< .mine
+			//NOEmoticons.setEmoticons("real", "dd","");
+=======
+			CONNECTINGImg.PLAINTEXT = "Y";
+		    CONNECTINGImg.LINKCLASS = "link";
+			CONNECTINGImg.setImgViewer("real", {@ $this->nextStartIdx}, "dd", "message_cls", "upload", "56", "292", "<br/>", "<br/>");
+			NOEmoticons.setEmoticons("real", "dd","message_cls");
+
+>>>>>>> .r201
+			setNextStartIdx({@ $this->nextStartIdx})
+		});
+<<<<<<< .mine
+
+		//NOEmoticons.setEmoticons("real", "dd","");
+=======
+
+		CONNECTINGImg.PLAINTEXT = "Y";
+		CONNECTINGImg.LINKCLASS = "link";
+		CONNECTINGImg.setImgViewer("real", {@ $this->nextStartIdx}, "dd", "message_cls", "upload", "56", "292", "<br/>", "<br/>");
+		NOEmoticons.setEmoticons("real", "dd","message_cls");
+>>>>>>> .r201
+		setNextStartIdx({@ $this->nextStartIdx})
+	} catch (e) { }
+<<<<<<< .mine
+
+=======
+
+	function ExpIt(ob){
+		if(ob.getAttribute("width") == 292) {
+			ob.setAttribute("width", 62);
+		}
+		else {
+			ob.setAttribute("width", 292);
+		}
+	}
+>>>>>>> .r201
+</script>
+<span id="{$this->nextStartIdx}">
+<dummy podo:foreach="$this->messages as $message">
+	<tpl:List_Message message="{$message}" />
+</dummy>
+</span>

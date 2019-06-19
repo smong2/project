@@ -1,0 +1,135 @@
+var nextStartidx;
+var listQueryParams;
+
+function resizeSelf()/*{{{*/
+{
+	try {
+		parent.resizeIFrame("id_frmMain", document.body.scrollHeight );
+	}
+	catch (e) { }
+}/*}}}*/
+
+function closeAllOfLayers()/*{{{*/
+{
+	if (document.getElementById('layer_select').style.display == 'none') {
+	}
+	else {
+		layerClose('layer_select');
+	}
+}/*}}}*/
+
+/****************************************************************************** 
+ ***** MESSAGE **************************************************************** 
+ ******************************************************************************/
+
+/**
+ * 메시지 목록 더보기
+ */
+function getMessagesMore()/*{{{*/
+{
+	try {
+		var parameters = listQueryParams;
+		parameters['startIdx'] = nextStartIdx;
+
+		var options = {
+			method: 'get',
+			insertion: Insertion.Bottom,
+			evalScripts: true,
+			onComplete: function ()
+			{
+				resizeSelf();
+			},
+			parameters: parameters
+		};
+		new Ajax.Updater('box_messages', '/list/messagesAjax', options);
+	}
+	catch (e) {
+	}
+}/*}}}*/
+
+/**
+ * 다음 메시지 ID를 저장한다.
+ */
+function setNextStartIdx(idx)/*{{{*/
+{
+	nextStartIdx = idx;
+
+	if (idx.trim() == '') {
+		document.getElementById('btn_more').style.display = 'none';
+		resizeSelf();
+	}
+}/*}}}*/
+
+/**
+ * 피플로 추가하기
+ */
+function addPeople(targetCmn)/*{{{*/
+{
+}/*}}}*/
+
+/****************************************************************************** 
+ ***** COMMENTS *************************************************************** 
+ ******************************************************************************/
+
+/**
+ * 댓글 목록을 가져온다.
+ */
+function getComments(senderCmn, messageId, page)/*{{{*/
+{
+	try {
+		var options = {
+			method: 'get',
+			evalScripts: true,
+			onComplete: function ()
+			{
+				resizeSelf();
+			},
+			parameters: {senderCmn: senderCmn, messageId: messageId, page: page}
+		};
+		new Ajax.Updater('box_comments_'+messageId, '/message/commentsAjax', options);
+	}
+	catch (e) {
+		alert(e);
+	}
+}/*}}}*/
+
+/**
+ * 댓글 박스를 펼친다.
+ */
+function openComments(senderCmn, messageId)/*{{{*/
+{
+	var elem = document.getElementById('box_comments_'+messageId);
+	if (elem.style.display == 'none') {
+		elem.style.display = 'block';
+		getComments(senderCmn, messageId, 1);
+	}
+	else {
+		elem.style.display = 'none';
+		resizeSelf();
+	}
+}/*}}}*/
+
+/**
+ * 댓글 수를 업데이트 한다.
+ */
+function setTotalComments(messageId, totalComments, totalCommentsStr)/*{{{*/
+{
+	if (totalComments <= 0) {
+		document.getElementById('number_totalComments_'+messageId).innerHTML = '0';
+		document.getElementById('icon_isNew_'+messageId).style.display = 'none';
+	}
+	else {
+		document.getElementById('number_totalComments_'+messageId).innerHTML = totalCommentsStr;
+	}
+}/*}}}*/
+
+function commonAttachEvent(tg, name, func)/*{{{*/
+{
+	if (tg.addEventListener) {
+		tg.addEventListener(name, func, false);
+	}
+	else if (tg.attachEvent) {
+		tg.attachEvent('on'+name, func);
+	}
+}/*}}}*/
+

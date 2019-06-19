@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dispatcher-config>
+	<patterns>
+		<pattern type="ACTION">
+			<expression><![CDATA[/^\/?$/i]]></expression>
+			<controller><![CDATA[MainController]]></controller>
+			<action><![CDATA[doIndex]]></action>
+			<view><![CDATA[Main_Index]]></view>
+		</pattern>
+
+		<pattern type="ACTION">
+			<expression><![CDATA[/^\/([a-zA-Z_]\w*)\/?$/i]]></expression>
+			<controller><![CDATA[MainController]]></controller>
+			<action><![CDATA[do<$1>]]></action>
+			<view><![CDATA[Main_<$1>]]></view>
+		</pattern>
+
+		<pattern type="ACTION">
+			<expression><![CDATA[/^\/([a-zA-Z_]\w*(?:\/[a-zA-Z_]\w*)*)\/([a-zA-Z_]\w*)\/?$/i]]></expression>
+			<controller><![CDATA[<$1>Controller]]></controller>
+			<action><![CDATA[do<$2>]]></action>
+			<view><![CDATA[<$1>_<$2>]]></view>
+		</pattern>
+    </patterns>
+
+    <default>
+    	<controller><![CDATA[MainController]]></controller>
+    	<action><![CDATA[doNotFound]]></action>
+    	<view><![CDATA[Main_NotFound]]></view>
+    </default>
+</dispatcher-config>

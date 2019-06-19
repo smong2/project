@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<custom_tag>
+	<tags prefix="podo">
+		<!-- <podo:execute href="/main/topMenu" /> -->
+		<tag name="execute">
+			<attribute name="href" required="true" />
+
+			<code><![CDATA[
+				<?php $__strHref = {$href#var}; $__arrAttr = {%ATTR_ARRAY%}; if (count($__arrAttr) > 0) { if (strpos($__strHref, '?') !== false) $__strHref .= '&'; else $__strHref .= '?'; $arrKeyValue = array(); foreach ($__arrAttr as $__key=>$__value) $arrKeyValue[] = $__key.'='.urlencode($__value); $__strHref .= join('&', $arrKeyValue); }; Podo::execute($__strHref); ?>
+			]]></code>
+		</tag>
+	</tags>
+</custom_tag>

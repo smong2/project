@@ -1,0 +1,54 @@
+<script type="text/javascript">
+	increaseMessageCnt();
+	if (typeof(messageIdsByUserId[{@ $this->message->getSender()->getUserId()}]) == 'undefined') {
+		messageIdsByUserId[{@ $this->message->getSender()->getUserId()}] = new Array();
+	}
+	messageIdsByUserId[{@ $this->message->getSender()->getUserId()}].push({@ $this->message->getMessageId()});
+
+
+</script>
+
+<li id="box_message_{$this->message->getMessageId()}">
+	<div class="cntView f_clear">
+		<div class="pfImg">
+			<a href="?senderCmn={$this->message->getSender()->getUserId()}" title="{$this->message->getWriterNm()}님의 커넥팅 모아보기" onclick="olapStat('CNT13');"><img src="{$this->message->getProfileImageUrl()}" width="56" height="56" alt="" /></a>
+			<a id="btn_add_{$this->message->getMessageId()}" href="#" class="addProf" name="{$this->message->getSender()->getUserId()}" onclick="addPeople({@ $this->message->getSender()->getUserId()}, {@ $this->message->getWriterNm()}); return false;" title="피플로 추가" podo:if="$this->myUser->isFriend($this->message->getSender()) == false" >ADD</a>
+		</div>
+		<dl>
+			<dt>
+				<a href="#"><u>{$this->message->getWriterNm()}</u></a> 
+				<span title="{date('Y.m/d H:i', $this->message->getWriteDt())}"><a href="#">{$this->message->getWriteDtDiffStr()}</a> <a href="#">{$this->message->getSourceTitleStr()}</a></span>
+
+			<dummy podo:if="$this->message->getFrom() == '네이트온'">
+				<img src="/images/ic_nateon.gif"/>
+			</dummy>
+			<dummy podo:elseif="$this->message->getFrom() == '모바일'">
+				<img src="/images/ic_phone.gif"/>
+			</dummy>
+			</dt>
+			<dummy podo:if="$this->message->isRemovable($this->myUser)">
+				<dd class="btn"><a href="#" onclick="olapStat('CNT16'); deleteMessage({@ $this->message->getSender()->getUserId()}, {@ $this->message->getMessageId()}); return false;" class="del" onfocus="blur();">삭제</a></dd>
+			</dummy>
+			<dummy podo:if="$this->message->isRemovable($this->myUser) == false">
+				<dd class="btn"><a href="javascript:;" onclick="javascript:openReconnecting({@ $this->message->getMessageId()}); return false;" ondblclick="javascript:openReconnecting({@ $this->message->getMessageId()}); return false;" onfocus="blur()">리커넥팅</a></dd>
+			</dummy>
+			<dd class="{$this->message->isClipped() && $this->message->getThumbUrl() ? 'rcnt' : ''}">
+				<dummy podo:if="$this->message->isClipped() && $this->message->getThumbUrl()">
+					<a href="{$this->message->getSourceUrl()}" target="_blank" onclick="olapStat('CNT20');"><img src="{$this->message->getThumbUrl()}" attr-if:onerror="$this->message->getAttachType() == Message::ATTACH_TYPE_CLIPPED_VIDEO" onerror="this.src='http://connect.nate.com/img_ver2/n_play_icon.jpg';" width="49" alt="{$this->message->getMessage()}" /></a>
+				</dummy>
+				<a href="{$this->message->getSourceUrl()}" target="_blank" onclick="{$this->message->isClipped() && $this->message->getThumbUrl() ? 'olapStat(\'CNT20\');' : 'olapStat(\'CNT19\');'}" podo:cond="$this->message->getSourceUrl()">{HTML($this->message->getMessageHTML())}</a>
+			</dd>
+		</dl>
+		<div class="scrapAlim" podo:if="$this->message->isClipped()">외부사이트에서 스크랩 + 커넥팅한 글입니다.<br/><a href="http://connect.nate.com/index.nate?menu=7" onclick="olapStat('CNT21'); openWindow('http://connect.nate.com/index.nate?menu=7'); return false;" target="_blank">싸이월드스크랩보기</a></div>
+		<div class="subTxt">
+			<div class="replyCnt">
+				<a href="javascript:;" onclick="olapStat('CNT15'); javascript:openComments({@ $this->message->getSender()->getUserId()}, {@ $this->message->getMessageId()}); return false;" ondblclick="javascript:openComments({@ $this->message->getSender()->getUserId()}, {@ $this->message->getMessageId()}); return false;" class="reply" onfocus="blur();">댓글 <i id="number_totalComments_{$this->message->getMessageId()}">{number_format($this->message->getCommentCnt())}</i></a>
+				<span id="icon_isNew_{$this->message->getMessageId()}" class="new" style="display:{$this->message->hasNewComments() ? '' : 'none'}">new</span>
+			</div>
+		</div>
+	</div>
+	<div id="reconnecting_{$this->message->getMessageId()}" class="reCntInput" style="display:none">
+		<tpl:Main_Reconnecting message="{$this->message}" />
+	</div>
+	<div id="box_comments_{$this->message->getMessageId()}" class="replyBox" style="display:none;"></div>
+</li>

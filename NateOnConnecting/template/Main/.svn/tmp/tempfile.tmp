@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>네이트커넥트</title>
+<link rel="stylesheet" type="text/css" href="/ui/css/common.css" />
+<link rel="stylesheet" type="text/css" href="/ui/css/main.css" />
+<script type="text/javascript">
+document.domain = 'nate.com';
+// <![CDATA[
+window.onload = function(){
+}
+
+function resizeIFrame(psID, piHeight){
+	var iHeight = document.getElementById(psID).getAttribute("height");
+	 if(piHeight != iHeight) document.getElementById(psID).setAttribute("height", piHeight);
+}
+// ]]>
+</script>
+</head>
+
+<body>
+<h1>커넥팅 네이트온 탭</h1>
+<div class="wrap">
+	<!-- 커넥팅 -->
+	<h2 class="cnting"><strong><a href="#" onclick="oNateNameUI.openNameUI('area_type_1',{},this);return false;">이정현</a></strong>님을 피플로 추가한 친구/일촌이 <strong>12</strong>명 입니다.<a href="#" class="del">삭제</a></h2>
+
+	<div id="cnt_connecting">
+		<dl class="cntInput">
+			<dt><a href="#"><img src="/ui/img/thumb_56x56.gif" width="56" height="56" alt="" /></a></dt>
+			<dd class="write"><textarea cols="50" rows="3"></textarea></dd>
+			<dd class="count">(50/150)</dd>
+			<dd class="btn"><button>보내기</button></dd>
+		</dl>
+
+		<div class="cntAdd"><a href="#">네이트온 친구를 피플로 추가하기</a></div>
+		<div class="tabConnect">
+			<ul>
+				<li class="tab01 on"><a href="/list" target="id_frmMain">커넥팅</a></li><!-- 활성화 상태일때만 on 처리 -->
+				<li class="tab02"><a href="/mine" target="id_frmMain">나의 커넥팅 상태</a></li><!-- 활성화 상태일때만 on 처리 -->
+			</ul>
+		</div>
+		
+	</div>
+
+	<div id="contents">
+		<iframe id="id_frmMain" name="id_frmMain" src="/list" title="컨텐츠 영역" frameborder="0" scrolling="auto" width="100%" height="100%"></iframe>
+	</div>
+	<!-- /커넥팅 -->
+</div>
+</body>
+</html>

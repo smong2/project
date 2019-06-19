@@ -1,0 +1,276 @@
+var nextStartidx;
+var listQueryParams;
+
+function resizeSelf()/*{{{*/
+{
+	try {
+		parent.resizeIFrame('id_frmMain', document.body.scrollHeight );
+	}
+	catch (e) { }
+}/*}}}*/
+
+function closeAllOfLayers()/*{{{*/
+{
+	if (document.getElementById('layer_select').style.display == 'none') {
+	}
+	else {
+		layerClose('layer_select');
+	}
+}/*}}}*/
+
+/****************************************************************************** 
+ ***** MESSAGE **************************************************************** 
+ ******************************************************************************/
+
+/**
+ * 메시지 목록 더보기
+ */
+function getMessagesMore()/*{{{*/
+{
+	try {
+		var parameters = listQueryParams;
+		parameters['startIdx'] = nextStartIdx;
+
+		var options = {
+			method: 'get',
+			insertion: Insertion.Bottom,
+			evalScripts: true,
+			onComplete: function ()
+			{
+				resizeSelf();
+			},
+			parameters: parameters
+		};
+		new Ajax.Updater('box_messages', '/list/messagesAjax', options);
+	}
+	catch (e) {
+	}
+}/*}}}*/
+
+/**
+ * 다음 메시지 ID를 저장한다.
+ */
+function setNextStartIdx(idx)/*{{{*/
+{
+	nextStartIdx = idx;
+
+	if (idx.trim() == '') {
+		document.getElementById('btn_more').style.display = 'none';
+		resizeSelf();
+	}
+}/*}}}*/
+
+
+/**
+ * 피플로 추가하기
+ */
+var connectedPeople = new Array();
+function addPeople(targetCmn)/*{{{*/
+{
+	stringCntPeople = connectedPeople.toString();
+	if (stringCntPeople.indexOf(targetCmn) == -1) {
+		connectedPeople.push(targetCmn);
+	}
+
+	hideAddbtn();
+}/*}}}*/
+
+/**
+ * Add 버튼 숨기기
+ */
+function hideAddbtn()
+{
+	addObj = document.getElementsByTagName('A');
+
+	stringCntPeople = connectedPeople.toString();
+	for(i=0;i<addObj.length;i++) {
+		if (stringCntPeople.indexOf(addObj[i].name) != -1 && addObj[i].name != '') {
+			addObj[i].style.display = 'none';
+		}
+	}
+}
+/**
+ * 메시지 삭제
+ */
+function deleteMessage(senderCmn, messageId)/*{{{*/
+{
+    if (confirm('삭제하시겠습니까?') == false) {
+		return;
+	}
+	
+	try {
+		var options = {
+			method: 'post',
+			onComplete: function (transport, json)
+			{
+				if (json.result == false) {
+					alert('잠시 후에 다시 시도해주세요.');
+					return;
+				}
+
+				document.getElementById('box_message_'+messageId).style.display = 'none';
+			},
+			parameters: {senderCmn: senderCmn, messageId: messageId}
+		};
+		new Ajax.Request('/message/delete', options);
+    }
+	catch (e) {
+	}
+}/*}}}*/
+
+/****************************************************************************** 
+ ***** COMMENTS *************************************************************** 
+ ******************************************************************************/
+
+/**
+ * 댓글 목록을 가져온다.
+ */
+function getComments(senderCmn, messageId, page)/*{{{*/
+{
+	try {
+		var options = {
+			method: 'get',
+			evalScripts: true,
+			onComplete: function ()
+			{
+				resizeSelf();
+			},
+			parameters: {senderCmn: senderCmn, messageId: messageId, page: page}
+		};
+		new Ajax.Updater('box_comments_'+messageId, '/message/commentsAjax', options);
+	}
+	catch (e) {
+	}
+}/*}}}*/
+
+/**
+ * 댓글 박스를 펼친다.
+ */
+function openComments(senderCmn, messageId)/*{{{*/
+{
+	var elem = document.getElementById('box_comments_'+messageId);
+	if (elem.style.display == 'none') {
+		elem.style.display = 'block';
+		getComments(senderCmn, messageId, -1);
+	}
+	else {
+		elem.style.display = 'none';
+		resizeSelf();
+	}
+}/*}}}*/
+
+/**
+ * 댓글 수를 업데이트 한다.
+ */
+function setTotalComments(messageId, totalComments, totalCommentsStr)/*{{{*/
+{
+	if (totalComments <= 0) {
+		document.getElementById('number_totalComments_'+messageId).innerHTML = '0';
+		document.getElementById('icon_isNew_'+messageId).style.display = 'none';
+	}
+	else {
+		document.getElementById('number_totalComments_'+messageId).innerHTML = totalCommentsStr;
+	}
+}/*}}}*/
+
+/**
+ * 댓글을 비밀글로 변경한다.
+ */
+function secretComment(messageId, commentId)/*{{{*/
+{
+    if (confirm('비밀글로 변경하시겠습니까?') == false) {
+		return;
+	}
+	
+	try {
+		var options = {
+			method: 'post',
+			onComplete: function (transport, json)
+			{
+				if (json.result == false) {
+					alert('잠시 후에 다시 시도해주세요.');
+					return;
+				}
+
+				var tg = document.getElementById('icon_secret_'+commentId);
+				tg.className = 'secret';
+				tg.title = '귓속말 댓글입니다.';
+				tg.innerHTML = '비밀';
+
+				var tg = document.getElementById('btn_secret_'+commentId);
+				tg.style.display = 'none';
+			},
+			parameters: {messageId: messageId, commentId: commentId}
+		};
+		new Ajax.Request('/message/comment/secret', options);
+    }
+	catch (e) {
+	}
+}/*}}}*/
+
+/**
+ * 댓글을 삭제한다.
+ */
+function deleteComment(senderCmn, messageId, commentId, page, totalPages, totalComments)/*{{{*/
+{
+    if (confirm('삭제하시겠습니까?') == false) {
+		return;
+	}
+	
+	try {
+		var options = {
+			method: 'post',
+			onComplete: function (transport, json)
+			{
+				if (json.result == false) {
+					alert('잠시 후에 다시 시도해주세요.');
+					return;
+				}
+
+				// 마지막 페이지일 경우에는 이전 페이지를 보여준다.
+				if (totalPages == page && (totalComments-1) % 10 == 0) {
+					page--;
+				}
+
+				getComments(senderCmn, messageId, page);
+			},
+			parameters: {senderCmn: senderCmn, messageId: messageId, commentId: commentId}
+		};
+		new Ajax.Request('/message/comment/delete', options);
+    }
+	catch (e) {
+	}
+}/*}}}*/
+
+/**
+ * 댓글을 삭제한다.
+ */
+function addComment(messageId)/*{{{*/
+{
+	var fo = document.getElementById('fo_comment_'+messageId);
+
+	if (fo.content.value.trim() == '') {
+		alert('내용을 입력해주세요.');
+		fo.content.focus();
+	}
+
+	try {
+		var options = {
+			method: 'post',
+			onComplete: function (transport, json)
+			{
+				if (json.result == false) {
+					alert('잠시 후에 다시 시도해주세요.');
+					return;
+				}
+
+				getComments(fo.senderCmn.value, fo.messageId.value, -1);
+			},
+			parameters: {senderCmn: fo.senderCmn.value, messageId: fo.messageId.value, isSecret: fo.isSecret.checked ? '1' : '0', content: fo.content.value}
+		};
+		new Ajax.Request('/message/addComment', options);
+    }
+	catch (e) {
+		alert(e);
+	}
+}/*}}}*/

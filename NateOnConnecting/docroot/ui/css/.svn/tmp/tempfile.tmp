@@ -1,0 +1,160 @@
+@charset "utf-8";
+
+h1 { display:none; }
+
+.wrap { padding:5px 2px 0 5px; font:11px "돋움", dotum; color:#666; line-height:1.3; min-width:220px; }
+.iwrap { padding:5px 0; font:11px "돋움", dotum; color:#666; line-height:1.3; min-width:220px; }
+
+h2.cnting { background:#f4f4f4; padding:6px 9px; }
+	h2.cnting strong { color:#01b19e; }
+	h2.cnting a.del { display:inline-block; width:12px; height:12px; text-indent:-1000em; background:url('../img/btn.gif') 0 -57px no-repeat; margin:-1px 0 0 2px; vertical-align:top; overflow:hidden; }
+
+.cntInput { position:relative; top:8px; left:0; height:78px; }
+	.cntInput dt { position:absolute; top:0; left:2px; }
+	.cntInput dt a { display:block; width:58px; height:58px; }
+	.cntInput dt img { border:1px solid #d0d2d2; }
+	.cntInput dd.write { margin-left:66px; margin-right:8px; }
+	.cntInput dd.write textarea { color:#666; border:1px solid #c8dcdc; width:100%; height:32px; padding:4px 3px; line-height:1.4; min-width:150px; .margin-right:-10px; }
+	.cntInput dd.count { margin:4px 0 0 66px; color:#849e9e; }
+	.cntInput dd.btn { position:absolute; top:44px; right:0; }
+	.cntInput dd.btn button{ display:block; width:54px; height:17px; background:url('../img/btn.gif') -1px -93px no-repeat; border:none; text-indent:-5000em; overflow:hidden; cursor:pointer; }
+
+	.pf_mng { display:none; position:absolute; top:38px; left:5px; width:47px; height:16px; background:url('../img/btn_manage.gif') no-repeat; overflow:hidden; text-indent:-5000em; z-index:2; border:none !important; }
+	
+.cntAdd { position:relative; text-align:right; padding-bottom:1px;}
+	.cntAdd a { display:inline-block; background:url('../img/btn.gif') right -22px no-repeat; letter-spacing:-1px; padding-right:12px; }
+
+.tabConnect { position:relative; height:33px; background:url('../img/bg_tab.gif') repeat-x; padding-left:10px; }
+	.tabConnect li { float:left; padding:9px 1px 0 0; }
+	.tabConnect li a { display:block; height:24px; background:url('../img/tab.gif') -10px -9px no-repeat; text-indent:-1000em; overflow:hidden; }
+	.tabConnect li.tab01 a { width:53px; background-position:-10px -9px; background-position-x:-10px !important; }
+	.tabConnect li.tab01.on a { background-position:-10px -42px; }	
+	.tabConnect li.tab02 a { width:112px; background-position:-64px -9px; background-position-x:-64px !important; }
+	.tabConnect li.tab02.on a { background-position:-64px -42px; }
+	.tabConnect li.on a { background-position-y:-42px !important; }
+	.tabConnect .btnRefresh { position:absolute; top:13px; right:2px; width:54px; height:12px; color:#a8a8a9; font-size:11px; background:url('../img/btn_refresh.gif') right top no-repeat; text-indent:-5000em; overflow:hidden; } 
+
+.title_cntingList { position:relative; padding:7px 0 0 0; z-index:3; }
+.title_cntingList .sel_view { display:block; border:1px solid #dfdfdf; width:71px; height:11px; padding:5px 10px; background:url('../img/arrow01.gif') 72px 4px no-repeat; letter-spacing:-1px; margin-right:27px; }
+.title_cntingList .layer_select { position:absolute; top:7px; left:0; border:1px solid #dfdfdf; width:71px; height:48px; padding:5px 10px; background:#FFF url('../img/arrow01.gif') 72px 4px no-repeat; z-index:1; letter-spacing:-1px; z-index:3; }
+.title_cntingList .layer_select dd { padding-top:4px; }
+.title_cntingList .connectGo { position:absolute; top:13px; right:2px; color:#908f8f; background:url('../img/btn.gif') right -180px no-repeat; padding-right:8px; }
+
+.cntingList { width:100%; }
+.cntingList li { clear:both; float:left; width:100%; position:relative; top:7px; border-bottom:1px solid #EFEFEF; padding-top:10px; }
+.cntingList li a.link { color:#53AEA8; letter-spacing:0; }
+<<<<<<< .mine
+.pfImg { position:absolute; top:0; left:-70px; width:70px; }
+=======
+.pfImg { position:absolute; top:10px; left:0; width:70px; }
+>>>>>>> .r42930
+	.pfImg .addProf { position:absolute; top:57px; left:0; width:57px; height:15px; background:url('../img/btn.gif') 0 -124px no-repeat; text-indent:-1000em; overflow:hidden; }
+
+
+.cntView { clear:both; margin:0 0 0 70px; }
+	.cntView dt u { color:#4e9de0; }
+	.cntView dt span { color:#b8b8b9; }
+<<<<<<< .mine
+	.cntView dt img { vertical-align:middle; margin:-1px 0 0 3px; }
+	.cntView dd { padding-top:6px; /*min-height:40px; _height:40px; */}
+	.cntView dd strong.rt { color:#22adb2; }
+=======
+	.cntView dd { padding-top:6px; min-height:40px; _height:40px;}
+>>>>>>> .r42930
+	.cntView dd.rcnt { min-height:45px; padding-top:8px; padding-left:62px; padding-bottom:7px; }
+	.cntView dd.rcnt img { vertical-align:top; border:4px solid #eeeeec; margin:-2px 4px 8px 0; margin-left:-62px; float:left; }
+
+	.subTxt { margin:10px 0 8px 0; text-align:right; }
+	.subTxt a.reply { display:inline-block; height:12px; background:url('../img/btn.gif') right 3px no-repeat;  padding-right:12px; text-decoration:none; }
+	.subTxt a.del { display:inline-block; height:12px; background:url('../img/btn.gif') 0 -77px no-repeat;  padding:0 2px 0 7px; margin-left:2px; text-decoration:none; }
+	.subTxt i { font-weight:bold; color:#59c2be;  }
+	.subTxt .new { display:inline-block; width:8px; height:8px; background:url('../img/ic_n.gif') no-repeat; text-indent:5000em; overflow:hidden; .vertical-align:top; .margin-top:3px; }
+
+	.scrapAlim { clear:both; color:#b8b8b9; padding-left:15px; background:url('../img/btn.gif') 3px -193px no-repeat; }
+	.scrapAlim a { display:inline-block; color:#53aea9; margin-top:2px; }
+
+.replyBox { position:relative; z-index:2; clear:both; width:100%; float:left; margin:0 0 -1px 0; padding:2px 0 0 0; background:#F8F8F8; }
+	ul.viewReply li { position:relative; clear:both; width:100%; border-bottom:0; cursor:default; padding-top:7px; }
+	ul.viewReply li em { position:absolute; top:7px; left:8px; width:12px; text-indent:-1000em; }
+	ul.viewReply li em.secret { background:url('../img/btn.gif') 0 -156px no-repeat; }
+	ul.viewReply li u { position:absolute; top:7px; left:20px; width:40px; height:15px; color:#4e9de0; text-decoration:none; overflow:hidden; }
+	ul.viewReply li span { display:block; padding:0 5px 0 60px; color:#7d7e7e; }
+	ul.viewReply li span b { font-weight:normal; font-size:11px; color:#ADADAD; letter-spacing:0; }
+	ul.viewReply li span b i { font-family:Tahoma; font-size:10px; }
+	ul.viewReply li span a.re_del { display:inline-block; width:10px; height:11px; background:url('../img/btn.gif') 0 -41px no-repeat; text-indent:-1000em; vertical-align:middle; overflow:hidden; }
+	ul.viewReply li span a.re_secret { display:inline-block; width:10px; height:11px; background:url('../img/btn.gif') 0 -157px no-repeat; text-indent:-1000em; vertical-align:middle; overflow:hidden; }
+	ul.viewReply li span.secretTxt { padding:0 5px 0 20px; }
+
+.replyPaging { clear:both; position:relative; bottom:-12px; padding:0 7px 0 0; text-align:right; }  
+	.replyPaging span.paging { display:inline-block; margin:0 4px }
+	.replyPaging a { margin:0 2px; font-family:Tahoma; font-size:9px; color:#666; text-decoration:none; }
+	.replyPaging a.current { color:#fd0303; cursor:default;  font-weight:bold; }
+	.replyPaging a.btn { margin:0 0 0 -3px; .margin:1px 0 0 1px; display:inline-block; background:url('../img/bg_innerpg.gif') no-repeat; height:10px; overflow:hidden; text-indent:-1000em; vertical-align:middle; }
+	.replyPaging a.btn.first_page { width:12px; background-position:0 0; } 
+	.replyPaging a.btn.prev_page { width:9px; background-position:-13px 0; } 
+	.replyPaging a.btn.next_page { width:9px; background-position:-23px 0; } 
+	.replyPaging a.btn.last_page { width:12px; background-position:-33px 0; } 
+
+.innerReply { clear:both; margin:0 0 9px 0; padding:15px 0 10px 5px; background-color:#F8F8F8; }  
+	.reSecret input { width:14px; height:16px; .margin-right:-2px; }
+	.reSecret label { padding:2px 0 2px 12px; margin-bottom:2px; font-size:11px; color:#ADADAD; display:inline-block; vertical-align:top; background:url('../img/btn.gif') 1px -154px no-repeat; }
+	.innerReply .reInput { position:relative; padding-right:56px; .padding-right:52px; }
+	.innerReply .reInput .txtbox { display:block; width:100%; _width:99.6%; height:20px; border:1px solid #E3E3E2; vertical-align:top; background:#FFF; overflow:hidden; _margin-left:-2px; }
+	.innerReply .reInput .txtbox input { width:100%; height:12px; padding:3px 0 0 3px; line-height:1; border:1px solid #FFF; color:#666; }
+	.innerReply .reInput button { position:absolute; top:0; right:6px; width:45px; height:22px; background:url('../img/btn.gif') -65px -93px no-repeat; text-indent:-1000em; overflow:hidden; border:none; }
+
+.cntMore { clear:both; margin:16px 0 8px 0; border:1px solid #d6d6d5; text-align:center; }
+	.cntMore a { display:block; border:1px solid #FFF; padding:3px 0 1px 0; .padding:2px 0;text-shadow: 0.1em 0.1em #fff; color:#59c2be; font-weight:bold; background:url('../img/bg_more.gif') repeat-x; text-decoration:none; }
+
+.noneMsg { line-height:200%; padding:60px 0; text-align:center; }
+
+/* 나의 커넥팅 상태 */
+.cnt_mycnting { clear:both; background:#f6fcfb url('../img/bl_01.gif') 0 100% repeat-x; padding:12px 9px 6px 9px; margin-top:25px; color:#919191;}
+	.cnt_mycnting li { padding-bottom:3px; }
+	.cnt_mycnting li a { color:#919191; font-weight:bold; }
+
+h2.tit_scrap { clear:both; height:12px; border-bottom:1px solid #ebebeb; padding:18px 0 6px 10px; font-weight:bold; color:#7c7d7d; }
+ul.list_scrap { margin:12px 0 0 0; clear:both; }
+	ul.list_scrap:after { content:" "; display:block; clear:both; height:0; visibility:hidden; }
+ul.list_scrap li { float:left; padding:0 0 5px 10px; }
+
+
+/**/
+.user_staus {position:relative;z-index:10;width:100%; }
+#box { color:#ecf3f2; font-size:12px; _margin-right:7px;} 
+#box b{display:block;height:1px;overflow:hidden;} 
+#box b, #box .r5{ color:#ecf3f2; background:#f6fcfb;} 
+#box .r1{background:#ecf3f2;margin:0px 2px 0px 2px;} 
+#box .r3, #box .r5{border-left:solid 1px;border-right:solid 1px;} 
+#box .r3{margin:0px 1px 0px 1px;height:1px;} 
+#box .r2{ height:1px;margin:0px 1px 0px 1px;background:#fff; border:0;border-left:solid 1px #ecf3f2;border-right:solid 1px #ecf3f2; } 
+#box .r5 { padding:10px 10px 0 10px; }
+#box .r5 * { color:#666; padding:6px 0; }
+
+#box2 {color:#ecf3f2; font-size:12px; margin-top:2px;} 
+#box2 b{display:block;height:1px;overflow:hidden;} 
+#box2 b, #box2 .r5{ color:#ecf3f2; background:#fff;} 
+#box2 .r1{background:#ecf3f2;} 
+#box2 .r1{margin:0px 2px 0px 2px;} 
+#box2 .r3, #box2 .r2, #box2 .r5{border-left:solid 1px;border-right:solid 1px;} 
+#box2 .r3{margin:0px 1px 0px 1px;} 
+#box2 .r2{height:1px;margin:0px 1px 0px 1px;background:#fff;} 
+#box2 .r5 { padding:10px 10px 0 10px; }
+#box2 .r5 * { color:#666; padding:5px 0; }
+
+.focus { color:#25bbb2 !important; }
+.desc { font-size:11px; padding-left:16px !important; background:url('../img/ic_desc.gif') 0 5px no-repeat; line-height:1.2; }
+.cnt { background:url('../img/ic_cloud.gif') no-repeat; padding:15px 0 5px 15px !important; }
+
+.direct { display:inline-block; color:#908f8f !important; font-weight:bold; background:url('../img/bg_direct.gif') bottom right no-repeat; line-height:1.3; padding:0 15px 0 0 !important; vertical-align:top; font-size:11px;letter-spacing:-1px; }
+.connect { display:inline-block; width:60px;color:#25bbb2 !important; font-size:11px; font-weight:bold; background:url('../img/bg_direct.gif') 0 50% no-repeat; line-height:1; }
+.direct_sel { display:inline-block; width:132px; height:19px; background:url('../img/btn_direct.gif') no-repeat; text-indent:-5000em; overflow:hidden; padding:0 !important; margin-bottom:5px; }
+.direct_mng { display:inline-block; width:132px; height:19px; background:url('../img/btn_direct.gif') -136px 0 no-repeat; text-indent:-5000em; overflow:hidden; padding:0 !important; margin-bottom:5px; }
+.direct_srv { display:inline-block; width:122px; height:19px; background:url('../img/btn_direct.gif') 0 -20px no-repeat; text-indent:-5000em; overflow:hidden; padding:0 !important; margin-bottom:5px; }
+.direct_cnting { display:inline-block; width:132px; height:19px; background:url('../img/btn_direct.gif') -129px -20px no-repeat; text-indent:-5000em; overflow:hidden; padding:0 !important; margin-bottom:5px; }
+
+.user_staus2 #box { _margin-right:0; }
+#box2 .info { padding:0 15px !important;}
+#box2 .btn { padding-left:15px !important; }
+#box .info, #box .desc { padding-right:15px !important;}
+#box .btn_close { position:absolute; top:4px; right:4px; _right:10px; width:12px; height:12px; text-indent:-5000em; background:url('../img/btn_close.gif') no-repeat; overflow:hidden; padding:0; }

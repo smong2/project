@@ -1,0 +1,246 @@
+<?php
+class User Extends BaseObject
+{
+	protected $__userId; // CMN
+
+	// NATE 정보
+	protected $__nateId;     // 네이트 ID
+	protected $__email;      // 이메일
+	protected $__gender;     // M: Male, F: Female
+	protected $__birthday;   // YYYYMMDD
+	protected $__lunar;      // 0: 음력, 1: 양력
+	protected $__realAge;    // 만 나이
+	protected $__realname;   // 실명
+	protected $__realnameCd; // Y: 실명인증, N: 실명인증안됨
+	protected $__cyworldId;  // 싸이월드 아이디
+	protected $__nateNick;   // 네이트 닉네임
+
+	// 커넥팅 정보
+	protected $__profileImage;     // 프로필 이미지
+	protected $__friendCnt;        // 나의 커넥팅 피플
+	protected $__reverseFriendCnt; // 나를 피플로 추가한 친구
+	protected $__msgCnt;           // 내가 보낸 커넥팅
+
+	// 친구 정보
+	private $_friendGbs = array();
+
+	const PROFILE_TYPE_CUSTOM = 0; // 사용자 등록 이미지
+
+	const FRIEND_GB_YES     = 1;
+	const FRIEND_GB_NO      = 2;
+	const FRIEND_GB_UNKNOWN = 3;
+
+	public static function instance($pk) /*{{{*/
+	{
+		static $sInstance = array();
+
+		$pk = strval($pk);
+
+		if (isset($sInstance[$pk]) === false) {
+			$className      = __CLASS__;
+			$obj            = new $className($pk);
+			$sInstance[$pk] = $obj;
+		}
+
+		return $sInstance[$pk];
+	} /*}}}*/
+
+	protected function __construct($userId) /*{{{*/
+	{
+		$this->__userId = $userId;
+	} /*}}}*/
+
+	/***************************************************************************** 
+	 ***** LOAD ****************************************************************** 
+	 *****************************************************************************/
+
+	/**
+	 * 나의 커넥팅 상태 정보를 가져온다.
+	 * 
+	 * @return User $user 객체에 값을 저장하여 $this 를 반환한다.
+	 */ public function loadConnectingInfo() /*{{{*/
+	{
+		$pdo = PDO_Manager::getConnectDB();
+
+		$query = 'exec dbo.ncsp2010_member_select :user_id;';
+		$stmt  = $pdo->prepare($query);
+		$stmt->bindValue(':user_id', $this->__userId, PDO::PARAM_STR);
+		$stmt->execute();
+
+		$results = array();
+		if ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+			$this->setProfileImage($row['PROFILE_IMAGE']);
+			$this->setFriendCnt($row['FRIEND_CNT']);
+			$this->setReverseFriendCnt($row['R_FRIEND_CNT']);
+			$this->setMsgCnt($row['MSG_CNT']);
+		}
+
+		return $this;
+	} /*}}}*/
+
+	/***************************************************************************** 
+	 ***** 기타 SET 함수들 ******************************************************* 
+	 *****************************************************************************/
+
+	/**
+	 * 친구인지 여부를 저장한다.
+	 * 
+	 * @param User $user 친구이지 여부를 저장할 사용자 객체
+	 * @param int $friendGb FRIEND_GB_XXX 값으로 저장한다.
+	 */
+	public function setFriendGb(User $user, $friendGb) /*{{{*/
+	{
+		$this->_friendGbs[$user->getUserId()] = $friendGb;
+	} /*}}}*/
+
+	/***************************************************************************** 
+	 ***** 기타 GET 함수들 ******************************************************* 
+	 *****************************************************************************/
+
+	/**
+	 * 내가 등록한 외부 블로그 목록을 가져온다.
+	 * 
+	 * @return array of MyExtBlog
+	 */
+	public function getMyExtBlogs() /*{{{*/
+	{
+		$pdo = PDO_Manager::getConnectDB();
+
+		$query = 'exec dbo.ncsp2010_memberblog_list :user_id, :current_page, :perpage';
+		$stmt  = $pdo->prepare($query);
+		$stmt->bindValue(':user_id',      $this->__userId, PDO::PARAM_STR);
+		$stmt->bindValue(':current_page', 1,               PDO::PARAM_INT);
+		$stmt->bindValue(':perpage',      50,              PDO::PARAM_INT);
+		$stmt->execute();
+
+		$results = array();
+		while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+			if (mb_detect_encoding($row['BLOG_NM']) != 'UTF-8') {
+				$row['BLOG_NM'] = mb_convert_encoding($row['BLOG_NM'], 'utf-8', 'cp949');
+			}
+			if (mb_detect_encoding($row['BLOG_TITLE']) != 'UTF-8') {
+				$row['BLOG_TITLE'] = mb_convert_encoding($row['BLOG_TITLE'], 'utf-8', 'cp949');
+			}
+
+			Logger::debug($row);
+
+			$myExtBlog = MyExtBlog::instance($row['BLOGDOC_SEQ']);
+			$myExtBlog->setExtBlog(ExtBlog::instance($row['BLOG_ID']));
+			$myExtBlog->setOwner($this);
+			$myExtBlog->setBlogTitle($row['BLOG_TITLE']);
+			$myExtBlog->setBlogUrl($row['BLOG_URL']);
+
+			$results[] = $myExtBlog;
+		}
+
+		return $results;
+	} /*}}}*/
+
+	/**
+	 * 친구인지 여부를 반환한다.
+	 * 
+	 * @param User $user 친구이지 여부를 판단할 사용자 객체
+	 * 
+	 * @return bool 친구이면 true 를 반환한다.
+	 */
+	public function isFriend(User $user) /*{{{*/
+	{
+		if ($user->getUserId() == $this->__userId) {
+			return true;
+		}
+
+		if (isset($this->_friendGbs[$user->getUserId()]) === false) {
+			return false;
+		}
+
+		if ($this->_friendGbs[$user->getUserId()] != self::FRIEND_GB_YES) {
+			return false;
+		}
+
+		return true;
+	} /*}}}*/
+
+	/***************************************************************************** 
+	 ***** HTML 을 위한 GET 함수들 *********************************************** 
+	 *****************************************************************************/
+
+	/**
+	 * 네이트 계정인지 여부를 반환한다.
+	 * 
+	 * @return bool 네이트 게정일 경우 true를 반환한다.
+	 */
+	public function isNateAccount() /*{{{*/
+	{
+		if ($this->__userId != '') {
+			return true;
+		}
+		else {
+			return false;
+		}
+	} /*}}}*/
+
+	/**
+	 * 첫 방문인지 확인
+	 * 
+	 * @return bool // 첫 방문이면 true 
+	 */
+	public function isFirstVisit() /*{{{*/
+	{
+		$pdo = PDO_Manager::getConnectDB();
+
+		$query = 'exec dbo.ncsp2010_membersvc_select :user_id';
+		$stmt  = $pdo->prepare($query);
+		$stmt->bindValue(':user_id',    $this->__userId, PDO::PARAM_STR);
+		$stmt->execute();
+
+		return ($stmt->fetch(PDO::FETCH_ASSOC) == false);
+	} /*}}}*/
+
+	/**
+	 * 사용자가 등록한 프로필 이미지 URL 을 반환한다.
+	 * 
+	 * @return string
+	 */
+	public function getProfileImageUrl() /*{{{*/
+	{
+		return self::generateProfileImageUrl(self::PROFILE_TYPE_CUSTOM, $this->getProfileImage());
+	} /*}}}*/
+
+	/**
+	 * $profileType과 $profileUrl을 참조하여 프로필 이미지 URL 을 반환한다.
+	 * 
+	 * $profileType 이 1 ~ 5 이면 제공 이미지이다.
+	 * $profileType 이 0 이면 사용자 등록 이미지이다.
+	 * 
+	 * @param int $profileType 프로필 타입
+	 * @param int $profileUrl 프로필 URL
+	 * 
+	 * @return string
+	 */
+	public static function generateProfileImageUrl($profileType, $profileUrl = '') /*{{{*/
+	{
+		if ($profileType == self::PROFILE_TYPE_CUSTOM) {
+			if ($profileUrl) {
+				return 'http://connect.nateimg.co.kr/thumb_56x56_prop/http://cyimg.cyworld.com/common/file_down.asp?redirect=' . $profileUrl;
+			}
+			else {
+				return 'http://connect.nate.com/img/thumb_56x56_01.gif';
+			}
+		}
+		else {
+			return 'http://connect.nate.com/img/thumb_56x56_0' . $profileType . '.gif';
+		}
+	} /*}}}*/
+
+	public function memberRegSourceCnt() /*{{{*/
+	{
+		$pdo = PDO_Manager::getBuddyDB();
+
+		$query = 'exec dbo.ncsp2010_friend_select_count_by_reg_source :user_id';
+		$stmt  = $pdo->prepare($query);
+		$stmt->bindValue(':user_id',    $this->__userId, PDO::PARAM_STR);
+		$stmt->execute();
+		$row = $stmt->fetch(PDO::FETCH_ASSOC);
+	} /*}}}*/
+}
+?>

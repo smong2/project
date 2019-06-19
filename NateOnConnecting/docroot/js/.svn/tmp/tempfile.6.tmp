@@ -1,0 +1,217 @@
+document.domain = 'nate.com';
+
+/******************************************************************************
+ ***** 유용한 변수 ************************************************************
+ ******************************************************************************/
+
+var isIE = (navigator.appVersion.indexOf("MSIE") != -1) ? true : false;
+
+/******************************************************************************
+ ***** ON_LOAD 핸들러 *********************************************************
+ ******************************************************************************/
+
+var arrOnloadHandle = new Array();
+
+function addOnloadHandle(f)/*{{{*/
+{
+    arrOnloadHandle[arrOnloadHandle.length] = f;
+}/*}}}*/
+
+function commonAttachEvent(tg, name, func)/*{{{*/
+{
+    if (tg.addEventListener) {
+        tg.addEventListener(name, func, false);
+    }
+    else if (tg.attachEvent) {
+        tg.attachEvent('on'+name, func);
+    }
+}/*}}}*/
+
+function execOnloadHandle()/*{{{*/
+{
+    for (var i=0; i<arrOnloadHandle.length; i++) {
+        var func = arrOnloadHandle[i];
+        func.call();
+    }
+}/*}}}*/
+
+commonAttachEvent(window, 'load', execOnloadHandle);
+
+/******************************************************************************
+ ***** STRING 관련 함수들 *****************************************************
+ ******************************************************************************/
+
+String.prototype.trim = function() /*{{{*/
+{
+	return this.replace(/^[\s　]+|[\s　]+$/g,"");
+}/*}}}*/
+
+String.prototype.ltrim = function() /*{{{*/
+{
+	return this.replace(/^[\s　]+/,"");
+}/*}}}*/
+
+String.prototype.rtrim = function() /*{{{*/
+{
+	return this.replace(/[\s　]+$/,"");
+}/*}}}*/
+
+/******************************************************************************
+ ***** TEXT FORM 관련 함수들 **************************************************
+ ******************************************************************************/
+
+function getKeyCode(e)/*{{{*/
+{
+	var ev = (window.event) ? window.event : e;
+	if (!ev || !ev.type) {
+		return false;
+	}
+	var ME = ev;
+
+	if (ME.type.indexOf('key') != -1) {
+		return (ev.keyCode) ? ev.keyCode : ((ev.charCode) ? ev.charCode : ev.which);
+	}
+	else {
+		return '';
+	}
+}/*}}}*/
+
+function onEnter(e, tg)/*{{{*/
+{
+	if (getKeyCode(e) == 13) {
+		return true;
+	}
+
+	return false;
+}/*}}}*/
+
+var currFocusForm;
+
+function loadChecker(inputId, maxLength, lengthId) /*{{{*/
+{
+	if (isIE == false) {
+		// firefox 용
+		HTMLElement.prototype.objInstance = null;
+	}
+
+	this.maxLength  = maxLength;
+	this.currLength = 0;
+
+	this.checkLength = function (objInput) {/*{{{*/
+		this.currLength = objInput.value.length;
+
+		if (this.currLength > this.maxLength) {
+			alert(this.maxLength + '자까지만 입력할 수 있습니다.', objInput);
+			this.cutString(objInput);
+			objInput.focus();
+		}
+
+		this.updateLengthString();
+	};/*}}}*/
+
+	this.cutString = function (objInput) {/*{{{*/
+		objInput.value = objInput.value.substr(0, maxLength);
+		this.currLength = objInput.value.length;
+	};/*}}}*/
+
+	if (lengthId == '') {
+		this.updateLengthString = function () {
+		};
+	}
+	else {
+		if (document.getElementById(lengthId) == false) {
+			alert('loadChecker: The length element is not found.');
+			return;
+		}
+
+		this.objLength = document.getElementById(lengthId);
+
+		this.updateLengthString = function () {
+			this.objLength.innerHTML = this.currLength;
+		};
+	}
+
+	if (document.getElementById(inputId) == false) {
+		alert('loadChecker: The input element is not found.');
+		return;
+	}
+
+	var objInput = document.getElementById(inputId);
+
+	objInput.objInstance = this;
+
+	if (isIE) {
+		commonAttachEvent(objInput, 'keyup', function (e) {
+			e = e || event;
+			tg = e.srcElement || e.target;
+
+			tg.objInstance.checkLength(objInput, false);
+		} );
+
+		commonAttachEvent(objInput, 'keypress', function (e) {
+			e = e || event;
+			tg = e.srcElement || e.target;
+
+			tg.objInstance.checkLength(objInput, false);
+		} );
+
+		commonAttachEvent(objInput, 'change', function (e) {
+			e = e || event;
+			tg = e.srcElement || e.target;
+
+			tg.objInstance.checkLength(objInput, true);
+		} );
+	}
+	else {
+		commonAttachEvent(objInput, 'focus', function (e) {
+			e = e || event;
+			tg = e.srcElement || e.target;
+
+			currFocusForm = tg;
+		} );
+	}
+}/*}}}*/
+
+addOnloadHandle(function () {/*{{{*/
+	if (isIE == false) {
+		setInterval(function () {
+			if (currFocusForm) {
+				currFocusForm.objInstance.checkLength(currFocusForm, false);
+			}
+		}, 100);
+	}
+});/*}}}*/
+
+/****************************************************************************** 
+ ***** NATE ON 인증 처리 ****************************************************** 
+ ******************************************************************************/
+
+function openWindow(url) /*{{{*/
+{
+	if (document.getElementById('fo_bridge') == null) {
+		try {
+			parent.openWindow(url);
+			return;
+		}
+		catch (e) { }
+	}
+
+	var f = document.forms['bridgeForm'];
+	f.elements['r_url'].value = url;
+	f.submit();
+}/*}}}*/
+
+function openPopupWindow(url, width, height) /*{{{*/
+{
+	if (document.getElementById('fo_bridge') != null) {
+		try {
+			window.open('', 'openPop', 'width='+width+',height='+height+',toolbar=no,menubar=no,resizable=no').focus();
+		}
+		catch (e) { }
+	}
+
+	var f = document.forms['bridgeForm'];
+	f.elements['r_url'].value = url;
+	f.target= 'openPop';
+	f.submit();
+}/*}}}*/

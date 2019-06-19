@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<custom_tag>
+	<tags prefix="__default__">
+		<!-- <link href="/css/common.css" /> -->
+		<tag name="link">
+			<attribute name="href" required="true" />
+
+			<code type="open"><![CDATA[
+				<?php if ({$href#var}) { ?><link href="<?php echo Util::appendFileModifyTime({$href#var}); ?>" {%ATTR_LIST%} /><?php } else { ?><link {%ATTR_LIST%}><?php } ?>
+			]]></code>
+
+			<code type="close"><![CDATA[
+				<?php if ({$href#var} == false) { ?></link><?php } ?>
+			]]></code>
+		</tag>
+
+		<!-- <script src="/js/common.js" /> -->
+		<tag name="script">
+			<attribute name="src" />
+
+			<code type="open"><![CDATA[
+				<script <?php echo {$src#var} !== null ? 'src="'.Util::appendFileModifyTime({$src#var}).'" ' : ''; ?>{%ATTR_LIST%}>
+			]]></code>
+
+			<code type="close"><![CDATA[
+				</script>
+			]]></code>
+		</tag>
+	</tags>
+</custom_tag>

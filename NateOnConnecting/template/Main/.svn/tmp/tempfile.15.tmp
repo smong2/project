@@ -1,0 +1,98 @@
+<script type="text/javascript" src="/js/shortcut.js"></script>
+<script type="text/javascript">
+addOnloadHandle(function() {/*{{{*/
+	CONNECTINGIns.init('memo', 'len');
+	setTimeout(function () { CONNECTINGIns.lengthCheckAll(); }, 300);
+
+	//loadChecker('memo', {@ Message::MAXLEN_MESSAGE}, 'len');
+	commonAttachEvent(document.getElementById('memo'), 'keyup', function (event) {
+		CONNECTINGIns.sUrlCheck(event);
+	});
+	commonAttachEvent(document.getElementById('memo'), 'click', function (event) {
+		if (isIE) {
+			document.getElementById("memo").disabled = false;
+		}
+		else {
+			document.getElementById("memo").readOnly = false;
+		}
+	});
+
+	shortcut.add("Alt+Enter",function() {
+		sendMessage();
+	});
+
+});/*}}}*/
+
+/************************** 
+ 메시지 보내기 - 처음 사용자 접근 처리 포함
+***************************/
+function sendMessage()/*{{{*/
+{
+	if (isFirstProc() == false) {
+		return false;
+	}
+
+	connecting();
+}/*}}}*/
+
+/************************** 
+	처음 사용자 처리 로직
+***************************/
+function isFirstProc()/*{{{*/
+{
+	var isFirstVisit = {@ $this->myUser->isFirstVisit()};
+	if (isFirstVisit) {
+		if (confirm('수신 대상자를 최종 확인하셨습니까?') == false) {
+			return false;
+		}
+
+		if(id_frmMain.document.getElementById('box') != null) {
+			id_frmMain.document.getElementById('box').style.display = 'none';	
+			closeStartPage();
+		}
+	}
+	return true;
+}/*}}}*/
+
+/************************** 
+// 실제 커넥팅 메시지 보내기
+***************************/
+function connecting()/*{{{*/
+{
+	document.getElementById('memo').value = document.getElementById('memo').value.replace('　', '');
+	CONNECTINGIns.SVCID = 'nateontab';
+	CONNECTINGIns.sendToMessage('1');
+}/*}}}*/
+
+function connectingReturnURL() /*{{{*/
+{
+	window.location.href = 'http://nateon.connect.nate.com/';
+}/*}}}*/
+</script>
+
+<form id="fo_message" onsubmit="return false;">
+	<input type="hidden" id="profileType" name="profileType" value="{$this->myUser->getProfileImage() ? User::PROFILE_TYPE_CUSTOM : 1}">
+	<dl class="cntInput" onmouseover="document.getElementById('aa').style.display='block'" onmouseout="document.getElementById('aa').style.display='none'">
+		<dt>
+			<a href="http://connect.nate.com/index.nate?menu=81&send=1" onclick="olapStat('CNT03'); openWindow('http://connect.nate.com/index.nate?menu=81&send=1'); return false;" target="_blank" onmouseover="document.getElementById('pfManage').style.display='block'" onmouseout="document.getElementById('pfManage').style.display='none'">
+				<img src="{$this->myUser->getProfileImage() ? $this->myUser->getProfileImageUrl() : User::generateProfileImageUrl(1)}" width="56" height="56" alt="" />
+				<img src="/ui/img/btn_manage.gif" id="pfManage" class="pf_mng" alt="관리"/>
+			</a>
+		</dt>
+		<dd class="write"><textarea id="memo" name="memo" cols="50" rows="3"></textarea></dd>
+		<dd id="aa" class="writeSend" style="display:none;">
+			<div class="writeSendbox">
+				<span class="count">(<span id="len">0</span>/{Message::MAXLEN_MESSAGE})</span>
+				<div class="sendtype">
+					<input type="radio" id="open_all"  name="open_yn" onfocus="this.blur()" value="y" onclick="document.getElementById('open_twitter').disabled=false"/>
+					<label for="open_all" class="openall">전체공개</label>
+					<input type="radio" id="open_buddy" name="open_yn" onfocus="this.blur()" value="n" onclick="document.getElementById('open_twitter').disabled=true"/>
+					<label for="open_buddy" class="openbuddy">친구공개</label>
+					<input type="checkbox" id="open_twitter"  onfocus="this.blur()" disabled/>
+					<label for="open_twitter" class="opentwitter">트위터 보내기</label>
+					<button onclick="olapStat('CNT04'); sendMessage();" class="btn" style="cursor:pointer">보내기</button>
+				</div>
+			</div>
+		</dd>
+	</dl>
+</form>

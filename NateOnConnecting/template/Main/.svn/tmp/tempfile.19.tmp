@@ -1,0 +1,26 @@
+<form id="frmReconnect_{$this->message->getReconnectKey()}" name='frm_{$this->message->getMessageId()}' onsubmit="reconnect({@ $this->message->getReconnectKey()}); return false;">
+<input type="hidden" name="reconnect_key" value="{$this->message->getReconnectKey()}"/>
+<dl>
+	<dt>리커넥팅</dt>
+	<dd class="re">
+		<dummy podo:if="$this->message->getOriginMessage()">
+			<a href="javascript:openWindow('http://connect.nate.com/{$this->message->getOriginMessage()->getDomain()}')" class="reuser"  onclick="javascript:openWindow('http://connect.nate.com/{$this->message->getOriginMessage()->getDomain()}'); olapStat('CIM23'); return false;" onfocus="blur()">{$this->message->getOriginMessage()->getWriterNm()}</a>
+		</dummy>
+		<dummy podo:else>
+			<a href="javascript:openWindow('http://connect.nate.com/{$this->message->getDomain()}')" class="reuser" onfocus="blur()" onclick="javascript:openWindow('http://connect.nate.com/{$this->message->getDomain()}');olapStat('CIM23'); return false;">{$this->message->getWriterNm()}</a>
+
+		</dummy>
+
+		{HTML($this->message->getMessageHTML())}
+	</dd>
+	<dd class="reInput">
+		<span class="user">{$this->myUser->getRealname()}</span>
+		<span id='reconLen_{$this->message->getReconnectKey()}' style='display:none'/>
+		<input type="hidden" id="reconID_{$this->message->getReconnectKey()}"  value="{$this->message->getReconnectKey()}"/>
+
+		<span class="txtbox"><input type="text" name="comment" id="reconnect_message_{$this->message->getReconnectKey()}" value="담는 말을 입력해주세요 (150자까지 입력 가능합니다)" style="ime-mode:active;" onkeyUp="CONNECTINGIns.reconUrlCheck('reconnect_message_{$this->message->getReconnectKey()}','reconLen_{$this->message->getReconnectKey()}', 'reconID_{$this->message->getReconnectKey()}', event);" onclick="txtClear(this); return false;" maxlength="150" /></span>
+		<button type="submit" class="send" onfocus="blur()" onclick="olapStat('CIM37');">보내기</button>
+	</dd>
+	<dd class="btn"><a href="#" onclick="javascript:openReconnecting({@ $this->message->getMessageKey()});olapStat('CIM36'); return false;" class="btnClose" onfocus="blur()">닫기</a></dd>
+</dl>
+</form>

@@ -1,0 +1,594 @@
+<?php
+require_once 'XML/Unserializer.php';
+
+class ContainerAPI
+{
+	const SORT_BY_CREATE_DT  = 0;
+	const SORT_BY_COMMENT_DT = 1;
+
+	const LIST_TYPE_SENT = 0;
+
+	/**
+	 * Container 서버에 요청한다.
+	 * 
+	 * @param string $url 요청할 URL, PATH(ex. /message/list.nate)만 넘긴다.
+	 * @param array $params {key: value, ...} 형식으로 전달한다.
+	 * @param array $forceEnum 한 개짜리 Element 라도 array 로 반환할 태그를 반환한다.
+	 * 
+	 * @return array XML을 array로 변환하여 반환한다. 에러가 발생할 경우는 false를 반환한다.
+	 */
+	private static function _sendRequest($url, array $params, array $forceEnum = array(), $isTextPlain = false) /*{{{*/
+	{
+		// HTTP Request
+		$request = new HTTP_Request($url);
+		$request->setMethod(HTTP_REQUEST_METHOD_POST);
+		foreach ($params as $key=>$val) {
+			$request->addPostData($key, $val);
+		}
+		$request->sendRequest();
+
+		if ($request->getResponseCode() != '200') {
+			trigger_error('ContainerAPI::getMessageList() - API 통신 에러', E_USER_WARNING);
+			return false;
+		}
+
+		if ($request->getResponseCode() == '500') {
+			self::displayRoutinCheck();
+		}
+
+		if ($request->getResponseCode() == '501') {
+			self::displayTemperCheck();
+		}
+
+		// XML Parsing
+		$xml = $request->getResponseBody();
+		if ($isTextPlain) {
+			return $xml;
+		}
+
+		$options      = array(XML_UNSERIALIZER_OPTION_FORCE_ENUM => $forceEnum);
+		$unserializer = new XML_Unserializer($options);
+		$status       = $unserializer->unserialize($xml);
+		if (PEAR::isError($status)) {
+			trigger_error('ContainerAPI::getMessageList() - XML 파싱 에러', E_USER_WARNING);
+			return false;
+		}
+
+		$result = $unserializer->getUnserializedData();
+
+		if (isset($result['code']) && $result['code'] != '100') {
+			trigger_error('ContainerAPI::getMessageList() - 결과 데이타 오류', E_USER_WARNING);
+			return false;
+		}
+
+		// Return Result
+		return $result;
+	} /*}}}*/
+
+	/**
+	 * 메시지 목록을 얻어온다.
+	 * 
+	 * @param User $user 조회하려는 사용자 객체
+	 * @param string $startIdx 다음 페이지 시작 ID
+	 * @param int $sort SORT_BY_XXX 정렬 타입
+	 * @param int $sourceType SOURCE_TYPE_XXX 조회할 소스 타입
+	 * @param int $listType LIST_TYPE_XXX 조회할 전송 대상
+	 * @param User $sender 조회할 메시지를 보낸 사용자 객체
+	 * @param int $rows 전달 받을 데이터 개수
+	 * 
+	 * @return array of {messages: array of Messages, nextStartIdx: string}
+	 */
+	public static function getMessages(User $user, $startIdx = '', $sort = '', $sourceType = '', $listType = '', $sender = null, $rows = 10) /*{{{*/
+	{
+		static $sCache = array();
+
+		$key = $user->getUserId() . ':' . $startIdx . ':' . $sort . ':' . $sourceType . ':' . $listType . ':' .($sender ? $sender->getUserId() : '') . ':' . $rows;
+
+		if (isset($sCache[$key]) === false) {
+			$retval = array(
+			    'messages' => array(),
+			    'nextStartIdx' => null,
+			);
+
+			try {
+				// Validate Parameters
+				if (in_array($sort, array('', self::SORT_BY_CREATE_DT, self::SORT_BY_COMMENT_DT)) === false) {
+					trigger_error('ContainerAPI::getMessageList() - $sort 값이 올바른지 확인 바랍니다.', E_USER_WARNING);
+				}
+				if (in_array($sourceType, array('', Message::SOURCE_TYPE_CONNECT, Message::SOURCE_TYPE_NATEON_CHATNAME, Message::SOURCE_TYPE_EXTERNAL_BLOG, Message::SOURCE_TYPE_CLIPPED)) === false) {
+					trigger_error('ContainerAPI::getMessageList() - $sourceType 값이 올바른지 확인 바랍니다.', E_USER_WARNING);
+				}
+				if (in_array($listType, array('', self::LIST_TYPE_SENT)) === false) {
+					trigger_error('ContainerAPI::getMessageList() - $listType 값이 올바른지 확인 바랍니다.', E_USER_WARNING);
+				}
+
+				// Generate Post Data
+				$params             = array();
+				$params['svc_id']   = ConfigManager::get('connecting.container.id');
+				$params['svc_pwd']  = ConfigManager::get('connecting.container.pwd');
+				$params['user_cmn'] = $user->getUserId();
+				if ($sort !== '') {
+					$params['sort'] = $sort;
+				}
+				else {
+					$params['sort'] = self::SORT_BY_CREATE_DT;
+				}
+				if ($startIdx !== '') {
+					$params['start_idx'] = $startIdx;
+				}
+				if ($sourceType !== '') {
+					$params['source_type'] = $sourceType;
+				}
+				if ($listType !== '') {
+					$params['list_type'] = self::LIST_TYPE_SENT;
+				}
+				if ($sender !== null) {
+					$params['sender_cmn'] = $sender->getUserId();
+					$params['list_type']  = self::LIST_TYPE_SENT;
+				}
+				$params['rows'] = $rows;
+
+				// Send Request
+				$result = self::_sendRequest(ConfigManager::get('connecting.container.url').'/message/list.nate', $params, array('post'));
+				if ($result === false) {
+					throw new Exception();
+				}
+
+				// Generate Return Value
+				if (isset($result['next_start_idx'])) {
+					$retval['nextStartIdx'] = $result['next_start_idx'];
+				}
+				if (isset($result['posts']) && isset($result['posts']['post'])) {
+					$messages = array();
+					foreach ($result['posts']['post'] as $post) {
+						$message = Message::instance($post['message_id']);
+						$message->setMessage($post['message']);
+						$message->setSender(User::instance($post['sender_cmn']));
+						$message->setWriterNm($post['writer_nm']);
+						$message->setWriteDt(strtotime($post['write_d']));
+						$message->setCommentCnt($post['comment_cnt']);
+						$message->setCommentDt($post['comment_d'] ? strtotime($post['comment_d']) : 0);
+						$message->setProfileType($post['profile_type']);
+						$message->setProfileUrl($post['profile_url']);
+						$message->setSourceType($post['source_type']);
+						$message->setSourceTitle($post['source_title']);
+						$message->setSourceUrl($post['source_url']);
+						$message->setAttachType($post['attach_type']);
+						$message->setAttachUrl($post['attach_url']);
+						$message->setFrom($post['from']);
+
+						if ($post['attach_type'] == Message::ATTACH_TYPE_CLIPPED_NEWS) {
+							$newsInfo = self::getNewsInfo($post['attach_url']);
+							$message->setMessage($newsInfo['message']);
+							$message->setSourceUrl($newsInfo['source_url']);
+							$message->setAttachUrl($newsInfo['attach_url']);
+						}
+
+						$messages[] = $message;
+					}
+
+					$retval['messages'] = $messages;
+				}
+			} catch (Exception $e) {
+			}
+
+			$sCache[$key] = $retval;
+		}
+
+		return $sCache[$key];
+	} /*}}}*/
+
+	/**
+	 * 단일 메시지를 조회한다.
+	 * 
+	 * @param User $user 조회하려는 사용자 객체
+	 * @param Message $message 메시지 정보를 담은 객체
+	 * 
+	 * @return array of (Container's response Data)
+	 */
+	public static function viewMessage(User $myUser, Message $message) /*{{{*/
+	{
+		static $viewCache = array();
+
+		$key = $myUser->getUserId() . ':' . $message->getMessageId();
+
+		if (isset($viewCache[$key]) === false) {
+			$retval = array(
+			    'message' => '',
+			);
+
+			try {
+				// Validate Parameters
+
+				// Generate Post Data
+				$params                = array();
+				$params['svc_id']      = ConfigManager::get('connecting.container.id');
+				$params['svc_pwd']     = ConfigManager::get('connecting.container.pwd');
+				$params['user_cmn']    = $myUser->getUserId();
+				$params['message_id']  = $message->getMessageId();
+				$params['message_cmn'] = $message->getSender()->getUserId();
+
+				// Send Request
+				$result = self::_sendRequest(ConfigManager::get('connecting.container.url').'/message/view.nate', $params, array('post'));
+				if ($result === false) {
+					throw new Exception();
+				}
+
+				// Generate Return Value
+				if (isset($result['post'])) {
+					foreach ($result['post'] as $post) {
+						$message = Message::instance($post['message_id']);
+						$message->setMessage($post['message']);
+						$message->setSender(User::instance($post['sender_cmn']));
+						$message->setWriterNm($post['writer_nm']);
+						$message->setWriteDt(strtotime($post['write_d']));
+						$message->setCommentCnt($post['comment_cnt']);
+						$message->setCommentDt($post['comment_d'] ? strtotime($post['comment_d']) : 0);
+						$message->setProfileType($post['profile_type']);
+						$message->setProfileUrl($post['profile_url']);
+						$message->setSourceType($post['source_type']);
+						$message->setSourceTitle($post['source_title']);
+						$message->setSourceUrl($post['source_url']);
+						$message->setAttachType($post['attach_type']);
+						$message->setAttachUrl($post['attach_url']);
+
+						if ($post['attach_type'] == Message::ATTACH_TYPE_CLIPPED_NEWS) {
+							$newsInfo = self::getNewsInfo($post['attach_url']);
+							$message->setMessage($newsInfo['message']);
+							$message->setSourceUrl($newsInfo['source_url']);
+							$message->setAttachUrl($newsInfo['attach_url']);
+						}
+					}
+
+					$retval['message'] = $message;
+				}
+			} catch (Exception $e) {
+			}
+
+			$viewCache[$key] = $retval;
+		}
+
+		return $viewCache[$key];
+	} /*}}}*/
+
+	/**
+	 * 댓글 목록을 읽어온다.
+	 * 
+	 * @param Message $message 이 메시지의 댓글을 읽어온다.
+	 * @param int $page 페이지 번호
+	 * 
+	 * @return array of {comments: array of Comment, totalPages: int, totalComments: int}
+	 */
+	public static function getComments(Message $message, $page = -1) /*{{{*/
+	{
+		$retval = array(
+		    'comments' => array(),
+		    'totalPages' => 1,
+		    'totalComments' => 0,
+		);
+
+		// Validate Parameters
+		if ($page <= 0 && $page != -1) {
+			$page = -1;
+		}
+
+		// Generate Post Data
+		$params                = array();
+		$params['svc_id']      = ConfigManager::get('connecting.container.id');
+		$params['svc_pwd']     = ConfigManager::get('connecting.container.pwd');
+		$params['message_cmn'] = $message->getSender()->getUserId();
+		$params['message_id']  = $message->getMessageId();
+		$params['page']        = $page;
+		$params['rows']        = 30;
+
+		// Send Request
+		$result = self::_sendRequest(ConfigManager::get('connecting.container.url').'/comment/list.nate', $params, array('comment'));
+		if ($result === false) {
+			return $retval;
+		}
+
+		// Generate Return Value
+		if (isset($result['totalPages'])) {
+			$retval['totalPages'] = $result['totalPages'];
+		}
+		if (isset($result['totalComments'])) {
+			$retval['totalComments'] = $result['totalComments'];
+		}
+		if (isset($result['comments']) && isset($result['comments']['comment'])) {
+			$comments = array();
+			foreach ($result['comments']['comment'] as $item) {
+				$comment = Comment::instance($item['comment_id']);
+				$comment->setCommentId($item['comment_id']);
+				$comment->setContent($item['content']);
+				$comment->setMessage(Message::instance($item['message_id']));
+				$comment->setWriter(User::instance($item['cmn']));
+				$comment->setWriteDt(strtotime($item['write_d']));
+				$comment->setWriterNm($item['writer_nm']);
+				$comment->setIsSecret($item['is_secret']);
+
+				$comments[] = $comment;
+			}
+
+			$retval['comments'] = $comments;
+		}
+
+		return $retval;
+	} /*}}}*/
+
+	/**
+	 * 뉴스 정보를 읽어온다.
+	 * 
+	 * @param string $xk 뉴스 아이디, Message.attach_url 에 저장되어 있다.
+	 * 
+	 * @param array of {source_url: 뉴스 URL, attach_url: 썸네일 URL, message: 타이틀}
+	 */
+	public static function getNewsInfo($xk) /*{{{*/
+	{
+		$retval = array(
+		    'source_url' => '',
+		    'attach_url' => '',
+		    'message' => '',
+		);
+
+		// Generate Post Data
+		$params          = array();
+		$params['xk']    = $xk;
+		$params['scode'] = 'B';
+
+		// Send Request
+		$result = self::_sendRequest('http://xmlcontainer.skcomms.co.kr/openscrap/post/get/v1', $params);
+		if ($result === false) {
+			return $retval;
+		}
+
+		// Generate Return Value
+		if (isset($result['Post']['Url'])) {
+			$retval['source_url'] = $result['Post']['Url'];
+		}
+		if (isset($result['Post']['OriginPhotoLink01']['Url'])) {
+			$retval['attach_url'] = $result['Post']['OriginPhotoLink01']['Url'];
+		}
+		if (isset($result['Post']['Subject'])) {
+			$retval['message'] = $result['Post']['Subject'];
+		}
+
+		return $retval;
+	} /*}}}*/
+
+	/**
+	 * 메시지를 삭제한다.
+	 * 
+	 * @param Message $message 삭제할 메시지 객체
+	 * 
+	 * @return bool 성공할 경우 true 를 반환한다.
+	 */
+	public static function deleteMessage(Message $message) /*{{{*/
+	{
+		// Generate Post Data
+		$params                = array();
+		$params['svc_id']      = ConfigManager::get('connecting.container.id');
+		$params['svc_pwd']     = ConfigManager::get('connecting.container.pwd');
+		$params['message_id']  = $message->getMessageId();
+		$params['message_cmn'] = $message->getSender()->getUserId();
+
+		// Send Request
+		$result = self::_sendRequest(ConfigManager::get('connecting.container.url').'/message/delete.nate', $params, array(), true);
+		if ($result === false) {
+			return $retval;
+		}
+
+		if (trim($result) == '100 SUCCESS') {
+			return true;
+		}
+		else {
+			return false;
+		}
+	} /*}}}*/
+
+	/**
+	 * 귓속말을 비밀글로 변경한다.
+	 * 
+	 * @param Comment $comment 비밀글로 변경할 댓글 객체
+	 * 
+	 * @return bool 성공할 경우 true 를 반환한다.
+	 */
+	public static function secretComment(Comment $comment) /*{{{*/
+	{
+		// Generate Post Data
+		$params                = array();
+		$params['svc_id']      = ConfigManager::get('connecting.container.id');
+		$params['svc_pwd']     = ConfigManager::get('connecting.container.pwd');
+		$params['message_id']  = $comment->getMessage()->getMessageId();
+		$params['message_cmn'] = $comment->getMessage()->getSender()->getUserId();
+		$params['comment_id']  = $comment->getCommentId();
+
+		// Send Request
+		$result = self::_sendRequest(ConfigManager::get('connecting.container.url').'/comment/update.nate', $params, array(), true);
+		if ($result === false) {
+			return $retval;
+		}
+
+		if (trim($result) == '100 SUCCESS') {
+			return true;
+		}
+		else {
+			return false;
+		}
+	} /*}}}*/
+
+	/**
+	 * 귓속말을 삭제한다.
+	 * 
+	 * @param Comment $comment 삭제할 댓글 객체
+	 * @param User $myUser 삭제 요청한 사용자의 객체
+	 * 
+	 * @return bool 성공할 경우 true 를 반환한다.
+	 */
+	public static function deleteComment(Comment $comment, User $myUser) /*{{{*/
+	{
+		// Generate Post Data
+		$params                = array();
+		$params['svc_id']      = ConfigManager::get('connecting.container.id');
+		$params['svc_pwd']     = ConfigManager::get('connecting.container.pwd');
+		$params['message_id']  = $comment->getMessage()->getMessageId();
+		$params['message_cmn'] = $comment->getMessage()->getSender()->getUserId();
+		$params['comment_id']  = $comment->getCommentId();
+		$params['user_cmn']    = $myUser->getUserId();
+
+		// Send Request
+		$result = self::_sendRequest(ConfigManager::get('connecting.container.url').'/comment/delete.nate', $params, array(), true);
+		if ($result === false) {
+			return $retval;
+		}
+
+		if (trim($result) == '100 SUCCESS') {
+			return true;
+		}
+		else {
+			return false;
+		}
+	} /*}}}*/
+
+	/**
+	 * 댓글을 추가한다.
+	 * 
+	 * @param Message $message 댓글을 추가할 커넥팅 객체
+	 * @param string $content 댓글 내용
+	 * @param int $isSecret 비밀글 여부
+	 * 
+	 * @return bool 성공할 경우 true 를 반환한다.
+	 */
+	public static function addComment(Message $message, User $myUser, $content, $isSecret) /*{{{*/
+	{
+		// Generate Post Data
+		$params                = array();
+		$params['svc_id']      = ConfigManager::get('connecting.container.id');
+		$params['svc_pwd']     = ConfigManager::get('connecting.container.pwd');
+		$params['sender_cmn']  = $myUser->getUserId();
+		$params['sender_name'] = $myUser->getRealname();
+		$params['message_id']  = $message->getMessageId();
+		$params['message_cmn'] = $message->getSender()->getUserId();
+		$params['comment']     = $content;
+		$params['is_secret']   = $isSecret ? '1' : '0';
+
+		// Send Request
+		$result = self::_sendRequest(ConfigManager::get('connecting.container.url').'/comment/add.nate', $params, array(), true);
+		if ($result === false) {
+			return $retval;
+		}
+
+		if (trim($result) == '100 SUCCESS') {
+			return true;
+		}
+		else {
+			return false;
+		}
+	} /*}}}*/
+
+	/**
+	 * 유저 정보 v 2.0
+	 * 
+	 * @param User   $user		유저 객체
+	 * @param string $domain	도메인 정보
+	 * @param string $nickname  닉네임 정보
+	 * 
+	 * @return data 컨테이너 응답 xml
+	 */
+	public static function getUserInfo(User $user, $domain = '', $nickname = '') /*{{{*/
+	{
+		static $sCache = array();
+		if (isset($sCache[$user->getUserId()]) === false) {
+			try {
+				// Generate Post Data
+				$params             = array();
+				$params['svc_id']   = ConfigManager::get('connecting.container.id');
+				$params['svc_pwd']  = ConfigManager::get('connecting.container.pwd');
+				$params['user_cmn'] = $user->getUserId();
+				$params['domain']   = $domain;
+				$params['nickname'] = $nickname;
+
+				// Send Request
+				$result = self::_sendRequest(ConfigManager::get('connecting.container.url_dev').'/v2/member/show.nate', $params, array(), false);
+
+				if ($result === false) {
+					throw new Exception();
+				}
+
+				$userInfo = null;
+
+				$profile  = $result['profile'];
+				$userInfo = User::instance($profile['cmn']);
+				$userInfo->setNateId($profile['id']);
+				$userInfo->setDomain($profile['domain']);
+				$userInfo->setNickname($profile['nickname']);
+				$userInfo->setProfileImage($profile['profile_image']);
+				$userInfo->setProfileImageUrl($profile['profile_image_url']);
+				$userInfo->setProfileThumbnailUrl($profile['profile_thumbnail_url']);
+				$userInfo->setFollowerCnt($profile['follower_cnt']);
+				$userInfo->setFollowingCnt($profile['following_cnt']);
+				$userInfo->setFriendCnt($profile['friend_cnt']);
+				$userInfo->setReverseFriendCnt($profile['r_friend_cnt']);
+				$userInfo->setMsgCnt($profile['msg_cnt']);
+				$userInfo->setRealname($profile['name']);
+				$userInfo->setToastYN($profile['toast_yn']);
+				$userInfo->setMsgOpenDefault($profile['msg_open_default']);
+				$userInfo->setCreatDt($profile['create_d']);
+				$userInfo->setIsTempDomain($profile['is_temp_domain']);
+				$userInfo->setIsDomainOwner($profile['is_domains_owner']);
+			} catch (Exception $e) {
+			}
+
+			$sCache[$user->getUserId()] = $userInfo;
+		}
+
+		return $sCache[$user->getUserId()];
+	} /*}}}*/
+
+	/**
+	 * 최근 4일 나의 친구, 역친구, follower 수 조회
+	 * @param User $user 유저객체
+	 * 
+	 * @return xml data
+	 */
+	public static function getBalloonInfo(User $user) /*{{{*/
+	{
+		// Generate Post Data
+		$params             = array();
+		$params['svc_id']   = ConfigManager::get('connecting.container.id');
+		$params['svc_pwd']  = ConfigManager::get('connecting.container.pwd');
+		$params['user_cmn'] = $user->getUserId();
+
+		// Send Request
+		$result = self::_sendRequest(ConfigManager::get('connecting.container.url_dev').'/v2/balloon/view.nate', $params, array(), false);
+
+		if ($result === false) {
+			throw new Exception();
+		}
+
+
+		print_r($result);
+	} /*}}}*/
+
+	/**
+	 * 정기점검 페이지
+	 */
+	public static function displayRoutinCheck() /*{{{*/
+	{
+		echo "<script>
+				top.location.replace('/routinCheck');
+			  </script>";
+		exit;
+	} /*}}}*/
+
+	/**
+	 * 임시점검 페이지
+	 */
+	public static function displayTemperCheck() /*{{{*/
+	{
+		echo "<script>
+				top.location.replace('/temperCheck');
+			  </script>";
+		exit;
+	} /*}}}*/
+}
+?>

@@ -1,0 +1,3 @@
+<body>
+	{%CDATA%}
+</body>

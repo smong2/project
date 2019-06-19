@@ -1,0 +1,30 @@
+<script type="text/javascript">
+	try { 
+		document.getElementById('textbox_comment_'+{@ $this->message->getMessageId()}).focus(); 
+	} catch (e) { }
+	try { 
+		setTotalComments({@ $this->message->getMessageId()}, {@ $this->totalComments}, {@ number_format($this->totalComments)}); 
+	} catch (e) { }
+</script>
+<ul class="viewReply">
+	<dummy podo:foreach="$this->comments as $comment">
+		<tpl:Message_Comment comment="{$comment}" />
+	</dummy>
+</ul>
+
+<dummy podo:if="$this->totalPages > 1">
+	<podo:execute href="/message/comment/pageNavigator" max="{$this->totalPages}" curr="{$this->page}" senderCmn="{$this->request->senderCmn}" messageId="{$this->request->messageId}" />
+</dummy>
+
+<fieldset class="innerReply">
+	<form id="fo_comment_{$this->message->getMessageId()}" onsubmit="addComment({@ $this->message->getMessageId()}); return false;">
+	<input type="hidden" name="messageId" value="{$this->message->getMessageId()}" />
+	<input type="hidden" name="comment_length_{$this->message->getMessageId()}"/>
+	<input type="hidden" name="senderCmn" value="{$this->message->getSender()->getUserId()}" />
+	<div class="reSecret"><input type="checkbox" name="isSecret" id="secret01" value="1" /> <label for="secret01">귓속말하기</label></div>
+	<div class="reInput">
+		<span class="txtbox"><input id="textbox_comment_{$this->message->getMessageId()}" name="content" type="text"  value="" onkeyUp="CONNECTINGIns.commentUrlCheck('textbox_comment_{$this->message->getMessageId()}','comment_length_{$this->message->getMessageId()}', event)" /></span>
+		<button class="reply" onclick="olapStat('CNT17'); addComment({@ $this->message->getMessageId()});">댓글</button>
+	</div>
+	</form>
+</fieldset>
