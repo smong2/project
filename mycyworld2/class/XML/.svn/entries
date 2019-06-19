@@ -1,0 +1,79 @@
+8
+
+dir
+34
+svn://svn.stdev.cyworld.com/monitoring8/trunk/class/XML
+svn://svn.stdev.cyworld.com/monitoring8
+
+
+
+2011-04-05T06:56:54.313446Z
+17
+mong
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+fbd0eaa5-55ff-433c-9b30-e9ce4e3bc9fc
+
+Serializer.php
+file
+
+
+
+
+2011-05-18T01:17:07.000000Z
+59fc8f73b89cb8315f508247f87e723c
+2011-04-05T06:56:54.313446Z
+17
+mong
+
+Parser.php
+file
+
+
+
+
+2011-05-18T01:17:07.000000Z
+dac8c3fe67f794060ee1d001a08c1fe2
+2011-04-05T06:56:54.313446Z
+17
+mong
+
+Unserializer.php
+file
+
+
+
+
+2011-05-18T01:17:07.000000Z
+ec6e3052f624bb35106a9b5cbaeb2014
+2011-04-05T06:56:54.313446Z
+17
+mong
+
+Util.php
+file
+
+
+
+
+2011-05-18T01:17:07.000000Z
+9bb265dafaaf06c86ca5c48f50368ded
+2011-04-05T06:56:54.313446Z
+17
+mong
+
+Parser
+dir
+

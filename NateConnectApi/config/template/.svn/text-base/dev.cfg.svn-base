@@ -1,0 +1,67 @@
+# if you need modify dev_base.ini, then don't modify config/dev_base.ini but config/template/dev_base.ini
+# if you want to use '#' or '#' character, then use '\#' or '\#'
+
+[common]
+basedir = {PODO_INSTALL_BASEDIR}
+tempdir = {$common.basedir}/tmp
+kiwidir = /skcomms/frw/kiwi-connecting
+islive  = {PODO_INSTALL_ISLIVE}
+debug   = true
+
+[Podo]
+basedir   = {$common.basedir}
+tempdir   = {$common.tempdir}
+debug     = {$common.debug}
+undefined = debug # default | (debug) | error
+
+[Podo_System_Logger]
+enable = {$Podo.debug}		# true | (false)
+
+default.enable          = false
+default.file            = {$common.tempdir}/debug.log
+default.file.maxsize    = 10485760
+default.flush           = false		# true | (false)
+default.level           = 9			# 0-9
+default.print.execinfo  = false		# true | (false)
+default.print.callstack = false		# true | (false)
+
+logger.debug.enable          = {$common.debug}
+logger.debug.file            = {$common.tempdir}/debug.log
+logger.debug.flush           = false
+logger.debug.level           = 9
+logger.debug.print.execinfo  = true
+logger.debug.print.callstack = false		# true | (false)
+
+logger.all.enable          = {$common.debug}
+logger.all.file            = {$common.tempdir}/all.log
+logger.all.flush           = false
+logger.all.print.execinfo  = true
+
+logger.request.enable          = {$common.debug}
+logger.request.file            = {$common.tempdir}/request.log
+logger.request.flush           = false
+logger.request.print.execinfo  = true
+
+logger.rcode.enable          = {$common.debug}
+logger.rcode.file            = {$common.tempdir}/rcode.log
+logger.rcode.flush           = false
+logger.rcode.print.execinfo  = true
+
+[Podo_System_ErrorHandler]
+enable       = true
+trace.enable = true
+show.level   = NOTICE	# NONE | ERROR | WARNING | (NOTICE) | STRICT | ALL
+logger.level = NOTICE	# NONE | ERROR | (WARNING) | NOTICE | STRICT | ALL
+logger.name  = debug	# you must set logger in [Podo_System_Logger]
+exit.level   = ERROR	# NONE | (ERROR) | WARNING | NOTICE | STRICT | ALL
+
+[connecting]
+#container.url  = http://192.168.243.189:8080
+container.url  = http://172.18.240.17
+container.url_dev  = http://172.18.240.17
+db.service.ip    = 172.18.240.13
+db.service.id  = mynate
+db.service.pwd = gkfn24tl!
+db.buddy.ip    = 172.18.240.13
+db.buddy.id    = mynate
+db.buddy.pwd   = gkfn24tl!

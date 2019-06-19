@@ -1,0 +1,245 @@
+
+===== [/~mong/NateConnectApi/index.php 17:09:57] ============================================================
+
+[request:9] --------- response error -------------
+[request:9] url - responseCode : http://172.18.240.17/v2/comment/list.nate - 500
+[request:9] Array
+          (
+              [svc_id] => open_api
+              [svc_pwd] => open_api%21
+              [user_cmn] => 00002414321
+              [message_key] => 00002414321
+              [page] => 1
+              [rows] => 5
+              [mode] => 
+          )
+          
+
+..... Elapsed Time: TOTAL 14.36 msec, USR 2.00 msec (13.9%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/NateConnectApi/index.php 23:07:08] ============================================================
+
+[request:9] --------- response error -------------
+[request:9] url - responseCode : http://172.18.240.17/v2/comment/list.nate - 500
+[request:9] Array
+          (
+              [svc_id] => open_api
+              [svc_pwd] => open_api%21
+              [user_cmn] => 00002414321
+              [message_key] => 
+              [page] => 1
+              [rows] => 5
+              [mode] => 
+          )
+          
+
+..... Elapsed Time: TOTAL 0.82 msec, USR 0.00 msec (0.0%), SYS 1.00 msec (122.0%)
+
+===== [/~mong/NateConnectApi/index.php 23:07:15] ============================================================
+
+[request:9] --------- response error -------------
+[request:9] url - responseCode : http://172.18.240.17/v2/comment/list.nate - 500
+[request:9] Array
+          (
+              [svc_id] => open_api
+              [svc_pwd] => open_api%21
+              [user_cmn] => 00002414321
+              [message_key] => 11111
+              [page] => 1
+              [rows] => 5
+              [mode] => 
+          )
+          
+
+..... Elapsed Time: TOTAL 0.79 msec, USR 1.00 msec (126.6%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/NateConnectApi/index.php 23:07:23] ============================================================
+
+[request:9] --------- response error -------------
+[request:9] url - responseCode : http://172.18.240.17/v2/comment/list.nate - 500
+[request:9] Array
+          (
+              [svc_id] => open_api
+              [svc_pwd] => open_api%21
+              [user_cmn] => 00002414321
+              [message_key] => 11111
+              [page] => 1
+              [rows] => 5
+              [mode] => twit
+          )
+          
+
+..... Elapsed Time: TOTAL 0.80 msec, USR 1.00 msec (125.0%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/NateConnectApi/index.php 23:07:26] ============================================================
+
+[request:9] --------- response error -------------
+[request:9] url - responseCode : http://172.18.240.17/v2/comment/list.nate - 500
+[request:9] Array
+          (
+              [svc_id] => open_api
+              [svc_pwd] => open_api%21
+              [user_cmn] => 00002414321
+              [message_key] => 11111
+              [page] => 1
+              [rows] => 5
+              [mode] => twitter
+          )
+          
+
+..... Elapsed Time: TOTAL 0.82 msec, USR 0.00 msec (0.0%), SYS 1.00 msec (122.0%)
+
+===== [/~mong/NateConnectApi/index.php 23:07:29] ============================================================
+
+[request:9] --------- response error -------------
+[request:9] url - responseCode : http://172.18.240.17/v2/comment/list.nate - 500
+[request:9] Array
+          (
+              [svc_id] => open_api
+              [svc_pwd] => open_api%21
+              [user_cmn] => 00002414321
+              [message_key] => 11111
+              [page] => 1
+              [rows] => 5
+              [mode] => twit
+          )
+          
+
+..... Elapsed Time: TOTAL 0.79 msec, USR 0.00 msec (0.0%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/NateConnectApi/index.php 23:07:34] ============================================================
+
+[request:9] --------- response error -------------
+[request:9] url - responseCode : http://172.18.240.17/v2/comment/list.nate - 500
+[request:9] Array
+          (
+              [svc_id] => open_api
+              [svc_pwd] => open_api%21
+              [user_cmn] => 00002414321
+              [message_key] => 11111
+              [page] => 1
+              [rows] => 5
+              [mode] => re
+          )
+          
+
+..... Elapsed Time: TOTAL 0.80 msec, USR 1.00 msec (125.0%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/NateConnectApi/index.php 23:07:38] ============================================================
+
+[request:9] --------- response error -------------
+[request:9] url - responseCode : http://172.18.240.17/v2/comment/list.nate - 500
+[request:9] Array
+          (
+              [svc_id] => open_api
+              [svc_pwd] => open_api%21
+              [user_cmn] => 00002414321
+              [message_key] => 11111
+              [page] => 1
+              [rows] => 5
+              [mode] => twit
+          )
+          
+
+..... Elapsed Time: TOTAL 0.79 msec, USR 1.00 msec (126.6%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/NateConnectApi/index.php 14:00:34] ============================================================
+
+[request:9] --------- response error -------------
+[request:9] url - responseCode : http://172.18.240.17/v2/comment/list.nate - 500
+[request:9] Array
+          (
+              [svc_id] => open_api
+              [svc_pwd] => open_api%21
+              [user_cmn] => 00002414321
+              [message_key] => 11111
+              [page] => 1
+              [rows] => 5
+              [mode] => 
+          )
+          
+
+..... Elapsed Time: TOTAL 0.81 msec, USR 0.00 msec (0.0%), SYS 1.00 msec (123.5%)
+
+===== [/~mong/NateConnectApi/index.php 14:00:42] ============================================================
+
+[request:9] --------- response error -------------
+[request:9] url - responseCode : http://172.18.240.17/v2/comment/list.nate - 500
+[request:9] Array
+          (
+              [svc_id] => open_api
+              [svc_pwd] => open_api%21
+              [user_cmn] => 00002414321
+              [message_key] => 11111
+              [page] => 1
+              [rows] => 5
+              [mode] => twit
+          )
+          
+
+..... Elapsed Time: TOTAL 0.82 msec, USR 0.00 msec (0.0%), SYS 1.00 msec (122.0%)
+
+===== [/~mong/NateConnectApi/index.php 14:05:01] ============================================================
+
+[request:9] --------- response error -------------
+[request:9] url - responseCode : https://www.googleapis.com/urlshortener/v1/url - 
+[request:9] Array
+          (
+              [longUrl] => http%3A%2F%2Fnews.nate.com%2Fhissue%2FgroupList%3Fmid%3Dn0502%26isq%3D5389%26sisq%3D5388%26n%3D252467%23cid252467
+              [key] => AIzaSyBkH4Oncc3ZVpvkWSYV44WZGLHpJ4KI1PQ
+          )
+          
+
+..... Elapsed Time: TOTAL 95.31 msec, USR 12.00 msec (12.6%), SYS 3.00 msec (3.1%)
+
+===== [/~mong/NateConnectApi/index.php 14:05:11] ============================================================
+
+[request:9] --------- response error -------------
+[request:9] url - responseCode : https://www.googleapis.com/urlshortener/v1/url - 
+[request:9] Array
+          (
+              [longUrl] => http%3A%2F%2Fnews.nate.com%2Fhissue%2FgroupList%3Fmid%3Dn0502%26isq%3D5389%26sisq%3D5388%26n%3D252467%23cid252467
+              [key] => AIzaSyBkH4Oncc3ZVpvkWSYV44WZGLHpJ4KI1PQ
+          )
+          
+
+..... Elapsed Time: TOTAL 10.06 msec, USR 9.00 msec (89.5%), SYS 1.00 msec (9.9%)
+
+===== [/~mong/NateConnectApi/index.php 14:05:24] ============================================================
+
+[request:9] --------- response error -------------
+[request:9] url - responseCode : http://www.googleapis.com/urlshortener/v1/url - 
+[request:9] Array
+          (
+              [longUrl] => http%3A%2F%2Fnews.nate.com%2Fhissue%2FgroupList%3Fmid%3Dn0502%26isq%3D5389%26sisq%3D5388%26n%3D252467%23cid252467
+              [key] => AIzaSyBkH4Oncc3ZVpvkWSYV44WZGLHpJ4KI1PQ
+          )
+          
+
+..... Elapsed Time: TOTAL 10.40 msec, USR 9.00 msec (86.5%), SYS 1.00 msec (9.6%)
+
+===== [/~mong/NateConnectApi/index.php 14:05:38] ============================================================
+
+[request:9] --------- response error -------------
+[request:9] url - responseCode : https://www.googleapis.com/urlshortener/v1/url - 
+[request:9] Array
+          (
+              [longUrl] => http%3A%2F%2Fnews.nate.com%2Fhissue%2FgroupList%3Fmid%3Dn0502%26isq%3D5389%26sisq%3D5388%26n%3D252467%23cid252467
+              [key] => AIzaSyBkH4Oncc3ZVpvkWSYV44WZGLHpJ4KI1PQ
+          )
+          
+
+..... Elapsed Time: TOTAL 10.25 msec, USR 9.00 msec (87.8%), SYS 1.00 msec (9.8%)
+
+===== [/~mong/NateConnectApi/index.php 14:08:07] ============================================================
+
+[request:9] --------- response error -------------
+[request:9] url - responseCode : http://www.googleapis.com/urlshortener/v1/url - 
+[request:9] Array
+          (
+              [longUrl] => http%3A%2F%2Fnews.nate.com%2Fhissue%2FgroupList%3Fmid%3Dn0502%26isq%3D5389%26sisq%3D5388%26n%3D252467%23cid252467
+              [key] => AIzaSyBkH4Oncc3ZVpvkWSYV44WZGLHpJ4KI1PQ
+          )
+          
+
+..... Elapsed Time: TOTAL 10.35 msec, USR 7.00 msec (67.6%), SYS 3.00 msec (29.0%)

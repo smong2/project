@@ -1,0 +1,2040 @@
+
+===== [/~mong/mycyworld2/index.php 10:46:15] ============================================================
+
+
+..... Elapsed Time: TOTAL 177.45 msec, USR 56.99 msec (32.1%), SYS 4.00 msec (2.3%)
+
+===== [/~mong/mycyworld2/index.php 10:46:36] ============================================================
+
+
+..... Elapsed Time: TOTAL 10.39 msec, USR 3.00 msec (28.9%), SYS 7.00 msec (67.4%)
+
+===== [/~mong/mycyworld2/index.php 10:46:36] ============================================================
+
+ACTION: /invite1/accept
+
+
+..... Elapsed Time: TOTAL 10.41 msec, USR 3.00 msec (28.8%), SYS 7.00 msec (67.2%)
+
+===== [/~mong/mycyworld2/index.php 10:47:52] ============================================================
+
+
+..... Elapsed Time: TOTAL 4.02 msec, USR 3.00 msec (74.6%), SYS 1.00 msec (24.9%)
+
+===== [/~mong/mycyworld2/index.php 10:47:52] ============================================================
+
+ACTION: /invite1/accept
+
+
+..... Elapsed Time: TOTAL 4.02 msec, USR 3.00 msec (74.6%), SYS 1.00 msec (24.9%)
+
+===== [/~mong/mycyworld2/index.php 10:50:46] ============================================================
+
+
+..... Elapsed Time: TOTAL 2.45 msec, USR 1.00 msec (40.8%), SYS 1.00 msec (40.8%)
+
+===== [/~mong/mycyworld2/index.php 15:56:12] ============================================================
+
+
+..... Elapsed Time: TOTAL 7.92 msec, USR 7.00 msec (88.4%), SYS 1.00 msec (12.6%)
+
+===== [/~mong/mycyworld2/index.php 15:56:12] ============================================================
+
+ACTION: /invite1/accept
+
+
+..... Elapsed Time: TOTAL 7.94 msec, USR 7.00 msec (88.2%), SYS 1.00 msec (12.6%)
+
+===== [/~mong/mycyworld2/index.php 16:14:20] ============================================================
+
+
+..... Elapsed Time: TOTAL 2.52 msec, USR 3.00 msec (119.0%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 16:14:20] ============================================================
+
+ACTION: /invite1/accept
+
+
+..... Elapsed Time: TOTAL 2.51 msec, USR 2.00 msec (79.7%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 16:14:46] ============================================================
+
+
+..... Elapsed Time: TOTAL 5.56 msec, USR 4.00 msec (71.9%), SYS 1.00 msec (18.0%)
+
+===== [/~mong/mycyworld2/index.php 16:14:46] ============================================================
+
+ACTION: /user_view
+
+User Warning: The template file is not exist. - Main_User_view in /skcomms/frw/kiwi/podo/class/Podo/Template.php on line 56
+
+#0  Podo_Template::instance('Main_User_view') called at [/skcomms/frw/kiwi/podo/class/Podo.php:118]
+#1  Podo::_executeView(MainController Object ( [request:protected] => Podo_Controller_Request Object ( [_params:private] => Array ( [addr] => Array ( [value] => 192.168.248.154,  [type] => GET ) ,  [action] => Array ( [value] => /user_view,  [type] => GET )  ) ,  [get] => ,  [post] => ,  [cookie] => ,  [session] => ,  [file] => ,  [__items:protected] => Array ( [addr] => 192.168.248.154,  [action] => /user_view )  ) ,  [response:protected] => Podo_Controller_Response Object ( [_DICT:private] => Array ( [RESULTS] => Array ( ) ,  [TARGET] => Array ( [URL] => ,  [VIEW] => Main_User_view )  )  ) ,  [cookie:protected] => Podo_Controller_Cookie Object ( [name] => ,  [expire] => 0,  [path] => ,  [domain] => ,  [_strValue:protected] => ,  [_arrSubValue:protected] => Array ( ) ,  [_strEncodingIn:protected] => utf-8,  [_strEncodingOut:protected] => utf-8,  [_isCrypt:protected] => ,  [_strCryptKey:protected] =>  ) ,  [json:protected] => Podo_Controller_Json Object ( ) ,  [_isExceptionThrowed:protected] =>  ) ) called at [/skcomms/frw/kiwi/podo/class/Podo.php:76]
+#2  Podo::execute() called at [docroot/index.php:4]
+
+
+..... Elapsed Time: TOTAL 5.57 msec, USR 4.00 msec (71.8%), SYS 1.00 msec (18.0%)
+
+===== [/~mong/mycyworld2/index.php 16:15:09] ============================================================
+
+
+..... Elapsed Time: TOTAL 4.29 msec, USR 2.00 msec (46.6%), SYS 2.00 msec (46.6%)
+
+===== [/~mong/mycyworld2/index.php 16:15:09] ============================================================
+
+ACTION: /user_view
+
+User Warning: The template file is not exist. - Main_User_view in /skcomms/frw/kiwi/podo/class/Podo/Template.php on line 56
+
+#0  Podo_Template::instance('Main_User_view') called at [/skcomms/frw/kiwi/podo/class/Podo.php:118]
+#1  Podo::_executeView(MainController Object ( [request:protected] => Podo_Controller_Request Object ( [_params:private] => Array ( [addr] => Array ( [value] => 192.168.248.154,  [type] => GET ) ,  [action] => Array ( [value] => /user_view,  [type] => GET )  ) ,  [get] => ,  [post] => ,  [cookie] => ,  [session] => ,  [file] => ,  [__items:protected] => Array ( [addr] => 192.168.248.154,  [action] => /user_view )  ) ,  [response:protected] => Podo_Controller_Response Object ( [_DICT:private] => Array ( [RESULTS] => Array ( ) ,  [TARGET] => Array ( [URL] => ,  [VIEW] => Main_User_view )  )  ) ,  [cookie:protected] => Podo_Controller_Cookie Object ( [name] => ,  [expire] => 0,  [path] => ,  [domain] => ,  [_strValue:protected] => ,  [_arrSubValue:protected] => Array ( ) ,  [_strEncodingIn:protected] => utf-8,  [_strEncodingOut:protected] => utf-8,  [_isCrypt:protected] => ,  [_strCryptKey:protected] =>  ) ,  [json:protected] => Podo_Controller_Json Object ( ) ,  [_isExceptionThrowed:protected] =>  ) ) called at [/skcomms/frw/kiwi/podo/class/Podo.php:76]
+#2  Podo::execute() called at [docroot/index.php:4]
+
+
+..... Elapsed Time: TOTAL 4.31 msec, USR 3.00 msec (69.6%), SYS 2.00 msec (46.4%)
+
+===== [/~mong/mycyworld2/index.php 16:15:21] ============================================================
+
+
+..... Elapsed Time: TOTAL 4.25 msec, USR 3.00 msec (70.6%), SYS 1.00 msec (23.5%)
+
+===== [/~mong/mycyworld2/index.php 16:15:21] ============================================================
+
+ACTION: /user_view
+
+User Warning: The template file is not exist. - Main_User_view in /skcomms/frw/kiwi/podo/class/Podo/Template.php on line 56
+
+#0  Podo_Template::instance('Main_User_view') called at [/skcomms/frw/kiwi/podo/class/Podo.php:118]
+#1  Podo::_executeView(MainController Object ( [request:protected] => Podo_Controller_Request Object ( [_params:private] => Array ( [addr] => Array ( [value] => 192.168.248.154,  [type] => GET ) ,  [action] => Array ( [value] => /user_view,  [type] => GET )  ) ,  [get] => ,  [post] => ,  [cookie] => ,  [session] => ,  [file] => ,  [__items:protected] => Array ( [addr] => 192.168.248.154,  [action] => /user_view )  ) ,  [response:protected] => Podo_Controller_Response Object ( [_DICT:private] => Array ( [RESULTS] => Array ( ) ,  [TARGET] => Array ( [URL] => ,  [VIEW] => Main_User_view )  )  ) ,  [cookie:protected] => Podo_Controller_Cookie Object ( [name] => ,  [expire] => 0,  [path] => ,  [domain] => ,  [_strValue:protected] => ,  [_arrSubValue:protected] => Array ( ) ,  [_strEncodingIn:protected] => utf-8,  [_strEncodingOut:protected] => utf-8,  [_isCrypt:protected] => ,  [_strCryptKey:protected] =>  ) ,  [json:protected] => Podo_Controller_Json Object ( ) ,  [_isExceptionThrowed:protected] =>  ) ) called at [/skcomms/frw/kiwi/podo/class/Podo.php:76]
+#2  Podo::execute() called at [docroot/index.php:4]
+
+
+..... Elapsed Time: TOTAL 4.23 msec, USR 3.00 msec (70.9%), SYS 2.00 msec (47.3%)
+
+===== [/~mong/mycyworld2/index.php 16:15:22] ============================================================
+
+
+..... Elapsed Time: TOTAL 3.97 msec, USR 4.00 msec (100.8%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 16:15:22] ============================================================
+
+ACTION: /user_view
+
+User Warning: The template file is not exist. - Main_User_view in /skcomms/frw/kiwi/podo/class/Podo/Template.php on line 56
+
+#0  Podo_Template::instance('Main_User_view') called at [/skcomms/frw/kiwi/podo/class/Podo.php:118]
+#1  Podo::_executeView(MainController Object ( [request:protected] => Podo_Controller_Request Object ( [_params:private] => Array ( [addr] => Array ( [value] => 192.168.248.154,  [type] => GET ) ,  [action] => Array ( [value] => /user_view,  [type] => GET )  ) ,  [get] => ,  [post] => ,  [cookie] => ,  [session] => ,  [file] => ,  [__items:protected] => Array ( [addr] => 192.168.248.154,  [action] => /user_view )  ) ,  [response:protected] => Podo_Controller_Response Object ( [_DICT:private] => Array ( [RESULTS] => Array ( ) ,  [TARGET] => Array ( [URL] => ,  [VIEW] => Main_User_view )  )  ) ,  [cookie:protected] => Podo_Controller_Cookie Object ( [name] => ,  [expire] => 0,  [path] => ,  [domain] => ,  [_strValue:protected] => ,  [_arrSubValue:protected] => Array ( ) ,  [_strEncodingIn:protected] => utf-8,  [_strEncodingOut:protected] => utf-8,  [_isCrypt:protected] => ,  [_strCryptKey:protected] =>  ) ,  [json:protected] => Podo_Controller_Json Object ( ) ,  [_isExceptionThrowed:protected] =>  ) ) called at [/skcomms/frw/kiwi/podo/class/Podo.php:76]
+#2  Podo::execute() called at [docroot/index.php:4]
+
+
+..... Elapsed Time: TOTAL 3.96 msec, USR 4.00 msec (101.0%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 16:15:40] ============================================================
+
+
+..... Elapsed Time: TOTAL 3.99 msec, USR 3.00 msec (75.2%), SYS 1.00 msec (25.1%)
+
+===== [/~mong/mycyworld2/index.php 16:15:40] ============================================================
+
+ACTION: /user_view
+
+User Warning: The template file is not exist. - Main_User_view in /skcomms/frw/kiwi/podo/class/Podo/Template.php on line 56
+
+#0  Podo_Template::instance('Main_User_view') called at [/skcomms/frw/kiwi/podo/class/Podo.php:118]
+#1  Podo::_executeView(MainController Object ( [request:protected] => Podo_Controller_Request Object ( [_params:private] => Array ( [addr] => Array ( [value] => 192.168.248.154,  [type] => GET ) ,  [action] => Array ( [value] => /user_view,  [type] => GET )  ) ,  [get] => ,  [post] => ,  [cookie] => ,  [session] => ,  [file] => ,  [__items:protected] => Array ( [addr] => 192.168.248.154,  [action] => /user_view )  ) ,  [response:protected] => Podo_Controller_Response Object ( [_DICT:private] => Array ( [RESULTS] => Array ( ) ,  [TARGET] => Array ( [URL] => ,  [VIEW] => Main_User_view )  )  ) ,  [cookie:protected] => Podo_Controller_Cookie Object ( [name] => ,  [expire] => 0,  [path] => ,  [domain] => ,  [_strValue:protected] => ,  [_arrSubValue:protected] => Array ( ) ,  [_strEncodingIn:protected] => utf-8,  [_strEncodingOut:protected] => utf-8,  [_isCrypt:protected] => ,  [_strCryptKey:protected] =>  ) ,  [json:protected] => Podo_Controller_Json Object ( ) ,  [_isExceptionThrowed:protected] =>  ) ) called at [/skcomms/frw/kiwi/podo/class/Podo.php:76]
+#2  Podo::execute() called at [docroot/index.php:4]
+
+
+..... Elapsed Time: TOTAL 3.98 msec, USR 3.00 msec (75.4%), SYS 1.00 msec (25.1%)
+
+===== [/~mong/mycyworld2/index.php 16:15:41] ============================================================
+
+
+..... Elapsed Time: TOTAL 4.11 msec, USR 3.00 msec (73.0%), SYS 1.00 msec (24.3%)
+
+===== [/~mong/mycyworld2/index.php 16:15:41] ============================================================
+
+ACTION: /user_view
+
+User Warning: The template file is not exist. - Main_User_view in /skcomms/frw/kiwi/podo/class/Podo/Template.php on line 56
+
+#0  Podo_Template::instance('Main_User_view') called at [/skcomms/frw/kiwi/podo/class/Podo.php:118]
+#1  Podo::_executeView(MainController Object ( [request:protected] => Podo_Controller_Request Object ( [_params:private] => Array ( [addr] => Array ( [value] => 192.168.248.154,  [type] => GET ) ,  [action] => Array ( [value] => /user_view,  [type] => GET )  ) ,  [get] => ,  [post] => ,  [cookie] => ,  [session] => ,  [file] => ,  [__items:protected] => Array ( [addr] => 192.168.248.154,  [action] => /user_view )  ) ,  [response:protected] => Podo_Controller_Response Object ( [_DICT:private] => Array ( [RESULTS] => Array ( ) ,  [TARGET] => Array ( [URL] => ,  [VIEW] => Main_User_view )  )  ) ,  [cookie:protected] => Podo_Controller_Cookie Object ( [name] => ,  [expire] => 0,  [path] => ,  [domain] => ,  [_strValue:protected] => ,  [_arrSubValue:protected] => Array ( ) ,  [_strEncodingIn:protected] => utf-8,  [_strEncodingOut:protected] => utf-8,  [_isCrypt:protected] => ,  [_strCryptKey:protected] =>  ) ,  [json:protected] => Podo_Controller_Json Object ( ) ,  [_isExceptionThrowed:protected] =>  ) ) called at [/skcomms/frw/kiwi/podo/class/Podo.php:76]
+#2  Podo::execute() called at [docroot/index.php:4]
+
+
+..... Elapsed Time: TOTAL 4.10 msec, USR 3.00 msec (73.2%), SYS 1.00 msec (24.4%)
+
+===== [/~mong/mycyworld2/index.php 16:16:31] ============================================================
+
+
+..... Elapsed Time: TOTAL 2.81 msec, USR 3.00 msec (106.8%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 16:16:31] ============================================================
+
+ACTION: /user_view
+
+
+..... Elapsed Time: TOTAL 2.81 msec, USR 3.00 msec (106.8%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 16:17:06] ============================================================
+
+
+..... Elapsed Time: TOTAL 1.26 msec, USR 1.00 msec (79.4%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 16:17:06] ============================================================
+
+ACTION: /user_view/dfasasf/ddd
+
+
+..... Elapsed Time: TOTAL 1.24 msec, USR 1.00 msec (80.6%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 16:17:14] ============================================================
+
+
+..... Elapsed Time: TOTAL 1.48 msec, USR 2.00 msec (135.1%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 16:17:14] ============================================================
+
+ACTION: /userview/dfasasf/ddd
+
+
+..... Elapsed Time: TOTAL 1.46 msec, USR 1.00 msec (68.5%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 16:18:38] ============================================================
+
+
+..... Elapsed Time: TOTAL 3.23 msec, USR 3.00 msec (92.9%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 16:18:38] ============================================================
+
+ACTION: /test
+
+
+..... Elapsed Time: TOTAL 3.25 msec, USR 3.00 msec (92.3%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 16:18:47] ============================================================
+
+
+..... Elapsed Time: TOTAL 1.88 msec, USR 1.00 msec (53.2%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 16:18:47] ============================================================
+
+ACTION: /test
+
+
+..... Elapsed Time: TOTAL 1.86 msec, USR 1.00 msec (53.8%), SYS 1.00 msec (53.8%)
+
+===== [/~mong/mycyworld2/index.php 16:19:00] ============================================================
+
+
+..... Elapsed Time: TOTAL 2.21 msec, USR 2.00 msec (90.5%), SYS 1.00 msec (45.2%)
+
+===== [/~mong/mycyworld2/index.php 16:20:22] ============================================================
+
+
+..... Elapsed Time: TOTAL 1.94 msec, USR 2.00 msec (103.1%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 16:20:22] ============================================================
+
+ACTION: /invite/accept
+
+
+..... Elapsed Time: TOTAL 1.92 msec, USR 2.00 msec (104.2%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 16:20:29] ============================================================
+
+
+..... Elapsed Time: TOTAL 2.52 msec, USR 2.00 msec (79.4%), SYS 1.00 msec (39.7%)
+
+===== [/~mong/mycyworld2/index.php 16:20:29] ============================================================
+
+ACTION: /invite1/accept
+
+
+..... Elapsed Time: TOTAL 2.51 msec, USR 2.00 msec (79.7%), SYS 1.00 msec (39.8%)
+
+===== [/~mong/mycyworld2/index.php 16:20:55] ============================================================
+
+
+..... Elapsed Time: TOTAL 2.15 msec, USR 1.00 msec (46.5%), SYS 1.00 msec (46.5%)
+
+===== [/~mong/mycyworld2/index.php 16:20:55] ============================================================
+
+ACTION: /invite1/accept
+
+
+..... Elapsed Time: TOTAL 2.13 msec, USR 1.00 msec (46.9%), SYS 1.00 msec (46.9%)
+
+===== [/~mong/mycyworld2/index.php 16:22:04] ============================================================
+
+
+..... Elapsed Time: TOTAL 3.45 msec, USR 4.00 msec (115.9%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 16:22:04] ============================================================
+
+ACTION: /invite1/accept
+
+
+..... Elapsed Time: TOTAL 3.43 msec, USR 4.00 msec (116.6%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 16:22:45] ============================================================
+
+
+..... Elapsed Time: TOTAL 3.61 msec, USR 3.00 msec (83.1%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 16:22:45] ============================================================
+
+ACTION: /invite1/accept
+
+000011111
+
+..... Elapsed Time: TOTAL 3.62 msec, USR 4.00 msec (110.5%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 16:22:56] ============================================================
+
+
+..... Elapsed Time: TOTAL 2.42 msec, USR 1.00 msec (41.3%), SYS 1.00 msec (41.3%)
+
+===== [/~mong/mycyworld2/index.php 16:22:56] ============================================================
+
+ACTION: /invite1/accept
+
+000011111
+
+..... Elapsed Time: TOTAL 2.42 msec, USR 2.00 msec (82.6%), SYS 1.00 msec (41.3%)
+
+===== [/~mong/mycyworld2/index.php 16:22:57] ============================================================
+
+
+..... Elapsed Time: TOTAL 2.21 msec, USR 0.00 msec (0.0%), SYS 2.00 msec (90.5%)
+
+===== [/~mong/mycyworld2/index.php 16:22:57] ============================================================
+
+ACTION: /invite1/accept
+
+000011111
+
+..... Elapsed Time: TOTAL 2.22 msec, USR 0.00 msec (0.0%), SYS 2.00 msec (90.1%)
+
+===== [/~mong/mycyworld2/index.php 16:23:08] ============================================================
+
+
+..... Elapsed Time: TOTAL 2.93 msec, USR 2.00 msec (68.3%), SYS 1.00 msec (34.1%)
+
+===== [/~mong/mycyworld2/index.php 16:23:08] ============================================================
+
+ACTION: /invite1/accept
+
+User Notice: Undefined request index: cmn in /skcomms/frw/kiwi/podo/class/Podo/Controller/Request.php on line 74
+
+#0  Podo_Controller_Request->get('cmn') called at [/skcomms/frw/kiwi/podo/class/Podo/Controller/Request.php:189]
+#1  Podo_Controller_Request->__get('cmn') called at [controller/Invite1Controller.php:6]
+#2  Invite1Controller->doAccept() called at [/skcomms/frw/kiwi/podo/class/Podo.php:87]
+#3  Podo::_executeAction(Array ( [CONTROLLER] => Invite1Controller,  [ACTION] => doAccept,  [VIEW] => Invite1_Accept ) , Array ( [addr] => 192.168.248.154,  [action] => /invite1/accept ) ) called at [/skcomms/frw/kiwi/podo/class/Podo.php:75]
+#4  Podo::execute() called at [docroot/index.php:4]
+
+
+..... Elapsed Time: TOTAL 2.90 msec, USR 2.00 msec (69.0%), SYS 1.00 msec (34.5%)
+
+===== [/~mong/mycyworld2/index.php 16:23:22] ============================================================
+
+
+..... Elapsed Time: TOTAL 2.15 msec, USR 1.00 msec (46.5%), SYS 1.00 msec (46.5%)
+
+===== [/~mong/mycyworld2/index.php 16:23:22] ============================================================
+
+ACTION: /invite1/accept
+
+
+
+..... Elapsed Time: TOTAL 2.12 msec, USR 1.00 msec (47.2%), SYS 1.00 msec (47.2%)
+
+===== [/~mong/mycyworld2/index.php 16:24:00] ============================================================
+
+
+..... Elapsed Time: TOTAL 3.40 msec, USR 2.00 msec (58.8%), SYS 1.00 msec (29.4%)
+
+===== [/~mong/mycyworld2/index.php 16:24:00] ============================================================
+
+ACTION: /invite1/accept
+
+
+
+..... Elapsed Time: TOTAL 3.37 msec, USR 3.00 msec (89.0%), SYS 1.00 msec (29.7%)
+
+===== [/~mong/mycyworld2/index.php 16:24:09] ============================================================
+
+
+..... Elapsed Time: TOTAL 3.34 msec, USR 2.00 msec (59.9%), SYS 2.00 msec (59.9%)
+
+===== [/~mong/mycyworld2/index.php 16:24:09] ============================================================
+
+ACTION: /invite1/accept
+
+---
+
+..... Elapsed Time: TOTAL 3.31 msec, USR 1.00 msec (30.2%), SYS 2.00 msec (60.4%)
+
+===== [/~mong/mycyworld2/index.php 16:26:02] ============================================================
+
+
+..... Elapsed Time: TOTAL 3.59 msec, USR 2.00 msec (55.7%), SYS 1.00 msec (27.9%)
+
+===== [/~mong/mycyworld2/index.php 16:26:02] ============================================================
+
+ACTION: /invite1/accept
+
+
+..... Elapsed Time: TOTAL 3.59 msec, USR 2.00 msec (55.7%), SYS 1.00 msec (27.9%)
+
+===== [/~mong/mycyworld2/index.php 16:26:57] ============================================================
+
+
+..... Elapsed Time: TOTAL 3.63 msec, USR 4.00 msec (110.2%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 16:26:57] ============================================================
+
+ACTION: /invite1/accept
+
+
+..... Elapsed Time: TOTAL 3.64 msec, USR 3.00 msec (82.4%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 16:27:32] ============================================================
+
+
+..... Elapsed Time: TOTAL 7.95 msec, USR 6.00 msec (75.5%), SYS 2.00 msec (25.2%)
+
+===== [/~mong/mycyworld2/index.php 16:27:32] ============================================================
+
+ACTION: /invite1/accept
+
+
+..... Elapsed Time: TOTAL 7.94 msec, USR 6.00 msec (75.6%), SYS 2.00 msec (25.2%)
+
+===== [/~mong/mycyworld2/index.php 16:27:42] ============================================================
+
+
+..... Elapsed Time: TOTAL 7.56 msec, USR 5.00 msec (66.1%), SYS 3.00 msec (39.7%)
+
+===== [/~mong/mycyworld2/index.php 16:27:42] ============================================================
+
+ACTION: /invite1/accept
+
+
+..... Elapsed Time: TOTAL 7.54 msec, USR 5.00 msec (66.3%), SYS 3.00 msec (39.8%)
+
+===== [/~mong/mycyworld2/index.php 16:28:42] ============================================================
+
+
+..... Elapsed Time: TOTAL 11.93 msec, USR 12.00 msec (100.6%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 16:28:42] ============================================================
+
+ACTION: /invite1/accept
+
+User Notice: Undefined request index: controllerVal in /skcomms/frw/kiwi/podo/class/Podo/Controller/Request.php on line 74
+
+#0  Podo_Controller_Request->get('controllerVal') called at [/skcomms/frw/kiwi/podo/class/Podo/Controller/Request.php:189]
+#1  Podo_Controller_Request->__get('controllerVal') called at [tmp/Podo/Template/1.0.2/Invite1/AcceptTemplate.php:11]
+#2  Invite1_AcceptTemplate->printHead(-1, -1) called at [/skcomms/frw/kiwi/podo/class/Podo/Template/Base.php:6]
+#3  Podo_Template_Base->display() called at [/skcomms/frw/kiwi/podo/class/Podo.php:127]
+#4  Podo::_executeView(Invite1Controller Object ( [request:protected] => Podo_Controller_Request Object ( [_params:private] => Array ( [addr] => Array ( [value] => 192.168.248.154,  [type] => GET ) ,  [action] => Array ( [value] => /invite1/accept,  [type] => GET ) ,  [cmn] => Array ( [value] => 000011111,  [type] => GET )  ) ,  [get] => ,  [post] => ,  [cookie] => ,  [session] => ,  [file] => ,  [__items:protected] => Array ( [addr] => 192.168.248.154,  [action] => /invite1/accept,  [cmn] => 000011111 )  ) ,  [response:protected] => Podo_Controller_Response Object ( [_DICT:private] => Array ( [RESULTS] => Array ( ) ,  [TARGET] => Array ( [URL] => ,  [VIEW] => Invite1_Accept )  ) ,  [templateCmn] => 000011111,  [controllerVal] => 1 ) ,  [cookie:protected] => Podo_Controller_Cookie Object ( [name] => ,  [expire] => 0,  [path] => ,  [domain] => ,  [_strValue:protected] => ,  [_arrSubValue:protected] => Array ( ) ,  [_strEncodingIn:protected] => utf-8,  [_strEncodingOut:protected] => utf-8,  [_isCrypt:protected] => ,  [_strCryptKey:protected] =>  ) ,  [json:protected] => Podo_Controller_Json Object ( ) ,  [_isExceptionThrowed:protected] =>  ) ) called at [/skcomms/frw/kiwi/podo/class/Podo.php:76]
+#5  Podo::execute() called at [docroot/index.php:4]
+
+
+..... Elapsed Time: TOTAL 11.92 msec, USR 12.00 msec (100.7%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 16:29:07] ============================================================
+
+
+..... Elapsed Time: TOTAL 10.17 msec, USR 8.00 msec (78.7%), SYS 2.00 msec (19.7%)
+
+===== [/~mong/mycyworld2/index.php 16:29:07] ============================================================
+
+ACTION: /invite1/accept
+
+User Notice: Undefined request index: controllerVal in /skcomms/frw/kiwi/podo/class/Podo/Controller/Request.php on line 74
+
+#0  Podo_Controller_Request->get('controllerVal') called at [/skcomms/frw/kiwi/podo/class/Podo/Controller/Request.php:189]
+#1  Podo_Controller_Request->__get('controllerVal') called at [tmp/Podo/Template/1.0.2/Invite1/AcceptTemplate.php:11]
+#2  Invite1_AcceptTemplate->printHead(-1, -1) called at [/skcomms/frw/kiwi/podo/class/Podo/Template/Base.php:6]
+#3  Podo_Template_Base->display() called at [/skcomms/frw/kiwi/podo/class/Podo.php:127]
+#4  Podo::_executeView(Invite1Controller Object ( [request:protected] => Podo_Controller_Request Object ( [_params:private] => Array ( [addr] => Array ( [value] => 192.168.248.154,  [type] => GET ) ,  [action] => Array ( [value] => /invite1/accept,  [type] => GET ) ,  [cmn] => Array ( [value] => 000011111,  [type] => GET )  ) ,  [get] => ,  [post] => ,  [cookie] => ,  [session] => ,  [file] => ,  [__items:protected] => Array ( [addr] => 192.168.248.154,  [action] => /invite1/accept,  [cmn] => 000011111 )  ) ,  [response:protected] => Podo_Controller_Response Object ( [_DICT:private] => Array ( [RESULTS] => Array ( ) ,  [TARGET] => Array ( [URL] => ,  [VIEW] => Invite1_Accept )  ) ,  [templateCmn] => 000011111,  [controllerVal] => 1 ) ,  [cookie:protected] => Podo_Controller_Cookie Object ( [name] => ,  [expire] => 0,  [path] => ,  [domain] => ,  [_strValue:protected] => ,  [_arrSubValue:protected] => Array ( ) ,  [_strEncodingIn:protected] => utf-8,  [_strEncodingOut:protected] => utf-8,  [_isCrypt:protected] => ,  [_strCryptKey:protected] =>  ) ,  [json:protected] => Podo_Controller_Json Object ( ) ,  [_isExceptionThrowed:protected] =>  ) ) called at [/skcomms/frw/kiwi/podo/class/Podo.php:76]
+#5  Podo::execute() called at [docroot/index.php:4]
+
+
+..... Elapsed Time: TOTAL 10.16 msec, USR 8.00 msec (78.7%), SYS 2.00 msec (19.7%)
+
+===== [/~mong/mycyworld2/index.php 16:29:07] ============================================================
+
+
+..... Elapsed Time: TOTAL 5.26 msec, USR 5.00 msec (95.1%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 16:29:07] ============================================================
+
+ACTION: /invite1/accept
+
+User Notice: Undefined request index: controllerVal in /skcomms/frw/kiwi/podo/class/Podo/Controller/Request.php on line 74
+
+#0  Podo_Controller_Request->get('controllerVal') called at [/skcomms/frw/kiwi/podo/class/Podo/Controller/Request.php:189]
+#1  Podo_Controller_Request->__get('controllerVal') called at [tmp/Podo/Template/1.0.2/Invite1/AcceptTemplate.php:11]
+#2  Invite1_AcceptTemplate->printHead(-1, -1) called at [/skcomms/frw/kiwi/podo/class/Podo/Template/Base.php:6]
+#3  Podo_Template_Base->display() called at [/skcomms/frw/kiwi/podo/class/Podo.php:127]
+#4  Podo::_executeView(Invite1Controller Object ( [request:protected] => Podo_Controller_Request Object ( [_params:private] => Array ( [addr] => Array ( [value] => 192.168.248.154,  [type] => GET ) ,  [action] => Array ( [value] => /invite1/accept,  [type] => GET ) ,  [cmn] => Array ( [value] => 000011111,  [type] => GET )  ) ,  [get] => ,  [post] => ,  [cookie] => ,  [session] => ,  [file] => ,  [__items:protected] => Array ( [addr] => 192.168.248.154,  [action] => /invite1/accept,  [cmn] => 000011111 )  ) ,  [response:protected] => Podo_Controller_Response Object ( [_DICT:private] => Array ( [RESULTS] => Array ( ) ,  [TARGET] => Array ( [URL] => ,  [VIEW] => Invite1_Accept )  ) ,  [templateCmn] => 000011111,  [controllerVal] => 1 ) ,  [cookie:protected] => Podo_Controller_Cookie Object ( [name] => ,  [expire] => 0,  [path] => ,  [domain] => ,  [_strValue:protected] => ,  [_arrSubValue:protected] => Array ( ) ,  [_strEncodingIn:protected] => utf-8,  [_strEncodingOut:protected] => utf-8,  [_isCrypt:protected] => ,  [_strCryptKey:protected] =>  ) ,  [json:protected] => Podo_Controller_Json Object ( ) ,  [_isExceptionThrowed:protected] =>  ) ) called at [/skcomms/frw/kiwi/podo/class/Podo.php:76]
+#5  Podo::execute() called at [docroot/index.php:4]
+
+
+..... Elapsed Time: TOTAL 5.26 msec, USR 5.00 msec (95.1%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 16:29:26] ============================================================
+
+
+..... Elapsed Time: TOTAL 6.53 msec, USR 6.00 msec (91.9%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 16:29:26] ============================================================
+
+ACTION: /invite1/accept
+
+User Notice: Undefined request index: controllerVal in /skcomms/frw/kiwi/podo/class/Podo/Controller/Request.php on line 74
+
+#0  Podo_Controller_Request->get('controllerVal') called at [/skcomms/frw/kiwi/podo/class/Podo/Controller/Request.php:189]
+#1  Podo_Controller_Request->__get('controllerVal') called at [tmp/Podo/Template/1.0.2/Invite1/AcceptTemplate.php:11]
+#2  Invite1_AcceptTemplate->printHead(-1, -1) called at [/skcomms/frw/kiwi/podo/class/Podo/Template/Base.php:6]
+#3  Podo_Template_Base->display() called at [/skcomms/frw/kiwi/podo/class/Podo.php:127]
+#4  Podo::_executeView(Invite1Controller Object ( [request:protected] => Podo_Controller_Request Object ( [_params:private] => Array ( [addr] => Array ( [value] => 192.168.248.154,  [type] => GET ) ,  [action] => Array ( [value] => /invite1/accept,  [type] => GET ) ,  [cmn] => Array ( [value] => 000011111,  [type] => GET )  ) ,  [get] => ,  [post] => ,  [cookie] => ,  [session] => ,  [file] => ,  [__items:protected] => Array ( [addr] => 192.168.248.154,  [action] => /invite1/accept,  [cmn] => 000011111 )  ) ,  [response:protected] => Podo_Controller_Response Object ( [_DICT:private] => Array ( [RESULTS] => Array ( ) ,  [TARGET] => Array ( [URL] => ,  [VIEW] => Invite1_Accept )  ) ,  [templateCmn] => 000011111,  [controllerVal] => 1 ) ,  [cookie:protected] => Podo_Controller_Cookie Object ( [name] => ,  [expire] => 0,  [path] => ,  [domain] => ,  [_strValue:protected] => ,  [_arrSubValue:protected] => Array ( ) ,  [_strEncodingIn:protected] => utf-8,  [_strEncodingOut:protected] => utf-8,  [_isCrypt:protected] => ,  [_strCryptKey:protected] =>  ) ,  [json:protected] => Podo_Controller_Json Object ( ) ,  [_isExceptionThrowed:protected] =>  ) ) called at [/skcomms/frw/kiwi/podo/class/Podo.php:76]
+#5  Podo::execute() called at [docroot/index.php:4]
+
+
+..... Elapsed Time: TOTAL 6.53 msec, USR 6.00 msec (91.9%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 16:29:27] ============================================================
+
+
+..... Elapsed Time: TOTAL 4.89 msec, USR 4.00 msec (81.8%), SYS 1.00 msec (20.4%)
+
+===== [/~mong/mycyworld2/index.php 16:29:27] ============================================================
+
+ACTION: /invite1/accept
+
+User Notice: Undefined request index: controllerVal in /skcomms/frw/kiwi/podo/class/Podo/Controller/Request.php on line 74
+
+#0  Podo_Controller_Request->get('controllerVal') called at [/skcomms/frw/kiwi/podo/class/Podo/Controller/Request.php:189]
+#1  Podo_Controller_Request->__get('controllerVal') called at [tmp/Podo/Template/1.0.2/Invite1/AcceptTemplate.php:11]
+#2  Invite1_AcceptTemplate->printHead(-1, -1) called at [/skcomms/frw/kiwi/podo/class/Podo/Template/Base.php:6]
+#3  Podo_Template_Base->display() called at [/skcomms/frw/kiwi/podo/class/Podo.php:127]
+#4  Podo::_executeView(Invite1Controller Object ( [request:protected] => Podo_Controller_Request Object ( [_params:private] => Array ( [addr] => Array ( [value] => 192.168.248.154,  [type] => GET ) ,  [action] => Array ( [value] => /invite1/accept,  [type] => GET ) ,  [cmn] => Array ( [value] => 000011111,  [type] => GET )  ) ,  [get] => ,  [post] => ,  [cookie] => ,  [session] => ,  [file] => ,  [__items:protected] => Array ( [addr] => 192.168.248.154,  [action] => /invite1/accept,  [cmn] => 000011111 )  ) ,  [response:protected] => Podo_Controller_Response Object ( [_DICT:private] => Array ( [RESULTS] => Array ( ) ,  [TARGET] => Array ( [URL] => ,  [VIEW] => Invite1_Accept )  ) ,  [templateCmn] => 000011111,  [controllerVal] => 1 ) ,  [cookie:protected] => Podo_Controller_Cookie Object ( [name] => ,  [expire] => 0,  [path] => ,  [domain] => ,  [_strValue:protected] => ,  [_arrSubValue:protected] => Array ( ) ,  [_strEncodingIn:protected] => utf-8,  [_strEncodingOut:protected] => utf-8,  [_isCrypt:protected] => ,  [_strCryptKey:protected] =>  ) ,  [json:protected] => Podo_Controller_Json Object ( ) ,  [_isExceptionThrowed:protected] =>  ) ) called at [/skcomms/frw/kiwi/podo/class/Podo.php:76]
+#5  Podo::execute() called at [docroot/index.php:4]
+
+
+..... Elapsed Time: TOTAL 4.87 msec, USR 4.00 msec (82.1%), SYS 1.00 msec (20.5%)
+
+===== [/~mong/mycyworld2/index.php 16:29:42] ============================================================
+
+
+..... Elapsed Time: TOTAL 11.19 msec, USR 9.00 msec (80.4%), SYS 3.00 msec (26.8%)
+
+===== [/~mong/mycyworld2/index.php 16:29:42] ============================================================
+
+ACTION: /invite1/accept
+
+User Notice: Undefined request index: al in /skcomms/frw/kiwi/podo/class/Podo/Controller/Request.php on line 74
+
+#0  Podo_Controller_Request->get('al') called at [/skcomms/frw/kiwi/podo/class/Podo/Controller/Request.php:189]
+#1  Podo_Controller_Request->__get('al') called at [tmp/Podo/Template/1.0.2/Invite1/AcceptTemplate.php:11]
+#2  Invite1_AcceptTemplate->printHead(-1, -1) called at [/skcomms/frw/kiwi/podo/class/Podo/Template/Base.php:6]
+#3  Podo_Template_Base->display() called at [/skcomms/frw/kiwi/podo/class/Podo.php:127]
+#4  Podo::_executeView(Invite1Controller Object ( [request:protected] => Podo_Controller_Request Object ( [_params:private] => Array ( [addr] => Array ( [value] => 192.168.248.154,  [type] => GET ) ,  [action] => Array ( [value] => /invite1/accept,  [type] => GET ) ,  [cmn] => Array ( [value] => 000011111,  [type] => GET )  ) ,  [get] => ,  [post] => ,  [cookie] => ,  [session] => ,  [file] => ,  [__items:protected] => Array ( [addr] => 192.168.248.154,  [action] => /invite1/accept,  [cmn] => 000011111 )  ) ,  [response:protected] => Podo_Controller_Response Object ( [_DICT:private] => Array ( [RESULTS] => Array ( ) ,  [TARGET] => Array ( [URL] => ,  [VIEW] => Invite1_Accept )  ) ,  [templateCmn] => 000011111,  [al] => 1 ) ,  [cookie:protected] => Podo_Controller_Cookie Object ( [name] => ,  [expire] => 0,  [path] => ,  [domain] => ,  [_strValue:protected] => ,  [_arrSubValue:protected] => Array ( ) ,  [_strEncodingIn:protected] => utf-8,  [_strEncodingOut:protected] => utf-8,  [_isCrypt:protected] => ,  [_strCryptKey:protected] =>  ) ,  [json:protected] => Podo_Controller_Json Object ( ) ,  [_isExceptionThrowed:protected] =>  ) ) called at [/skcomms/frw/kiwi/podo/class/Podo.php:76]
+#5  Podo::execute() called at [docroot/index.php:4]
+
+
+..... Elapsed Time: TOTAL 11.21 msec, USR 9.00 msec (80.3%), SYS 3.00 msec (26.8%)
+
+===== [/~mong/mycyworld2/index.php 16:29:42] ============================================================
+
+
+..... Elapsed Time: TOTAL 4.74 msec, USR 5.00 msec (105.5%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 16:29:42] ============================================================
+
+ACTION: /invite1/accept
+
+User Notice: Undefined request index: al in /skcomms/frw/kiwi/podo/class/Podo/Controller/Request.php on line 74
+
+#0  Podo_Controller_Request->get('al') called at [/skcomms/frw/kiwi/podo/class/Podo/Controller/Request.php:189]
+#1  Podo_Controller_Request->__get('al') called at [tmp/Podo/Template/1.0.2/Invite1/AcceptTemplate.php:11]
+#2  Invite1_AcceptTemplate->printHead(-1, -1) called at [/skcomms/frw/kiwi/podo/class/Podo/Template/Base.php:6]
+#3  Podo_Template_Base->display() called at [/skcomms/frw/kiwi/podo/class/Podo.php:127]
+#4  Podo::_executeView(Invite1Controller Object ( [request:protected] => Podo_Controller_Request Object ( [_params:private] => Array ( [addr] => Array ( [value] => 192.168.248.154,  [type] => GET ) ,  [action] => Array ( [value] => /invite1/accept,  [type] => GET ) ,  [cmn] => Array ( [value] => 000011111,  [type] => GET )  ) ,  [get] => ,  [post] => ,  [cookie] => ,  [session] => ,  [file] => ,  [__items:protected] => Array ( [addr] => 192.168.248.154,  [action] => /invite1/accept,  [cmn] => 000011111 )  ) ,  [response:protected] => Podo_Controller_Response Object ( [_DICT:private] => Array ( [RESULTS] => Array ( ) ,  [TARGET] => Array ( [URL] => ,  [VIEW] => Invite1_Accept )  ) ,  [templateCmn] => 000011111,  [al] => 1 ) ,  [cookie:protected] => Podo_Controller_Cookie Object ( [name] => ,  [expire] => 0,  [path] => ,  [domain] => ,  [_strValue:protected] => ,  [_arrSubValue:protected] => Array ( ) ,  [_strEncodingIn:protected] => utf-8,  [_strEncodingOut:protected] => utf-8,  [_isCrypt:protected] => ,  [_strCryptKey:protected] =>  ) ,  [json:protected] => Podo_Controller_Json Object ( ) ,  [_isExceptionThrowed:protected] =>  ) ) called at [/skcomms/frw/kiwi/podo/class/Podo.php:76]
+#5  Podo::execute() called at [docroot/index.php:4]
+
+
+..... Elapsed Time: TOTAL 4.71 msec, USR 5.00 msec (106.2%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 16:30:04] ============================================================
+
+
+..... Elapsed Time: TOTAL 12.12 msec, USR 12.00 msec (99.0%), SYS 1.00 msec (8.3%)
+
+===== [/~mong/mycyworld2/index.php 16:30:04] ============================================================
+
+ACTION: /invite1/accept
+
+User Notice: Undefined request index: al in /skcomms/frw/kiwi/podo/class/Podo/Controller/Request.php on line 74
+
+#0  Podo_Controller_Request->get('al') called at [/skcomms/frw/kiwi/podo/class/Podo/Controller/Request.php:189]
+#1  Podo_Controller_Request->__get('al') called at [tmp/Podo/Template/1.0.2/Invite1/AcceptTemplate.php:11]
+#2  Invite1_AcceptTemplate->printHead(-1, -1) called at [/skcomms/frw/kiwi/podo/class/Podo/Template/Base.php:6]
+#3  Podo_Template_Base->display() called at [/skcomms/frw/kiwi/podo/class/Podo.php:127]
+#4  Podo::_executeView(Invite1Controller Object ( [request:protected] => Podo_Controller_Request Object ( [_params:private] => Array ( [addr] => Array ( [value] => 192.168.248.154,  [type] => GET ) ,  [action] => Array ( [value] => /invite1/accept,  [type] => GET ) ,  [cmn] => Array ( [value] => 000011111,  [type] => GET )  ) ,  [get] => ,  [post] => ,  [cookie] => ,  [session] => ,  [file] => ,  [__items:protected] => Array ( [addr] => 192.168.248.154,  [action] => /invite1/accept,  [cmn] => 000011111 )  ) ,  [response:protected] => Podo_Controller_Response Object ( [_DICT:private] => Array ( [RESULTS] => Array ( ) ,  [TARGET] => Array ( [URL] => ,  [VIEW] => Invite1_Accept )  ) ,  [templateCmn] => 000011111,  [al] => 1 ) ,  [cookie:protected] => Podo_Controller_Cookie Object ( [name] => ,  [expire] => 0,  [path] => ,  [domain] => ,  [_strValue:protected] => ,  [_arrSubValue:protected] => Array ( ) ,  [_strEncodingIn:protected] => utf-8,  [_strEncodingOut:protected] => utf-8,  [_isCrypt:protected] => ,  [_strCryptKey:protected] =>  ) ,  [json:protected] => Podo_Controller_Json Object ( ) ,  [_isExceptionThrowed:protected] =>  ) ) called at [/skcomms/frw/kiwi/podo/class/Podo.php:76]
+#5  Podo::execute() called at [docroot/index.php:4]
+
+
+..... Elapsed Time: TOTAL 12.12 msec, USR 11.00 msec (90.8%), SYS 1.00 msec (8.3%)
+
+===== [/~mong/mycyworld2/index.php 16:30:20] ============================================================
+
+
+..... Elapsed Time: TOTAL 7.53 msec, USR 6.00 msec (79.7%), SYS 2.00 msec (26.6%)
+
+===== [/~mong/mycyworld2/index.php 16:30:20] ============================================================
+
+ACTION: /invite1/accept
+
+
+..... Elapsed Time: TOTAL 7.52 msec, USR 6.00 msec (79.8%), SYS 2.00 msec (26.6%)
+
+===== [/~mong/mycyworld2/index.php 16:30:26] ============================================================
+
+
+..... Elapsed Time: TOTAL 10.14 msec, USR 10.00 msec (98.6%), SYS 1.00 msec (9.9%)
+
+===== [/~mong/mycyworld2/index.php 16:30:26] ============================================================
+
+ACTION: /invite1/accept
+
+User Notice: Undefined request index: al in /skcomms/frw/kiwi/podo/class/Podo/Controller/Request.php on line 74
+
+#0  Podo_Controller_Request->get('al') called at [/skcomms/frw/kiwi/podo/class/Podo/Controller/Request.php:189]
+#1  Podo_Controller_Request->__get('al') called at [tmp/Podo/Template/1.0.2/Invite1/AcceptTemplate.php:11]
+#2  Invite1_AcceptTemplate->printHead(-1, -1) called at [/skcomms/frw/kiwi/podo/class/Podo/Template/Base.php:6]
+#3  Podo_Template_Base->display() called at [/skcomms/frw/kiwi/podo/class/Podo.php:127]
+#4  Podo::_executeView(Invite1Controller Object ( [request:protected] => Podo_Controller_Request Object ( [_params:private] => Array ( [addr] => Array ( [value] => 192.168.248.154,  [type] => GET ) ,  [action] => Array ( [value] => /invite1/accept,  [type] => GET ) ,  [cmn] => Array ( [value] => 000011111,  [type] => GET )  ) ,  [get] => ,  [post] => ,  [cookie] => ,  [session] => ,  [file] => ,  [__items:protected] => Array ( [addr] => 192.168.248.154,  [action] => /invite1/accept,  [cmn] => 000011111 )  ) ,  [response:protected] => Podo_Controller_Response Object ( [_DICT:private] => Array ( [RESULTS] => Array ( ) ,  [TARGET] => Array ( [URL] => ,  [VIEW] => Invite1_Accept )  ) ,  [templateCmn] => 000011111,  [al] => 1 ) ,  [cookie:protected] => Podo_Controller_Cookie Object ( [name] => ,  [expire] => 0,  [path] => ,  [domain] => ,  [_strValue:protected] => ,  [_arrSubValue:protected] => Array ( ) ,  [_strEncodingIn:protected] => utf-8,  [_strEncodingOut:protected] => utf-8,  [_isCrypt:protected] => ,  [_strCryptKey:protected] =>  ) ,  [json:protected] => Podo_Controller_Json Object ( ) ,  [_isExceptionThrowed:protected] =>  ) ) called at [/skcomms/frw/kiwi/podo/class/Podo.php:76]
+#5  Podo::execute() called at [docroot/index.php:4]
+
+
+..... Elapsed Time: TOTAL 10.12 msec, USR 9.00 msec (88.9%), SYS 1.00 msec (9.9%)
+
+===== [/~mong/mycyworld2/index.php 16:30:36] ============================================================
+
+
+..... Elapsed Time: TOTAL 6.12 msec, USR 5.00 msec (81.7%), SYS 1.00 msec (16.3%)
+
+===== [/~mong/mycyworld2/index.php 16:30:36] ============================================================
+
+ACTION: /invite1/accept
+
+User Notice: Undefined request index: al in /skcomms/frw/kiwi/podo/class/Podo/Controller/Request.php on line 74
+
+#0  Podo_Controller_Request->get('al') called at [/skcomms/frw/kiwi/podo/class/Podo/Controller/Request.php:189]
+#1  Podo_Controller_Request->__get('al') called at [tmp/Podo/Template/1.0.2/Invite1/AcceptTemplate.php:11]
+#2  Invite1_AcceptTemplate->printHead(-1, -1) called at [/skcomms/frw/kiwi/podo/class/Podo/Template/Base.php:6]
+#3  Podo_Template_Base->display() called at [/skcomms/frw/kiwi/podo/class/Podo.php:127]
+#4  Podo::_executeView(Invite1Controller Object ( [request:protected] => Podo_Controller_Request Object ( [_params:private] => Array ( [addr] => Array ( [value] => 192.168.248.154,  [type] => GET ) ,  [action] => Array ( [value] => /invite1/accept,  [type] => GET ) ,  [cmn] => Array ( [value] => 000011111,  [type] => GET )  ) ,  [get] => ,  [post] => ,  [cookie] => ,  [session] => ,  [file] => ,  [__items:protected] => Array ( [addr] => 192.168.248.154,  [action] => /invite1/accept,  [cmn] => 000011111 )  ) ,  [response:protected] => Podo_Controller_Response Object ( [_DICT:private] => Array ( [RESULTS] => Array ( ) ,  [TARGET] => Array ( [URL] => ,  [VIEW] => Invite1_Accept )  ) ,  [al] => 1,  [templateCmn] => 000011111 ) ,  [cookie:protected] => Podo_Controller_Cookie Object ( [name] => ,  [expire] => 0,  [path] => ,  [domain] => ,  [_strValue:protected] => ,  [_arrSubValue:protected] => Array ( ) ,  [_strEncodingIn:protected] => utf-8,  [_strEncodingOut:protected] => utf-8,  [_isCrypt:protected] => ,  [_strCryptKey:protected] =>  ) ,  [json:protected] => Podo_Controller_Json Object ( ) ,  [_isExceptionThrowed:protected] =>  ) ) called at [/skcomms/frw/kiwi/podo/class/Podo.php:76]
+#5  Podo::execute() called at [docroot/index.php:4]
+
+
+..... Elapsed Time: TOTAL 6.10 msec, USR 5.00 msec (82.0%), SYS 1.00 msec (16.4%)
+
+===== [/~mong/mycyworld2/index.php 16:30:46] ============================================================
+
+
+..... Elapsed Time: TOTAL 6.08 msec, USR 6.00 msec (98.7%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 16:30:46] ============================================================
+
+ACTION: /invite1/accept
+
+User Notice: Undefined request index: al in /skcomms/frw/kiwi/podo/class/Podo/Controller/Request.php on line 74
+
+#0  Podo_Controller_Request->get('al') called at [/skcomms/frw/kiwi/podo/class/Podo/Controller/Request.php:189]
+#1  Podo_Controller_Request->__get('al') called at [tmp/Podo/Template/1.0.2/Invite1/AcceptTemplate.php:11]
+#2  Invite1_AcceptTemplate->printHead(-1, -1) called at [/skcomms/frw/kiwi/podo/class/Podo/Template/Base.php:6]
+#3  Podo_Template_Base->display() called at [/skcomms/frw/kiwi/podo/class/Podo.php:127]
+#4  Podo::_executeView(Invite1Controller Object ( [request:protected] => Podo_Controller_Request Object ( [_params:private] => Array ( [addr] => Array ( [value] => 192.168.248.154,  [type] => GET ) ,  [action] => Array ( [value] => /invite1/accept,  [type] => GET ) ,  [cmn] => Array ( [value] => 000011111,  [type] => GET )  ) ,  [get] => ,  [post] => ,  [cookie] => ,  [session] => ,  [file] => ,  [__items:protected] => Array ( [addr] => 192.168.248.154,  [action] => /invite1/accept,  [cmn] => 000011111 )  ) ,  [response:protected] => Podo_Controller_Response Object ( [_DICT:private] => Array ( [RESULTS] => Array ( ) ,  [TARGET] => Array ( [URL] => ,  [VIEW] => Invite1_Accept )  ) ,  [al] => 1111,  [templateCmn] => 000011111 ) ,  [cookie:protected] => Podo_Controller_Cookie Object ( [name] => ,  [expire] => 0,  [path] => ,  [domain] => ,  [_strValue:protected] => ,  [_arrSubValue:protected] => Array ( ) ,  [_strEncodingIn:protected] => utf-8,  [_strEncodingOut:protected] => utf-8,  [_isCrypt:protected] => ,  [_strCryptKey:protected] =>  ) ,  [json:protected] => Podo_Controller_Json Object ( ) ,  [_isExceptionThrowed:protected] =>  ) ) called at [/skcomms/frw/kiwi/podo/class/Podo.php:76]
+#5  Podo::execute() called at [docroot/index.php:4]
+
+
+..... Elapsed Time: TOTAL 6.06 msec, USR 6.00 msec (99.0%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 16:30:47] ============================================================
+
+
+..... Elapsed Time: TOTAL 4.73 msec, USR 3.00 msec (63.4%), SYS 2.00 msec (42.3%)
+
+===== [/~mong/mycyworld2/index.php 16:30:47] ============================================================
+
+ACTION: /invite1/accept
+
+User Notice: Undefined request index: al in /skcomms/frw/kiwi/podo/class/Podo/Controller/Request.php on line 74
+
+#0  Podo_Controller_Request->get('al') called at [/skcomms/frw/kiwi/podo/class/Podo/Controller/Request.php:189]
+#1  Podo_Controller_Request->__get('al') called at [tmp/Podo/Template/1.0.2/Invite1/AcceptTemplate.php:11]
+#2  Invite1_AcceptTemplate->printHead(-1, -1) called at [/skcomms/frw/kiwi/podo/class/Podo/Template/Base.php:6]
+#3  Podo_Template_Base->display() called at [/skcomms/frw/kiwi/podo/class/Podo.php:127]
+#4  Podo::_executeView(Invite1Controller Object ( [request:protected] => Podo_Controller_Request Object ( [_params:private] => Array ( [addr] => Array ( [value] => 192.168.248.154,  [type] => GET ) ,  [action] => Array ( [value] => /invite1/accept,  [type] => GET ) ,  [cmn] => Array ( [value] => 000011111,  [type] => GET )  ) ,  [get] => ,  [post] => ,  [cookie] => ,  [session] => ,  [file] => ,  [__items:protected] => Array ( [addr] => 192.168.248.154,  [action] => /invite1/accept,  [cmn] => 000011111 )  ) ,  [response:protected] => Podo_Controller_Response Object ( [_DICT:private] => Array ( [RESULTS] => Array ( ) ,  [TARGET] => Array ( [URL] => ,  [VIEW] => Invite1_Accept )  ) ,  [al] => 1111,  [templateCmn] => 000011111 ) ,  [cookie:protected] => Podo_Controller_Cookie Object ( [name] => ,  [expire] => 0,  [path] => ,  [domain] => ,  [_strValue:protected] => ,  [_arrSubValue:protected] => Array ( ) ,  [_strEncodingIn:protected] => utf-8,  [_strEncodingOut:protected] => utf-8,  [_isCrypt:protected] => ,  [_strCryptKey:protected] =>  ) ,  [json:protected] => Podo_Controller_Json Object ( ) ,  [_isExceptionThrowed:protected] =>  ) ) called at [/skcomms/frw/kiwi/podo/class/Podo.php:76]
+#5  Podo::execute() called at [docroot/index.php:4]
+
+
+..... Elapsed Time: TOTAL 4.71 msec, USR 2.00 msec (42.5%), SYS 2.00 msec (42.5%)
+
+===== [/~mong/mycyworld2/index.php 16:30:47] ============================================================
+
+
+..... Elapsed Time: TOTAL 4.83 msec, USR 3.00 msec (62.1%), SYS 2.00 msec (41.4%)
+
+===== [/~mong/mycyworld2/index.php 16:30:47] ============================================================
+
+ACTION: /invite1/accept
+
+User Notice: Undefined request index: al in /skcomms/frw/kiwi/podo/class/Podo/Controller/Request.php on line 74
+
+#0  Podo_Controller_Request->get('al') called at [/skcomms/frw/kiwi/podo/class/Podo/Controller/Request.php:189]
+#1  Podo_Controller_Request->__get('al') called at [tmp/Podo/Template/1.0.2/Invite1/AcceptTemplate.php:11]
+#2  Invite1_AcceptTemplate->printHead(-1, -1) called at [/skcomms/frw/kiwi/podo/class/Podo/Template/Base.php:6]
+#3  Podo_Template_Base->display() called at [/skcomms/frw/kiwi/podo/class/Podo.php:127]
+#4  Podo::_executeView(Invite1Controller Object ( [request:protected] => Podo_Controller_Request Object ( [_params:private] => Array ( [addr] => Array ( [value] => 192.168.248.154,  [type] => GET ) ,  [action] => Array ( [value] => /invite1/accept,  [type] => GET ) ,  [cmn] => Array ( [value] => 000011111,  [type] => GET )  ) ,  [get] => ,  [post] => ,  [cookie] => ,  [session] => ,  [file] => ,  [__items:protected] => Array ( [addr] => 192.168.248.154,  [action] => /invite1/accept,  [cmn] => 000011111 )  ) ,  [response:protected] => Podo_Controller_Response Object ( [_DICT:private] => Array ( [RESULTS] => Array ( ) ,  [TARGET] => Array ( [URL] => ,  [VIEW] => Invite1_Accept )  ) ,  [al] => 1111,  [templateCmn] => 000011111 ) ,  [cookie:protected] => Podo_Controller_Cookie Object ( [name] => ,  [expire] => 0,  [path] => ,  [domain] => ,  [_strValue:protected] => ,  [_arrSubValue:protected] => Array ( ) ,  [_strEncodingIn:protected] => utf-8,  [_strEncodingOut:protected] => utf-8,  [_isCrypt:protected] => ,  [_strCryptKey:protected] =>  ) ,  [json:protected] => Podo_Controller_Json Object ( ) ,  [_isExceptionThrowed:protected] =>  ) ) called at [/skcomms/frw/kiwi/podo/class/Podo.php:76]
+#5  Podo::execute() called at [docroot/index.php:4]
+
+
+..... Elapsed Time: TOTAL 4.82 msec, USR 3.00 msec (62.2%), SYS 2.00 msec (41.5%)
+
+===== [/~mong/mycyworld2/index.php 16:31:02] ============================================================
+
+
+..... Elapsed Time: TOTAL 7.38 msec, USR 8.00 msec (108.4%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 16:31:02] ============================================================
+
+ACTION: /invite1/accept
+
+
+..... Elapsed Time: TOTAL 7.36 msec, USR 7.00 msec (95.1%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 16:31:21] ============================================================
+
+
+..... Elapsed Time: TOTAL 7.70 msec, USR 7.00 msec (90.9%), SYS 1.00 msec (13.0%)
+
+===== [/~mong/mycyworld2/index.php 16:31:21] ============================================================
+
+ACTION: /invite1/accept
+
+
+..... Elapsed Time: TOTAL 7.68 msec, USR 6.00 msec (78.1%), SYS 1.00 msec (13.0%)
+
+===== [/~mong/mycyworld2/index.php 16:31:52] ============================================================
+
+
+..... Elapsed Time: TOTAL 7.32 msec, USR 5.00 msec (68.3%), SYS 3.00 msec (41.0%)
+
+===== [/~mong/mycyworld2/index.php 16:31:52] ============================================================
+
+ACTION: /invite1/accept
+
+
+..... Elapsed Time: TOTAL 7.30 msec, USR 4.00 msec (54.8%), SYS 3.00 msec (41.1%)
+
+===== [/~mong/mycyworld2/index.php 16:32:59] ============================================================
+
+
+..... Elapsed Time: TOTAL 3.62 msec, USR 3.00 msec (82.9%), SYS 1.00 msec (27.6%)
+
+===== [/~mong/mycyworld2/index.php 16:32:59] ============================================================
+
+ACTION: /invite1/accept
+
+
+..... Elapsed Time: TOTAL 3.62 msec, USR 3.00 msec (82.9%), SYS 1.00 msec (27.6%)
+
+===== [/~mong/mycyworld2/index.php 16:37:52] ============================================================
+
+
+..... Elapsed Time: TOTAL 3.70 msec, USR 3.00 msec (81.1%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 16:37:52] ============================================================
+
+ACTION: /invite1/accept
+
+
+..... Elapsed Time: TOTAL 3.69 msec, USR 3.00 msec (81.3%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 16:38:15] ============================================================
+
+
+..... Elapsed Time: TOTAL 3.24 msec, USR 2.00 msec (61.7%), SYS 1.00 msec (30.9%)
+
+===== [/~mong/mycyworld2/index.php 16:38:15] ============================================================
+
+ACTION: /invite1/accept
+
+
+..... Elapsed Time: TOTAL 3.24 msec, USR 2.00 msec (61.7%), SYS 1.00 msec (30.9%)
+
+===== [/~mong/mycyworld2/index.php 16:38:15] ============================================================
+
+
+..... Elapsed Time: TOTAL 2.03 msec, USR 2.00 msec (98.5%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 16:38:15] ============================================================
+
+ACTION: /invite1/finish
+
+
+..... Elapsed Time: TOTAL 2.05 msec, USR 2.00 msec (97.6%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 16:38:44] ============================================================
+
+
+..... Elapsed Time: TOTAL 3.06 msec, USR 3.00 msec (98.0%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 16:38:44] ============================================================
+
+ACTION: /invite1/accept
+
+
+..... Elapsed Time: TOTAL 3.05 msec, USR 3.00 msec (98.4%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 16:38:44] ============================================================
+
+
+..... Elapsed Time: TOTAL 1.80 msec, USR 1.00 msec (55.6%), SYS 1.00 msec (55.6%)
+
+===== [/~mong/mycyworld2/index.php 16:38:44] ============================================================
+
+ACTION: /invite1/finish
+
+
+..... Elapsed Time: TOTAL 1.78 msec, USR 1.00 msec (56.2%), SYS 1.00 msec (56.2%)
+
+===== [/~mong/mycyworld2/index.php 16:38:45] ============================================================
+
+
+..... Elapsed Time: TOTAL 1.79 msec, USR 1.00 msec (55.9%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 16:38:45] ============================================================
+
+ACTION: /invite1/accept
+
+
+..... Elapsed Time: TOTAL 1.77 msec, USR 2.00 msec (113.0%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 16:38:45] ============================================================
+
+
+..... Elapsed Time: TOTAL 1.80 msec, USR 0.00 msec (0.0%), SYS 2.00 msec (111.1%)
+
+===== [/~mong/mycyworld2/index.php 16:38:45] ============================================================
+
+ACTION: /invite1/finish
+
+
+..... Elapsed Time: TOTAL 1.78 msec, USR 0.00 msec (0.0%), SYS 2.00 msec (112.4%)
+
+===== [/~mong/mycyworld2/index.php 16:38:46] ============================================================
+
+
+..... Elapsed Time: TOTAL 1.79 msec, USR 1.00 msec (55.9%), SYS 1.00 msec (55.9%)
+
+===== [/~mong/mycyworld2/index.php 16:38:46] ============================================================
+
+ACTION: /invite1/accept
+
+
+..... Elapsed Time: TOTAL 1.77 msec, USR 1.00 msec (56.5%), SYS 1.00 msec (56.5%)
+
+===== [/~mong/mycyworld2/index.php 16:38:46] ============================================================
+
+
+..... Elapsed Time: TOTAL 1.75 msec, USR 1.00 msec (57.1%), SYS 1.00 msec (57.1%)
+
+===== [/~mong/mycyworld2/index.php 16:38:46] ============================================================
+
+ACTION: /invite1/finish
+
+
+..... Elapsed Time: TOTAL 1.74 msec, USR 1.00 msec (57.5%), SYS 1.00 msec (57.5%)
+
+===== [/~mong/mycyworld2/index.php 16:38:50] ============================================================
+
+
+..... Elapsed Time: TOTAL 1.71 msec, USR 1.00 msec (58.5%), SYS 1.00 msec (58.5%)
+
+===== [/~mong/mycyworld2/index.php 16:38:50] ============================================================
+
+ACTION: /invite1/accept
+
+
+..... Elapsed Time: TOTAL 1.69 msec, USR 1.00 msec (59.2%), SYS 1.00 msec (59.2%)
+
+===== [/~mong/mycyworld2/index.php 16:38:50] ============================================================
+
+
+..... Elapsed Time: TOTAL 1.69 msec, USR 2.00 msec (118.3%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 16:38:50] ============================================================
+
+ACTION: /invite1/finish
+
+
+..... Elapsed Time: TOTAL 1.67 msec, USR 2.00 msec (119.8%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 17:13:33] ============================================================
+
+
+..... Elapsed Time: TOTAL 2.50 msec, USR 3.00 msec (120.0%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 17:13:33] ============================================================
+
+ACTION: /invite1/finish
+
+
+..... Elapsed Time: TOTAL 2.50 msec, USR 2.00 msec (80.0%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 17:47:53] ============================================================
+
+
+..... Elapsed Time: TOTAL 1.35 msec, USR 2.00 msec (148.1%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 17:47:53] ============================================================
+
+ACTION: /invite1/finish
+
+
+..... Elapsed Time: TOTAL 1.37 msec, USR 2.00 msec (146.0%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 17:47:58] ============================================================
+
+
+..... Elapsed Time: TOTAL 7.42 msec, USR 4.00 msec (53.9%), SYS 4.00 msec (53.9%)
+
+===== [/~mong/mycyworld2/index.php 17:47:58] ============================================================
+
+ACTION: /invite1/accept
+
+
+..... Elapsed Time: TOTAL 7.44 msec, USR 4.00 msec (53.8%), SYS 4.00 msec (53.8%)
+
+===== [/~mong/mycyworld2/index.php 09:43:10] ============================================================
+
+
+..... Elapsed Time: TOTAL 9.49 msec, USR 9.00 msec (94.8%), SYS 1.00 msec (10.5%)
+
+===== [/~mong/mycyworld2/index.php 09:43:10] ============================================================
+
+ACTION: /invite1/add
+
+
+..... Elapsed Time: TOTAL 9.49 msec, USR 9.00 msec (94.8%), SYS 1.00 msec (10.5%)
+
+===== [/~mong/mycyworld2/index.php 09:43:25] ============================================================
+
+
+..... Elapsed Time: TOTAL 3.86 msec, USR 3.00 msec (77.7%), SYS 1.00 msec (25.9%)
+
+===== [/~mong/mycyworld2/index.php 09:43:25] ============================================================
+
+ACTION: /invite1/add
+
+
+..... Elapsed Time: TOTAL 3.85 msec, USR 3.00 msec (77.9%), SYS 1.00 msec (26.0%)
+
+===== [/~mong/mycyworld2/index.php 09:43:44] ============================================================
+
+
+..... Elapsed Time: TOTAL 4.06 msec, USR 3.00 msec (73.9%), SYS 1.00 msec (24.6%)
+
+===== [/~mong/mycyworld2/index.php 09:43:44] ============================================================
+
+ACTION: /invite1/add
+
+
+..... Elapsed Time: TOTAL 4.06 msec, USR 2.00 msec (49.3%), SYS 2.00 msec (49.3%)
+
+===== [/~mong/mycyworld2/index.php 10:44:58] ============================================================
+
+
+..... Elapsed Time: TOTAL 6.82 msec, USR 7.00 msec (102.6%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 10:44:58] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 6.84 msec, USR 7.00 msec (102.3%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 10:45:20] ============================================================
+
+
+..... Elapsed Time: TOTAL 4.57 msec, USR 3.00 msec (65.6%), SYS 2.00 msec (43.8%)
+
+===== [/~mong/mycyworld2/index.php 10:45:20] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 4.57 msec, USR 3.00 msec (65.6%), SYS 2.00 msec (43.8%)
+
+===== [/~mong/mycyworld2/index.php 10:45:39] ============================================================
+
+
+..... Elapsed Time: TOTAL 3.61 msec, USR 1.00 msec (27.7%), SYS 3.00 msec (83.1%)
+
+===== [/~mong/mycyworld2/index.php 10:45:39] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 3.65 msec, USR 1.00 msec (27.4%), SYS 3.00 msec (82.2%)
+
+===== [/~mong/mycyworld2/index.php 10:45:53] ============================================================
+
+
+..... Elapsed Time: TOTAL 3.15 msec, USR 3.00 msec (95.2%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 10:45:53] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 3.14 msec, USR 3.00 msec (95.5%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 10:48:59] ============================================================
+
+
+..... Elapsed Time: TOTAL 4.63 msec, USR 5.00 msec (108.0%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 10:48:59] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 4.63 msec, USR 4.00 msec (86.4%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 10:49:29] ============================================================
+
+
+..... Elapsed Time: TOTAL 3.79 msec, USR 3.00 msec (79.2%), SYS 1.00 msec (26.4%)
+
+===== [/~mong/mycyworld2/index.php 10:49:29] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 3.63 msec, USR 2.00 msec (55.1%), SYS 1.00 msec (27.5%)
+
+===== [/~mong/mycyworld2/index.php 10:49:41] ============================================================
+
+
+..... Elapsed Time: TOTAL 3.55 msec, USR 2.00 msec (56.3%), SYS 1.00 msec (28.2%)
+
+===== [/~mong/mycyworld2/index.php 10:49:41] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 3.55 msec, USR 2.00 msec (56.3%), SYS 1.00 msec (28.2%)
+
+===== [/~mong/mycyworld2/index.php 10:50:07] ============================================================
+
+
+..... Elapsed Time: TOTAL 3.25 msec, USR 1.00 msec (30.8%), SYS 2.00 msec (61.5%)
+
+===== [/~mong/mycyworld2/index.php 10:50:07] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 3.24 msec, USR 1.00 msec (30.9%), SYS 2.00 msec (61.7%)
+
+===== [/~mong/mycyworld2/index.php 10:50:19] ============================================================
+
+
+..... Elapsed Time: TOTAL 3.36 msec, USR 3.00 msec (89.3%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 10:50:19] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 3.39 msec, USR 3.00 msec (88.5%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 10:50:38] ============================================================
+
+
+..... Elapsed Time: TOTAL 3.08 msec, USR 3.00 msec (97.4%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 10:50:38] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 3.07 msec, USR 3.00 msec (97.7%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 10:51:03] ============================================================
+
+
+..... Elapsed Time: TOTAL 4.76 msec, USR 5.00 msec (105.0%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 10:51:03] ============================================================
+
+ACTION: /member/secretBoard
+
+User Warning: BaseObject::__call() - regDt 멤버변수는 값이 없습니다. getRegDt() 메서드는 먼저 setRegDt() 한 후에 호출해야 합니다. in /home/mong/project/mycyworld2/class/BaseObject.php on line 29
+
+#0  BaseObject->__call('getRegDt', Array ( ) ) called at [:0]
+#1  Board->getRegDt() called at [class/Board.php:40]
+#2  Board->transTimeformat() called at [controller/MemberController.php:47]
+#3  MemberController->doSecretBoard() called at [/skcomms/frw/kiwi/podo/class/Podo.php:87]
+#4  Podo::_executeAction(Array ( [CONTROLLER] => MemberController,  [ACTION] => doSecretBoard,  [VIEW] => Member_SecretBoard ) , Array ( [addr] => 192.168.248.154,  [action] => /member/secretBoard ) ) called at [/skcomms/frw/kiwi/podo/class/Podo.php:75]
+#5  Podo::execute() called at [docroot/index.php:4]
+
+
+..... Elapsed Time: TOTAL 4.73 msec, USR 4.00 msec (84.6%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 10:51:18] ============================================================
+
+
+..... Elapsed Time: TOTAL 3.18 msec, USR 2.00 msec (62.9%), SYS 2.00 msec (62.9%)
+
+===== [/~mong/mycyworld2/index.php 10:51:18] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 3.21 msec, USR 1.00 msec (31.2%), SYS 2.00 msec (62.3%)
+
+===== [/~mong/mycyworld2/index.php 10:51:27] ============================================================
+
+
+..... Elapsed Time: TOTAL 3.97 msec, USR 3.00 msec (75.6%), SYS 1.00 msec (25.2%)
+
+===== [/~mong/mycyworld2/index.php 10:51:27] ============================================================
+
+ACTION: /member/secretBoard
+
+User Warning: BaseObject::__call() - regDt 멤버변수는 값이 없습니다. getRegDt() 메서드는 먼저 setRegDt() 한 후에 호출해야 합니다. in /home/mong/project/mycyworld2/class/BaseObject.php on line 29
+
+#0  BaseObject->__call('getRegDt', Array ( ) ) called at [:0]
+#1  Board->getRegDt() called at [class/Board.php:40]
+#2  Board->transTimeformat() called at [controller/MemberController.php:47]
+#3  MemberController->doSecretBoard() called at [/skcomms/frw/kiwi/podo/class/Podo.php:87]
+#4  Podo::_executeAction(Array ( [CONTROLLER] => MemberController,  [ACTION] => doSecretBoard,  [VIEW] => Member_SecretBoard ) , Array ( [addr] => 192.168.248.154,  [action] => /member/secretBoard ) ) called at [/skcomms/frw/kiwi/podo/class/Podo.php:75]
+#5  Podo::execute() called at [docroot/index.php:4]
+
+
+..... Elapsed Time: TOTAL 3.96 msec, USR 3.00 msec (75.8%), SYS 1.00 msec (25.3%)
+
+===== [/~mong/mycyworld2/index.php 10:52:20] ============================================================
+
+
+..... Elapsed Time: TOTAL 4.40 msec, USR 4.00 msec (90.9%), SYS 1.00 msec (22.7%)
+
+===== [/~mong/mycyworld2/index.php 10:52:20] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 4.39 msec, USR 3.00 msec (68.3%), SYS 1.00 msec (22.8%)
+
+===== [/~mong/mycyworld2/index.php 11:07:35] ============================================================
+
+
+..... Elapsed Time: TOTAL 3.49 msec, USR 2.00 msec (57.3%), SYS 2.00 msec (57.3%)
+
+===== [/~mong/mycyworld2/index.php 11:07:35] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 3.52 msec, USR 1.00 msec (28.4%), SYS 2.00 msec (56.8%)
+
+===== [/~mong/mycyworld2/index.php 11:08:21] ============================================================
+
+
+..... Elapsed Time: TOTAL 38.16 msec, USR 15.00 msec (39.3%), SYS 5.00 msec (13.1%)
+
+===== [/~mong/mycyworld2/index.php 11:08:21] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 38.16 msec, USR 15.00 msec (39.3%), SYS 5.00 msec (13.1%)
+
+===== [/~mong/mycyworld2/index.php 11:12:37] ============================================================
+
+
+..... Elapsed Time: TOTAL 5.60 msec, USR 4.00 msec (71.4%), SYS 2.00 msec (35.7%)
+
+===== [/~mong/mycyworld2/index.php 11:12:37] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 5.61 msec, USR 4.00 msec (71.3%), SYS 2.00 msec (35.7%)
+
+===== [/~mong/mycyworld2/index.php 11:12:38] ============================================================
+
+
+..... Elapsed Time: TOTAL 3.01 msec, USR 3.00 msec (99.7%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 11:12:38] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 3.03 msec, USR 3.00 msec (99.0%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 11:12:39] ============================================================
+
+
+..... Elapsed Time: TOTAL 2.77 msec, USR 1.00 msec (36.1%), SYS 1.00 msec (36.1%)
+
+===== [/~mong/mycyworld2/index.php 11:12:39] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 2.78 msec, USR 2.00 msec (71.9%), SYS 1.00 msec (36.0%)
+
+===== [/~mong/mycyworld2/index.php 11:12:39] ============================================================
+
+
+..... Elapsed Time: TOTAL 2.55 msec, USR 3.00 msec (117.6%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 11:12:39] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 2.53 msec, USR 2.00 msec (79.1%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 11:12:41] ============================================================
+
+
+..... Elapsed Time: TOTAL 2.60 msec, USR 1.00 msec (38.5%), SYS 1.00 msec (38.5%)
+
+===== [/~mong/mycyworld2/index.php 11:12:41] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 2.62 msec, USR 1.00 msec (38.2%), SYS 2.00 msec (76.3%)
+
+===== [/~mong/mycyworld2/index.php 11:12:41] ============================================================
+
+
+..... Elapsed Time: TOTAL 2.38 msec, USR 1.00 msec (42.0%), SYS 1.00 msec (42.0%)
+
+===== [/~mong/mycyworld2/index.php 11:12:41] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 2.42 msec, USR 1.00 msec (41.3%), SYS 1.00 msec (41.3%)
+
+===== [/~mong/mycyworld2/index.php 11:12:49] ============================================================
+
+
+..... Elapsed Time: TOTAL 4.06 msec, USR 2.00 msec (49.3%), SYS 2.00 msec (49.3%)
+
+===== [/~mong/mycyworld2/index.php 11:12:49] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 4.05 msec, USR 2.00 msec (49.4%), SYS 2.00 msec (49.4%)
+
+===== [/~mong/mycyworld2/index.php 11:14:25] ============================================================
+
+
+..... Elapsed Time: TOTAL 4.13 msec, USR 4.00 msec (96.9%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 11:14:25] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 4.16 msec, USR 4.00 msec (96.2%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 11:14:26] ============================================================
+
+
+..... Elapsed Time: TOTAL 2.41 msec, USR 2.00 msec (83.0%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 11:14:26] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 2.40 msec, USR 2.00 msec (83.3%), SYS 1.00 msec (41.7%)
+
+===== [/~mong/mycyworld2/index.php 11:14:27] ============================================================
+
+
+..... Elapsed Time: TOTAL 2.56 msec, USR 2.00 msec (78.1%), SYS 1.00 msec (39.1%)
+
+===== [/~mong/mycyworld2/index.php 11:14:27] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 2.55 msec, USR 2.00 msec (78.4%), SYS 1.00 msec (39.2%)
+
+===== [/~mong/mycyworld2/index.php 11:14:27] ============================================================
+
+
+..... Elapsed Time: TOTAL 2.60 msec, USR 2.00 msec (76.9%), SYS 1.00 msec (38.5%)
+
+===== [/~mong/mycyworld2/index.php 11:14:27] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 2.62 msec, USR 2.00 msec (76.3%), SYS 1.00 msec (38.2%)
+
+===== [/~mong/mycyworld2/index.php 11:14:27] ============================================================
+
+
+..... Elapsed Time: TOTAL 2.39 msec, USR 2.00 msec (83.7%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 11:14:27] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 2.38 msec, USR 2.00 msec (84.0%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 11:14:27] ============================================================
+
+
+..... Elapsed Time: TOTAL 2.55 msec, USR 3.00 msec (117.6%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 11:14:27] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 2.53 msec, USR 3.00 msec (118.6%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 11:14:38] ============================================================
+
+
+..... Elapsed Time: TOTAL 9.70 msec, USR 8.00 msec (82.5%), SYS 1.00 msec (10.3%)
+
+===== [/~mong/mycyworld2/index.php 11:14:38] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 9.73 msec, USR 8.00 msec (82.2%), SYS 1.00 msec (10.3%)
+
+===== [/~mong/mycyworld2/index.php 11:14:49] ============================================================
+
+
+..... Elapsed Time: TOTAL 4.64 msec, USR 4.00 msec (86.2%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 11:14:49] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 4.65 msec, USR 5.00 msec (107.5%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 11:15:02] ============================================================
+
+
+..... Elapsed Time: TOTAL 11.01 msec, USR 9.00 msec (81.7%), SYS 2.00 msec (18.2%)
+
+===== [/~mong/mycyworld2/index.php 11:15:02] ============================================================
+
+ACTION: /member/secretBoard
+
+Fatal Error: Object of class Board could not be converted to string in /home/mong/project/mycyworld2/template/Invite/Accept.tpl on line 4
+
+#0  Invite_AcceptTemplate->printHead(-1, -1) called at [/skcomms/frw/kiwi/podo/class/Podo/Template/Base.php:6]
+#1  Podo_Template_Base->display() called at [/skcomms/frw/kiwi/podo/class/Podo.php:127]
+#2  Podo::_executeView(MemberController Object ( [request:protected] => Podo_Controller_Request Object ( [_params:private] => Array ( [addr] => Array ( [value] => 192.168.248.154,  [type] => GET ) ,  [action] => Array ( [value] => /member/secretBoard,  [type] => GET )  ) ,  [get] => ,  [post] => ,  [cookie] => ,  [session] => ,  [file] => ,  [__items:protected] => Array ( [addr] => 192.168.248.154,  [action] => /member/secretBoard )  ) ,  [response:protected] => Podo_Controller_Response Object ( [_DICT:private] => Array ( [RESULTS] => Array ( ) ,  [TARGET] => Array ( [URL] => ,  [VIEW] => Invite_Accept )  ) ,  [board] => Board Object ( [__idx:protected] => 11231312,  [__name:protected] => 테스터,  [__subject:protected] => ,  [__content:protected] => ,  [__regDt:protected] => 1305730800,  [__userCreatedTime:protected] => ,  [__member:protected] => Member Object ( [__userId:protected] => infra,  [__name:protected] => ,  [isLoaded:protected] => ,  [isEmptyStatus:protected] =>  ) ,  [isLoaded:protected] => ,  [isEmptyStatus:protected] =>  )  ) ,  [cookie:protected] => Podo_Controller_Cookie Object ( [name] => ,  [expire] => 0,  [path] => ,  [domain] => ,  [_strValue:protected] => ,  [_arrSubValue:protected] => Array ( ) ,  [_strEncodingIn:protected] => utf-8,  [_strEncodingOut:protected] => utf-8,  [_isCrypt:protected] => ,  [_strCryptKey:protected] =>  ) ,  [json:protected] => Podo_Controller_Json Object ( ) ,  [_isExceptionThrowed:protected] =>  ) ) called at [/skcomms/frw/kiwi/podo/class/Podo.php:76]
+#3  Podo::execute() called at [docroot/index.php:4]
+
+
+..... Elapsed Time: TOTAL 11.04 msec, USR 9.00 msec (81.5%), SYS 2.00 msec (18.1%)
+
+===== [/~mong/mycyworld2/index.php 11:15:07] ============================================================
+
+
+..... Elapsed Time: TOTAL 5.97 msec, USR 6.00 msec (100.5%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 11:15:07] ============================================================
+
+ACTION: /member/secretBoard
+
+Fatal Error: Object of class Board could not be converted to string in /home/mong/project/mycyworld2/template/Invite/Accept.tpl on line 4
+
+#0  Invite_AcceptTemplate->printHead(-1, -1) called at [/skcomms/frw/kiwi/podo/class/Podo/Template/Base.php:6]
+#1  Podo_Template_Base->display() called at [/skcomms/frw/kiwi/podo/class/Podo.php:127]
+#2  Podo::_executeView(MemberController Object ( [request:protected] => Podo_Controller_Request Object ( [_params:private] => Array ( [addr] => Array ( [value] => 192.168.248.154,  [type] => GET ) ,  [action] => Array ( [value] => /member/secretBoard,  [type] => GET )  ) ,  [get] => ,  [post] => ,  [cookie] => ,  [session] => ,  [file] => ,  [__items:protected] => Array ( [addr] => 192.168.248.154,  [action] => /member/secretBoard )  ) ,  [response:protected] => Podo_Controller_Response Object ( [_DICT:private] => Array ( [RESULTS] => Array ( ) ,  [TARGET] => Array ( [URL] => ,  [VIEW] => Invite_Accept )  ) ,  [board] => Board Object ( [__idx:protected] => 11231312,  [__name:protected] => 테스터,  [__subject:protected] => ,  [__content:protected] => ,  [__regDt:protected] => 1305730800,  [__userCreatedTime:protected] => ,  [__member:protected] => Member Object ( [__userId:protected] => infra,  [__name:protected] => ,  [isLoaded:protected] => ,  [isEmptyStatus:protected] =>  ) ,  [isLoaded:protected] => ,  [isEmptyStatus:protected] =>  )  ) ,  [cookie:protected] => Podo_Controller_Cookie Object ( [name] => ,  [expire] => 0,  [path] => ,  [domain] => ,  [_strValue:protected] => ,  [_arrSubValue:protected] => Array ( ) ,  [_strEncodingIn:protected] => utf-8,  [_strEncodingOut:protected] => utf-8,  [_isCrypt:protected] => ,  [_strCryptKey:protected] =>  ) ,  [json:protected] => Podo_Controller_Json Object ( ) ,  [_isExceptionThrowed:protected] =>  ) ) called at [/skcomms/frw/kiwi/podo/class/Podo.php:76]
+#3  Podo::execute() called at [docroot/index.php:4]
+
+
+..... Elapsed Time: TOTAL 6.00 msec, USR 6.00 msec (100.0%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 11:15:17] ============================================================
+
+
+..... Elapsed Time: TOTAL 7.31 msec, USR 6.00 msec (82.1%), SYS 2.00 msec (27.4%)
+
+===== [/~mong/mycyworld2/index.php 11:15:17] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 7.30 msec, USR 6.00 msec (82.2%), SYS 2.00 msec (27.4%)
+
+===== [/~mong/mycyworld2/index.php 11:15:31] ============================================================
+
+
+..... Elapsed Time: TOTAL 10.46 msec, USR 10.00 msec (95.6%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 11:15:31] ============================================================
+
+ACTION: /member/secretBoard
+
+Notice: Undefined property: Board::$member in /home/mong/project/mycyworld2/template/Invite/Accept.tpl on line 4
+
+#0  Invite_AcceptTemplate->printHead(-1, -1) called at [/skcomms/frw/kiwi/podo/class/Podo/Template/Base.php:6]
+#1  Podo_Template_Base->display() called at [/skcomms/frw/kiwi/podo/class/Podo.php:127]
+#2  Podo::_executeView(MemberController Object ( [request:protected] => Podo_Controller_Request Object ( [_params:private] => Array ( [addr] => Array ( [value] => 192.168.248.154,  [type] => GET ) ,  [action] => Array ( [value] => /member/secretBoard,  [type] => GET )  ) ,  [get] => ,  [post] => ,  [cookie] => ,  [session] => ,  [file] => ,  [__items:protected] => Array ( [addr] => 192.168.248.154,  [action] => /member/secretBoard )  ) ,  [response:protected] => Podo_Controller_Response Object ( [_DICT:private] => Array ( [RESULTS] => Array ( ) ,  [TARGET] => Array ( [URL] => ,  [VIEW] => Invite_Accept )  ) ,  [board] => Board Object ( [__idx:protected] => 11231312,  [__name:protected] => 테스터,  [__subject:protected] => ,  [__content:protected] => ,  [__regDt:protected] => 1305730800,  [__userCreatedTime:protected] => ,  [__member:protected] => Member Object ( [__userId:protected] => infra,  [__name:protected] => ,  [isLoaded:protected] => ,  [isEmptyStatus:protected] =>  ) ,  [isLoaded:protected] => ,  [isEmptyStatus:protected] =>  )  ) ,  [cookie:protected] => Podo_Controller_Cookie Object ( [name] => ,  [expire] => 0,  [path] => ,  [domain] => ,  [_strValue:protected] => ,  [_arrSubValue:protected] => Array ( ) ,  [_strEncodingIn:protected] => utf-8,  [_strEncodingOut:protected] => utf-8,  [_isCrypt:protected] => ,  [_strCryptKey:protected] =>  ) ,  [json:protected] => Podo_Controller_Json Object ( ) ,  [_isExceptionThrowed:protected] =>  ) ) called at [/skcomms/frw/kiwi/podo/class/Podo.php:76]
+#3  Podo::execute() called at [docroot/index.php:4]
+
+
+..... Elapsed Time: TOTAL 10.45 msec, USR 10.00 msec (95.7%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 11:15:43] ============================================================
+
+
+..... Elapsed Time: TOTAL 8.28 msec, USR 5.00 msec (60.4%), SYS 3.00 msec (36.2%)
+
+===== [/~mong/mycyworld2/index.php 11:15:43] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 8.31 msec, USR 5.00 msec (60.2%), SYS 3.00 msec (36.1%)
+
+===== [/~mong/mycyworld2/index.php 11:15:57] ============================================================
+
+
+..... Elapsed Time: TOTAL 8.49 msec, USR 7.00 msec (82.4%), SYS 1.00 msec (11.8%)
+
+===== [/~mong/mycyworld2/index.php 11:15:57] ============================================================
+
+ACTION: /member/secretBoard
+
+User Warning: CYT Parse Error in /skcomms/frw/kiwi/podo/class/Podo/Template/Compiler.php on line 61
+
+#0  Podo_Template_Compiler->compile('Invite_Accept', '/home/mong/project/mycyworld2/template/Invite/Accept.tpl', '/home/mong/project/mycyworld2/tmp/Podo/Template/1.0.2/Invite/AcceptTemplate.php') called at [/skcomms/frw/kiwi/podo/class/Podo/Template.php:187]
+#1  Podo_Template::_compile('Invite_Accept') called at [/skcomms/frw/kiwi/podo/class/Podo/Template.php:192]
+#2  Podo_Template::_autoload('Invite_Accept') called at [/skcomms/frw/kiwi/podo/class/Podo/Template.php:55]
+#3  Podo_Template::instance('Invite_Accept') called at [/skcomms/frw/kiwi/podo/class/Podo.php:118]
+#4  Podo::_executeView(MemberController Object ( [request:protected] => Podo_Controller_Request Object ( [_params:private] => Array ( [addr] => Array ( [value] => 192.168.248.154,  [type] => GET ) ,  [action] => Array ( [value] => /member/secretBoard,  [type] => GET )  ) ,  [get] => ,  [post] => ,  [cookie] => ,  [session] => ,  [file] => ,  [__items:protected] => Array ( [addr] => 192.168.248.154,  [action] => /member/secretBoard )  ) ,  [response:protected] => Podo_Controller_Response Object ( [_DICT:private] => Array ( [RESULTS] => Array ( ) ,  [TARGET] => Array ( [URL] => ,  [VIEW] => Invite_Accept )  ) ,  [board] => Board Object ( [__idx:protected] => 11231312,  [__name:protected] => 테스터,  [__subject:protected] => ,  [__content:protected] => ,  [__regDt:protected] => 1305730800,  [__userCreatedTime:protected] => ,  [__member:protected] => Member Object ( [__userId:protected] => infra,  [__name:protected] => ,  [isLoaded:protected] => ,  [isEmptyStatus:protected] =>  ) ,  [isLoaded:protected] => ,  [isEmptyStatus:protected] =>  )  ) ,  [cookie:protected] => Podo_Controller_Cookie Object ( [name] => ,  [expire] => 0,  [path] => ,  [domain] => ,  [_strValue:protected] => ,  [_arrSubValue:protected] => Array ( ) ,  [_strEncodingIn:protected] => utf-8,  [_strEncodingOut:protected] => utf-8,  [_isCrypt:protected] => ,  [_strCryptKey:protected] =>  ) ,  [json:protected] => Podo_Controller_Json Object ( ) ,  [_isExceptionThrowed:protected] =>  ) ) called at [/skcomms/frw/kiwi/podo/class/Podo.php:76]
+#5  Podo::execute() called at [docroot/index.php:4]
+
+
+..... Elapsed Time: TOTAL 8.49 msec, USR 7.00 msec (82.4%), SYS 1.00 msec (11.8%)
+
+===== [/~mong/mycyworld2/index.php 11:16:06] ============================================================
+
+
+..... Elapsed Time: TOTAL 7.43 msec, USR 5.00 msec (67.3%), SYS 2.00 msec (26.9%)
+
+===== [/~mong/mycyworld2/index.php 11:16:06] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 7.42 msec, USR 6.00 msec (80.9%), SYS 2.00 msec (27.0%)
+
+===== [/~mong/mycyworld2/index.php 15:26:41] ============================================================
+
+
+..... Elapsed Time: TOTAL 7.15 msec, USR 4.00 msec (55.9%), SYS 3.00 msec (42.0%)
+
+===== [/~mong/mycyworld2/index.php 15:26:41] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 7.15 msec, USR 5.00 msec (69.9%), SYS 3.00 msec (42.0%)
+
+===== [/~mong/mycyworld2/index.php 15:28:12] ============================================================
+
+
+..... Elapsed Time: TOTAL 3.84 msec, USR 2.00 msec (52.1%), SYS 2.00 msec (52.1%)
+
+===== [/~mong/mycyworld2/index.php 15:28:12] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 3.84 msec, USR 2.00 msec (52.1%), SYS 2.00 msec (52.1%)
+
+===== [/~mong/mycyworld2/index.php 15:28:14] ============================================================
+
+
+..... Elapsed Time: TOTAL 3.75 msec, USR 1.00 msec (26.7%), SYS 3.00 msec (80.0%)
+
+===== [/~mong/mycyworld2/index.php 15:28:14] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 3.73 msec, USR 1.00 msec (26.8%), SYS 3.00 msec (80.4%)
+
+===== [/~mong/mycyworld2/index.php 15:28:51] ============================================================
+
+
+..... Elapsed Time: TOTAL 30.12 msec, USR 23.00 msec (76.4%), SYS 7.00 msec (23.2%)
+
+===== [/~mong/mycyworld2/index.php 15:28:51] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 30.12 msec, USR 23.00 msec (76.4%), SYS 7.00 msec (23.2%)
+
+===== [/~mong/mycyworld2/index.php 15:29:17] ============================================================
+
+
+..... Elapsed Time: TOTAL 27.89 msec, USR 25.00 msec (89.6%), SYS 3.00 msec (10.8%)
+
+===== [/~mong/mycyworld2/index.php 15:29:17] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 27.87 msec, USR 25.00 msec (89.7%), SYS 3.00 msec (10.8%)
+
+===== [/~mong/mycyworld2/index.php 15:30:05] ============================================================
+
+
+..... Elapsed Time: TOTAL 27.38 msec, USR 26.00 msec (95.0%), SYS 2.00 msec (7.3%)
+
+===== [/~mong/mycyworld2/index.php 15:30:05] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 27.36 msec, USR 26.00 msec (95.0%), SYS 2.00 msec (7.3%)
+
+===== [/~mong/mycyworld2/index.php 15:31:20] ============================================================
+
+
+..... Elapsed Time: TOTAL 28.33 msec, USR 29.00 msec (102.4%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 15:31:20] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 28.33 msec, USR 28.00 msec (98.8%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 15:31:21] ============================================================
+
+
+..... Elapsed Time: TOTAL 3.49 msec, USR 3.00 msec (86.0%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 15:31:21] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 3.48 msec, USR 3.00 msec (86.2%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 15:33:18] ============================================================
+
+
+..... Elapsed Time: TOTAL 29.12 msec, USR 25.00 msec (85.9%), SYS 4.00 msec (13.7%)
+
+===== [/~mong/mycyworld2/index.php 15:33:18] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 29.12 msec, USR 25.00 msec (85.9%), SYS 4.00 msec (13.7%)
+
+===== [/~mong/mycyworld2/index.php 15:34:17] ============================================================
+
+
+..... Elapsed Time: TOTAL 31.64 msec, USR 25.00 msec (79.0%), SYS 6.00 msec (19.0%)
+
+===== [/~mong/mycyworld2/index.php 15:34:17] ============================================================
+
+ACTION: /member/secretBoard
+
+Notice: Uninitialized string offset:  1 in /home/mong/project/mycyworld2/template/Member/SecretBoard.tpl on line 35
+
+#0  Member_SecretBoardTemplate->printHead(-1, -1) called at [/skcomms/frw/kiwi/podo/class/Podo/Template/Base.php:6]
+#1  Podo_Template_Base->display() called at [/skcomms/frw/kiwi/podo/class/Podo.php:127]
+#2  Podo::_executeView(MemberController Object ( [request:protected] => Podo_Controller_Request Object ( [_params:private] => Array ( [addr] => Array ( [value] => 192.168.248.154,  [type] => GET ) ,  [action] => Array ( [value] => /member/secretBoard,  [type] => GET )  ) ,  [get] => ,  [post] => ,  [cookie] => ,  [session] => ,  [file] => ,  [__items:protected] => Array ( [addr] => 192.168.248.154,  [action] => /member/secretBoard )  ) ,  [response:protected] => Podo_Controller_Response Object ( [_DICT:private] => Array ( [RESULTS] => Array ( ) ,  [TARGET] => Array ( [URL] => ,  [VIEW] => Member_SecretBoard )  ) ,  [board] => Board Object ( [__idx:protected] => 11231312,  [__name:protected] => 테스터,  [__subject:protected] => ,  [__content:protected] => ,  [__regDt:protected] => 1305730800,  [__userCreatedTime:protected] => ,  [__member:protected] => Member Object ( [__userId:protected] => infra,  [__name:protected] => ,  [isLoaded:protected] => ,  [isEmptyStatus:protected] =>  ) ,  [isLoaded:protected] => ,  [isEmptyStatus:protected] =>  ) ,  [arr] => Array ( [0] => 1,  [1] => 2,  [2] => 3 )  ) ,  [cookie:protected] => Podo_Controller_Cookie Object ( [name] => ,  [expire] => 0,  [path] => ,  [domain] => ,  [_strValue:protected] => ,  [_arrSubValue:protected] => Array ( ) ,  [_strEncodingIn:protected] => utf-8,  [_strEncodingOut:protected] => utf-8,  [_isCrypt:protected] => ,  [_strCryptKey:protected] =>  ) ,  [json:protected] => Podo_Controller_Json Object ( ) ,  [_isExceptionThrowed:protected] =>  ) ) called at [/skcomms/frw/kiwi/podo/class/Podo.php:76]
+#3  Podo::execute() called at [docroot/index.php:4]
+
+
+..... Elapsed Time: TOTAL 31.64 msec, USR 25.00 msec (79.0%), SYS 7.00 msec (22.1%)
+
+===== [/~mong/mycyworld2/index.php 15:34:25] ============================================================
+
+
+..... Elapsed Time: TOTAL 28.63 msec, USR 23.00 msec (80.3%), SYS 5.00 msec (17.5%)
+
+===== [/~mong/mycyworld2/index.php 15:34:25] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 28.63 msec, USR 23.00 msec (80.3%), SYS 6.00 msec (21.0%)
+
+===== [/~mong/mycyworld2/index.php 15:35:52] ============================================================
+
+
+..... Elapsed Time: TOTAL 27.41 msec, USR 24.00 msec (87.6%), SYS 3.00 msec (10.9%)
+
+===== [/~mong/mycyworld2/index.php 15:35:52] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 27.39 msec, USR 25.00 msec (91.3%), SYS 3.00 msec (11.0%)
+
+===== [/~mong/mycyworld2/index.php 15:37:10] ============================================================
+
+
+..... Elapsed Time: TOTAL 28.27 msec, USR 22.00 msec (77.8%), SYS 7.00 msec (24.8%)
+
+===== [/~mong/mycyworld2/index.php 15:37:10] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 28.26 msec, USR 22.00 msec (77.8%), SYS 6.00 msec (21.2%)
+
+===== [/~mong/mycyworld2/index.php 15:38:37] ============================================================
+
+
+..... Elapsed Time: TOTAL 31.76 msec, USR 30.00 msec (94.5%), SYS 2.00 msec (6.3%)
+
+===== [/~mong/mycyworld2/index.php 15:38:37] ============================================================
+
+ACTION: /member/secretBoard
+
+Notice: Undefined variable: ar in /home/mong/project/mycyworld2/template/Member/SecretBoard.tpl on line 34
+
+#0  Member_SecretBoardTemplate->printHead(-1, -1) called at [/skcomms/frw/kiwi/podo/class/Podo/Template/Base.php:6]
+#1  Podo_Template_Base->display() called at [/skcomms/frw/kiwi/podo/class/Podo.php:127]
+#2  Podo::_executeView(MemberController Object ( [request:protected] => Podo_Controller_Request Object ( [_params:private] => Array ( [addr] => Array ( [value] => 192.168.248.154,  [type] => GET ) ,  [action] => Array ( [value] => /member/secretBoard,  [type] => GET )  ) ,  [get] => ,  [post] => ,  [cookie] => ,  [session] => ,  [file] => ,  [__items:protected] => Array ( [addr] => 192.168.248.154,  [action] => /member/secretBoard )  ) ,  [response:protected] => Podo_Controller_Response Object ( [_DICT:private] => Array ( [RESULTS] => Array ( ) ,  [TARGET] => Array ( [URL] => ,  [VIEW] => Member_SecretBoard )  ) ,  [board] => Board Object ( [__idx:protected] => 11231312,  [__name:protected] => 테스터,  [__subject:protected] => ,  [__content:protected] => ,  [__regDt:protected] => 1305730800,  [__userCreatedTime:protected] => ,  [__member:protected] => Member Object ( [__userId:protected] => infra,  [__name:protected] => ,  [isLoaded:protected] => ,  [isEmptyStatus:protected] =>  ) ,  [isLoaded:protected] => ,  [isEmptyStatus:protected] =>  ) ,  [arr] => Array ( [0] => 1,  [1] => 2,  [2] => 3 )  ) ,  [cookie:protected] => Podo_Controller_Cookie Object ( [name] => ,  [expire] => 0,  [path] => ,  [domain] => ,  [_strValue:protected] => ,  [_arrSubValue:protected] => Array ( ) ,  [_strEncodingIn:protected] => utf-8,  [_strEncodingOut:protected] => utf-8,  [_isCrypt:protected] => ,  [_strCryptKey:protected] =>  ) ,  [json:protected] => Podo_Controller_Json Object ( ) ,  [_isExceptionThrowed:protected] =>  ) ) called at [/skcomms/frw/kiwi/podo/class/Podo.php:76]
+#3  Podo::execute() called at [docroot/index.php:4]
+
+
+..... Elapsed Time: TOTAL 31.77 msec, USR 30.00 msec (94.4%), SYS 2.00 msec (6.3%)
+
+===== [/~mong/mycyworld2/index.php 15:39:07] ============================================================
+
+
+..... Elapsed Time: TOTAL 27.95 msec, USR 25.00 msec (89.4%), SYS 3.00 msec (10.7%)
+
+===== [/~mong/mycyworld2/index.php 15:39:07] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 27.96 msec, USR 25.00 msec (89.4%), SYS 3.00 msec (10.7%)
+
+===== [/~mong/mycyworld2/index.php 15:40:04] ============================================================
+
+
+..... Elapsed Time: TOTAL 29.01 msec, USR 23.00 msec (79.3%), SYS 6.00 msec (20.7%)
+
+===== [/~mong/mycyworld2/index.php 15:40:04] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 29.01 msec, USR 23.00 msec (79.3%), SYS 6.00 msec (20.7%)
+
+===== [/~mong/mycyworld2/index.php 15:43:24] ============================================================
+
+
+..... Elapsed Time: TOTAL 42.34 msec, USR 29.00 msec (68.5%), SYS 4.00 msec (9.4%)
+
+===== [/~mong/mycyworld2/index.php 15:43:24] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 42.36 msec, USR 29.00 msec (68.5%), SYS 4.00 msec (9.4%)
+
+===== [/~mong/mycyworld2/index.php 15:43:58] ============================================================
+
+
+..... Elapsed Time: TOTAL 33.79 msec, USR 29.00 msec (85.8%), SYS 5.00 msec (14.8%)
+
+===== [/~mong/mycyworld2/index.php 15:43:58] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 33.81 msec, USR 29.00 msec (85.8%), SYS 5.00 msec (14.8%)
+
+===== [/~mong/mycyworld2/index.php 15:44:32] ============================================================
+
+
+..... Elapsed Time: TOTAL 31.65 msec, USR 26.00 msec (82.1%), SYS 5.00 msec (15.8%)
+
+===== [/~mong/mycyworld2/index.php 15:44:32] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 31.68 msec, USR 27.00 msec (85.2%), SYS 5.00 msec (15.8%)
+
+===== [/~mong/mycyworld2/index.php 15:44:33] ============================================================
+
+
+..... Elapsed Time: TOTAL 9.86 msec, USR 9.00 msec (91.3%), SYS 1.00 msec (10.1%)
+
+===== [/~mong/mycyworld2/index.php 15:44:33] ============================================================
+
+ACTION: /invite1/add
+
+
+..... Elapsed Time: TOTAL 9.86 msec, USR 9.00 msec (91.3%), SYS 1.00 msec (10.1%)
+
+===== [/~mong/mycyworld2/index.php 15:44:36] ============================================================
+
+
+..... Elapsed Time: TOTAL 6.71 msec, USR 6.00 msec (89.4%), SYS 1.00 msec (14.9%)
+
+===== [/~mong/mycyworld2/index.php 15:44:36] ============================================================
+
+ACTION: /invite1/accept
+
+
+..... Elapsed Time: TOTAL 6.69 msec, USR 6.00 msec (89.7%), SYS 1.00 msec (14.9%)
+
+===== [/~mong/mycyworld2/index.php 15:44:41] ============================================================
+
+
+..... Elapsed Time: TOTAL 4.10 msec, USR 3.00 msec (73.2%), SYS 1.00 msec (24.4%)
+
+===== [/~mong/mycyworld2/index.php 15:44:41] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 4.09 msec, USR 3.00 msec (73.3%), SYS 1.00 msec (24.4%)
+
+===== [/~mong/mycyworld2/index.php 15:44:42] ============================================================
+
+
+..... Elapsed Time: TOTAL 3.36 msec, USR 4.00 msec (119.0%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 15:44:42] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 3.34 msec, USR 4.00 msec (119.8%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 15:45:35] ============================================================
+
+
+..... Elapsed Time: TOTAL 8.40 msec, USR 7.00 msec (83.3%), SYS 1.00 msec (11.9%)
+
+===== [/~mong/mycyworld2/index.php 15:45:35] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 8.38 msec, USR 7.00 msec (83.5%), SYS 1.00 msec (11.9%)
+
+===== [/~mong/mycyworld2/index.php 15:46:06] ============================================================
+
+
+..... Elapsed Time: TOTAL 30.31 msec, USR 24.00 msec (79.2%), SYS 6.00 msec (19.8%)
+
+===== [/~mong/mycyworld2/index.php 15:46:06] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 30.32 msec, USR 24.00 msec (79.2%), SYS 6.00 msec (19.8%)
+
+===== [/~mong/mycyworld2/index.php 15:46:46] ============================================================
+
+
+..... Elapsed Time: TOTAL 30.60 msec, USR 29.00 msec (94.8%), SYS 1.00 msec (3.3%)
+
+===== [/~mong/mycyworld2/index.php 15:46:46] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 30.59 msec, USR 29.00 msec (94.8%), SYS 1.00 msec (3.3%)
+
+===== [/~mong/mycyworld2/index.php 15:47:36] ============================================================
+
+
+..... Elapsed Time: TOTAL 28.85 msec, USR 26.00 msec (90.1%), SYS 3.00 msec (10.4%)
+
+===== [/~mong/mycyworld2/index.php 15:47:36] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 28.83 msec, USR 26.00 msec (90.2%), SYS 3.00 msec (10.4%)
+
+===== [/~mong/mycyworld2/index.php 15:50:04] ============================================================
+
+
+..... Elapsed Time: TOTAL 35.13 msec, USR 28.00 msec (79.7%), SYS 7.00 msec (19.9%)
+
+===== [/~mong/mycyworld2/index.php 15:50:04] ============================================================
+
+ACTION: /member/secretBoard
+
+Notice: Undefined variable: arr in /home/mong/project/mycyworld2/template/Member/PublicViewConnecting.tpl on line 6
+
+#0  Member_PublicViewConnectingTemplate->printHead(-1, -1) called at [tmp/Podo/Template/1.0.2/Member/SecretBoardTemplate.php:30]
+#1  Member_SecretBoardTemplate->printHead(-1, -1) called at [/skcomms/frw/kiwi/podo/class/Podo/Template/Base.php:6]
+#2  Podo_Template_Base->display() called at [/skcomms/frw/kiwi/podo/class/Podo.php:127]
+#3  Podo::_executeView(MemberController Object ( [request:protected] => Podo_Controller_Request Object ( [_params:private] => Array ( [addr] => Array ( [value] => 192.168.248.154,  [type] => GET ) ,  [action] => Array ( [value] => /member/secretBoard,  [type] => GET )  ) ,  [get] => ,  [post] => ,  [cookie] => ,  [session] => ,  [file] => ,  [__items:protected] => Array ( [addr] => 192.168.248.154,  [action] => /member/secretBoard )  ) ,  [response:protected] => Podo_Controller_Response Object ( [_DICT:private] => Array ( [RESULTS] => Array ( ) ,  [TARGET] => Array ( [URL] => ,  [VIEW] => Member_SecretBoard )  ) ,  [board] => Board Object ( [__idx:protected] => 11231312,  [__name:protected] => 테스터,  [__subject:protected] => ,  [__content:protected] => ,  [__regDt:protected] => 1305730800,  [__userCreatedTime:protected] => ,  [__member:protected] => Member Object ( [__userId:protected] => infra,  [__name:protected] => ,  [isLoaded:protected] => ,  [isEmptyStatus:protected] =>  ) ,  [isLoaded:protected] => ,  [isEmptyStatus:protected] =>  ) ,  [arr] => Array ( [0] => 1,  [1] => 2,  [2] => 3 )  ) ,  [cookie:protected] => Podo_Controller_Cookie Object ( [name] => ,  [expire] => 0,  [path] => ,  [domain] => ,  [_strValue:protected] => ,  [_arrSubValue:protected] => Array ( ) ,  [_strEncodingIn:protected] => utf-8,  [_strEncodingOut:protected] => utf-8,  [_isCrypt:protected] => ,  [_strCryptKey:protected] =>  ) ,  [json:protected] => Podo_Controller_Json Object ( ) ,  [_isExceptionThrowed:protected] =>  ) ) called at [/skcomms/frw/kiwi/podo/class/Podo.php:76]
+#4  Podo::execute() called at [docroot/index.php:4]
+
+
+..... Elapsed Time: TOTAL 35.14 msec, USR 29.00 msec (82.5%), SYS 7.00 msec (19.9%)
+
+===== [/~mong/mycyworld2/index.php 15:50:12] ============================================================
+
+
+..... Elapsed Time: TOTAL 9.67 msec, USR 9.00 msec (93.1%), SYS 1.00 msec (10.3%)
+
+===== [/~mong/mycyworld2/index.php 15:50:12] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 9.65 msec, USR 9.00 msec (93.3%), SYS 1.00 msec (10.4%)
+
+===== [/~mong/mycyworld2/index.php 15:54:04] ============================================================
+
+
+..... Elapsed Time: TOTAL 38.42 msec, USR 29.00 msec (75.5%), SYS 4.00 msec (10.4%)
+
+===== [/~mong/mycyworld2/index.php 15:54:04] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 38.41 msec, USR 29.00 msec (75.5%), SYS 4.00 msec (10.4%)
+
+===== [/~mong/mycyworld2/index.php 15:56:42] ============================================================
+
+
+..... Elapsed Time: TOTAL 14.38 msec, USR 12.00 msec (83.4%), SYS 2.00 msec (13.9%)
+
+===== [/~mong/mycyworld2/index.php 15:56:42] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 14.39 msec, USR 12.00 msec (83.4%), SYS 2.00 msec (13.9%)
+
+===== [/~mong/mycyworld2/index.php 15:56:43] ============================================================
+
+
+..... Elapsed Time: TOTAL 5.93 msec, USR 3.00 msec (50.6%), SYS 3.00 msec (50.6%)
+
+===== [/~mong/mycyworld2/index.php 15:56:43] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 5.93 msec, USR 3.00 msec (50.6%), SYS 3.00 msec (50.6%)
+
+===== [/~mong/mycyworld2/index.php 15:56:44] ============================================================
+
+
+..... Elapsed Time: TOTAL 3.92 msec, USR 4.00 msec (102.0%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 15:56:44] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 3.90 msec, USR 4.00 msec (102.6%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 15:56:45] ============================================================
+
+
+..... Elapsed Time: TOTAL 3.90 msec, USR 4.00 msec (102.6%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 15:56:45] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 3.87 msec, USR 3.00 msec (77.5%), SYS 0.00 msec (0.0%)
+
+===== [/~mong/mycyworld2/index.php 15:56:59] ============================================================
+
+
+..... Elapsed Time: TOTAL 10.80 msec, USR 9.00 msec (83.3%), SYS 2.00 msec (18.5%)
+
+===== [/~mong/mycyworld2/index.php 15:56:59] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 10.78 msec, USR 9.00 msec (83.5%), SYS 2.00 msec (18.6%)
+
+===== [/~mong/mycyworld2/index.php 15:57:12] ============================================================
+
+
+..... Elapsed Time: TOTAL 10.56 msec, USR 8.00 msec (75.8%), SYS 3.00 msec (28.4%)
+
+===== [/~mong/mycyworld2/index.php 15:57:12] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 10.54 msec, USR 7.00 msec (66.4%), SYS 3.00 msec (28.5%)
+
+===== [/~mong/mycyworld2/index.php 17:04:09] ============================================================
+
+
+..... Elapsed Time: TOTAL 11.61 msec, USR 9.00 msec (77.5%), SYS 3.00 msec (25.8%)
+
+===== [/~mong/mycyworld2/index.php 17:04:09] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 11.62 msec, USR 9.00 msec (77.5%), SYS 3.00 msec (25.8%)
+
+===== [/~mong/mycyworld2/index.php 17:04:14] ============================================================
+
+
+..... Elapsed Time: TOTAL 4.59 msec, USR 4.00 msec (87.1%), SYS 1.00 msec (21.8%)
+
+===== [/~mong/mycyworld2/index.php 17:04:14] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 4.58 msec, USR 3.00 msec (65.5%), SYS 1.00 msec (21.8%)
+
+===== [/~mong/mycyworld2/index.php 17:04:18] ============================================================
+
+
+..... Elapsed Time: TOTAL 4.66 msec, USR 2.00 msec (42.9%), SYS 3.00 msec (64.4%)
+
+===== [/~mong/mycyworld2/index.php 17:04:18] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 4.65 msec, USR 2.00 msec (43.0%), SYS 3.00 msec (64.5%)
+
+===== [/~mong/mycyworld2/index.php 17:04:36] ============================================================
+
+
+..... Elapsed Time: TOTAL 12.62 msec, USR 10.00 msec (79.2%), SYS 3.00 msec (23.8%)
+
+===== [/~mong/mycyworld2/index.php 17:04:36] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 12.61 msec, USR 9.00 msec (71.4%), SYS 3.00 msec (23.8%)
+
+===== [/~mong/mycyworld2/index.php 17:04:53] ============================================================
+
+
+..... Elapsed Time: TOTAL 12.80 msec, USR 10.00 msec (78.1%), SYS 2.00 msec (15.6%)
+
+===== [/~mong/mycyworld2/index.php 17:04:53] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 12.79 msec, USR 10.00 msec (78.2%), SYS 2.00 msec (15.6%)
+
+===== [/~mong/mycyworld2/index.php 17:45:45] ============================================================
+
+
+..... Elapsed Time: TOTAL 27.67 msec, USR 23.00 msec (83.1%), SYS 4.00 msec (14.5%)
+
+===== [/~mong/mycyworld2/index.php 17:45:45] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 27.67 msec, USR 24.00 msec (86.7%), SYS 4.00 msec (14.5%)
+
+===== [/~mong/mycyworld2/index.php 17:46:36] ============================================================
+
+
+..... Elapsed Time: TOTAL 4.72 msec, USR 2.00 msec (42.4%), SYS 3.00 msec (63.6%)
+
+===== [/~mong/mycyworld2/index.php 17:46:36] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 4.74 msec, USR 2.00 msec (42.2%), SYS 2.00 msec (42.2%)
+
+===== [/~mong/mycyworld2/index.php 17:46:39] ============================================================
+
+
+..... Elapsed Time: TOTAL 5.23 msec, USR 3.00 msec (57.4%), SYS 2.00 msec (38.2%)
+
+===== [/~mong/mycyworld2/index.php 17:46:39] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 5.25 msec, USR 3.00 msec (57.1%), SYS 2.00 msec (38.1%)
+
+===== [/~mong/mycyworld2/index.php 17:47:19] ============================================================
+
+
+..... Elapsed Time: TOTAL 11.01 msec, USR 10.00 msec (90.8%), SYS 1.00 msec (9.1%)
+
+===== [/~mong/mycyworld2/index.php 17:47:19] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 11.03 msec, USR 10.00 msec (90.7%), SYS 1.00 msec (9.1%)
+
+===== [/~mong/mycyworld2/index.php 17:49:05] ============================================================
+
+
+..... Elapsed Time: TOTAL 4.69 msec, USR 3.00 msec (64.0%), SYS 2.00 msec (42.6%)
+
+===== [/~mong/mycyworld2/index.php 17:49:05] ============================================================
+
+ACTION: /member/secretBoard
+
+
+..... Elapsed Time: TOTAL 4.71 msec, USR 3.00 msec (63.7%), SYS 2.00 msec (42.5%)

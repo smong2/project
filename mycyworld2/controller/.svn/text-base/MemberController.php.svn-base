@@ -1,0 +1,35 @@
+<?php
+class MemberController extends Podo_Controller_Base
+{
+	public function doUserInfo() /*{{{*/
+	{
+		$this->request->setDefault(
+		                              array('cmn' => '',
+		                                   ));
+
+		$this->response->cmn = '';
+
+		if ($this->request->cmn) {
+			$api = Member::instance(0);
+			$api->setUserId($this->request->cmn);
+			$result = $api->getUserInfo();
+
+			$this->response->user = $result['profile'];
+			$this->response->cmn  = $this->request->cmn;
+			Logger::debug($this->response->user);
+			Logger::debug($result);
+		}
+	} /*}}}*/
+
+	public function doFormatting() /*{{{*/
+	{
+		$a   = 2231314143;
+		$b   = 11231;
+		$aaa = '111';
+
+		if ($a == 1) {
+			echo '1';
+		}
+	} /*}}}*/
+}
+?>

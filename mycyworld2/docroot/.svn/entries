@@ -1,0 +1,49 @@
+8
+
+dir
+34
+svn://svn.stdev.cyworld.com/monitoring8/trunk/docroot
+svn://svn.stdev.cyworld.com/monitoring8
+
+
+
+2011-03-30T07:27:57.921646Z
+10
+mong
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+fbd0eaa5-55ff-433c-9b30-e9ce4e3bc9fc
+
+images
+dir
+
+css
+dir
+
+js
+dir
+
+index.php
+file
+
+
+
+
+2011-05-18T01:17:07.000000Z
+ab72167e72dff15942f591b02206fef6
+2011-03-30T07:26:36.038631Z
+9
+mong
+

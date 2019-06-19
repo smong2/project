@@ -1,0 +1,52 @@
+8
+
+dir
+83
+svn://svn.stdev.cyworld.com/nate_connect_api/trunk/template/Main
+svn://svn.stdev.cyworld.com/nate_connect_api
+
+
+
+2010-08-26T04:55:33.828813Z
+8
+mong
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+34737d01-a16c-4dbc-909f-09eb6631eba8
+
+Index.tpl
+file
+
+
+
+
+2010-06-18T08:49:23.000000Z
+742d6d5dedaf7e2b0bc22d571a9bee8b
+2010-06-17T09:26:41.275487Z
+2
+mong
+
+NotFound.tpl
+file
+
+
+
+
+2010-07-30T09:31:03.000000Z
+b73da1154bb5dd98cf1e7dd3f2ecf6ef
+2010-08-26T04:55:33.828813Z
+8
+mong
+

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dispatcher-config>
+	<patterns>
+		<!--
+		변환규칙
+
+		<$N> 은 해당하는 영역에서 '/'를 기준으로 단어를 분리하여,
+		첫 글자를 대문자로 치환하고, '/' 는 '_' 로 치환합니다. 
+		예를 들어, main/index 는 Main_Index 로 치환됩니다.
+		{$N} 은 해당하는 영역을 그대로 사용합니다.
+		예를 들어, main/index 는 변환없이 그대로 그 값이 사용됩니다.
+
+		<$N> 은 주로 controller 와 action, view name 으로 사용되고,
+		{$N> 은 주로 파라미터 값으로 넘겨줄 때 사용합니다.
+		-->
+		<pattern type="ACTION">
+			<expression><![CDATA[/^\/?$/i]]></expression>
+			<controller><![CDATA[MainController]]></controller>
+			<action><![CDATA[doIndex]]></action>
+			<view><![CDATA[Main_Index]]></view>
+		</pattern>
+
+		<pattern type="ACTION">
+			<expression><![CDATA[/^\/([a-zA-Z_]\w*)\/?$/i]]></expression>
+			<controller><![CDATA[MainController]]></controller>
+			<action><![CDATA[do<$1>]]></action>
+			<view><![CDATA[Main_<$1>]]></view>
+		</pattern>
+
+		<pattern type="ACTION">
+			<expression><![CDATA[/^\/([a-zA-Z_]\w*(?:\/[a-zA-Z_]\w*)*)\/([a-zA-Z_]\w*)\/?$/i]]></expression>
+			<controller><![CDATA[<$1>Controller]]></controller>
+			<action><![CDATA[do<$2>]]></action>
+			<view><![CDATA[<$1>_<$2>]]></view>
+		</pattern>
+
+		<!--
+		아래와 같이 <param> 태그를 사용하여 URL 의 일부를 Request 변수로 받을 수 있습니다.
+		-->
+		<!--pattern type="ACTION">
+			<expression><![CDATA[/^\/(friendly)\/(get|put|delete)\/(\d+)$/i]]></expression>
+			<controller><![CDATA[<$1>Controller]]></controller>
+			<action><![CDATA[do<$2>]]></action>
+			<view><![CDATA[<$1>_<$2>]]></view>
+			<param id="var_name"><![CDATA[{$2}]]></param>
+		</pattern-->
+    </patterns>
+
+	<!--
+	Config 파일에서 Podo.undefined 값이 default 로 설정되어있는 경우
+	해당하는 페이지가 없을 때 (해당하는 컨트롤러 메서드를 만들지 않은 경우)
+	아래에 설정한 컨트롤러 메서드가 실행됩니다.
+	-->
+    <default>
+    	<controller><![CDATA[MainController]]></controller>
+    	<action><![CDATA[doNotFound]]></action>
+    	<view><![CDATA[Main_NotFound]]></view>
+    </default>
+</dispatcher-config>

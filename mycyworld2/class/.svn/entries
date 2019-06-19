@@ -1,0 +1,86 @@
+8
+
+dir
+34
+svn://svn.stdev.cyworld.com/monitoring8/trunk/class
+svn://svn.stdev.cyworld.com/monitoring8
+
+
+
+2011-04-13T09:32:00.432822Z
+22
+minji
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+fbd0eaa5-55ff-433c-9b30-e9ce4e3bc9fc
+
+Api.php
+file
+
+
+
+
+2011-05-18T01:17:07.000000Z
+1c2c53664243458b8515bb67f826292c
+2011-04-13T09:32:00.432822Z
+22
+minji
+
+XML
+dir
+
+ContainerAPI.php
+file
+
+
+
+
+2011-05-18T01:17:07.000000Z
+20922b67bb62983f79a990274d9e9131
+2011-04-13T09:32:00.432822Z
+22
+minji
+
+BaseObject.php
+file
+
+
+
+
+2011-05-18T01:17:07.000000Z
+ef18ccb94b93dbd74084669d6125bdb4
+2011-04-13T09:32:00.432822Z
+22
+minji
+
+Member.php
+file
+
+
+
+
+2011-05-18T01:17:07.000000Z
+7f6d007fdcf86b23275f24e61ebd3648
+2011-04-13T09:32:00.432822Z
+22
+minji
+
+Board.php
+file
+0
+
+
+add
+

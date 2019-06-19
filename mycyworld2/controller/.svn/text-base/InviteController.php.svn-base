@@ -1,0 +1,33 @@
+<?php
+class InviteController extends Podo_Controller_Base
+{
+	public function doAccept() /*{{{*/
+	{
+	} /*}}}*/
+
+	public function doSend() /*{{{*/
+	{
+		$this->request->setDefault(array('id' => ''));
+		$id =$this->request->id; 
+		$this->response->setRedirect('result?id='.$id);
+
+	} /*}}}*/
+	public function doResult()
+	/*{{{*/
+	{
+
+		
+	}
+	public function doAdd() /*{{{*/
+	{
+	$this->request->setDefault(array('cmn' => '', 'name' => '',));
+	//	$this->request->setDefault(array('cmn' => ''));
+	//	$this->request->setDefault(array('name' => ''));
+		$this->response->cmn=$this->request->cmn;
+		$this->response->name=$this->request->name;
+		$this->response->message='<b>/this is bold.</b>';
+		$group='skcomms';
+		$this->response->group=$group;
+	} /*}}}*/
+}
+?>

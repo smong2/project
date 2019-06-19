@@ -1,0 +1,40 @@
+8
+
+dir
+83
+svn://svn.stdev.cyworld.com/nate_connect_api/trunk/class/PDO
+svn://svn.stdev.cyworld.com/nate_connect_api
+
+
+
+2010-06-28T06:27:56.838904Z
+7
+mong
+
+
+svn:special svn:externals svn:needs-lock
+
+Manager.php
+file
+
+
+
+
+2010-10-13T07:20:02.000000Z
+13efcb40989b40bbb76018692a3aaa35
+2010-06-28T06:27:56.838904Z
+7
+mong
+
+MSSQL.php
+file
+
+
+
+
+2010-06-18T07:52:07.000000Z
+533470c6770bcee051500bbd2d8d6cea
+2010-06-28T06:27:56.838904Z
+7
+mong
+

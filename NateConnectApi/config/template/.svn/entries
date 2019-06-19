@@ -1,0 +1,52 @@
+8
+
+dir
+83
+svn://svn.stdev.cyworld.com/nate_connect_api/trunk/config/template
+svn://svn.stdev.cyworld.com/nate_connect_api
+
+
+
+2010-11-29T17:22:57.219131Z
+53
+mong
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+34737d01-a16c-4dbc-909f-09eb6631eba8
+
+common_base.inc.php
+file
+
+
+
+
+2010-11-29T16:01:15.000000Z
+b086bb09d2a1d1da355bbc57d19f966e
+2010-06-28T06:24:10.445505Z
+6
+mong
+
+dev.cfg
+file
+
+
+
+
+2010-11-29T17:07:23.000000Z
+eec994d617579db56aeb8db4d5026da4
+2010-11-29T17:22:57.219131Z
+53
+mong
+

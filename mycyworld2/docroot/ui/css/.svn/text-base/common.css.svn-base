@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+/* =스타일 초기화
+----------------------------------------------------------------------------------------------------------------*/
+html{ color:#000; background:#fff; 
+	scrollbar-3dlight-color:#e6e6e6; 
+	scrollbar-arrow-color:#5b5b5b; 
+	scrollbar-track-color:#f8f8f8; 
+	scrollbar-darkshadow-color:#fff; 
+	scrollbar-face-color:#fff; 
+	scrollbar-highlight-color:#fff; 
+	scrollbar-shadow-color:#e6e6e6; 
+	overflow-y:scroll; 
+	}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img{border:0;}
+address,caption,cite,code,dfn,em,th,var,i{font-style:normal;font-weight:normal;}
+li{list-style:none;}
+caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+q:before,q:after{content:'';}
+abbr,acronym {border:0;font-variant:normal;}
+/* to preserve line-height and selector appearance */
+sup {vertical-align:text-top;}
+sub {vertical-align:text-bottom;}
+input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}
+/*to enable resizing for IE*/
+input,textarea,select{*font-size:100%;}
+/*because legend doesn't inherit in IE */
+legend{color:#000;}
+
+/* =기본 폰트
+----------------------------------------------------------------------------------------------------------------*/
+body { color:#000; font:normal 12px/1.2em 돋움,dotum,verdana; }
+
+/* =Link
+----------------------------------------------------------------------------------------------------------------*/
+a { color:#666666; text-decoration:none; }
+a:hover { text-decoration:underline; }
+
+/* =float 해제
+----------------------------------------------------------------------------------------------------------------*/
+.f_clear:after { content:"."; display:block; clear:both; height:0; visibility:hidden; }
+.f_clear { display:inline-block; }
+* html .f_clear { height:1%; }
+.f_clear { display:block; }
+
+/* =float 해제
+----------------------------------------------------------------------------------------------------------------*/
+.text_ellipsis { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+ 

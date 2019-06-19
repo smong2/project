@@ -1,0 +1,34 @@
+8
+
+dir
+83
+svn://svn.stdev.cyworld.com/nate_connect_api/trunk/template
+svn://svn.stdev.cyworld.com/nate_connect_api
+
+
+
+2010-11-12T09:21:05.792231Z
+48
+mong
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+34737d01-a16c-4dbc-909f-09eb6631eba8
+
+Main
+dir
+
+Common
+dir
+

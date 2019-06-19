@@ -1,0 +1,52 @@
+8
+
+dir
+34
+svn://svn.stdev.cyworld.com/monitoring8/trunk/config/template
+svn://svn.stdev.cyworld.com/monitoring8
+
+
+
+2011-03-30T07:26:36.038631Z
+9
+mong
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+fbd0eaa5-55ff-433c-9b30-e9ce4e3bc9fc
+
+common_base.inc.php
+file
+
+
+
+
+2011-05-18T01:17:07.000000Z
+780227cb9c3a6c2c385d11383a19bae8
+2011-03-30T07:26:36.038631Z
+9
+mong
+
+dev.cfg
+file
+
+
+
+
+2011-05-18T01:17:07.000000Z
+3db5482d307b4fc350f624fbb7d14e29
+2011-03-30T07:26:36.038631Z
+9
+mong
+

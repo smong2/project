@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dispatcher-config>
+	<patterns>
+		<pattern type="ACTION">
+			<expression><![CDATA[/^\/?$/i]]></expression>
+			<controller><![CDATA[MainController]]></controller>
+			<action><![CDATA[doIndex]]></action>
+			<view><![CDATA[Main_Index]]></view>
+		</pattern>
+
+		<pattern type="ACTION">
+			<expression><![CDATA[/^\/([a-zA-Z_]\w*)\/?$/i]]></expression>
+			<controller><![CDATA[MainController]]></controller>
+			<action><![CDATA[do<$1>]]></action>
+			<view><![CDATA[Main_<$1>]]></view>
+		</pattern>
+
+		<!-- 메시지 리스트 조회 -->
+		<pattern type="ACTION">
+			<expression><![CDATA[/^\/users\/([a-zA-Z0-9]+)\/messages\/?$/i]]></expression>
+			<controller><![CDATA[MessageController]]></controller>
+			<action><![CDATA[doListV1]]></action>
+			<param id="user_cmn"><![CDATA[{$1}]]></param>
+		</pattern>
+	
+		<!-- 댓글 리스트 조회 -->
+		<pattern type="ACTION">
+			<expression><![CDATA[/^\/users\/([a-zA-Z0-9]+)\/messages\/([a-zA-Z0-9.,_]\w*)\/comments\/?$/i]]></expression>
+			<controller><![CDATA[CommentController]]></controller>
+			<action><![CDATA[doListV1]]></action>
+			<param id="user_cmn"><![CDATA[{$1}]]></param>
+			<param id="message_id"><![CDATA[{$2}]]></param>
+		</pattern>
+
+
+		<pattern type="ACTION">
+			<expression><![CDATA[/^\/([a-zA-Z_]\w*(?:\/[a-zA-Z_]\w*)*)\/([a-zA-Z_]\w*)\/?$/i]]></expression>
+			<controller><![CDATA[<$1>Controller]]></controller>
+			<action><![CDATA[do<$2>]]></action>
+			<view><![CDATA[<$1>_<$2>]]></view>
+		</pattern>
+    </patterns>
+
+	<!-- 잘못된 URI 접근 처리로 변경 -->
+    <default>
+    	<controller><![CDATA[MainController]]></controller>
+    	<action><![CDATA[doNotFound]]></action>
+    	<view><![CDATA[Main_NotFound]]></view>
+    </default>
+</dispatcher-config>
