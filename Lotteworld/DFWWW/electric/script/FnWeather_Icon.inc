@@ -1,0 +1,147 @@
+<% 
+DIM Icon_40,code
+
+FUNCTION FnWeatherIcon(weather_value)
+
+'40°³ ¾ÆÀÌÄÜ ¹Ù²Ù´Â ºÎºÐ
+'¼Ò³ª±â
+IF (instr(weather_value,"¼Ò³ª±â")) THEN    
+code="¼Ò³ª±â"
+	IF (instr(weather_value,"»õº®") or instr(weather_value,"¾ÆÄ§") or instr(weather_value,"¿ÀÀü")) THEN 
+			icon_40="08"
+    ELSEIF (instr(weather_value,"¿ÀÈÄ") or instr(weather_value,"¹ã") or instr(weather_value,"Àú³á") or instr(weather_value,"³·")) THEN
+			icon_40="09"
+    ELSE 
+			icon_40="07"
+    END IF  '¼Ò³ª±â ¼­ºê
+
+
+'ºñ/´«/°·   '¼Ò³ª±â ´ÙÀ½ ¸Þ´º
+code="ºñ/´«/°·"
+ELSEIF (instr(weather_value,"ºñ ") and instr(weather_value,"´«") and instr(weather_value,"°·")) THEN
+
+	IF (instr(weather_value,"»õº®") or instr(weather_value,"¾ÆÄ§") or instr(weather_value,"¿ÀÀü")) THEN
+			icon_40="37"
+	ELSEIF (instr(weather_value,"¿ÀÈÄ") or instr(weather_value,"¹ã") or instr(weather_value,"Àú³á") or instr(weather_value,"³·")) THEN
+			icon_40="38"
+	ELSE 
+	        icon_40="36"
+	END IF 'ºñ´«°· ¼­ºê
+
+
+'´« ºñ/´«/°· ´ÙÀ½ ¸Þ´º
+ELSEIF (instr(weather_value,"´«")) THEN
+code="´«"
+     IF (instr(weather_value,"ºñ/´«") or instr(weather_value,"ºñ¶Ç´Â´«")) THEN
+
+            IF (instr(weather_value,"Â÷Â÷") or instr(weather_value,"->")) THEN
+
+              	IF (instr(weather_value,"¿ÀÈÄ") or instr(weather_value,"¹ã") or instr(weather_value,"Àú³á") or instr(weather_value,"³·")) THEN 
+              			icon_40="30"
+              	ELSE
+              			icon_40="29"
+				END IF  '¿ÀÈÄ ¼­ºê
+
+            ELSEIF (instr(weather_value,"»õº®") or instr(weather_value,"¾ÆÄ§") or instr(weather_value,"¿ÀÀü")) THEN icon_40="27"
+            ELSEIF (instr(weather_value,"¿ÀÈÄ") or instr(weather_value,"¹ã") or instr(weather_value,"Àú³á") or instr(weather_value,"³·")) THEN 
+					icon_40="28"
+            ELSE 
+					icon_40="26"
+            END IF 'Â÷Â÷ ¼­ºê
+
+	ELSEIF (instr(weather_value,"´«/ºñ") or instr(weather_value,"´«¶Ç´Âºñ")) THEN  'ºñ¶Ç´Â´« ¿¬¼Ó
+		code="´«¶Ç´Âºñ"
+			IF (instr(weather_value,"Â÷Â÷") or instr(weather_value,"->")) THEN
+
+           		IF (instr(weather_value,"¿ÀÈÄ") or instr(weather_value,"¹ã") or instr(weather_value,"Àú³á") or instr(weather_value,"³·")) THEN 
+           				icon_40="35"
+       				ELSE 
+	       				icon_40="34"
+				END IF '¿ÀÈÄ ¼­ºê
+
+			ELSEIF (instr(weather_value,"»õº®") or instr(weather_value,"¾ÆÄ§") or instr(weather_value,"¿ÀÀü")) THEN 
+				icon_40="32"
+			ELSEIF (instr(weather_value,"¿ÀÈÄ") or instr(weather_value,"¹ã") or instr(weather_value,"Àú³á") or instr(weather_value,"³·")) THEN 
+				icon_40="33"
+			ELSE
+				icon_40="31"
+			END IF  'Â÷Â÷ ¼­ºê
+
+	ELSEIF (instr(weather_value,"Â÷Â÷") or instr(weather_value,"->")) THEN 'ºñ¶Ç´Â´« ¿¬¼Ó
+		code="Â÷Â÷ ½Ã¸®Áî"
+			IF(instr(weather_value,"¿ÀÈÄ") or instr(weather_value,"¹ã") or instr(weather_value,"Àú³á") or instr(weather_value,"³·")) THEN
+				icon_40="22"
+			ELSE 
+				icon_40="21"
+			END IF '¿ÀÈÄ ¼­ºê
+
+	ELSE IF(instr(weather_value,"°·") or instr(weather_value,"=>")) THEN 'ºñ¶Ç´Â´« ¿¬¼Ó
+            if(instr(weather_value,"»õº®") or instr(weather_value,"¾ÆÄ§") or instr(weather_value,"¿ÀÀü")) THEN
+               icon_40="24"
+            elseif(instr(weather_value,"¿ÀÈÄ") or instr(weather_value,"¹ã") or instr(weather_value,"Àú³á") or instr(weather_value,"³·")) THEN
+			   icon_40="25"
+            else 
+               icon_40="23"
+            END IF '»õº® ¼­ºê
+              
+			elseif(instr(weather_value,"»õº®") or instr(weather_value,"¾ÆÄ§") or instr(weather_value,"¿ÀÀü")) THEN
+				icon_40="19"
+			elseif(instr(weather_value,"¿ÀÈÄ") or instr(weather_value,"¹ã") or instr(weather_value,"Àú³á") or instr(weather_value,"³·")) THEN
+				icon_40="20"
+	        else 
+				icon_40="18"
+            END IF  '»õº® ¼­ºê
+END IF
+ELSEIF(instr(weather_value,"ºñ")) THEN
+
+           IF (instr(weather_value,"°·") or instr(weather_value,"=>")) THEN
+               IF (instr(weather_value,"»õº®") or instr(weather_value,"¾ÆÄ§") or instr(weather_value,"¿ÀÀü")) THEN
+				icon_40="16"
+               ELSEIF (instr(weather_value,"¿ÀÈÄ") or instr(weather_value,"¹ã") or instr(weather_value,"Àú³á") or instr(weather_value,"³·")) THEN
+                icon_40="17"
+               ELSE
+                icon_40="15"
+               END IF
+
+           ELSEIF(instr(weather_value,"Â÷Â÷") or instr(weather_value,"->")) THEN
+               IF(instr(weather_value,"¿ÀÈÄ") or instr(weather_value,"¹ã") or instr(weather_value,"Àú³á") or instr(weather_value,"³·")) THEN
+                icon_40="14"
+               ELSE
+                icon_40="13"
+               END IF
+
+           ELSEIF(instr(weather_value,"»õº®") or instr(weather_value,"¾ÆÄ§") or instr(weather_value,"¿ÀÀü")) THEN
+				icon_40="11"
+
+           ELSEIF(instr(weather_value,"¿ÀÈÄ") or instr(weather_value,"¹ã") or instr(weather_value,"Àú³á") or instr(weather_value,"³·")) THEN
+				icon_40="12"
+
+           ELSE
+				icon_40="10"
+           END IF
+
+ELSEIF (instr(weather_value,"¸¼ÀºÈÄ") OR instr(weather_value,"¸¼À½->")) THEN 
+	icon_40="06"
+
+ELSEIF(instr(weather_value,"¸¼À½")) THEN
+	icon_40="01"
+
+ELSEIF(instr(weather_value,"±¸¸§Á¶±Ý")) THEN
+	icon_40="02"
+
+ELSEIF(instr(weather_value,"±¸¸§¸¹")) THEN
+	icon_40="03"
+
+ELSEIF(instr(weather_value,"Èå¸°ÈÄ") OR instr(weather_value,"Èå¸²ÈÄ") OR instr(weather_value,"°·") OR instr(weather_value,"Â÷Â÷¸¼¾ÆÁü")) THEN
+    icon_40="05"
+
+ELSEIF(instr(weather_value,"Èå¸²") OR instr(weather_value,"Èå·ÁÁü")) THEN
+	icon_40="04"
+
+ELSEIF(instr(weather_value,"ÃµµÕ") OR instr(weather_value,"¹ø°³")) THEN 
+	icon_40="39"
+END IF
+
+FnWeatherIcon=icon_40
+END FUNCTION
+%>
