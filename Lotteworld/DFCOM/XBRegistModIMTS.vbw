@@ -1,0 +1,6 @@
+clsXBRegistModINTX = 22, 22, 462, 545, 
+clsXBRegistModITX = 44, 44, 484, 567, Z
+modSTDBConnect = 0, 0, 0, 0, C
+modSTLog = 0, 0, 0, 0, C
+modUserName = 0, 0, 0, 0, C
+modKDBConnect = 0, 0, 0, 0, C
