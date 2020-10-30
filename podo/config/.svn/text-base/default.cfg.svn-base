@@ -1,0 +1,91 @@
+[Podo]
+basedir   = {MANDATORY}
+tempdir   = {$Podo.basedir}/tmp
+debug     = true
+charset   = utf-8
+undefined = debug # default | (debug) | error
+
+[Podo_Plugin]
+use.exceptionHandler = true
+
+[Podo_System_Autoloader]
+cache.file  = {$Podo.tempdir}/Podo/System/Autoloader/Cache.php
+cache.check = {$Podo.debug}
+dirs        = []
+ext         = ['.php','.class.php']
+
+[Podo_System_Logger]
+enable = false		# true | (false)
+
+default.enable          = false
+default.file            = {$Podo.tempdir}/debug.log
+default.file.maxsize    = 10485760
+default.flush           = false		# true | (false)
+default.level           = 9			# 0-9
+default.print.execinfo  = false		# true | (false)
+default.print.callstack = false		# true | (false)
+
+logger.debug.enable         = {$Podo.debug}
+logger.debug.file           = {$Podo.tempdir}/debug.log
+logger.debug.flush          = true
+logger.debug.level          = 9
+logger.debug.print.execinfo = true
+
+logger.Podo_Dispatcher.enable = false
+
+[Podo_System_ErrorHandler]
+enable       = true
+trace.enable = true
+show.level   = NOTICE 	# NONE | ERROR | WARNING | (NOTICE) | STRICT | ALL
+logger.level = WARNING	# NONE | ERROR | (WARNING) | NOTICE | STRICT | ALL
+logger.name  = debug	# you must set logger in [Podo_System_Logger]
+exit.level   = ERROR	# NONE | (ERROR) | WARNING | NOTICE | STRICT | ALL
+
+[Podo_Dispatcher]
+rule.file  = {$Podo.basedir}/config/dispatcher.xml
+rule.cache = {$Podo.tempdir}/Podo/Dispatcher/XMLParser/dispatcher.php
+
+[Podo_Controller_Base]
+custom.request  = Podo_Controller_Request
+custom.response = Podo_Controller_Response
+custom.cookie   = Podo_Controller_Cookie
+
+[Podo_Controller_Cookie]
+default.expire       = 0
+default.path         = /
+default.domain       = ''
+default.encoding.in  = utf-8
+default.encoding.out = utf-8
+default.crypt        = false
+default.crypt.key    = ''
+
+# fill cookie name in 'sample'
+cookie.sample.expire       = 0				# default '0'
+cookie.sample.path         = /				# default '/'
+cookie.sample.domain       = cyworld.de		# default ''
+cookie.sample.encoding.in  = utf-8			# default 'utf-8'
+cookie.sample.encoding.out = utf-8			# default 'utf-8'
+cookie.sample.crypt        = true			# true | (false)
+cookie.sample.crypt.key    = crypted		# default ''
+
+[cyt]
+compile.ttl       = 0
+compile.checkfile = []
+compile.always    = false
+
+basedir.tpl       = {$Podo.basedir}/template
+basedir.class     = {$Podo.tempdir}/cyt/template
+basedir.pear      = {$Podo.basedir}/vendor/catz/pear
+
+customtag         = []
+
+generate.postfix  = Template	# 클래스명에 자동으로 붙는 postfix
+generate.ext      = .php		# 생성되는 클래스의 확장자
+generate.showinfo = false		# <!-- 템플릿명 --> 과 같은 설명을 보여줄지 여부
+
+syntax.base.json_decode   = true	# {@ ... } 형식 사용할지 여부
+syntax.script.asdata      = true	# <script> 안의 데이타를 모두 CDATA 로 처리할지 여부
+									# <script> 안에서 <dummy> 태그도 사용 가능
+syntax.attrib.escape      = true	# 태그의 속성값을 자동으로 escape 시켜줄지 여부
+syntax.comment.handlelink = true	# <!-- --> 안의 <link> 태그를 주석이 아닌 태그로 처리할지 여부
+

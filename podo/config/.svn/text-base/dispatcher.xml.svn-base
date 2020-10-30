@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dispatcher-config>
+	<patterns>
+	    <!--
+	    // 비슷한 조건이 겹칠 경우를 위해 ACTION, PARAM, ALL, 기타 순서로 써야 한다.
+	    // ALL일 경우 마지막에 ?를 제외하는 조건을 줘야 한다.
+		// 같은 비교 조건 일 경우 긴조건을 앞쪽에 써야 한다.
+		// (.+) 대신에 에러율 감소를 위해 (\w+) 사용을 권장.
+		// CONTROLLER 태그가 MAPPING보다 우선한다.
+		-->
+		<pattern type="ACTION">
+			<expression><![CDATA[/^(\w+)\/(\w+)\/(\w+)\/(\w+)\??/i]]></expression>
+			<mapping><![CDATA[condir/CONTROLLER/ACTION/mh_id]]></mapping>>
+			<controller><![CDATA[{$1}_{$2}Controller]]></controller>
+			<view><![CDATA[{$2}/{$3}.php]]></view>
+		</pattern>
+		<!--pattern type="PARAM" param="ic" target="URI">
+			<expression><![CDATA[/^~kimgua\/index\.php\?action=([^\?\/ ]+)\??\/?/i]]></expression>
+			<mapping><![CDATA[~kimgua/index.php?action=boardid]]></mapping>
+		</pattern>
+		<pattern type="PARAM" param="ib" value="1" target="ALL">
+			<expression><![CDATA[/^www.cyworld.nate.com\/~kimgua\/index\.php\?action=([^\?\/ ]+)\??\/?/i]]></expression>
+			<mapping><![CDATA[www.cyworld.nate.com/~kimgua/index.php?action=contentid]]></mapping>
+		</pattern>
+		<pattern type="ALL">
+			<expression><![CDATA[/^www.cyworld.nate.com\/~kimgua\/index\.php\?action=([^\/\? ]+)\??/i]]></expression>
+			<mapping><![CDATA[www.cyworld.nate.com/~kimgua/index.php?action=userid]]></mapping>
+		</pattern>
+		<pattern type="HOST">
+			<expression><![CDATA[/^(.+).search.nate.com/i]]></expression>
+			<mapping><![CDATA[ID.search.nate.com]]></mapping>
+		</pattern>
+		<pattern type="URI">
+			<expression><![CDATA[/^~kimgua\/index\.php\?action=(\w+)\/(\w+)\/(\w+)\??/i]]></expression>
+			<mapping><![CDATA[~kimgua/index.php?action=Controller/Action/Boardid]]></mapping>
+		</pattern>
+		<pattern type="URI">
+			<expression><![CDATA[/^~kimgua\/index\.php\?action=(\w+)\/(\w+)\??/i]]></expression>
+			<mapping><![CDATA[~kimgua/index.php?action=Userid/Homeid]]></mapping>>
+			<controller><![CDATA[PatternController]]></controller>
+			<action><![CDATA[patternAction]]></action>
+		</pattern>
+		<pattern type="URI">
+			<expression><![CDATA[/^[%7E|~]\w+\/cyworld-de\/dispatcher\.php\?action=(\w+)\/(\w+)\/(\w+)\/(\w+)\/(\w+)\??/i]]></expression>
+			<mapping><![CDATA[~ID/cyworld-de/dispatcher.php?action=condir/CONTROLLER/ACTION/mh_id/viewtype]]></mapping>>
+			<controller><![CDATA[{$1}_{$2}Controller]]></controller>
+			<view><![CDATA[{$2}/{$3}.php]]></view>
+		</pattern>
+		<pattern type="URI">
+			<expression><![CDATA[/^~kimgua\/index\.php\?action=(\w+)\/(\w+)\/(\w+)\/(\w+)\??/i]]></expression>
+			<mapping><![CDATA[~kimgua/index.php?action=Controller/Homeid/boardid/articleid]]></mapping>
+			<controller><![CDATA[{$1}Controller]]></controller>
+			<action><![CDATA[{$2}]]></action>
+			<view><![CDATA[tpl_{$1}_{$2}]]></view>
+			<param id="boardseq"><![CDATA[{$3}]]></param>
+		</pattern-->
+    </patterns>
+    <default>
+    	<controller><![CDATA[DefaultController]]></controller>
+    	<action><![CDATA[excute]]></action>
+    </default>
+</dispatcher-config>

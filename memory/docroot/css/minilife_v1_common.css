@@ -1,0 +1,433 @@
+@charset "utf-8";
+
+/* //////////////// [Default] //////////////// */
+html {height:100%;}
+body {width:100%;height:100%;font-size:12px;font-family:'돋움','Dotum','AppleGothic','sans-serif';background-color:#ffffff;}
+ol, ul, li, dl, dt, dd {list-style:none;}
+th, ul, ol, li, dl, dt, dd, form, blockquote {margin:0;padding:0;}
+img, fieldset {border:0;}
+hr {clear:both;display:none;}
+a {text-decoration:none;}
+table {border:0;}
+.clear {clear:both;float:none;width:0;height:0;margin:0;padding:0;font:0/0 Arial;}
+.hide {width:0;height:0;text-indent:-1000em;font:0/0 arial;}
+.png24 {tmp:expression(setPng24(this));}
+.fl {float:left;}
+.fr {float:right;}
+a.sname01:link, a.sname01:active, a.sname01:visited {font:9pt '돋움','Dotum','Verdana','Arial','Sans-Serif';line-height:1.2em;letter-spacing:0;color:#48688f;}
+a.sname01:hover {text-decoration:underline;}
+
+
+/* ===================== [Common] ===================== */
+/* 오랜지색 숫자 */
+strong.num {font:bold 8pt 돋움;color:#FF7E00;letter-spacing:-2px;}
+/* Gray Box - 미니라이프 꾸미기 */
+.round-gray01 {position:relative;float:left;display:inline;border:1px solid #DDDDDD;background:#F6F6F6;}
+	.round-gray01 span.rounded {position:absolute;z-index:1;float:left;width:8px;height:8px;font:0/0 arial;background-repeat:no-repeat;background-image:url('http://c1img.cyworld.co.kr/img/minilife/v1/common/bg_round-gray.gif');}
+	.round-gray01 span.lt {top:-1px;left:-1px;background-position:left top;}
+	.round-gray01 span.rt {top:-1px;right:-1px;background-position:right top;}
+	.round-gray01 span.lb {bottom:-1px;left:-1px;background-position:left bottom;}
+	.round-gray01 span.rb {bottom:-1px;right:-1px;background-position:right bottom;}
+/* 라운드 박스 Type01 - 공지사항+도움말 / 미니라이프 컨테스트 */
+.rounded-type01 {position:relative;float:left;display:inline;border:1px solid #DDDDDD;background:#ffffff;}
+	.rounded-type01 span.rounded {position:absolute;z-index:1;float:left;width:10px;height:10px;font:0/0 arial;background-repeat:no-repeat;background-image:url('http://c1img.cyworld.co.kr/img/minilife/v1/common/bg_round-type01.gif');}
+	.rounded-type01 span.lt {top:-1px;left:-1px;background-position:left top;}
+	.rounded-type01 span.rt {top:-1px;right:-1px;background-position:right top;}
+	.rounded-type01 span.lb {bottom:-1px;left:-1px;background-position:left bottom;}
+	.rounded-type01 span.rb {bottom:-1px;right:-1px;background-position:right bottom;}
+/* 라운드 박스 Type02 - 서브 좌측 네비게이션 */
+.rounded-type02 {position:relative;float:left;display:inline;background:#F2EEDF;}
+	.rounded-type02 span.rounded {position:absolute;z-index:1;float:left;width:8px;height:8px;font:0/0 arial;background-repeat:no-repeat;background-image:url('http://c1img.cyworld.co.kr/img/minilife/v1/common/bg_rounded-type02.gif');}
+	.rounded-type02 span.lt {top:0;left:0;background-position:left top;}
+	.rounded-type02 span.rt {top:0;right:0;background-position:right top;}
+	.rounded-type02 span.lb {bottom:-1px;left:0;background-position:left bottom;}
+	.rounded-type02 span.rb {bottom:-1px;right:0;background-position:right bottom;}
+	/* inner */
+	.rounded-type02-inner {position:relative;float:left;display:inline;background:#FFFFFF;}
+		.rounded-type02-inner span.rounded {position:absolute;z-index:1;float:left;width:8px;height:8px;font:0/0 arial;background-repeat:no-repeat;background-image:url('http://c1img.cyworld.co.kr/img/minilife/v1/common/bg_rounded-type02-inner.gif');}
+		.rounded-type02-inner span.lt {top:0;left:0;background-position:left top;}
+		.rounded-type02-inner span.rt {top:0;right:0;background-position:right top;}
+		.rounded-type02-inner span.lb {bottom:0;left:0;background-position:left bottom;}
+		.rounded-type02-inner span.rb {bottom:0;right:0;background-position:right bottom;}
+/* 라운드 박스 Type03(서브 우측 컨텐츠) - 오늘의 미니라이프 / 콘테스트 ON AIR */
+.rounded-type03 {position:relative;float:left;display:inline;background:#F6F6F6;}
+	.rounded-type03 span.rounded {position:absolute;z-index:1;float:left;width:6px;height:6px;font:0/0 arial;background-repeat:no-repeat;background-image:url('http://c1img.cyworld.co.kr/img/minilife/v1/common/bg_rounded-type03.gif');}
+	.rounded-type03 span.lt {top:0;left:0;background-position:left top;}
+	.rounded-type03 span.rt {top:0;right:0;background-position:right top;}
+	.rounded-type03 span.lb {bottom:0;left:0;background-position:left bottom;}
+	.rounded-type03 span.rb {bottom:0;right:0;background-position:right bottom;}
+/* Recently List - 공지사항 / 도움말 */
+.recent-list {position:relative;clear:both;float:left;display:inline;width:100%;}
+	.recent-list a.more {top:10px;right:15px;}
+	.recent-list ul {clear:both;float:left;display:inline;width:210px;margin:3px 0 0 10px;}
+		.recent-list ul li {clear:both;float:left;width:194px;margin:6px 0 0 0;padding:0 0 0 16px;background:url('http://c1img.cyworld.co.kr/img/minilife/v1/icon/bul_set01.gif') 10px 4px no-repeat;}
+			.recent-list ul li a {display:block;width:100%;height:14px;font:9pt/1.2em 돋움;color:#666666;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+			.recent-list ul li a:hover {text-decoration:underline;}
+/* 검색버튼 */
+input.search-send {width:40px;height:21px;padding:0;font:0/0 arial;text-indent:-1000em;cursor:pointer;border:0;background:url('http://c1img.cyworld.co.kr/img/minilife/v1/button/btn_top_search.gif') left top no-repeat;}
+/* Global contents / Space contest 타이틀 */
+.title-line {clear:both;float:left;display:inline;height:26px;text-indent:-1000em;font:0/0 arial;border-bottom:1px solid #DDDDDD;background-repeat:no-repeat;background-image:url('http://c1img.cyworld.co.kr/img/minilife/v1/common/tit_global-contest.gif');}
+	.title-line a {float:left;height:18px;margin:0;padding:0;text-indent:-1000em;font:0/0 arial;overflow:hidden;}
+/* 더보기 */
+a.more {position:absolute;z-index:99;float:left;width:32px;height:9px;text-indent:-1000em;font:0/0 arial;cursor:pointer;background:url('http://c1img.cyworld.co.kr/img/minilife/v1/button/btn_more.gif') left top no-repeat;}
+/* 순위 아이콘 */
+span.rank {float:left;display:inline;width:11px;height:11px;margin:1px 4px 0 0;text-indent:-1000em;font:0/0 arial;overflow:hidden;background-repeat:no-repeat;background-image:url('http://c1img.cyworld.co.kr/img/minilife/v1/icon/ico_rank-number01.gif');}
+	span.r01 {background-position:left top;}
+	span.r02 {background-position:left -20px;}
+	span.r03 {background-position:left -39px;}
+	span.r04 {background-position:left -60px;}
+	span.r05 {background-position:left -79px;}
+/* 공간 썸네일 리스트 형식 */
+a.favorite {float:left;margin:2px 4px 0 0;font:0/0 arial;}
+/* 파티상태 아이콘 */
+span.party-status {float:left;width:9px;height:13px;margin:0 4px 0 0;text-indent:-1000em;font:0/0 arial;cursor:pointer;background-image:url('http://c1img.cyworld.co.kr/img/minilife/v1/icon/ico_party-status.gif');background-repeat:no-repeat;}
+	span.partyon {background-position:left top;}
+	span.party-star {height:15px !important;background-position:left -22px;}
+	span.partyoff {background-position:left bottom;}
+a.title {float:left;margin:1px 0 0 0;font:9pt 돋움;color:#555555;}
+a.title:hover {text-decoration:underline;}
+/* 카테고리 종류 */
+span.party-category {float:left;width:100px;height:14px;text-indent:-1000em;font:0/0 arial;background-image:url('http://c1img.cyworld.co.kr/img/minilife/v1/icon/ico_party-category2.gif');background-repeat:no-repeat;}
+	span.home {background-position:left top;}
+	span.issue {background-position:left -20px;}
+	span.music {background-position:left -40px;}
+	span.dance {background-position:left -60px;}
+	span.study {background-position:left -80px;}
+	span.woman {background-position:left -100px;}
+	span.birthday {background-position:left -120px;}
+	span.graduate {background-position:left -140px;}
+	span.christmas {background-position:left -160px;}
+	span.celebrate {background-position:left -180px;}
+	span.culture {background-position:left -200px;}
+/* 페이징 */
+.paging-wrap {clear:both;margin:20px auto 0 auto;}
+	.paging-wrap tbody tr td {}
+		.paging-wrap tbody tr td * {float:left;width:12px;height:15px;text-indent:-1000em;font:0/0 arial;background-image:url('http://c1img.cyworld.co.kr/img/minilife/v1/paging-set.gif');background-repeat:no-repeat;}
+		.paging-wrap a.go-first {margin:0 2px 0 0;background-position:3px 4px;}
+			.paging-wrap a.go-first:hover {background-position:3px -16px;}
+		.paging-wrap a.go-previous {margin:0 2px 0 0;background-position:-11px 4px;}
+			.paging-wrap a.go-previous:hover {background-position:-11px -16px;}
+		.paging-wrap a.page-num {width:auto;height:13px;padding:0 5px;text-indent:0;font:7pt/1.4em verdana;color:#333333;letter-spacing:-2px;background:none;}
+			.paging-wrap a.page-num:hover {color:#FF6600;}
+		.paging-wrap strong.this {width:auto;height:13px;padding:0 6px;text-indent:0;font:bold 7pt/1.4em verdana;color:#FF6600;letter-spacing:-2px;background:none;}
+		.paging-wrap	span.bar {width:1px;background-position:-30px top;}
+		.paging-wrap a.go-forward {margin:0 0 0 2px;background-position:-41px 4px;}
+			.paging-wrap a.go-forward:hover {background-position:-41px -16px;}
+		.paging-wrap a.go-end {margin:0 0 0 2px;background-position:-60px 4px;}
+			.paging-wrap a.go-end:hover {background-position:-60px -16px;}
+/* 코멘트 페이징 */
+.view-comment {clear:both;float:right;display:inline;margin:16px 0 0 0;}
+	.view-comment * {float:left;width:12px;height:15px;text-indent:-1000em;font:0/0 arial;background-image:url('http://c1img.cyworld.co.kr/img/minilife/v1/paging-set.gif');background-repeat:no-repeat;}
+	.view-comment a.go-first {margin:0 2px 0 0;background-position:3px 4px;}
+		.view-comment a.go-first:hover {background-position:3px -16px;}
+	.view-comment a.go-previous {margin:0 2px 0 0;background-position:-11px 4px;}
+		.view-comment a.go-previous:hover {background-position:-11px -16px;}
+	.view-comment a.page-num {width:auto;height:13px;padding:0 4px;text-indent:0;font:7pt/1.4em verdana;color:#333333;letter-spacing:-2px;background:none;}
+		.view-comment a.page-num:hover {color:#FF6600;}
+	.view-comment strong.this {width:auto;height:13px;padding:0 5px;text-indent:0;font:bold 7pt/1.4em verdana;color:#FF6600;letter-spacing:-2px;background:none;}
+	.view-comment a.go-forward {margin:0 0 0 2px;background-position:-41px 4px;}
+		.view-comment a.go-forward:hover {background-position:-41px -16px;}
+	.view-comment a.go-end {margin:0 0 0 2px;background-position:-60px 4px;}
+		.view-comment a.go-end:hover {background-position:-60px -16px;}
+/* TD for relative wrap */
+div.for-relative-wrap {position:relative;float:left;}
+/* 서브네비게이션 */
+.sub-navigation {width:180px;margin:5px 0 0 0;padding:10px 10px 9px 10px;}
+	.sub-navigation h3 {margin:5px 0;text-indent:14px;font:bold 9pt 돋움;color:#424242;}
+	.navigation-inner {width:180px;}
+		.navigation-inner ul {clear:both;float:left;display:inline;width:160px;margin:7px 0 0 10px; padding:0 0 7px 0;}
+			.navigation-inner ul li {clear:both;float:left;width:100%;margin:2px 0 0 0;padding:4px 0 4px 0;background:url('http://c1img.cyworld.co.kr/img/minilife/v1/bg_dot-sub-navigation.gif') left bottom repeat-x;}
+			.navigation-inner ul li.last {padding:4px 0 3px 0 !important;background:none;}
+				.navigation-inner ul li.this a {color:#FF6600 !important;}
+				.navigation-inner ul li a {float:left;display:inline;width:146px;padding:2px 0 2px 14px;font:bold 9pt 돋움;color:#777777;background:url('http://c1img.cyworld.co.kr/img/minilife/v1/icon/bul_set01.gif') 5px -56px no-repeat;}
+				.navigation-inner ul li a:hover {color:#FF6600;text-decoration:underline;}
+
+
+/* ===================== [Header] ===================== */
+#header {position:relative;z-index:9999;width:970px;margin:0 auto;/*background:url('http://c1img.cyworld.co.kr/img/minilife/v1/common/bg_header.gif') left bottom no-repeat;*/}
+	/* 로그아웃일때 */
+	#logout #header {background:none;}
+	/* 타이틀 H1 */
+	h1 {float:left;display:inline;margin:14px 0 0 10px;padding:0; width:248px; height:39px; background-image:url('http://c1img.cyworld.co.kr/img/minilife/v1/common/tit_bi-set.gif'); background-repeat:no-repeat; background-position:left top;}
+		h1 span {float:left;width:0;height:0;text-indent:-1000em;font:0/0 arial;}
+		h1 a {float:left;display:inline;text-indent:-1000em;font:0/0 arial;}
+		h1 a.cyworld {width:86px;height:20px;margin:16px 0 0 62px;}
+		h1 a.space {width:96px;height:21px;margin:10px 0 0 4px;}
+	h1.member-female {height:35px; background-position:left -65px;}
+		h1.member-female a.cyworld {margin:12px 0 0 62px;}
+		h1.member-female a.space {margin:7px 0 0 4px;}
+	/* GNB */
+	.gnb {position:relative;z-index:99;float:right;height:26px;background:url('http://c1img.cyworld.co.kr/img/minilife/v1/common/bg_gnbleft.gif') left top no-repeat;}
+		.gnb ul.gnbmenu {float:left;display:inline;height:26px;margin:0 0 0 9px;background:url('http://c1img.cyworld.co.kr/img/minilife/v1/common/bg_gnbright.gif') right top no-repeat;}
+			.gnb ul.gnbmenu li {float:left;margin:7px 4px 0 0;padding:0 0 0 5px;background:url('http://c1img.cyworld.co.kr/img/minilife/v1/icon/ico_gnbrect.gif') left 5px no-repeat;}
+				.gnb ul.gnbmenu li a {font:8pt 돋움;color:#6C6C6C;line-height:1.3em;letter-spacing:-1px;}
+				.gnb ul.gnbmenu li a:hover {color:#FF6600;text-decoration:none;}
+			/* 첫번째 메뉴 */
+			.gnb ul.gnbmenu li.first {padding:0 0 0 0;background:none;}
+			/* name */
+			.gnb ul.gnbmenu li.name {margin:7px 7px 0 0;padding:0;background:none;}
+				.gnb ul.gnbmenu li.name a{color:#48688F;}
+			/* 서비스 전체보기 */
+			.gnb ul.gnbmenu li.serviceall {background:url('http://c1img.cyworld.co.kr/img/minilife/v1/icon/ico_gnbbargray.gif') left 1px no-repeat;}
+				.gnb ul.gnbmenu li.serviceall a {float:left;padding:0 7px 0 0;background:url('http://c1img.cyworld.co.kr/img/minilife/v1/icon/ico_arrow_down.gif') right 4px no-repeat;}
+				.gnb ul.gnbmenu li.serviceall a.open {float:left;padding:0 7px 0 0;background:url('http://c1img.cyworld.co.kr/img/minilife/v1/icon/ico_arrow_up.gif') right 4px no-repeat;}
+			#gnbSelect {position:absolute; top:22px; right:24px; width:92px; padding:0 0 1px 0; z-index:99;background:url('http://c1img.cyworld.co.kr/img/minilife/v1/common/bg_selectmenu2.gif') no-repeat left bottom;}
+				#gnbSelect .gnbSelect_top { width:92px; height:8px; font-size:0; background:url('http://c1img.cyworld.co.kr/img/minilife/v1/common/bg_selectmenu1.gif') no-repeat left top; }
+				#gnbSelect ul.selectmenu { width:74px; margin:0; padding:0 9px 0 9px; }
+				#gnbSelect ul.selectmenu li { display:block; width:74px; padding:1px 0 1px 0; font:8pt 돋움;letter-spacing:-1px;}
+					#gnbSelect ul.selectmenu li a:link, #gnbSelect ul.selectmenu li a:visited, #gnbSelect ul.selectmenu li a:active { color:#777777; }
+					#gnbSelect ul.selectmenu li a:hover { color:#FF7200; }
+
+				#gnbSelect #menu2 { display:none; padding-bottom:5px; background:none; }
+				#gnbSelect #menu2_1 {
+					float:left; display:inline; width:72px; margin:2px 9px 0 9px; padding:6px 0 7px 0; font:8pt 돋움; color:#666666; letter-spacing:-1px; cursor:pointer;
+					background:url('http://c1img.cyworld.co.kr/img/minilife/v1/common/dotline01.gif') repeat-x left top;
+				}
+			/* 로그인-아웃 */
+			.gnb ul.gnbmenu li.loginout {margin:5px 0 0 0;padding:0 12px 0 5px;font:0/0 arial;background:none;}
+	/* SNB */
+	ul.snb {position:absolute;left:0;bottom:-1px;clear:both;float:left;display:inline;margin:10px 0 0 0;}
+		ul.snb li {float:left;margin:0 2px 0 0;font:0/0 arial;}
+	/* 상단검색 */
+	fieldset.global-search {float:right;display:inline;width:292px;margin:13px 109px 9px 0;padding:0;}
+		fieldset.global-search legend {width:0;height:0;text-indent:-1000em;font:0/0 arial;}
+		fieldset.global-search dl {float:left;}
+			fieldset.global-search dl dt {float:left;margin:4px 3px 0 0;font:9pt 돋움;color:#999999;}
+			fieldset.global-search dl dd {float:left;display:inline;}
+				fieldset.global-search dl dd select {float:left;width:53px;font:9pt 돋움;color:#666666;}
+				fieldset.global-search dl dd input.search-input {float:left;width:132px;height:15px;margin:0 4px 0 0; padding:3px 0 0 2px; font:9pt 돋움;color:#666666;border:1px solid #D9D9D9;background:#ffffff;}
+				fieldset.global-search dl dd input.search-send {float:left;margin:0;}
+			fieldset.global-search dl dd.search-people {margin:4px 0 0 4px;}
+				fieldset.global-search dl dd.search-people a {font:bold 9pt 돋움;color:#FF8000;letter-spacing:-1px;text-decoration:underline;}
+	/* 미니라이프 SHOP */
+	a.space-shop {position:absolute;top:50px;right:8px;float:right;width:91px;height:42px;font:0/0 arial;text-indent:-1000em;background:url('http://c1img.cyworld.co.kr/img/minilife/v1/button/btn_spaceshop.gif') left top no-repeat;}
+
+/* ===================== [Body] ===================== */
+/* iframe */
+iframe#mlIframeBody {float:right;width:760px;margin:0 0 0 10px;padding:28px 0 0 0;}
+#bodywrap {position:relative;z-index:9;clear:both;width:970px;margin:0 auto;background:url('http://c1img.cyworld.co.kr/img/minilife/v1/bg_sub-body.gif') left top no-repeat;}
+	/* 로그인영역 */
+		/* 로그인전 : 2008.07.28 윤성애 */
+		#login-form {position:relative; clear:both;float:left;display:inline;padding:0;}
+		.sub-login { width:154px; padding:26px 23px 0 23px !important; background:url('http://c1img.cyworld.co.kr/img/minilife/v1/common/bg_sub-body-bt.gif') left bottom no-repeat;}
+		#login-form fieldset { clear:both; position:relative; margin:0 0 6px 0; padding:0; }
+		#login-form.sub-login fieldset { padding:0 0 1px 0; }
+			#login-form fieldset legend {width:0; height:0; text-indent:0; font:0/0 arial; overflow:hidden;}
+			#login-form input { width:91px; height:16px; padding:5px 0 0 4px; overflow:hidden; background-color:#F2F2F2; border:1px solid #E5E5E5; color:#666666; font-size:9pt; }
+			#login-form input#passwd_rsa { position:absolute; top:0; left:0; width:0; height:0; visibility:hidden; }
+			#login-form input#loginEmail { position:relative; margin:0 0 4px 0; .margin:-1px 0 2px 0; ime-mode:disabled; }
+			#login-form input#loginEmail.bg { background:url('http://c1img.cyworld.co.kr/img/minilife/v1/common/img_login_4.gif') no-repeat -1px -154px; }
+			#login-form input#loginPasswd.bg { background:url('http://c1img.cyworld.co.kr/img/minilife/v1/common/img_login_4.gif') no-repeat -1px -181px; }
+			#login-form input.btn {
+				position:absolute; top:0; left:103px; width:51px; height:50px; padding:0; cursor:pointer;
+				background:url('http://c1img.cyworld.co.kr/img/minilife/v1/common/img_login_4.gif') no-repeat -78px -270px; border:none;
+			}
+			#login-form input.login-checkbox {float:left; display:inline; width:auto; height:auto; margin:8px 3px 0 0; padding:0; background:none; border:0;}
+			#login-form label.login-check {float:left; display:inline; height:11px; margin:9px 5px 0 0; text-indent:-1000em; font:0/0 arial; overflow:hidden; background-image:url('http://c1img.cyworld.co.kr/img/minilife/v1/common/img_login_4.gif'); background-repeat:no-repeat;}
+				#login-form label.email-save {width:45px; background-position:-95px -78px;}
+				#login-form label.login-protect {width:37px; background-position:-95px -59px;}
+		#login-form .loginbtn {
+				height:18px; background:url('http://c1img.cyworld.co.kr/img/minilife/v1/common/img_login_4.gif') no-repeat 0 -34px; border-top:1px solid #ED4610; color:#E3E3E3;
+			}
+		#login-form .loginbtn {position:relative; background-position:0 -33px;}
+			#login-form .loginbtn a { position:absolute; display:block; height:12px; overflow:hidden; text-indent:-300em; }
+			#login-form .loginbtn a.join { left:0; top:7px; width:36px; }
+			#login-form .loginbtn a.searchpass { left:59px; top:7px; right:0; width:84px; }
+	#login-form a.firsttime {clear:both;float:left;display:inline;width:179px;height:98px;margin:21px 0 0 0;text-indent:-1000em;font:0/0 arial;background:url('http://c1img.cyworld.co.kr/img/minilife/v1/button/btn_firsttime02.gif') left top no-repeat;} /* 2008.06.25 수정 */
+	#login-form.sub-login a.firsttime {position:relative; margin:5px 0 0 -12px;}
+
+	/* Global Contents */
+	#global-contents {float:left;width:200px;}
+		/* 개인화영역 - 로그인후 */
+		.personal-area {clear:both;float:left;display:inline;width:200px;height:auto;margin:0;padding-bottom:10px;background:url('http://c1img.cyworld.co.kr/img/minilife/v1/bg_personal-area_bottom.gif') left bottom no-repeat;}
+			/* 아바타영역 */
+			.personal-area .avatar {position:relative;float:left;display:inline;width:80px;height:103px;margin:15px 0 0 13px;}
+				.personal-area .avatar table tbody tr td {width:80px;height:103px;text-align:center;font:0/0 arial;}
+					.personal-area .avatar table tbody tr td img {width:80px;height:90px;}
+			/* 사용자정보 */
+			.personal-area ul.pesonal-info {float:left;display:inline;width:85px;margin:21px 0 0 9px;}
+				.personal-area ul.pesonal-info li {clear:both;float:left;width:100%;margin:2px 0 0 0;}
+				.personal-area ul.pesonal-info li.name {margin:2px 0 3px 0;}
+					.personal-area ul.pesonal-info li a img.chgcharacter {margin:0 0 -2px 0;}
+					.personal-area ul.pesonal-info li a, li span.visitor {font:8pt 돋움;color:#666666;letter-spacing:-1px;}
+					.personal-area ul.pesonal-info li strong.num {margin:0 0 0 -2px;}
+					.personal-area ul.pesonal-info li a.logout {float:left;width:54px;height:20px;margin:2px 0 0 0;text-indent:-1000em;font:0/0 arial;background:url('http://c1img.cyworld.co.kr/img/minilife/v1/button/btn_personal-logout.gif') left top no-repeat;}
+					.personal-area ul.pesonal-info li.name a.sname01 {font:9pt/1.2em 돋움; color:#48688f; letter-spacing:0;}
+			/* 내미니라이프바로가기 */
+			a.myspace {clear:both;float:left;position:relative;width:180px;height:39px;margin:9px 0 0 10px;text-indent:-1000em;font:0/0 arial;background:url('http://c1img.cyworld.co.kr/img/minilife/v1/button/btn_sub-myspace_1.gif') left top no-repeat;}
+			#login-form.sub-login a.myspace {margin:18px 0 0 -13px;}
+			/* 미니라이프에 접속중이 일촌 */
+			dl.space-onedeg {clear:both;float:left;display:inline;width:180px;margin:8px 0 0 10px;background:url('http://c1img.cyworld.co.kr/img/minilife/v1/bg_onedeg_top.gif') left top no-repeat;}
+				dl.space-onedeg dt {padding-top:10px;font:8pt 돋움;color:#666666;letter-spacing:-1px;text-align:center;}
+					dl.space-onedeg dt a {position:relative;float:left;width:165px;margin:0 0 0 8px;font:8pt 돋움;color:#666666;letter-spacing:-1px;text-align:center;cursor:pointer;}
+					dl.space-onedeg dt a:hover {text-decoration:none;}
+						dl.space-onedeg dt a span {float:left;}
+							dl.space-onedeg dt a span strong {margin:0 0 0 1px;}
+						dl.space-onedeg dt a span.icon-open, dl.space-onedeg dt a span.icon-close {float:right;width:11px;height:11px;margin:0 0 0 5px;text-indent:-1000em;font:0/0 arial;background-image:url('http://c1img.cyworld.co.kr/img/minilife/v1/button/btn_onedeg-list-folding.gif');background-repeat:no-repeat;}
+						dl.space-onedeg dt a span.icon-open {background-position:left 0;}
+						dl.space-onedeg dt a span.icon-close {background-position:left -11px;}
+				dl.space-onedeg dd {position:relative;clear:both;float:left;display:none;width:100%;margin:8px 0 0 0;padding-top:10px;background:url('http://c1img.cyworld.co.kr/img/minilife/v1/bg_sub-onedeg-dot.gif') 10px top no-repeat;}
+					dl.space-onedeg dd p {font:8pt 돋움;color:#666666;text-align:center;}
+					dl.space-onedeg dd ul {float:left;display:inline;width:141px;margin:-2px 0 0 23px;}
+						dl.space-onedeg dd ul li {float:left;display:inline;width:47px;margin:2px 0 0 0;padding:0;}
+						dl.space-onedeg dd ul li.last {padding:0;}
+							dl.space-onedeg dd ul li a.sname01 {float:left; width:36px; height:12px; font-size:8pt !important;letter-spacing:-1px !important; line-height:1.2em; overflow:hidden; word-break:break-all; text-overflow:ellipsis; white-space:nowrap;}
+							dl.space-onedeg dd ul li img.n-member {margin:0 0 0 -7px;}
+					a.toggle {position:absolute;top:1px;width:11px;height:11px;text-indent:-1000em;font:0/0 arial;background-repeat:no-repeat;background-image:url('http://c1img.cyworld.co.kr/img/minilife/v1/button/btn_toggle-onedeg.gif');}
+					a.previous {top:11px;left:8px;background-position:left top;}
+					a.forward {top:11px;right:8px;background-position:right top;}
+				/* 미니라이프 파도타기 */
+				dl.space-onedeg dd.surfing {display:inline;margin:7px 0 0 0;padding-top:0;padding-bottom:9px;background:url('http://c1img.cyworld.co.kr/img/minilife/v1/bg_onedeg_bottom.gif') left bottom no-repeat;}
+					dl.space-onedeg dd.surfing select {width:161px;margin:0 0 0 10px;font:9pt 돋움;color:#646464;}
+		/* 퀵링크 */
+		div.quicklink-wrap {clear:both;float:left;width:200px;margin:5px 0 0 0;background:url('http://c1img.cyworld.co.kr/img/minilife/v1/bg_quicklink-top.gif') left top no-repeat;}
+			div.quicklink-wrap ul {clear:both;float:left;width:189px; margin:10px 0 0 0; padding:0 0 0 11px;}
+				div.quicklink-wrap ul li {clear:both;float:left;width:189px;margin:0;padding:0;}
+					div.quicklink-wrap ul li a {font:0/0 arial;}
+			div.quicklink-wrap span.quicklink-bottom {clear:both; float:left; width:200px; height:8px; font:0/0 arial; background:url('http://c1img.cyworld.co.kr/img/minilife/v1/bg_quicklink-bottom.gif') left bottom no-repeat;}
+		/* 공지사항 + 도움말 */
+		.notice-help {clear:both;width:198px;margin:5px 0 0 0;}
+			.recent-list ul {width:180px;}
+				.recent-list ul li {width:154px;}
+			/* 공지사항 */
+			.notice {margin:15px 0 0 0;}
+				.notice h3.title-line {width:180px;margin:0 0 0 10px;background-position:left -30px;}
+					.notice h3.title-line a {width:54px;}
+			/* 도움말 */
+			.help {margin:17px 0 0 0;padding-bottom:16px;}
+				.help h3.title-line {width:180px;margin:0 0 0 10px;background-position:left -60px;}
+					.help h3.title-line a {width:43px;}
+		/* 하나씩 있을때 */
+		.notice-help-alone {padding-bottom:11px;}
+		/* DirectX 설치 */
+		.install-directx {width:228px;margin:3px 0 0 0;}
+			.install-directx p {clear:both;float:left;display:inline;width:195px;margin:0 0 0 19px;padding:13px 0 11px 0;font:8pt/1.5em 돋움;letter-spacing:-1px;color:#999999;text-align:left;}
+				.install-directx p a {color:#666666;font-weight:bold;text-decoration:underline;}
+		/* 서브페이지일때 */
+		.sub-directx {width:198px;}
+			.sub-directx p {width:170px;}
+		/* 오픈 API 배너 */
+		a.openapi-banner {clear:both;float:left;width:230px;height:47px;margin:5px 0 0 0;text-indent:-1000em;font:0/0 arial;overflow:hidden;background:url('http://c1img.cyworld.co.kr/img/minilife/v1/button/btn_open-api.gif') left top no-repeat;}
+	/* Contents */
+	#contents {position:relative;float:right;width:732px;}
+		/* 지금접속중 / 지금파티중 */
+		.connected {position:absolute;top:25px;right:29px;font:0/0 arial;}
+			/* 로그아웃일때 */
+			#logout .connected {top:23px;right:27px;}
+		/* 서브페이지 - 타이틀 */
+		h2.sub-title-h2 {clear:both;float:left;display:inline;width:90%;height:21px;margin:0 0 0 5px;text-indent:-1000em;font:0/0 arial;background-image:url('http://c1img.cyworld.co.kr/img/minilife/v1/tit_space-sub02.gif');background-repeat:no-repeat;}
+			h2.search {background-position:left top;}
+			h2.notice {background-position:left -25px;}
+			h2.faq {background-position:left -50px;}
+			h2.modelhouse {background-position:5px -75px;}
+			h2.space {height:26px;margin:-4px 0 0 5px;background-position:1px -120px;}
+		/* 서브페이지 h3 타이틀 */
+		h3.sub-title-h3 {clear:both;float:left;display:inline;width:90%;height:14px;text-indent:-1000em;font:0/0 arial;background-image:url('http://c1img.cyworld.co.kr/img/minilife/v1/common/tit_global-contest.gif');background-repeat:no-repeat;}
+		/* 즐겨찾기 레이어 */
+		div.add-favorite {z-index:999;position:absolute;}
+		div.position-l {left:-230px;top:15px;}
+		div.position-r {right:-370px;top:15px;}
+		div.position-lb {left:-230px;top:-230px;}
+		div.position-rb {right:-370px;top:-230px;}
+			div.add-favorite .rounded {clear:both;float:left;width:100%;height:7px;font:0/0 arial;background-repeat:no-repeat;}
+			div.add-favorite .top {background-position:left top;}
+			div.add-favorite .add-favorite-body {position:relative;clear:both;float:left;width:100%;}
+				div.add-favorite .add-favorite-body	p.msg {clear:both;float:left;width:100%;font:9pt/1.5em 돋움;color:#666666;text-align:center;}
+					div.add-favorite .add-favorite-body	p.msg strong {font-weight:normal;text-decoration:underline;}
+				div.add-favorite .add-favorite-body div.btn-wrap {clear:both;margin:0 0 0 20px;padding:10px 0 0 0;text-align:center;font:0/0 arial;border-top:1px solid #E0E0E0;}
+					div.add-favorite .add-favorite-body div.btn-wrap img {margin:0 2px 0 1px;}
+			div.add-favorite .bottom {background-position:left bottom;}
+			a.close-layer {position:absolute;top:-2px;right:4px;float:left;width:14px;height:13px;text-indent:-1000em;font:0/0 arial;background:url('http://c1img.cyworld.co.kr/img/minilife/v1/button/btn_close-layer.gif') left top no-repeat;}
+			/* 405px*/
+			div.w405 {width:405px;}
+				div.w405 .rounded {background-image:url('http://c1img.cyworld.co.kr/img/minilife/v1/bg_favorite-405.gif');}
+				div.w405 .add-favorite-body {padding:0 0 13px 0;background:url('http://c1img.cyworld.co.kr/img/minilife/v1/bg_favorite-405-body.gif') left top repeat-y;}
+					div.w405 .add-favorite-body	dl {position:relative;clear:both;float:left;display:inline;width:365px !important;margin:18px 0 0 20px !important;}
+						div.w405 .add-favorite-body	dl dt {float:left;display:inline;width:239px;margin:3px 0 0 79px;}
+							div.w405 .add-favorite-body	dl dt span.party-category {width:auto;}
+								div.w405 .add-favorite-body	dl dt span.home, div.w405 .add-favorite-body dl dt span.music, div.w405 .add-favorite-body dl dt span.woman, div.w405 .add-favorite-body	dl dt span.birthday, div.w405 .add-favorite-body	dl dt span.graduate, div.w405 .add-favorite-body dl dt span.culture, div.w405 .add-favorite-body dl dt span.celebrate {width:29px;}
+								div.w405 .add-favorite-body	dl dt span.issue, div.w405 .add-favorite-body dl dt span.dance {width:28px;}
+								div.w405 .add-favorite-body	dl dt span.study {width:39px;}
+								div.w405 .add-favorite-body	dl dt span.christmas {width:59px;}
+							div.w405 .add-favorite-body	dl dt span.title {float:left;display:inline;margin:0 0 0 4px;font:bold 9pt 돋움;color:#555555;}
+						div.w405 .add-favorite-body	dl dd.writer {float:left;margin:5px 0 0 0;padding:0 0 0 6px;background:url('http://c1img.cyworld.co.kr/img/minilife/v1/icon/ico_bar-sr.gif') left 2px no-repeat;}
+						div.w405 .add-favorite-body	dl dd.public {position:absolute;left:0;top:0;width:73px;}
+							div.w405 .add-favorite-body	dl dd.public select {width:74px;font:9pt 돋움;color:#646464;}
+						div.w405 .add-favorite-body	dl dd.description {clear:both;float:left;width:100%;margin:5px 0 0 0;padding:10px 0 0 0;background:url('http://c1img.cyworld.co.kr/img/minilife/v1/bg_dot01.gif') left top repeat-x;}
+							div.w405 .add-favorite-body	dl dd.description textarea {width:361px;height:28px;font:9pt 돋움;color:#828282;border:1px solid #D9D9D9;overflow:auto;background:#ffffff;}
+					div.w405 .add-favorite-body	p.msg {margin:22px 0 21px 0;}
+					div.w405 .add-favorite-body div.btn-wrap {width:365px;}
+			/* 360px*/
+			div.w360 {width:360px;}
+				div.w360 .rounded {background-image:url('http://c1img.cyworld.co.kr/img/minilife/v1/bg_favorite-360.gif');}
+				div.w360 .add-favorite-body {padding:0 0 13px 0;background:url('http://c1img.cyworld.co.kr/img/minilife/v1/bg_favorite-360-body.gif') left top repeat-y;}
+					div.w360 .add-favorite-body strong.add-complete {clear:both;float:left;width:100%;margin:28px 0 0 0;font:bold 9pt 돋움;color:#FF6C00;text-align:center;}
+					div.w360 .add-favorite-body	p.msg {margin:20px 0 21px 0;}
+					div.w360 .add-favorite-body div.btn-wrap {width:320px;}
+			div.w360 a.close-layer {top:-2px;right:5px;}
+
+
+/* 파티 소개 레이어 수정 : 2008년 2월 28일 UI개발팀 이현국 */
+div.party-detail-view-wrap {z-index:8;position:relative;padding:12px;overflow:hidden;border:1px solid #DDDDDF;background:#ffffff;}
+	/* Rounded */
+	div.party-detail-view-wrap span.rnd {z-index:9;position:absolute;display:block;width:2px;height:2px;font:0/0 arial;overflow:hidden;/*background-image:url('http://c1img.cyworld.co.kr/img/minilife/v1/rnd-party-detail.gif'); background-repeat:no-repeat;*/}
+	div.party-detail-view-wrap span.lt {top:-1px;left:-1px;background-position:left top;}
+	div.party-detail-view-wrap span.rt {top:-1px;right:-1px;background-position:right top;}
+	div.party-detail-view-wrap span.lb {bottom:-1px;left:-1px;background-position:left bottom;}
+	div.party-detail-view-wrap span.rb {bottom:-1px;right:-1px;background-position:right bottom;}
+	/* content */
+	div.party-detail-view-wrap dl.party-detail {position:relative;clear:both; float:left; width:100%;}
+		div.party-detail-view-wrap dl.party-detail dt {clear:both; float:left; width:100%;}
+			div.party-detail-view-wrap dl.party-detail dt span.party-category {float:left;margin:0;}
+			div.party-detail-view-wrap dl.party-detail dt span.home, div.party-detail-view-wrap dl.party-detail dt span.music, div.party-detail-view-wrap dl.party-detail dt span.woman, div.party-detail-view-wrap dl.party-detail dt span.birthday, div.party-detail-view-wrap dl.party-detail dt span.graduate, div.party-detail-view-wrap dl.party-detail dt span.celebrate, div.party-detail-view-wrap dl.party-detail dt span.culture {width:29px;}
+			div.party-detail-view-wrap dl.party-detail dt span.issue, div.party-detail-view-wrap dl.party-detail dt span.dance {width:28px;}
+			div.party-detail-view-wrap dl.party-detail dt span.study {width:39px;}
+			div.party-detail-view-wrap dl.party-detail dt span.christmas {width:59px;}
+			div.party-detail-view-wrap dl.party-detail dt strong {float:left;display:inline;margin:1px 0 0 6px;height:14px;font:bold 9pt/1.2em 돋움; color:#666666;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+		div.party-detail-view-wrap dl.party-detail dd.img {position:absolute;left:0;top:0;width:100px;height:70px;}
+			div.party-detail-view-wrap dl.party-detail dd.img a {position:relative;float:left;width:100px;height:70px;font:0/0 arial;overflow:hidden;}
+				div.party-detail-view-wrap dl.party-detail dd.img a span {position:absolute;top:0;left:0;width:100px;height:70px;font:0/0 arial;overflow:hidden;cursor:pointer;background:url('http://c1img.cyworld.co.kr/img/minilife/v1/frame-party-detail.gif') left top no-repeat;}
+		div.party-detail-view-wrap dl.party-detail dd.description {clear:both; float:left; width:100%; margin:3px 0 0 0; font:9pt/1.3em 돋움; color:#999999;word-break:break-all;}
+		div.party-detail-view-wrap dl.party-detail dd.btn {clear:both; float:left; width:100%; margin:6px 0 0 0;}
+			div.party-detail-view-wrap dl.party-detail dd.btn a {float:right;width:50px;height:18px;text-indent:-1000em;font:0/0 arial;overflow:hidden;}
+			div.party-detail-view-wrap dl.party-detail dd.btn a.party-join {background:url('http://c1img.cyworld.co.kr/img/minilife/v1/button/btn_party-join.gif') left top no-repeat;}
+			div.party-detail-view-wrap dl.party-detail dd.btn a.party-invite {background:url('http://c1img.cyworld.co.kr/img/minilife/v1/button/btn_party-intive.gif') left top no-repeat;}
+
+
+/**************** Footer ****************/
+#Footer {
+    float:clear; width:970px; margin:30px auto 0 auto; padding:0 0 10px 0; text-align:center; color:#424242;
+    border-top:3px solid #FF6600; background:url('http://c1img.cyworld.co.kr/img/coverstory/v3/bg_footertype01.gif') no-repeat left bottom;
+}
+#Footer a:link, #Footer a:visited, #Footer a:hover, #Footer a:active,
+#Footer2 a:link, #Footer2 a:visited, #Footer2 a:hover, #Footer2 a:active,
+#Footer3 a:link, #Footer3 a:visited, #Footer3 a:hover, #Footer3 a:active { color:#424242; text-decoration:none; }
+#Footer a:hover, #Footer2 a:hover, #Footer3 a:hover  { text-decoration:underline; }
+dl#FooterMenu { float:clear; height:28px; margin:5px auto 0 auto; }
+    dl#FooterMenu dt { display:none; }
+    dl#FooterMenu dd { padding:7px 0 0 0; font-size:9pt; line-height:1em; .line-height:1.2em; }
+        dl#FooterMenu dd span { margin:0 4px 0 2px; color:#BBBBBB; }
+dl#familysite { float:left; display:inline; margin:17px 0 0 194px; padding:0; font-size:8pt; letter-spacing:-1px; }
+    dl#familysite dt { float:left; padding:0 8px 0 0; background:url('http://c1img.cyworld.co.kr/img/main_v7/arrow_Footer.gif') no-repeat right 30%; }
+    dl#familysite dd { float:left; padding:0 0 0 6px; background-image:none; }
+        dl#familysite dd span { margin:0 2px 0 1px; color:#AAAAAA; }
+dl#global { float:left; display:inline; margin:14px 0 4px 24px; padding:0; font-size:8pt; }
+    dl#global dt { display:none; }
+    dl#global dd { float:left; padding-top:5px; .padding-top:3px; background:none; }
+    dl#global dd select { width:111px; margin:-2px 0 0 10px; vertical-align:middle; font-size:8pt; color:#424242; }
+    dl#global dd input { margin:-1px -1px 0 2px; _margin:-4px -4px 0 -3px; vertical-align:middle; }
+    dl#global dd label { letter-spacing:-1px; color:#888888; }
+#Footer address { display:inline; margin-right:3px; font-style:normal; }
+#Fcopyright {
+    clear:both; width:301px; height:19px; margin:0 auto 0 auto; padding:0;
+    background:url('http://c1img.cyworld.co.kr/img/coverstory/v3/copyright.gif') no-repeat left top;
+}
+    #Fcopyright strong { display:none; }
+
+
+/* 컴퓨터 자가진단 추가 : 2008.06.25 UI개발팀 김병화 */
+.install-help {position:relative;z-index:10;clear:both;float:left;padding-top:5px;}
+	.install-help a { float:left;text-indent:-1000em;font:0/0 arial;overflow:hidden;background:url('http://c1img.cyworld.co.kr/img/minilife/v1/banner_help.gif') no-repeat; }
+	.install-help a.type01 { width:200px;height:50px;background-position:0 -60px; }
+	.install-help a.type02 { width:230px;height:50px;background-position:0 0; }
+	.install-help a.type03 { margin-top:-3px;width:173px;height:40px;background-position:0 -120px; }

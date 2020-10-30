@@ -1,0 +1,68 @@
+8
+
+dir
+73
+svn://svn.stdev.cyworld.com/memory/trunk/docroot
+svn://svn.stdev.cyworld.com/memory
+
+
+
+2009-08-14T02:15:10.555116Z
+68
+n2986
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+51c83f4d-3035-44c2-8cf4-53d96a979598
+
+images
+dir
+
+css
+dir
+
+fs
+file
+75
+
+
+
+2009-08-21T08:39:58.000000Z
+7b9ca33a9fc97ebe9528b1b6838af6dc
+2009-08-27T08:01:26.846783Z
+75
+n2986
+has-props
+
+
+svn:special
+
+js
+dir
+
+index.php
+file
+74
+
+
+
+2009-08-19T02:08:55.000000Z
+e8c893ccd14488e1a01b449fa98d007c
+2009-08-21T07:58:08.001585Z
+74
+n2986
+
+imgProfile
+dir
+

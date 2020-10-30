@@ -1,0 +1,43 @@
+8
+
+dir
+73
+svn://svn.stdev.cyworld.com/memory/trunk/template
+svn://svn.stdev.cyworld.com/memory
+
+
+
+2009-08-18T06:30:50.428239Z
+71
+n2986
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+51c83f4d-3035-44c2-8cf4-53d96a979598
+
+Main
+dir
+
+Admin
+dir
+
+Common
+dir
+
+Mp
+dir
+
+Mybox
+dir
+

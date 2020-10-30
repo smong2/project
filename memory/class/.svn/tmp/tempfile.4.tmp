@@ -1,0 +1,1272 @@
+<<<<<<< .mine
+<?php
+class Mp extends BaseObject
+{
+	protected $__mpSq;
+	protected $__category;
+	protected $__categoryMiscNm;
+	protected $__mpNm;
+	protected $__hitCnt;
+	protected $__memorizeCnt;
+	protected $__creator;
+	protected $__creatorNick;
+	protected $__timeTag;
+	protected $__mtCnt;
+	protected $__content;
+	protected $__blockedFl;
+	protected $__deletedFl;
+	protected $__insertDt;
+
+	protected $__police;     // getPolice() 를 하는 경우에는 police 데이타가 없을 경우 자동으로 _loadPolice 를 실행한다.
+	protected $__dbCategory; // doModify() 를 하는 경우, category 의 mp_cnt 를 업데이트 해주기 위하여 필요함
+
+	private $_moduleCnt;
+
+	const VALIDATED                 = 0;
+	const ERROR_CATEGORY_EMPTY      = 1;
+	const ERROR_CATEGORY_INVALID    = 2;
+	const ERROR_CATEGORY_MISC_EMPTY = 6;
+	const ERROR_NAME_EMPTY          = 3;
+	const ERROR_NAME_LONG           = 4;
+	const ERROR_NAME_DUPLICATED     = 5;
+
+	const MAXLEN_NAME = 30;
+
+	private $_isLoaded = false;
+
+	public static $errmsg = array(
+	    self::ERROR_CATEGORY_EMPTY => '카테고리를 입력해주세요.',
+	    self::ERROR_CATEGORY_INVALID => '알 수 없는 오류가 발생하였습니다.',
+	    self::ERROR_CATEGORY_MISC_EMPTY => '기타 카테고리명을 입력해주세요.',
+	    self::ERROR_NAME_EMPTY => '제목을 입력해주세요.',
+	    self::ERROR_NAME_LONG => '제목이 너무 깁니다.',
+	    self::ERROR_NAME_DUPLICATED => '입력하신 제목은 이미 사용중입니다.',
+	);
+
+	public static function instance($mpSq) /*{{{*/
+	{
+		static $sInstance = array();
+
+		$mpSq = intval($mpSq);
+
+		if (isset($sInstance[$mpSq]) === false) {
+			$className        = __CLASS__;
+			$mp               = new $className($mpSq);
+			$sInstance[$mpSq] = $mp;
+		}
+
+		return $sInstance[$mpSq];
+	} /*}}}*/
+
+	public function __construct($mpSq = null) /*{{{*/
+	{
+		$this->__mpSq = $mpSq;
+	} /*}}}*/
+
+	/***************************************************************************
+	 ***** CHECK 함수들 ********************************************************
+	 **************************************************************************/
+
+	/**
+	 * @param bool $isModify 수정 모드인지 여부를 입력, 이에 따라 중복 MP 를 체크할지 여부를 결정한다.
+	 */
+	public function validate($isModify = false) /*{{{*/
+	{
+		if ($this->getCategory()->getCategorySq() == 0) {
+			return self::ERROR_CATEGORY_EMPTY;
+		}
+
+		if (CategoryPeer::retrieveCategoryByCategorySq($this->getCategory()->getCategorySq()) === null) {
+			return self::ERROR_CATEGORY_INVALID;
+		}
+
+		if ($this->getCategory()->getCategoryNm() === '기타' and $this->getCategoryMiscNm() == '') {
+			return self::ERROR_CATEGORY_MISC_EMPTY;
+		}
+
+		if ($this->getMpNm() == '') {
+			return self::ERROR_NAME_EMPTY;
+		}
+
+		if (strlen(mb_convert_encoding($this->getMpNm(), 'cp949', 'utf-8')) > self::MAXLEN_NAME) {
+			return self::ERROR_NAME_LONG;
+		}
+
+		if ($isModify === false) {
+			if (MpPeer::countMpByMpNm($this->getMpNm()) > 0) {
+				return self::ERROR_NAME_DUPLICATED;
+			}
+		}
+
+		return self::VALIDATED;
+	} /*}}}*/
+
+	/***************************************************************************
+	 ***** LOAD 함수들 *********************************************************
+	 **************************************************************************/
+
+	private function _loadPolice() /*{{{*/
+	{
+		$pdo = PDO_Manager::getMemoryDB();
+
+		$query = 'SELECT status_gb, reason_gb, officer_id, content FROM mp_police
+				  WHERE mp_sq = :mp_sq';
+		$stmt  = $pdo->prepare($query);
+		$stmt->bindValue(':mp_sq', $this->__mpSq, PDO::PARAM_INT);
+		$stmt->execute();
+
+		$police = MpPolice::instance($this->__mpSq);
+		if ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+			$police->setStatusGb($row['status_gb']);
+			$police->setReasonGb($row['reason_gb']);
+			$police->setOfficer(AdminOfficer::instance($row['officer_id']));
+			$police->setContent($row['content']);
+		}
+		else {
+			$police->setStatusGb(MpPolice::STATUS_GB_NORMAL);
+			$police->setReasonGb('');
+			$police->setContent('');
+		}
+
+		$this->__police = $police;
+	} /*}}}*/
+
+	public function load()
+	{
+		if ($this->_isLoaded == true) {
+			return $this;
+		}
+
+		$this->_isLoaded = true;
+
+		return MpPeer::_retrieveMpByMpSq($this->__mpSq);
+	}
+
+	private function _loadModuleCnt() /*{{{*/
+	{
+		$pdo = PDO_Manager::getMemoryDB();
+
+		$query = 'SELECT module_gb, register_cnt FROM mp_module_cnt
+		          WHERE mp_sq = :mp_sq';
+		$stmt  = $pdo->prepare($query);
+		$stmt->bindValue(':mp_sq', $this->__mpSq, PDO::PARAM_INT);
+		$stmt->execute;
+
+		$this->_moduleCnt = array();
+		while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+			$this->_moduleCnt[$row['module_gb']] = $row['register_cnt'];
+		}
+	} /*}}}*/
+
+	/***************************************************************************
+	 ***** ACTION 함수들 *******************************************************
+	 **************************************************************************/
+
+	public function doAdd() /*{{{*/
+	{
+		$pdo = PDO_Manager::getMemoryDB();
+
+		$query = 'INSERT INTO memory_piece
+				  (category_sq, category_misc_nm, mp_nm, creator_id, creator_nick, content, 
+				   start_year, start_month, start_day, end_year, end_month, end_day, 
+				   timetag_gb, timetag_data, update_dt)
+				  VALUES (:category_sq, :category_misc_nm, :mp_nm, :creator_id, :creator_nick, :content, 
+				          :start_year, :start_month, :start_day, :end_year, :end_month, :end_day,
+						  :timetag_gb, :timetag_data, now())';
+		$stmt  = $pdo->prepare($query);
+		$stmt->bindValue(':category_sq',      $this->getCategory()->getCategorySq(), PDO::PARAM_INT);
+		$stmt->bindValue(':category_misc_nm', $this->getCategoryMiscNm(),            PDO::PARAM_STR);
+		$stmt->bindValue(':mp_nm',            $this->getMpNm(),                      PDO::PARAM_STR);
+		$stmt->bindValue(':creator_id',       $this->getCreator()->getUserId(),      PDO::PARAM_STR);
+		$stmt->bindValue(':creator_nick',     $this->getCreatorNick(),               PDO::PARAM_STR);
+		$stmt->bindValue(':content',          $this->getContent(),                   PDO::PARAM_STR);
+		$this->getTimeTag()->bindValue($stmt);
+		$stmt->execute();
+
+		$this->__mpSq = $pdo->lastInsertId();
+
+		$this->getCategory()->increaseMpCnt();
+	} /*}}}*/
+
+	public function doModify() /*{{{*/
+	{
+		$pdo = PDO_Manager::getMemoryDB();
+
+		$this->getCategory()->load();
+		if ($this->getCategory()->getCategoryNm() == '기타') {
+			$this->setCategoryMiscNm('');
+		}
+
+		$query = 'UPDATE memory_piece 
+				  SET category_sq = :category_sq, category_misc_nm = :category_misc_nm, content = :content,
+				      start_year = :start_year, start_month = :start_month, start_day = :start_day,
+					  end_year = :end_year, end_month = :end_month, end_day = :end_day,
+					  timetag_gb = :timetag_gb, timetag_data = :timetag_data, update_dt = now()
+				  WHERE mp_sq = :mp_sq';
+		$stmt  = $pdo->prepare($query);
+		$stmt->bindValue(':mp_sq',            $this->__mpSq,                         PDO::PARAM_INT);
+		$stmt->bindValue(':category_sq',      $this->getCategory()->getCategorySq(), PDO::PARAM_INT);
+		$stmt->bindValue(':category_misc_nm', $this->getCategoryMiscNm(),            PDO::PARAM_STR);
+		$stmt->bindValue(':content',          $this->getContent(),                   PDO::PARAM_STR);
+		$this->getTimeTag()->bindValue($stmt);
+		$stmt->execute();
+
+		if ($this->getDbCategory()->getCategorySq() != $this->getCategory()->getCategorySq()) {
+			$this->getDbCategory()->decreaseMpCnt();
+			$this->getCategory()->increaseMpCnt();
+		}
+	} /*}}}*/
+
+	public function trash() /*{{{*/
+	{
+		$this->getCategory()->decreaseMpCnt();
+
+		$pdo   = PDO_Manager::getMemoryDB();
+		$query = 'UPDATE memory_piece SET blocked_fl = :blocked_fl, deleted_fl = :deleted_fl WHERE mp_sq = :mp_sq';
+		$stmt  = $pdo->prepare($query);
+		$stmt->bindValue(':mp_sq',      $this->__mpSq, PDO::PARAM_INT);
+		$stmt->bindValue(':blocked_fl', 0,             PDO::PARAM_INT);
+		$stmt->bindValue(':deleted_fl', 1,             PDO::PARAM_INT);
+		$stmt->execute();
+
+		$this->setBlockedFl(0);
+		$this->setDeletedFl(1);
+	} /*}}}*/
+
+	public function trashByAdmin($reasonGb, $content, AdminOfficer $officer) /*{{{*/
+	{
+		// mp_police 테이블의 정보를 변경한다.
+		$this->_updatePolice(MpPolice::STATUS_GB_TRASH, $reasonGb, $content, $officer);
+
+		// 이미 삭제 대기 상태인 경우에는 바로 종료
+		if ($this->getStatus() === MpPolice::STATUS_GB_TRASH) {
+			AdminLogPeer::add($officer, AdminLog::GB_MP_TRASH_MODIFY, $this);
+			return;
+		}
+
+		// 삭제 대기 처리를 한다.
+		$this->trash();
+
+		// 로그를 남긴다.
+		AdminLogPeer::add($officer, AdminLog::GB_MP_TRASH_ADD, $this);
+	} /*}}}*/
+
+	public function block($reasonGb, $content, AdminOfficer $officer) /*{{{*/
+	{
+		// mp_police 테이블의 정보를 변경한다.
+		$this->_updatePolice(MpPolice::STATUS_GB_BLOCKED, $reasonGb, $content, $officer);
+
+		// 이미 노출 제한 상태인 경우에는 바로 종료
+		if ($this->getStatus() === MpPolice::STATUS_GB_BLOCKED) {
+			AdminLogPeer::add($officer, AdminLog::GB_MP_BLOCK_MODIFY, $this);
+			return;
+		}
+
+		// 삭제 대기 중인 경우에는 mp count 를 복원한다.
+		if ($this->getStatus() === MpPolice::STATUS_GB_TRASH) {
+			$this->getCategory()->increaseMpCnt();
+		}
+
+		// 노출 제한 상태려 변경한다.
+		$pdo   = PDO_Manager::getMemoryDB();
+		$query = 'UPDATE memory_piece SET blocked_fl = :blocked_fl, deleted_fl = :deleted_fl WHERE mp_sq = :mp_sq';
+		$stmt  = $pdo->prepare($query);
+		$stmt->bindValue(':mp_sq',      $this->__mpSq, PDO::PARAM_INT);
+		$stmt->bindValue(':blocked_fl', 1,             PDO::PARAM_INT);
+		$stmt->bindValue(':deleted_fl', 0,             PDO::PARAM_INT);
+		$stmt->execute();
+
+		$this->setBlockedFl(1);
+		$this->setDeletedFl(0);
+
+		// 로그를 남긴다.
+		AdminLogPeer::add($officer, AdminLog::GB_MP_BLOCK_ADD, $this);
+	} /*}}}*/
+
+	public function recovery(AdminOfficer $officer) /*{{{*/
+	{
+		// 이미 일반 상태이므로 종료
+		if ($this->getStatus() === MpPolice::STATUS_GB_NORMAL) {
+			return;
+		}
+
+		// 삭제 대기 중인 경우에는 mp count 를 복원한다.
+		if ($this->getStatus() === MpPolice::STATUS_GB_TRASH) {
+			$this->getCategory()->increaseMpCnt();
+		}
+
+		$pdo = PDO_Manager::getMemoryDB();
+
+		// mp_police 테이블의 정보를 삭제한다.
+		$query = 'DELETE FROM mp_police WHERE mp_sq = :mp_sq';
+		$stmt  = $pdo->prepare($query);
+		$stmt->bindValue(':mp_sq', $this->__mpSq, PDO::PARAM_INT);
+		$stmt->execute();
+
+		if (isset($this->__police)) {
+			$this->__police = null;
+		}
+
+		// 일반 모드로 복원한다.
+		$query = 'UPDATE memory_piece SET blocked_fl = :blocked_fl, deleted_fl = :deleted_fl WHERE mp_sq = :mp_sq';
+		$stmt  = $pdo->prepare($query);
+		$stmt->bindValue(':mp_sq',      $this->__mpSq, PDO::PARAM_INT);
+		$stmt->bindValue(':blocked_fl', 0,             PDO::PARAM_INT);
+		$stmt->bindValue(':deleted_fl', 0,             PDO::PARAM_INT);
+		$stmt->execute();
+
+		$this->setBlockedFl(0);
+		$this->setDeletedFl(0);
+
+		// 로그를 남긴다.
+		AdminLogPeer::add($officer, AdminLog::GB_MP_RECOVERY, $this);
+	} /*}}}*/
+
+	private function _updatePolice($statusGb, $reasonGb, $content, AdminOfficer $officer) /*{{{*/
+	{
+		if ($this->getStatus() === MpPolice::STATUS_GB_NORMAL) {
+			$pdo   = PDO_Manager::getMemoryDB();
+			$query = 'INSERT INTO mp_police (mp_sq, mp_nm, creator_id, status_gb, reason_gb, officer_id, content, update_dt)
+					  VALUES (:mp_sq, :mp_nm, :creator_id, :status_gb, :reason_gb, :officer_id, :content, now())';
+			$stmt  = $pdo->prepare($query);
+			$stmt->bindValue(':mp_sq',      $this->__mpSq,                    PDO::PARAM_INT);
+			$stmt->bindValue(':mp_nm',      $this->getMpNm(),                 PDO::PARAM_STR);
+			$stmt->bindValue(':creator_id', $this->getCreator()->getUserId(), PDO::PARAM_STR);
+			$stmt->bindValue(':status_gb',  $statusGb,                        PDO::PARAM_INT);
+			$stmt->bindValue(':reason_gb',  $reasonGb,                        PDO::PARAM_INT);
+			$stmt->bindValue(':officer_id', $officer->getUserId(),            PDO::PARAM_STR);
+			$stmt->bindValue(':content',    $content,                         PDO::PARAM_STR);
+			$stmt->execute();
+		}
+		else {
+			$pdo   = PDO_Manager::getMemoryDB();
+			$query = 'UPDATE mp_police 
+					  SET status_gb = :status_gb, reason_gb = :reason_gb, officer_id = :officer_id, content = :content
+					  WHERE mp_sq = :mp_sq';
+			$stmt  = $pdo->prepare($query);
+			$stmt->bindValue(':mp_sq',      $this->__mpSq,         PDO::PARAM_INT);
+			$stmt->bindValue(':status_gb',  $statusGb,             PDO::PARAM_INT);
+			$stmt->bindValue(':reason_gb',  $reasonGb,             PDO::PARAM_INT);
+			$stmt->bindValue(':officer_id', $officer->getUserId(), PDO::PARAM_STR);
+			$stmt->bindValue(':content',    $content,              PDO::PARAM_STR);
+			$stmt->execute();
+		}
+
+		if (isset($this->__police)) {
+			$this->getPolice()->setMpNm($this->getMpNm());
+			$this->getPolice()->setMpCreator($this->getCreator());
+			$this->getPolice()->setStatusGb($statusGb);
+			$this->getPolice()->setReasonGb($reasonGb);
+			$this->getPolice()->setOfficer($officer);
+			$this->getPolice()->setContent($content);
+		}
+	} /*}}}*/
+
+	public function addModuleBasic(User $writer, $isByOfficer = false) /*{{{*/
+	{
+		$pdo = PDO_Manager::getMemoryDB();
+
+		$query = 'INSERT INTO module_basic (mp_sq, writer_id, edit_gb, activate_fl, activate_dt, update_dt)
+				  VALUES (:mp_sq, :writer_id, :edit_gb, :activate_fl, :activate_dt, now())';
+		$stmt  = $pdo->prepare($query);
+		$stmt->bindValue(':mp_sq',     $this->__mpSq,        PDO::PARAM_INT);
+		$stmt->bindValue(':writer_id', $writer->getUserId(), PDO::PARAM_STR);
+		$stmt->bindValue(':edit_gb',   0,                    PDO::PARAM_INT);
+		if ($isByOfficer) {
+			$stmt->bindValue(':activate_fl', 1,                   PDO::PARAM_INT);
+			$stmt->bindValue(':activate_dt', date('Y-m-d H:i:s'), PDO::PARAM_STR);
+		}
+		else {
+			$stmt->bindValue(':activate_fl', 0, PDO::PARAM_INT);
+			$stmt->bindValue(':activate_dt', 0, PDO::PARAM_INT);
+		}
+		$stmt->execute();
+
+		$mdBasicSq = $pdo->lastInsertId();
+
+		$mdBasic = ModuleBasic::instance($pdo->lastInsertId());
+		$mdBasic->setMp($this);
+		$mdBasic->setWriter($writer);
+
+		return $mdBasic;
+	} /*}}}*/
+
+	/**
+	 * 완전 삭제한다.
+	 */
+	public function remove(AdminOfficer $officer) /*{{{*/
+	{
+		$pdo = PDO_Manager::getMemoryDB();
+
+		// mp_police 테이블도 업데이트
+		$query = 'UPDATE mp_police 
+				  SET status_gb = :status_gb,
+					  officer_id = :officer_id,
+					  update_dt = now()
+				  WHERE mp_sq = :mp_sq';
+		$stmt  = $pdo->prepare($query);
+		$stmt->bindValue(':status_gb',  Police::STATUS_GB_REMOVED, PDO::PARAM_INT);
+		$stmt->bindValue(':mp_sq',      $this->__mpSq,             PDO::PARAM_INT);
+		$stmt->bindValue(':officer_id', $officer->getUserId(),     PDO::PARAM_STR);
+		$stmt->execute();
+
+		// memory_piece 테이블에서 삭제
+		$query = 'DELETE FROM memory_piece
+				  WHERE mp_sq = :mp_sq';
+		$stmt  = $pdo->prepare($query);
+		$stmt->bindValue(':mp_sq', $this->__mpSq, PDO::PARAM_INT);
+		$stmt->execute();
+
+		// Category 객체를 이미 가지고 있으므로 decrease 함수 호출
+		$this->getCategory()->decreaseMpCnt();
+	} /*}}}*/
+
+	/***************************************************************************
+	 ***** GET 함수들 **********************************************************
+	 **************************************************************************/
+
+	/**
+	 * AdminLog 에서 사용하기 위한 UniqueCode 를 반환한다.
+	 */
+	public function getUniqueCode() /*{{{*/
+	{
+		return 'mp#' . $this->__mpSq;
+	} /*}}}*/
+
+	public function getStatus() /*{{{*/
+	{
+		if ($this->getDeletedFl()) {
+			return MpPolice::STATUS_GB_TRASH;
+		}
+		else if ($this->getBlockedFl()) {
+			return MpPolice::STATUS_GB_BLOCKED;
+		}
+		else {
+			return MpPolice::STATUS_GB_NORMAL;
+		}
+	} /*}}}*/
+
+	public function getStatusStr() /*{{{*/
+	{
+		if ($this->getDeletedFl()) {
+			return MpPolice::$status[MpPolice::STATUS_GB_TRASH];
+		}
+		else if ($this->getBlockedFl()) {
+			return MpPolice::$status[MpPolice::STATUS_GB_BLOCKED];
+		}
+		else {
+			return '';
+		}
+	} /*}}}*/
+
+	public function getPolice() /*{{{*/
+	{
+		if (isset($this->__police) === false) {
+			$this->_loadPolice();
+		}
+
+		return $this->__police;
+	} /*}}}*/
+
+	/**
+	 * 메인 기본 정보를 반환한다.
+	 * 
+	 * @return ModuleBasic
+	 */
+	public function getMainModuleBasic() /*{{{*/
+	{
+		$pdo = PDO_Manager::getMemoryDB();
+
+		$query = 'SELECT md_basic_sq, writer_id, edit_gb, mainimg_gb, mainimg_url, content FROM module_basic
+				  WHERE mp_sq = :mp_sq and activate_fl = :activate_fl';
+		$stmt  = $pdo->prepare($query);
+		$stmt->bindValue(':mp_sq',       $this->__mpSq, PDO::PARAM_INT);
+		$stmt->bindValue(':activate_fl', 1,             PDO::PARAM_INT);
+		$stmt->execute();
+
+		if ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+			$moduleBasic = ModuleBasic::instance($row['md_basic_sq']);
+			$moduleBasic->setMp($this);
+			$moduleBasic->setWriter(User::instance($row['writer_id']));
+			$moduleBasic->setEditGb($row['edit_gb']);
+			$moduleBasic->setMainImgGb($row['mainimg_gb']);
+			$moduleBasic->setMainImgUrl($row['mainimg_url']);
+			$moduleBasic->setContent($row['content']);
+
+			return $moduleBasic;
+		}
+		else {
+			return null;
+		}
+	} /*}}}*/
+
+	public function getModuleCnt($moduleGb) /*{{{*/
+	{
+		if (isset($this->_moduleCnt)) {
+			$this->_loadModuleCnt();
+		}
+
+		return isset($this->_moduleCnt[$moduleGb]) ? $this->_moduleCnt[$moduleGb] : 0;
+	} /*}}}*/
+}
+?>
+=======
+<?php
+class Mp extends BaseObject
+{
+	protected $__mpSq;
+	protected $__category;
+	protected $__categoryMiscNm;
+	protected $__mpNm;
+	protected $__hitCnt;
+	protected $__memorizeCnt;
+	protected $__creator;
+	protected $__creatorNick;
+	protected $__timeTag;
+	protected $__mtCnt;
+	protected $__mt2dCnt;
+	protected $__mt2dYtdCnt;
+	protected $__firstMt;
+	protected $__blockedFl;
+	protected $__deletedFl;
+	protected $__insertDt;
+
+	protected $__police;         // getPolice() 를 하는 경우에는 police 데이타가 없을 경우 자동으로 _loadPolice 를 실행한다.
+	protected $__categoryBefore; // doModify() 를 하는 경우, category 의 mp_cnt 를 업데이트 해주기 위하여 필요함
+
+	private $_moduleCnt;
+
+	const VALIDATED                 = 0;
+	const ERROR_CATEGORY_EMPTY      = 1;
+	const ERROR_CATEGORY_INVALID    = 2;
+	const ERROR_CATEGORY_MISC_EMPTY = 6;
+	const ERROR_NAME_EMPTY          = 3;
+	const ERROR_NAME_LONG           = 4;
+	const ERROR_NAME_DUPLICATED     = 5;
+
+	const MAXLEN_MP_NM = 30;
+
+	private $_isLoaded = false;
+
+	public static $errmsg = array(
+	    self::ERROR_CATEGORY_EMPTY => '카테고리를 선택해 주세요.',
+	    self::ERROR_CATEGORY_INVALID => '알 수 없는 오류가 발생하였습니다.',
+	    self::ERROR_CATEGORY_MISC_EMPTY => '기타 카테고리명을 입력해주세요.',
+	    self::ERROR_NAME_EMPTY => '제목을 입력해 주세요.',
+	    self::ERROR_NAME_LONG => '제목이 너무 깁니다.',
+	    self::ERROR_NAME_DUPLICATED => '이미 만들어져 있는 기억입니다. 다른 기억을 만들어 주세요!',
+	);
+
+	public static function instance($mpSq) /*{{{*/
+	{
+		static $sInstance = array();
+
+		$mpSq = intval($mpSq);
+
+		if (isset($sInstance[$mpSq]) === false) {
+			$className        = __CLASS__;
+			$mp               = new $className($mpSq);
+			$sInstance[$mpSq] = $mp;
+		}
+
+		return $sInstance[$mpSq];
+	} /*}}}*/
+
+	public function __construct($mpSq = null) /*{{{*/
+	{
+		$this->__mpSq = $mpSq;
+	} /*}}}*/
+
+	/***************************************************************************
+	 ***** SET 함수들 **********************************************************
+	 **************************************************************************/
+
+	public function setTimeTag(TimeTag $timeTag) /*{{{*/
+	{
+		$timeTag->setParentGb(TimeTag::PARENT_GB_MP);
+		$timeTag->setParentSq($this->__mpSq);
+
+		$this->__timeTag = $timeTag;
+	} /*}}}*/
+
+	/***************************************************************************
+	 ***** CHECK 함수들 ********************************************************
+	 **************************************************************************/
+
+	/**
+	 * @param bool $isModify 수정 모드인지 여부를 입력, 이에 따라 중복 MP 를 체크할지 여부를 결정한다.
+	 */
+	public function validate($isModify = false) /*{{{*/
+	{
+		if ($this->getMpNm() == '') {
+			return self::ERROR_NAME_EMPTY;
+		}
+
+		if (strlen(mb_convert_encoding($this->getMpNm(), 'cp949', 'utf-8')) > self::MAXLEN_MP_NM) {
+			return self::ERROR_NAME_LONG;
+		}
+
+		if ($this->getCategory()->getCategorySq() <= 0) {
+			return self::ERROR_CATEGORY_EMPTY;
+		}
+
+		if (CategoryPeer::retrieveCategoryByCategorySq($this->getCategory()->getCategorySq()) === null) {
+			return self::ERROR_CATEGORY_INVALID;
+		}
+
+		if ($this->getCategory()->getCategoryNm() === Category::MISC_NM && $this->getCategoryMiscNm() == '') {
+			// return self::ERROR_CATEGORY_MISC_EMPTY;
+		}
+
+		if ($isModify === false) {
+			if (MpPeer::countMpsByCategorySqAndMpNm($this->getCategory()->getCategorySq(), $this->getMpNm()) > 0) {
+				return self::ERROR_NAME_DUPLICATED;
+			}
+		}
+
+		return self::VALIDATED;
+	} /*}}}*/
+
+	/***************************************************************************
+	 ***** LOAD 함수들 *********************************************************
+	 **************************************************************************/
+
+	private function _loadPolice() /*{{{*/
+	{
+		$pdo = PDO_Manager::getMemoryDB();
+
+		$query = 'SELECT status_gb, reason_gb, officer_id, content FROM mp_police
+				  WHERE mp_sq = :mp_sq';
+		$stmt  = $pdo->prepare($query);
+		$stmt->bindValue(':mp_sq', $this->__mpSq, PDO::PARAM_INT);
+		$stmt->execute();
+
+		$police = MpPolice::instance($this->__mpSq);
+		if ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+			$police->setStatusGb($row['status_gb']);
+			$police->setReasonGb($row['reason_gb']);
+			$police->setOfficer(AdminOfficer::instance($row['officer_id']));
+			$police->setContent($row['content']);
+		}
+		else {
+			$police->setStatusGb(MpPolice::STATUS_GB_NORMAL);
+			$police->setReasonGb('');
+			$police->setContent('');
+		}
+
+		$this->__police = $police;
+	} /*}}}*/
+
+	/**
+	 * MP 의 기본 정보들을 DB 로부터 읽어와서 객체에 저장하고
+	 * 이 객체를 반환한다. 만약 해당 MP 가 DB 에 존재하지 않을 경우에는
+	 * null 을 반환한다.
+	 */
+	public function load() /*{{{*/
+	{
+		if ($this->_isLoaded == true) {
+			return $this;
+		}
+
+		$this->_isLoaded = true;
+
+		return MpPeer::_retrieveMpByMpSq($this->__mpSq);
+	} /*}}}*/
+
+	private function _loadModuleCnt() /*{{{*/
+	{
+		$pdo = PDO_Manager::getMemoryDB();
+
+		$query = 'SELECT module_gb, register_cnt FROM mp_module_cnt
+		          WHERE mp_sq = :mp_sq';
+		$stmt  = $pdo->prepare($query);
+		$stmt->bindValue(':mp_sq', $this->__mpSq, PDO::PARAM_INT);
+		$stmt->execute;
+
+		$this->_moduleCnt = array();
+		while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+			$this->_moduleCnt[$row['module_gb']] = $row['register_cnt'];
+		}
+	} /*}}}*/
+
+	public function loadByRowData($row) /*{{{*/
+	{
+		parent::loadByRowData($row);
+
+		$this->setCategory(Category::instance($row['category_sq']));
+		$this->setCategoryBefore(Category::instance($row['category_sq']));
+		$this->setCreator(User::instance($row['creator_id']));
+		if (isset($row['first_mt_sq'])) {
+			$this->setFirstMt(Mt::instance($row['first_mt_sq']));
+		}
+	} /*}}}*/
+
+	/***************************************************************************
+	 ***** ACTION 함수들 *******************************************************
+	 **************************************************************************/
+
+	public function doAdd() /*{{{*/
+	{
+		if (isset($this->__insertDt) === false) {
+			$this->setInsertDt(time());
+		}
+
+		$pdo = PDO_Manager::getMemoryDB();
+
+		$query = 'INSERT INTO memory_piece
+				  (creator_id, creator_nick, mp_nm, category_sq, category_misc_nm, insert_dt, update_dt)
+				  VALUES (:creator_id, :creator_nick, :mp_nm, :category_sq, :category_misc_nm, :insert_dt, now())';
+		$stmt  = $pdo->prepare($query);
+		$stmt->bindValue(':creator_id',       $this->getCreator()->getUserId(),          PDO::PARAM_STR);
+		$stmt->bindValue(':creator_nick',     $this->getCreatorNick(),                   PDO::PARAM_STR);
+		$stmt->bindValue(':mp_nm',            $this->getMpNm(),                          PDO::PARAM_STR);
+		$stmt->bindValue(':category_sq',      $this->getCategory()->getCategorySq(),     PDO::PARAM_INT);
+		$stmt->bindValue(':category_misc_nm', $this->getCategoryMiscNm(),                PDO::PARAM_STR);
+		$stmt->bindValue(':insert_dt',        date('Y-m-d H:i:s', $this->getInsertDt()), PDO::PARAM_STR);
+		$stmt->execute();
+
+		$this->__mpSq  = $pdo->lastInsertId();
+		$this->__mtCnt = 0;
+
+		$this->getCategory()->increaseMpCnt();
+		$this->getCreator()->increaseMpCreateCnt();
+
+		$this->getTimeTag()->setParentSq($this->__mpSq);
+		$this->addTimeTag($this->getTimeTag());
+
+		if ($this->getCreator()->isMemorize($this) === false) {
+			$this->getCreator()->memorize($this);
+		}
+	} /*}}}*/
+
+	public function doModify() /*{{{*/
+	{
+		$pdo = PDO_Manager::getMemoryDB();
+
+		$this->getCategory()->load();
+		if ($this->getCategory()->getCategoryNm() == '기타') {
+			$this->setCategoryMiscNm('');
+		}
+
+		$query = 'UPDATE memory_piece 
+				  SET category_sq = :category_sq, category_misc_nm = :category_misc_nm, content = :content,
+				      start_year = :start_year, start_month = :start_month, start_day = :start_day,
+					  end_year = :end_year, end_month = :end_month, end_day = :end_day,
+					  timetag_gb = :timetag_gb, timetag_data = :timetag_data, update_dt = now()
+				  WHERE mp_sq = :mp_sq';
+		$stmt  = $pdo->prepare($query);
+		$stmt->bindValue(':mp_sq',            $this->__mpSq,                         PDO::PARAM_INT);
+		$stmt->bindValue(':category_sq',      $this->getCategory()->getCategorySq(), PDO::PARAM_INT);
+		$stmt->bindValue(':category_misc_nm', $this->getCategoryMiscNm(),            PDO::PARAM_STR);
+		$stmt->bindValue(':content',          $this->getContent(),                   PDO::PARAM_STR);
+		$this->getTimeTag()->bindValue($stmt);
+		$stmt->execute();
+
+		if ($this->getCategoryBefore()->getCategorySq() != $this->getCategory()->getCategorySq()) {
+			$this->getCategoryBefore()->decreaseMpCnt();
+			$this->getCategory()->increaseMpCnt();
+		}
+	} /*}}}*/
+
+	public function trash() /*{{{*/
+	{
+		$this->getCategory()->decreaseMpCnt();
+
+		$pdo   = PDO_Manager::getMemoryDB();
+		$query = 'UPDATE memory_piece SET blocked_fl = :blocked_fl, deleted_fl = :deleted_fl WHERE mp_sq = :mp_sq';
+		$stmt  = $pdo->prepare($query);
+		$stmt->bindValue(':mp_sq',      $this->__mpSq, PDO::PARAM_INT);
+		$stmt->bindValue(':blocked_fl', 0,             PDO::PARAM_INT);
+		$stmt->bindValue(':deleted_fl', 1,             PDO::PARAM_INT);
+		$stmt->execute();
+
+		$this->setBlockedFl(0);
+		$this->setDeletedFl(1);
+	} /*}}}*/
+
+	public function trashByAdmin($reasonGb, $content, AdminOfficer $officer) /*{{{*/
+	{
+		// mp_police 테이블의 정보를 변경한다.
+		$this->_updatePolice(MpPolice::STATUS_GB_TRASH, $reasonGb, $content, $officer);
+
+		// 이미 삭제 대기 상태인 경우에는 바로 종료
+		if ($this->getStatus() === MpPolice::STATUS_GB_TRASH) {
+			AdminLogPeer::add($officer, AdminLog::GB_MP_TRASH_MODIFY, $this);
+			return;
+		}
+
+		// 삭제 대기 처리를 한다.
+		$this->trash();
+
+		// 로그를 남긴다.
+		AdminLogPeer::add($officer, AdminLog::GB_MP_TRASH_ADD, $this);
+	} /*}}}*/
+
+	public function block($reasonGb, $content, AdminOfficer $officer) /*{{{*/
+	{
+		// mp_police 테이블의 정보를 변경한다.
+		$this->_updatePolice(MpPolice::STATUS_GB_BLOCKED, $reasonGb, $content, $officer);
+
+		// 이미 노출 제한 상태인 경우에는 바로 종료
+		if ($this->getStatus() === MpPolice::STATUS_GB_BLOCKED) {
+			AdminLogPeer::add($officer, AdminLog::GB_MP_BLOCK_MODIFY, $this);
+			return;
+		}
+
+		// 삭제 대기 중인 경우에는 mp count 를 복원한다.
+		if ($this->getStatus() === MpPolice::STATUS_GB_TRASH) {
+			$this->getCategory()->increaseMpCnt();
+		}
+
+		// 노출 제한 상태려 변경한다.
+		$pdo   = PDO_Manager::getMemoryDB();
+		$query = 'UPDATE memory_piece SET blocked_fl = :blocked_fl, deleted_fl = :deleted_fl WHERE mp_sq = :mp_sq';
+		$stmt  = $pdo->prepare($query);
+		$stmt->bindValue(':mp_sq',      $this->__mpSq, PDO::PARAM_INT);
+		$stmt->bindValue(':blocked_fl', 1,             PDO::PARAM_INT);
+		$stmt->bindValue(':deleted_fl', 0,             PDO::PARAM_INT);
+		$stmt->execute();
+
+		$this->setBlockedFl(1);
+		$this->setDeletedFl(0);
+
+		// 로그를 남긴다.
+		AdminLogPeer::add($officer, AdminLog::GB_MP_BLOCK_ADD, $this);
+	} /*}}}*/
+
+	public function recovery(AdminOfficer $officer) /*{{{*/
+	{
+		// 이미 일반 상태이므로 종료
+		if ($this->getStatus() === MpPolice::STATUS_GB_NORMAL) {
+			return;
+		}
+
+		// 삭제 대기 중인 경우에는 mp count 를 복원한다.
+		if ($this->getStatus() === MpPolice::STATUS_GB_TRASH) {
+			$this->getCategory()->increaseMpCnt();
+		}
+
+		$pdo = PDO_Manager::getMemoryDB();
+
+		// mp_police 테이블의 정보를 삭제한다.
+		$query = 'DELETE FROM mp_police WHERE mp_sq = :mp_sq';
+		$stmt  = $pdo->prepare($query);
+		$stmt->bindValue(':mp_sq', $this->__mpSq, PDO::PARAM_INT);
+		$stmt->execute();
+
+		if (isset($this->__police)) {
+			$this->__police = null;
+		}
+
+		// 일반 모드로 복원한다.
+		$query = 'UPDATE memory_piece SET blocked_fl = :blocked_fl, deleted_fl = :deleted_fl WHERE mp_sq = :mp_sq';
+		$stmt  = $pdo->prepare($query);
+		$stmt->bindValue(':mp_sq',      $this->__mpSq, PDO::PARAM_INT);
+		$stmt->bindValue(':blocked_fl', 0,             PDO::PARAM_INT);
+		$stmt->bindValue(':deleted_fl', 0,             PDO::PARAM_INT);
+		$stmt->execute();
+
+		$this->setBlockedFl(0);
+		$this->setDeletedFl(0);
+
+		// 로그를 남긴다.
+		AdminLogPeer::add($officer, AdminLog::GB_MP_RECOVERY, $this);
+	} /*}}}*/
+
+	private function _updatePolice($statusGb, $reasonGb, $content, AdminOfficer $officer) /*{{{*/
+	{
+		if ($this->getStatus() === MpPolice::STATUS_GB_NORMAL) {
+			$pdo   = PDO_Manager::getMemoryDB();
+			$query = 'INSERT INTO mp_police (mp_sq, mp_nm, creator_id, status_gb, reason_gb, officer_id, content, update_dt)
+					  VALUES (:mp_sq, :mp_nm, :creator_id, :status_gb, :reason_gb, :officer_id, :content, now())';
+			$stmt  = $pdo->prepare($query);
+			$stmt->bindValue(':mp_sq',      $this->__mpSq,                    PDO::PARAM_INT);
+			$stmt->bindValue(':mp_nm',      $this->getMpNm(),                 PDO::PARAM_STR);
+			$stmt->bindValue(':creator_id', $this->getCreator()->getUserId(), PDO::PARAM_STR);
+			$stmt->bindValue(':status_gb',  $statusGb,                        PDO::PARAM_INT);
+			$stmt->bindValue(':reason_gb',  $reasonGb,                        PDO::PARAM_INT);
+			$stmt->bindValue(':officer_id', $officer->getUserId(),            PDO::PARAM_STR);
+			$stmt->bindValue(':content',    $content,                         PDO::PARAM_STR);
+			$stmt->execute();
+		}
+		else {
+			$pdo   = PDO_Manager::getMemoryDB();
+			$query = 'UPDATE mp_police 
+					  SET status_gb = :status_gb, reason_gb = :reason_gb, officer_id = :officer_id, content = :content
+					  WHERE mp_sq = :mp_sq';
+			$stmt  = $pdo->prepare($query);
+			$stmt->bindValue(':mp_sq',      $this->__mpSq,         PDO::PARAM_INT);
+			$stmt->bindValue(':status_gb',  $statusGb,             PDO::PARAM_INT);
+			$stmt->bindValue(':reason_gb',  $reasonGb,             PDO::PARAM_INT);
+			$stmt->bindValue(':officer_id', $officer->getUserId(), PDO::PARAM_STR);
+			$stmt->bindValue(':content',    $content,              PDO::PARAM_STR);
+			$stmt->execute();
+		}
+
+		if (isset($this->__police)) {
+			$this->getPolice()->setMpNm($this->getMpNm());
+			$this->getPolice()->setMpCreator($this->getCreator());
+			$this->getPolice()->setStatusGb($statusGb);
+			$this->getPolice()->setReasonGb($reasonGb);
+			$this->getPolice()->setOfficer($officer);
+			$this->getPolice()->setContent($content);
+		}
+	} /*}}}*/
+
+	public function addModuleBasic(User $writer, $isByOfficer = false) /*{{{*/
+	{
+		$pdo = PDO_Manager::getMemoryDB();
+
+		$query = 'INSERT INTO module_basic (mp_sq, writer_id, edit_gb, activate_fl, activate_dt, update_dt)
+				  VALUES (:mp_sq, :writer_id, :edit_gb, :activate_fl, :activate_dt, now())';
+		$stmt  = $pdo->prepare($query);
+		$stmt->bindValue(':mp_sq',     $this->__mpSq,        PDO::PARAM_INT);
+		$stmt->bindValue(':writer_id', $writer->getUserId(), PDO::PARAM_STR);
+		$stmt->bindValue(':edit_gb',   0,                    PDO::PARAM_INT);
+		if ($isByOfficer) {
+			$stmt->bindValue(':activate_fl', 1,                   PDO::PARAM_INT);
+			$stmt->bindValue(':activate_dt', date('Y-m-d H:i:s'), PDO::PARAM_STR);
+		}
+		else {
+			$stmt->bindValue(':activate_fl', 0, PDO::PARAM_INT);
+			$stmt->bindValue(':activate_dt', 0, PDO::PARAM_INT);
+		}
+		$stmt->execute();
+
+		$mdBasicSq = $pdo->lastInsertId();
+
+		$mdBasic = ModuleBasic::instance($pdo->lastInsertId());
+		$mdBasic->setMp($this);
+		$mdBasic->setWriter($writer);
+
+		return $mdBasic;
+	} /*}}}*/
+
+	/**
+	 * 완전 삭제한다.
+	 */
+	public function remove(AdminOfficer $officer) /*{{{*/
+	{
+		$pdo = PDO_Manager::getMemoryDB();
+
+		// mp_police 테이블도 업데이트
+		$query = 'UPDATE mp_police 
+				  SET status_gb = :status_gb,
+					  officer_id = :officer_id,
+					  update_dt = now()
+				  WHERE mp_sq = :mp_sq';
+		$stmt  = $pdo->prepare($query);
+		$stmt->bindValue(':status_gb',  Police::STATUS_GB_REMOVED, PDO::PARAM_INT);
+		$stmt->bindValue(':mp_sq',      $this->__mpSq,             PDO::PARAM_INT);
+		$stmt->bindValue(':officer_id', $officer->getUserId(),     PDO::PARAM_STR);
+		// $stmt->execute();
+
+		// memory_piece 테이블에서 삭제
+		$query = 'DELETE FROM memory_piece
+				  WHERE mp_sq = :mp_sq';
+		$stmt  = $pdo->prepare($query);
+		$stmt->bindValue(':mp_sq', $this->__mpSq, PDO::PARAM_INT);
+		// $stmt->execute();
+
+		$this->getCategory()->decreaseMpCnt();
+		// $stmt->execute();
+	} /*}}}*/
+
+	public function updateFirstMt(Mt $mt) /*{{{*/
+	{
+		$pdo = PDO_Manager::getMemoryDB();
+
+		$query = 'UPDATE memory_piece SET first_mt_sq = :first_mt_sq, update_dt = now() WHERE mp_sq = :mp_sq';
+		$stmt  = $pdo->prepare($query);
+		$stmt->bindValue(':mp_sq',       $this->__mpSq,  PDO::PARAM_INT);
+		$stmt->bindValue(':first_mt_sq', $mt->getMtSq(), PDO::PARAM_INT);
+		$stmt->execute();
+
+		$this->__firstMtSq = $mt;
+	} /*}}}*/
+
+	public function increaseMtCnt() /*{{{*/
+	{
+		$pdo = PDO_Manager::getMemoryDB();
+
+		$query = 'UPDATE memory_piece SET mt_cnt = mt_cnt + 1, update_dt = now() WHERE mp_sq = :mp_sq';
+		$stmt  = $pdo->prepare($query);
+		$stmt->bindValue(':mp_sq', $this->__mpSq, PDO::PARAM_INT);
+		$stmt->execute();
+
+		if (isset($this->__mtCnt)) {
+			$this->__mtCnt++;
+		}
+	} /*}}}*/
+
+	public function decreaseMtCnt() /*{{{*/
+	{
+		$pdo = PDO_Manager::getMemoryDB();
+
+		$query = 'UPDATE memory_piece SET mt_cnt = mt_cnt - 1, update_dt = now() WHERE mp_sq = :mp_sq';
+		$stmt  = $pdo->prepare($query);
+		$stmt->bindValue(':mp_sq', $this->__mpSq, PDO::PARAM_INT);
+		$stmt->execute();
+
+		if (isset($this->__mtCnt)) {
+			$this->__mtCnt--;
+		}
+	} /*}}}*/
+
+	public function increaseMt2dCnt() /*{{{*/
+	{
+		$pdo = PDO_Manager::getMemoryDB();
+
+		$query = 'UPDATE memory_piece SET mt2d_cnt = mt2d_cnt + 1, update_dt = now() WHERE mp_sq = :mp_sq';
+		$stmt  = $pdo->prepare($query);
+		$stmt->bindValue(':mp_sq', $this->__mpSq, PDO::PARAM_INT);
+		$stmt->execute();
+
+		if (isset($this->__mt2dCnt)) {
+			$this->__mt2dCnt++;
+		}
+	} /*}}}*/
+
+	public function increaseMemorizeCnt() /*{{{*/
+	{
+		$pdo = PDO_Manager::getMemoryDB();
+
+		$query = 'UPDATE memory_piece SET memorize_cnt = memorize_cnt + 1, update_dt = now() WHERE mp_sq = :mp_sq';
+		$stmt  = $pdo->prepare($query);
+		$stmt->bindValue(':mp_sq', $this->__mpSq, PDO::PARAM_INT);
+		$stmt->execute();
+
+		if (isset($this->__memorizeCnt)) {
+			$this->__memorizeCnt++;
+		}
+	} /*}}}*/
+
+	/***************************************************************************
+	 ***** ADD 함수들 **********************************************************
+	 **************************************************************************/
+
+	public function addMt(Mt $mt) /*{{{*/
+	{
+		// DB 에 INSERt 쿼리 실행
+		$pdo = PDO_Manager::getMemoryDB();
+
+		$query = 'INSERT INTO memory_talk
+				  (mp_sq, writer_id, writer_nick, content, parent_mt_sq,
+				   start_year, start_month, start_day, timetag_gb, timetag_data, update_dt)
+				  VALUES (:mp_sq, :writer_id, :writer_nick, :content, :parent_mt_sq, 
+						  :start_year, :start_month, :start_day, :timetag_gb, :timetag_data, now())';
+		$stmt  = $pdo->prepare($query);
+		$stmt->bindValue(':mp_sq',       $this->__mpSq,                 PDO::PARAM_INT);
+		$stmt->bindValue(':writer_id',   $mt->getWriter()->getUserId(), PDO::PARAM_STR);
+		$stmt->bindValue(':writer_nick', $mt->getWriterNick(),          PDO::PARAM_STR);
+		$stmt->bindValue(':content',     $mt->getContent(),             PDO::PARAM_STR);
+		$stmt->bindValue(':parent_mt_sq', 0, PDO::PARAM_INT);
+		$mt->getTimeTag()->bindValue($stmt);
+		$stmt->execute();
+
+		$mt->setMtSq($pdo->lastInsertId());
+
+		// 첫번째 MT 인 경우에는 MP 에 타임 태크를 추가하고 First MT 지정
+		if ($this->getMtCnt() <= 0) {
+			$this->updateFirstMt($mt);
+		}
+
+		// MT 개수 업데이트
+		$this->increaseMtCnt();
+		$this->increaseMt2dCnt();
+		$mt->getWriter()->increaseMtCnt();
+
+		if ($mt->getWriter()->isMemorize($this) === false) {
+			$mt->getWriter()->memorize($this);
+		}
+	} /*}}}*/
+
+	public function addTimeTag(TimeTag $timeTag) /*{{{*/
+	{
+		$pdo = PDO_Manager::getMemoryDB();
+
+		$query = 'INSERT INTO mp_timetag
+				  (mp_sq, category_sq, start_year, start_month, start_day, 
+				   timetag_gb, timetag_data, parent_gb, parent_sq, create_dt, update_dt)
+				  VALUES (:mp_sq, :category_sq, :start_year, :start_month, :start_day,
+				          :timetag_gb, :timetag_data, :parent_gb, :parent_sq, :create_dt, now())';
+		$stmt  = $pdo->prepare($query);
+		$stmt->bindValue(':mp_sq',       $this->__mpSq,                         PDO::PARAM_INT);
+		$stmt->bindValue(':category_sq', $this->getCategory()->getCategorySq(), PDO::PARAM_INT);
+		$timeTag->bindValue($stmt);
+		$stmt->bindValue(':parent_gb', $timeTag->getParentGb(),                   PDO::PARAM_INT);
+		$stmt->bindValue(':parent_sq', $timeTag->getParentSq(),                   PDO::PARAM_INT);
+		$stmt->bindValue(':create_dt', date('Y-m-d H:i:s', $this->getInsertDt()), PDO::PARAM_STR);
+		$stmt->execute();
+
+		if ($timeTag->getStartYear() > 0) {
+			$query = 'UPDATE mp_timetag SET activate_fl = activate_fl + 1, update_dt = now()
+					  WHERE mp_sq = :mp_sq and timetag_gb = :timetag_gb and timetag_data = :timetag_data';
+			$stmt  = $pdo->prepare($query);
+			$stmt->bindValue(':mp_sq',        $this->__mpSq,                          PDO::PARAM_INT);
+			$stmt->bindValue(':timetag_gb',   TimeTag::GB_10YEARS,                    PDO::PARAM_INT);
+			$stmt->bindValue(':timetag_data', intval($timeTag->getStartYear()/10)*10, PDO::PARAM_STR);
+			$stmt->execute();
+
+			if ($stmt->rowCount() <= 0) {
+				$query = 'INSERT INTO mp_timetag (mp_sq, category_sq, timetag_gb, timetag_data, create_dt, update_dt)
+						  VALUES (:mp_sq, :category_sq, :timetag_gb, :timetag_data, :create_dt, now())';
+				$stmt  = $pdo->prepare($query);
+				$stmt->bindValue(':mp_sq',        $this->__mpSq,                             PDO::PARAM_INT);
+				$stmt->bindValue(':category_sq',  $this->getCategory()->getCategorySq(),     PDO::PARAM_INT);
+				$stmt->bindValue(':timetag_gb',   TimeTag::GB_10YEARS,                       PDO::PARAM_INT);
+				$stmt->bindValue(':timetag_data', intval($timeTag->getStartYear()/10)*10,    PDO::PARAM_STR);
+				$stmt->bindValue(':create_dt',    date('Y-m-d H:i:s', $this->getInsertDt()), PDO::PARAM_STR);
+				$stmt->execute();
+			}
+		}
+	} /*}}}*/
+
+	/***************************************************************************
+	 ***** GET 함수들 **********************************************************
+	 **************************************************************************/
+
+	/**
+	 * AdminLog 에서 사용하기 위한 UniqueCode 를 반환한다.
+	 */
+	public function getUniqueCode() /*{{{*/
+	{
+		return 'mp#' . $this->__mpSq;
+	} /*}}}*/
+
+	public function getStatus() /*{{{*/
+	{
+		if ($this->getDeletedFl()) {
+			return MpPolice::STATUS_GB_TRASH;
+		}
+		else if ($this->getBlockedFl()) {
+			return MpPolice::STATUS_GB_BLOCKED;
+		}
+		else {
+			return MpPolice::STATUS_GB_NORMAL;
+		}
+	} /*}}}*/
+
+	public function getStatusStr() /*{{{*/
+	{
+		if ($this->getDeletedFl()) {
+			return MpPolice::$status[MpPolice::STATUS_GB_TRASH];
+		}
+		else if ($this->getBlockedFl()) {
+			return MpPolice::$status[MpPolice::STATUS_GB_BLOCKED];
+		}
+		else {
+			return '';
+		}
+	} /*}}}*/
+
+	public function getPolice() /*{{{*/
+	{
+		if (isset($this->__police) === false) {
+			$this->_loadPolice();
+		}
+
+		return $this->__police;
+	} /*}}}*/
+
+	/**
+	 * 메인 기본 정보를 반환한다.
+	 * 
+	 * @return ModuleBasic
+	 */
+	public function getMainModuleBasic() /*{{{*/
+	{
+		$pdo = PDO_Manager::getMemoryDB();
+
+		$query = 'SELECT md_basic_sq, writer_id, edit_gb, mainimg_gb, mainimg_url, content FROM module_basic
+				  WHERE mp_sq = :mp_sq and activate_fl = :activate_fl';
+		$stmt  = $pdo->prepare($query);
+		$stmt->bindValue(':mp_sq',       $this->__mpSq, PDO::PARAM_INT);
+		$stmt->bindValue(':activate_fl', 1,             PDO::PARAM_INT);
+		$stmt->execute();
+
+		if ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+			$moduleBasic = ModuleBasic::instance($row['md_basic_sq']);
+			$moduleBasic->setMp($this);
+			$moduleBasic->setWriter(User::instance($row['writer_id']));
+			$moduleBasic->setEditGb($row['edit_gb']);
+			$moduleBasic->setMainImgGb($row['mainimg_gb']);
+			$moduleBasic->setMainImgUrl($row['mainimg_url']);
+			$moduleBasic->setContent($row['content']);
+
+			return $moduleBasic;
+		}
+		else {
+			return null;
+		}
+	} /*}}}*/
+
+	public function getModuleCnt($moduleGb) /*{{{*/
+	{
+		if (isset($this->_moduleCnt)) {
+			$this->_loadModuleCnt();
+		}
+
+		return isset($this->_moduleCnt[$moduleGb]) ? $this->_moduleCnt[$moduleGb] : 0;
+	} /*}}}*/
+
+	/**
+	 * 기억나에 등록한 사용작 목록을 반환한다.
+	 */
+	public function getMemorizeUsers($page = 1, $numPerPage = 5) /*{{{*/
+	{
+		$pdo = PDO_Manager::getMemoryDB();
+
+		$query = 'SELECT b.user_id, b.nickname FROM memorize a, user b 
+				  WHERE mp_sq = :mp_sq and a.user_id = b.user_id 
+				  ORDER BY a.insert_dt desc LIMIT :offset, :limit';
+		$stmt  = $pdo->prepare($query);
+		$stmt->bindValue(':mp_sq',  $this->__mpSq,         PDO::PARAM_INT);
+		$stmt->bindValue(':offset', ($page-1)*$numPerPage, PDO::PARAM_INT);
+		$stmt->bindValue(':limit',  $numPerPage,           PDO::PARAM_INT);
+		$stmt->execute();
+
+		$users = array();
+		while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+			$user = User::instance($row['user_id']);
+			$user->setNickName($row['nickname']);
+
+			$users[] = $user;
+		}
+
+		return $users;
+	} /*}}}*/
+
+	public function getMts($page = 1, $numPerPage = 10, $order = 'mt_sq') /*{{{*/
+	{
+		if ($order == 'child_mt_cnt') {
+			$orderBy = 'child_mt_cnt desc';
+		}
+		else {
+			$orderBy = 'mt_sq desc';
+		}
+
+		$pdo = PDO_Manager::getMemoryDB();
+
+		$query = 'SELECT * FROM memory_talk WHERE mp_sq = :mp_sq and parent_mt_sq = :parent_mt_sq
+				  ORDER BY '.$orderBy.' LIMIT :offset, :limit';
+		$stmt = $pdo->prepare($query);
+		$stmt->bindValue(':mp_sq', $this->__mpSq, PDO::PARAM_INT);
+		$stmt->bindValue(':parent_mt_sq', 0, PDO::PARAM_INT);
+		$stmt->bindValue(':offset', ($page-1)*$numPerPage, PDO::PARAM_INT);
+		$stmt->bindValue(':limit',  $numPerPage,           PDO::PARAM_INT);
+		$stmt->execute();
+
+		$mts = array();
+		while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+			$mt = Mt::instance($row['mt_sq']);
+			$mt->loadByRowData($row);
+
+			$mts[] = $mt;
+		}
+
+		return $mts;
+	} /*}}}*/
+}
+?>
+>>>>>>> .r62

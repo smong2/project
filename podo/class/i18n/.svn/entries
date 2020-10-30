@@ -1,0 +1,52 @@
+8
+
+dir
+260
+svn://svn.stdev.cyworld.com/podo/trunk/class/i18n
+svn://svn.stdev.cyworld.com/podo
+
+
+
+2007-04-19T12:21:43.984371Z
+46
+kimgua
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+ce8de3fc-3281-4183-b2b6-ec36a7f23369
+
+I18NParser.php
+file
+
+
+
+
+2011-02-16T07:29:25.000000Z
+1993823d9f9b715b1534b70fc49d4423
+2007-04-19T12:21:43.984371Z
+46
+kimgua
+
+I18N.php
+file
+
+
+
+
+2011-02-16T07:29:25.000000Z
+02fab466c1e84c87178d158a4b19c8b5
+2007-04-19T12:21:43.984371Z
+46
+kimgua
+

@@ -1,0 +1,1193 @@
+[2009-08-18 15:31:02]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-18 15:34:54]	1.34	/mp/list	MEM01	SELECT a.*, content FROM memory_piece a LEFT JOIN memory_talk b ON a.first_mt_sq = b.mt_sq WHERE deleted_fl = 0 ORDER BY mp_sq DESC LIMIT :offset, :limit
+[2009-08-18 15:34:54]	27.00	/mp/list	MEM01	SELECT count(*) cnt FROM memory_piece WHERE deleted_fl = 0
+[2009-08-18 15:34:54]	0.50	/mp/list	MEM01	SELECT category_sq, category_nm, view_ord FROM category WHERE activate_fl = :activate_fl
+[2009-08-18 15:38:19]	0.78	/mybox/config/basic	MEM01	SELECT user_id, insert_dt, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image FROM user WHERE user_id = :user_id
+[2009-08-18 15:42:34]	0.79	/mybox/config/basic	MEM01	SELECT user_id, insert_dt, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image FROM user WHERE user_id = :user_id
+[2009-08-18 15:42:35]	0.92	/mybox/config/basic	MEM01	SELECT user_id, insert_dt, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image FROM user WHERE user_id = :user_id
+[2009-08-18 15:42:35]	0.58	/mybox/config/basic	MEM01	SELECT user_id, insert_dt, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image FROM user WHERE user_id = :user_id
+[2009-08-18 15:42:35]	0.57	/mybox/config/basic	MEM01	SELECT user_id, insert_dt, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image FROM user WHERE user_id = :user_id
+[2009-08-18 15:42:57]	0.89	/mybox/config/basic	MEM01	SELECT user_id, insert_dt, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image FROM user WHERE user_id = :user_id
+[2009-08-18 15:42:57]	0.47	/mybox/config/basic	MEM01	SELECT user_id, insert_dt, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image FROM user WHERE user_id = :user_id
+[2009-08-18 15:43:28]	0.77	/mybox/config/basic	MEM01	SELECT user_id, insert_dt, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image FROM user WHERE user_id = :user_id
+[2009-08-18 15:43:36]	0.95	/Mybox/config/basicImgUp	MEM01	SELECT user_id, insert_dt, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image FROM user WHERE user_id = :user_id
+[2009-08-18 15:43:36]	1.08	/Mybox/config/basicImgUp	MEM01	UPDATE user SET profile_image = :profile_image WHERE user_id = :user_id
+[2009-08-18 15:43:36]	0.66	/mybox/config/basic	MEM01	SELECT user_id, insert_dt, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image FROM user WHERE user_id = :user_id
+[2009-08-18 15:43:46]	0.81	/mybox/config/basic	MEM01	SELECT user_id, insert_dt, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image FROM user WHERE user_id = :user_id
+[2009-08-18 15:46:08]	0.95	/mybox/config/basic	MEM01	SELECT user_id, insert_dt, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image FROM user WHERE user_id = :user_id
+[2009-08-18 15:46:37]	0.73	/mybox/config/basic	MEM01	SELECT user_id, insert_dt, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image FROM user WHERE user_id = :user_id
+[2009-08-18 15:47:49]	0.82	/mybox/config/basic	MEM01	SELECT user_id, insert_dt, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image FROM user WHERE user_id = :user_id
+[2009-08-18 16:03:08]	0.74	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:03:34]	0.70	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:04:14]	0.79	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:04:15]	0.60	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:04:17]	0.69	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:04:17]	0.69	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:04:26]	0.79	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:06:47]	0.64	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:07:37]	0.74	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:08:06]	0.76	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:09:09]	0.80	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:09:20]	0.76	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:09:21]	0.73	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:09:31]	0.65	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:09:56]	0.89	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:10:27]	0.78	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:11:48]	0.85	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:11:49]	0.46	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:12:16]	0.72	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:12:56]	0.89	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:14:56]	0.93	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:14:57]	0.61	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:14:57]	0.48	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:15:17]	1.00	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:15:34]	0.71	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-18 16:15:34]	1.04	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page WHERE user_id= :user_id
+[2009-08-18 16:15:34]	0.65	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:16:54]	0.86	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:16:57]	0.61	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:17:17]	0.81	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:17:37]	0.75	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:17:38]	0.70	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:17:39]	0.68	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:17:47]	0.79	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:20:23]	0.88	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:20:32]	0.75	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:20:41]	0.66	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-18 16:20:41]	1.00	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page WHERE user_id= :user_id
+[2009-08-18 16:20:41]	0.64	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:20:44]	0.66	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-18 16:20:44]	0.44	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page WHERE user_id= :user_id
+[2009-08-18 16:20:44]	0.58	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:21:01]	0.92	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:21:02]	0.60	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-18 16:21:02]	0.42	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page WHERE user_id= :user_id
+[2009-08-18 16:21:02]	0.60	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:21:04]	0.67	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-18 16:21:04]	2.60	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page WHERE user_id= :user_id
+[2009-08-18 16:21:04]	0.61	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:21:08]	0.70	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-18 16:21:08]	2.93	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page WHERE user_id= :user_id
+[2009-08-18 16:21:08]	0.64	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:21:11]	0.66	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-18 16:21:11]	3.14	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page WHERE user_id= :user_id
+[2009-08-18 16:21:11]	0.60	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:21:12]	0.68	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-18 16:21:12]	2.99	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page WHERE user_id= :user_id
+[2009-08-18 16:21:12]	0.61	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:22:03]	0.75	/Mybox/config/basicImgUp	MEM01	SELECT user_id, insert_dt, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image FROM user WHERE user_id = :user_id
+[2009-08-18 16:22:03]	0.98	/Mybox/config/basicImgUp	MEM01	UPDATE user SET profile_image = :profile_image WHERE user_id = :user_id
+[2009-08-18 16:22:03]	0.62	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:22:05]	0.76	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:22:06]	0.71	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:22:07]	0.72	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:22:08]	0.59	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:22:21]	0.78	/Mybox/config/basicImgUp	MEM01	SELECT user_id, insert_dt, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image FROM user WHERE user_id = :user_id
+[2009-08-18 16:22:21]	0.94	/Mybox/config/basicImgUp	MEM01	UPDATE user SET profile_image = :profile_image WHERE user_id = :user_id
+[2009-08-18 16:22:21]	0.62	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:22:23]	0.78	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:22:43]	12.40	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-18 16:22:46]	11.30	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-18 16:23:02]	12.86	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-18 16:23:13]	12.32	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-18 16:23:15]	0.69	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-18 16:23:15]	0.98	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page WHERE user_id= :user_id
+[2009-08-18 16:23:15]	0.63	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:27:52]	0.89	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:27:54]	10.89	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-18 16:27:57]	0.55	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-18 16:28:12]	0.73	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-18 16:28:12]	0.45	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page WHERE user_id= :user_id
+[2009-08-18 16:28:12]	0.59	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:28:13]	13.59	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-18 16:28:17]	0.68	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-18 16:28:17]	0.45	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page WHERE user_id= :user_id
+[2009-08-18 16:28:17]	0.58	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:28:23]	1.22	/mp/list	MEM01	SELECT a.*, content FROM memory_piece a LEFT JOIN memory_talk b ON a.first_mt_sq = b.mt_sq WHERE deleted_fl = 0 ORDER BY mp_sq DESC LIMIT :offset, :limit
+[2009-08-18 16:28:23]	33.24	/mp/list	MEM01	SELECT count(*) cnt FROM memory_piece WHERE deleted_fl = 0
+[2009-08-18 16:28:23]	0.68	/mp/list	MEM01	SELECT category_sq, category_nm, view_ord FROM category WHERE activate_fl = :activate_fl
+[2009-08-18 16:28:26]	0.77	/mp/view	MEM01	SELECT * FROM memory_piece WHERE mp_sq = :mp_sq
+[2009-08-18 16:28:26]	0.53	/mp/view	MEM01	SELECT count(*) cnt FROM memorize WHERE user_id = :user_id and mp_sq = :mp_sq
+[2009-08-18 16:28:26]	1.04	/mp/view	MEM01	SELECT b.user_id, b.nickname FROM memorize a, user b WHERE mp_sq = :mp_sq and a.user_id = b.user_id ORDER BY a.insert_dt desc LIMIT :offset, :limit
+[2009-08-18 16:28:26]	2.15	/mp/view	MEM01	SELECT * FROM memory_talk WHERE mp_sq = :mp_sq and parent_mt_sq = :parent_mt_sq ORDER BY mt_sq desc LIMIT :offset, :limit
+[2009-08-18 16:28:34]	0.72	/admin/index	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-18 16:28:34]	2.07	/admin/index	MEM01	UPDATE admin_officer SET last_access_dt = now() WHERE user_id = :user_id
+[2009-08-18 16:28:34]	0.79	/admin/index	MEM01	INSERT INTO admin_log (officer_id, action_gb, arg1, arg2) VALUES (:officer_id, :action_gb, :arg1, :arg2)
+[2009-08-18 16:28:34]	0.61	/admin/home	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-18 16:28:34]	0.47	/admin/leftMenu	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-18 16:28:34]	0.52	/admin/topMenu	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-18 16:28:34]	0.59	/admin/leftMenu	MEM01	SELECT menu_gb FROM admin_auth WHERE user_id = :user_id
+[2009-08-18 16:28:50]	0.81	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:28:57]	12.15	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-18 16:29:12]	0.69	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-18 16:29:12]	3.21	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page WHERE user_id= :user_id
+[2009-08-18 16:29:12]	0.62	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:29:13]	0.74	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:29:14]	0.70	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:29:19]	1.26	/mp/list	MEM01	SELECT a.*, content FROM memory_piece a LEFT JOIN memory_talk b ON a.first_mt_sq = b.mt_sq WHERE deleted_fl = 0 ORDER BY mp_sq DESC LIMIT :offset, :limit
+[2009-08-18 16:29:19]	34.57	/mp/list	MEM01	SELECT count(*) cnt FROM memory_piece WHERE deleted_fl = 0
+[2009-08-18 16:29:19]	0.46	/mp/list	MEM01	SELECT category_sq, category_nm, view_ord FROM category WHERE activate_fl = :activate_fl
+[2009-08-18 16:29:20]	0.78	/mp/view	MEM01	SELECT * FROM memory_piece WHERE mp_sq = :mp_sq
+[2009-08-18 16:29:20]	0.50	/mp/view	MEM01	SELECT count(*) cnt FROM memorize WHERE user_id = :user_id and mp_sq = :mp_sq
+[2009-08-18 16:29:20]	1.04	/mp/view	MEM01	SELECT b.user_id, b.nickname FROM memorize a, user b WHERE mp_sq = :mp_sq and a.user_id = b.user_id ORDER BY a.insert_dt desc LIMIT :offset, :limit
+[2009-08-18 16:29:20]	2.22	/mp/view	MEM01	SELECT * FROM memory_talk WHERE mp_sq = :mp_sq and parent_mt_sq = :parent_mt_sq ORDER BY mt_sq desc LIMIT :offset, :limit
+[2009-08-18 16:29:25]	0.45	/admin/index	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-18 16:29:25]	1.09	/admin/index	MEM01	UPDATE admin_officer SET last_access_dt = now() WHERE user_id = :user_id
+[2009-08-18 16:29:25]	0.76	/admin/index	MEM01	INSERT INTO admin_log (officer_id, action_gb, arg1, arg2) VALUES (:officer_id, :action_gb, :arg1, :arg2)
+[2009-08-18 16:29:25]	0.63	/admin/topMenu	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-18 16:29:25]	0.53	/admin/home	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-18 16:29:25]	0.55	/admin/leftMenu	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-18 16:29:25]	0.38	/admin/leftMenu	MEM01	SELECT menu_gb FROM admin_auth WHERE user_id = :user_id
+[2009-08-18 16:29:31]	0.73	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:29:36]	1.20	/mp/list	MEM01	SELECT a.*, content FROM memory_piece a LEFT JOIN memory_talk b ON a.first_mt_sq = b.mt_sq WHERE deleted_fl = 0 ORDER BY mp_sq DESC LIMIT :offset, :limit
+[2009-08-18 16:29:36]	36.01	/mp/list	MEM01	SELECT count(*) cnt FROM memory_piece WHERE deleted_fl = 0
+[2009-08-18 16:29:36]	0.50	/mp/list	MEM01	SELECT category_sq, category_nm, view_ord FROM category WHERE activate_fl = :activate_fl
+[2009-08-18 16:29:37]	0.80	/mp/view	MEM01	SELECT * FROM memory_piece WHERE mp_sq = :mp_sq
+[2009-08-18 16:29:37]	0.50	/mp/view	MEM01	SELECT count(*) cnt FROM memorize WHERE user_id = :user_id and mp_sq = :mp_sq
+[2009-08-18 16:29:37]	1.03	/mp/view	MEM01	SELECT b.user_id, b.nickname FROM memorize a, user b WHERE mp_sq = :mp_sq and a.user_id = b.user_id ORDER BY a.insert_dt desc LIMIT :offset, :limit
+[2009-08-18 16:29:37]	2.15	/mp/view	MEM01	SELECT * FROM memory_talk WHERE mp_sq = :mp_sq and parent_mt_sq = :parent_mt_sq ORDER BY mt_sq desc LIMIT :offset, :limit
+[2009-08-18 16:29:45]	0.76	/admin/index	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-18 16:29:45]	0.93	/admin/index	MEM01	UPDATE admin_officer SET last_access_dt = now() WHERE user_id = :user_id
+[2009-08-18 16:29:45]	0.77	/admin/index	MEM01	INSERT INTO admin_log (officer_id, action_gb, arg1, arg2) VALUES (:officer_id, :action_gb, :arg1, :arg2)
+[2009-08-18 16:29:45]	0.60	/admin/leftMenu	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-18 16:29:45]	0.49	/admin/topMenu	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-18 16:29:45]	0.36	/admin/leftMenu	MEM01	SELECT menu_gb FROM admin_auth WHERE user_id = :user_id
+[2009-08-18 16:29:45]	0.40	/admin/home	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-18 16:29:52]	0.80	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:29:58]	11.47	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-18 16:30:04]	0.70	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-18 16:30:04]	0.47	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page WHERE user_id= :user_id
+[2009-08-18 16:30:04]	0.58	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:30:06]	0.65	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-18 16:30:06]	0.44	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page WHERE user_id= :user_id
+[2009-08-18 16:30:06]	0.57	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:37:08]	0.78	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:37:29]	0.75	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:37:30]	0.73	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:37:31]	0.77	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:37:35]	12.45	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-18 16:37:37]	0.81	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:37:38]	0.73	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:37:39]	0.68	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:38:10]	0.73	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:38:18]	12.42	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-18 16:38:26]	0.80	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:38:51]	10.94	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-18 16:38:52]	0.80	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-18 16:38:52]	1.74	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page, update_dt = now() WHERE user_id = :user_id
+[2009-08-18 16:38:53]	0.67	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:38:57]	0.78	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-18 16:38:57]	3.64	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page, update_dt = now() WHERE user_id = :user_id
+[2009-08-18 16:38:57]	0.63	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:39:48]	0.78	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-18 16:39:48]	2.37	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page, update_dt = now() WHERE user_id = :user_id
+[2009-08-18 16:39:48]	0.61	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 16:51:12]	0.78	/Mybox/config/basicImgUp	MEM01	SELECT user_id, insert_dt, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image FROM user WHERE user_id = :user_id
+[2009-08-18 16:51:12]	0.93	/Mybox/config/basicImgUp	MEM01	UPDATE user SET profile_image = :profile_image WHERE user_id = :user_id
+[2009-08-18 16:51:12]	0.63	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 17:48:52]	0.73	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 17:48:57]	11.38	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-18 18:04:13]	0.81	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:04:35]	0.92	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:05:19]	0.81	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:05:50]	0.78	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:06:07]	0.76	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:08:00]	0.91	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:09:04]	0.76	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:09:31]	1.05	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:13:39]	0.78	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:14:11]	0.81	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:14:23]	0.68	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:15:17]	0.78	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:15:41]	0.76	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:15:55]	0.90	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:16:04]	0.77	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:17:42]	0.80	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:18:42]	0.60	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:19:02]	0.72	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:20:07]	0.69	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:21:21]	0.79	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:21:55]	0.92	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:22:25]	0.79	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:22:35]	0.76	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:22:47]	0.78	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:26:03]	0.68	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:29:03]	0.70	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:29:14]	1.47	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:29:36]	0.76	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:31:07]	0.75	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:31:24]	0.73	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:32:47]	0.65	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:32:58]	0.87	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:33:22]	0.77	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:33:50]	0.79	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:34:08]	0.74	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:34:39]	0.75	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:34:51]	0.86	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:35:07]	0.76	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:37:12]	0.78	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:37:20]	0.79	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:37:35]	0.73	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:37:37]	13.45	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-18 18:37:50]	11.07	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-18 18:38:01]	12.38	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-18 18:38:06]	13.26	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-18 18:38:17]	0.78	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:38:19]	13.42	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-18 18:38:40]	11.97	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-18 18:39:03]	0.75	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:39:06]	13.51	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-18 18:39:11]	13.76	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-18 18:42:55]	0.84	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:43:10]	0.79	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:43:16]	12.48	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-18 18:44:37]	0.76	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:44:52]	0.81	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:44:54]	11.50	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-18 18:45:38]	12.63	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-18 18:46:12]	0.78	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:46:18]	13.45	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-18 18:46:20]	0.70	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-18 18:46:20]	2.85	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page, update_dt = now() WHERE user_id = :user_id
+[2009-08-18 18:46:20]	0.63	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-18 18:46:21]	0.62	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-19 18:02:29]	0.97	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-19 18:02:30]	0.49	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-19 18:02:31]	0.48	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-19 18:02:34]	0.83	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-19 18:02:34]	2.42	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, profile_image = :profile_image, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page, update_dt = now() WHERE user_id = :user_id
+[2009-08-19 18:02:34]	0.81	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-19 18:05:15]	0.70	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-19 18:05:17]	0.76	/mybox/config/blogsync	MEM01	SELECT count(*) cnt FROM user_blogsync
+[2009-08-19 18:05:17]	0.63	/mybox/config/blogsync	MEM01	SELECT blog_seq, blog_id, api_id, blog_user_id, api_key, blog_password, category_nm, mp_cnt, insert_dt FROM user_blogsync WHERE user_id = :user_id ORDER BY blog_seq DESC LIMIT :offset, :limit
+[2009-08-19 18:05:23]	0.54	/mybox/config/Blogsync	MEM01	SELECT count(*) cnt FROM user_blogsync
+[2009-08-19 18:05:23]	0.46	/mybox/config/Blogsync	MEM01	SELECT blog_seq, blog_id, api_id, blog_user_id, api_key, blog_password, category_nm, mp_cnt, insert_dt FROM user_blogsync WHERE user_id = :user_id ORDER BY blog_seq DESC LIMIT :offset, :limit
+[2009-08-19 18:05:31]	0.99	/mybox/config/invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-19 18:25:07]	0.97	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-19 18:26:12]	0.69	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-19 18:26:19]	0.62	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-19 18:26:20]	0.58	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-19 18:42:03]	0.93	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-19 18:42:11]	0.55	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-19 18:43:00]	0.69	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-19 18:43:07]	0.67	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-19 18:46:36]	0.70	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-19 18:46:46]	0.67	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-19 18:54:11]	0.95	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-19 18:58:20]	0.69	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-19 19:01:41]	0.71	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-19 19:05:55]	0.67	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-19 19:06:21]	0.68	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-19 19:06:42]	0.67	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-19 19:06:54]	0.69	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-19 19:07:02]	0.68	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-19 19:07:40]	0.63	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-19 19:07:49]	0.55	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-19 19:13:04]	0.93	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-19 19:13:23]	2.66	/mybox/config/Inviteproc	MEM01	INSERT INTO invite (invite_id, invite_email, recieve_email, invite_message, share_mp) VALUES (:invite_id, :invite_email, :recieve_email, :invite_message, :share_mp)
+[2009-08-19 19:13:23]	0.87	/mybox/config/Inviteproc	MEM01	INSERT INTO invite (invite_id, invite_email, recieve_email, invite_message, share_mp) VALUES (:invite_id, :invite_email, :recieve_email, :invite_message, :share_mp)
+[2009-08-19 19:13:23]	4.78	/mybox/config/Inviteproc	MEM01	INSERT INTO invite (invite_id, invite_email, recieve_email, invite_message, share_mp) VALUES (:invite_id, :invite_email, :recieve_email, :invite_message, :share_mp)
+[2009-08-19 19:14:49]	1.08	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-19 19:14:50]	0.65	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-19 19:17:01]	0.81	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-19 19:18:09]	0.81	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-19 19:18:31]	0.79	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-19 19:18:32]	0.65	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-19 19:19:09]	0.80	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-19 19:19:27]	0.73	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-19 19:19:39]	0.77	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-19 19:19:42]	0.65	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-19 19:19:49]	0.77	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-19 19:19:55]	0.65	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-19 19:20:44]	0.79	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-19 19:21:05]	0.82	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-19 19:21:17]	0.83	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-19 19:23:59]	0.81	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-19 19:24:16]	0.82	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-19 19:24:31]	0.71	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-19 19:24:46]	0.84	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-19 19:24:48]	0.65	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-19 19:26:33]	0.67	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-19 19:26:33]	0.50	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-19 19:26:34]	0.49	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-20 09:44:50]	0.92	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-20 09:45:29]	0.81	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 09:47:22]	0.81	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 09:47:36]	0.66	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 09:47:44]	1.04	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 09:48:03]	0.80	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 09:48:04]	0.62	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 09:48:15]	0.79	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 09:57:56]	1.08	/admin/authByMenu	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-20 09:57:56]	0.48	/admin/authByMenu	MEM01	SELECT menu_gb FROM admin_auth WHERE user_id = :user_id
+[2009-08-20 09:57:56]	0.48	/admin/authByMenu	MEM01	SELECT user_id, nate_id, realname, officer_dt, last_access_dt FROM admin_officer WHERE officer_fl = 1
+[2009-08-20 09:57:56]	0.39	/admin/authByMenu	MEM01	SELECT user_id FROM admin_auth WHERE menu_gb = :menu_gb
+[2009-08-20 09:57:57]	0.48	/admin/authByOfficer	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-20 09:57:57]	0.34	/admin/authByOfficer	MEM01	SELECT menu_gb FROM admin_auth WHERE user_id = :user_id
+[2009-08-20 09:57:57]	0.40	/admin/authByOfficer	MEM01	SELECT user_id, nate_id, realname, officer_dt, last_access_dt FROM admin_officer WHERE officer_fl = 1
+[2009-08-20 09:57:58]	0.43	/admin/officer	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-20 09:57:58]	0.33	/admin/officer	MEM01	SELECT menu_gb FROM admin_auth WHERE user_id = :user_id
+[2009-08-20 09:57:58]	0.39	/admin/officer	MEM01	SELECT user_id, nate_id, realname, officer_dt, last_access_dt FROM admin_officer WHERE officer_fl = 1
+[2009-08-20 09:57:58]	0.45	/admin/mp/trash	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-20 09:57:58]	0.34	/admin/mp/trash	MEM01	SELECT menu_gb FROM admin_auth WHERE user_id = :user_id
+[2009-08-20 09:57:58]	0.49	/admin/mp/trash	MEM01	SELECT count(*) cnt FROM mp_police
+[2009-08-20 09:57:58]	0.56	/admin/mp/trash	MEM01	SELECT mp_police.mp_sq, mp_police.mp_nm, mp_police.creator_id, creator_nick, status_gb, reason_gb, mp_police.content, mp_police.update_dt, mp_police.officer_id, admin_officer.realname, admin_officer.nate_id FROM mp_police LEFT JOIN memory_piece ON mp_police.mp_sq = memory_piece.mp_sq LEFT JOIN admin_officer ON mp_police.officer_id = admin_officer.user_id LIMIT :offset, :limit
+[2009-08-20 09:57:59]	0.44	/admin/mp/add	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-20 09:57:59]	0.32	/admin/mp/add	MEM01	SELECT menu_gb FROM admin_auth WHERE user_id = :user_id
+[2009-08-20 09:57:59]	0.59	/admin/mp/add	MEM01	SELECT category_sq, category_nm, activate_fl, mp_cnt, view_ord, insert_dt, update_dt FROM category
+[2009-08-20 09:58:01]	0.68	/admin/mp/index	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-20 09:58:01]	0.34	/admin/mp/index	MEM01	SELECT menu_gb FROM admin_auth WHERE user_id = :user_id
+[2009-08-20 09:58:01]	21.58	/admin/mp/index	MEM01	SELECT count(*) cnt FROM memory_piece
+[2009-08-20 09:58:01]	0.59	/admin/mp/index	MEM01	SELECT category_sq, category_nm, activate_fl, mp_cnt, view_ord, insert_dt, update_dt FROM category
+[2009-08-20 09:58:01]	1.45	/admin/mp/index	MEM01	SELECT a.*, content FROM memory_piece a LEFT JOIN memory_talk b ON a.first_mt_sq = b.mt_sq ORDER BY mp_sq DESC LIMIT :offset, :limit
+[2009-08-20 09:58:03]	0.45	/admin/mp/index	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-20 09:58:03]	0.34	/admin/mp/index	MEM01	SELECT menu_gb FROM admin_auth WHERE user_id = :user_id
+[2009-08-20 09:58:03]	0.29	/admin/mp/index	MEM01	SELECT count(*) cnt FROM memory_piece
+[2009-08-20 09:58:03]	0.44	/admin/mp/index	MEM01	SELECT category_sq, category_nm, activate_fl, mp_cnt, view_ord, insert_dt, update_dt FROM category
+[2009-08-20 09:58:03]	0.93	/admin/mp/index	MEM01	SELECT a.*, content FROM memory_piece a LEFT JOIN memory_talk b ON a.first_mt_sq = b.mt_sq ORDER BY mp_sq DESC LIMIT :offset, :limit
+[2009-08-20 09:58:04]	0.44	/admin/mp/index	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-20 09:58:04]	0.33	/admin/mp/index	MEM01	SELECT menu_gb FROM admin_auth WHERE user_id = :user_id
+[2009-08-20 09:58:04]	0.28	/admin/mp/index	MEM01	SELECT count(*) cnt FROM memory_piece
+[2009-08-20 09:58:04]	0.44	/admin/mp/index	MEM01	SELECT category_sq, category_nm, activate_fl, mp_cnt, view_ord, insert_dt, update_dt FROM category
+[2009-08-20 09:58:04]	1.95	/admin/mp/index	MEM01	SELECT a.*, content FROM memory_piece a LEFT JOIN memory_talk b ON a.first_mt_sq = b.mt_sq ORDER BY mp_sq DESC LIMIT :offset, :limit
+[2009-08-20 09:58:08]	0.55	/admin/category/index	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-20 09:58:08]	0.34	/admin/category/index	MEM01	SELECT menu_gb FROM admin_auth WHERE user_id = :user_id
+[2009-08-20 09:58:08]	0.47	/admin/category/index	MEM01	SELECT category_sq, category_nm, activate_fl, mp_cnt, view_ord, insert_dt, update_dt FROM category
+[2009-08-20 09:58:12]	0.44	/admin/category/modify	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-20 09:58:12]	0.34	/admin/category/modify	MEM01	SELECT menu_gb FROM admin_auth WHERE user_id = :user_id
+[2009-08-20 09:58:12]	0.56	/admin/category/modify	MEM01	SELECT category_sq, category_nm, activate_fl, mp_cnt FROM category WHERE category_sq = :category_sq
+[2009-08-20 09:58:12]	0.68	/admin/category/modify	MEM01	SELECT module_config_sq, module_gb, title, field_gb, field_length FROM module_config WHERE category_sq = :category_sq ORDER BY view_ord
+[2009-08-20 09:58:13]	0.45	/admin/category/index	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-20 09:58:13]	0.31	/admin/category/index	MEM01	SELECT menu_gb FROM admin_auth WHERE user_id = :user_id
+[2009-08-20 09:58:13]	0.44	/admin/category/index	MEM01	SELECT category_sq, category_nm, activate_fl, mp_cnt, view_ord, insert_dt, update_dt FROM category
+[2009-08-20 09:58:16]	0.43	/admin/category/modify	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-20 09:58:16]	0.33	/admin/category/modify	MEM01	SELECT menu_gb FROM admin_auth WHERE user_id = :user_id
+[2009-08-20 09:58:16]	0.44	/admin/category/modify	MEM01	SELECT category_sq, category_nm, activate_fl, mp_cnt FROM category WHERE category_sq = :category_sq
+[2009-08-20 09:58:16]	0.55	/admin/category/modify	MEM01	SELECT module_config_sq, module_gb, title, field_gb, field_length FROM module_config WHERE category_sq = :category_sq ORDER BY view_ord
+[2009-08-20 09:58:19]	0.52	/admin/category/index	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-20 09:58:19]	0.34	/admin/category/index	MEM01	SELECT menu_gb FROM admin_auth WHERE user_id = :user_id
+[2009-08-20 09:58:19]	0.45	/admin/category/index	MEM01	SELECT category_sq, category_nm, activate_fl, mp_cnt, view_ord, insert_dt, update_dt FROM category
+[2009-08-20 09:58:21]	0.44	/admin/category/modify	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-20 09:58:21]	0.34	/admin/category/modify	MEM01	SELECT menu_gb FROM admin_auth WHERE user_id = :user_id
+[2009-08-20 09:58:21]	0.53	/admin/category/modify	MEM01	SELECT category_sq, category_nm, activate_fl, mp_cnt FROM category WHERE category_sq = :category_sq
+[2009-08-20 09:58:21]	0.57	/admin/category/modify	MEM01	SELECT module_config_sq, module_gb, title, field_gb, field_length FROM module_config WHERE category_sq = :category_sq ORDER BY view_ord
+[2009-08-20 09:58:28]	0.60	/admin/category/index	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-20 09:58:28]	0.35	/admin/category/index	MEM01	SELECT menu_gb FROM admin_auth WHERE user_id = :user_id
+[2009-08-20 09:58:28]	0.45	/admin/category/index	MEM01	SELECT category_sq, category_nm, activate_fl, mp_cnt, view_ord, insert_dt, update_dt FROM category
+[2009-08-20 10:56:26]	0.82	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 10:56:47]	0.82	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 10:57:53]	0.82	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 10:58:18]	0.76	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 10:58:48]	0.76	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 11:03:15]	0.82	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 11:03:17]	0.78	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 11:03:21]	0.67	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 11:12:45]	1.02	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 11:12:53]	0.82	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 11:15:10]	0.82	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 11:15:14]	0.65	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 11:15:16]	0.62	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 11:15:40]	0.82	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 11:15:47]	0.65	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 11:17:18]	0.83	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 11:17:19]	0.66	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 11:17:57]	0.77	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 11:19:23]	0.79	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 11:19:28]	0.67	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 11:19:46]	0.74	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 11:19:51]	0.73	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 11:19:54]	0.70	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 11:20:06]	0.79	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 11:21:24]	0.82	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 11:21:31]	0.70	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 11:21:44]	0.71	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 11:21:47]	0.78	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 11:21:59]	0.83	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 13:20:47]	2.00	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 13:29:28]	0.80	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 13:33:49]	0.88	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 13:33:49]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 13:33:50]	0.50	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 13:33:50]	0.51	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 13:33:57]	0.61	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 13:33:57]	0.50	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 13:34:24]	0.62	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 13:34:24]	0.51	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 13:34:35]	0.53	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 13:34:35]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 13:34:36]	0.44	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 13:34:36]	0.51	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 13:34:41]	0.46	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 13:34:41]	0.50	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 13:35:03]	0.62	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 13:35:03]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 13:35:21]	0.51	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 13:35:21]	0.50	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 13:35:49]	0.56	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 13:35:49]	0.50	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 13:35:50]	0.43	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 13:35:50]	0.50	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 13:35:55]	0.45	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 13:35:55]	0.49	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 13:47:59]	0.62	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 13:47:59]	0.50	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 13:48:27]	0.63	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 13:48:27]	0.54	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 13:49:14]	0.61	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 13:49:14]	0.51	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 13:49:38]	0.57	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 13:49:38]	0.50	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 13:49:41]	0.41	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 13:49:41]	0.50	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 13:49:57]	0.61	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 13:49:57]	0.54	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 13:50:11]	0.54	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 13:50:11]	0.61	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 13:50:20]	0.41	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 13:50:20]	0.50	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 13:50:34]	0.55	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 13:50:34]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 13:51:32]	0.58	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 13:51:32]	0.61	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 13:51:40]	0.58	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 13:51:40]	0.50	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 13:53:14]	0.54	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 13:53:14]	0.51	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 13:53:23]	0.40	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 13:53:23]	0.49	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 13:53:29]	0.44	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 13:53:29]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 13:53:37]	0.57	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 13:53:37]	0.51	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 13:54:05]	0.56	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 13:54:05]	0.51	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 13:54:13]	0.41	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 13:54:13]	0.50	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 13:58:42]	0.58	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 13:58:42]	0.50	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 13:58:48]	0.55	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 13:58:48]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:01:01]	0.55	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:01:01]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:01:08]	0.56	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:01:08]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:07:00]	0.45	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:07:00]	0.59	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:07:01]	0.68	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:07:01]	0.50	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:08:11]	0.76	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:08:11]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:08:14]	0.44	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:08:14]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:08:54]	0.44	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:08:54]	0.50	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:10:18]	0.39	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:10:18]	0.49	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:11:16]	0.43	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:11:16]	0.51	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:19:00]	0.54	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:19:00]	0.53	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:19:44]	0.57	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:19:44]	0.50	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:19:55]	0.53	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:19:55]	0.50	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:20:02]	0.55	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:20:02]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:20:09]	0.45	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:20:09]	0.50	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:20:37]	0.52	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:20:37]	0.53	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:20:38]	0.40	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:20:38]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:20:40]	0.38	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:20:40]	0.50	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:20:45]	0.46	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:20:45]	0.50	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:20:46]	0.41	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:20:46]	0.51	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:20:52]	0.52	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:20:52]	0.54	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:20:53]	0.40	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:20:53]	0.50	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:21:00]	0.55	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:21:00]	0.50	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:21:01]	0.59	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:21:01]	0.51	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:21:10]	0.54	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:21:10]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:21:56]	0.56	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:21:56]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:22:09]	0.56	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:22:09]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:22:14]	0.40	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:22:14]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:22:20]	0.43	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:22:20]	0.50	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:23:07]	0.56	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:23:07]	0.51	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:23:14]	0.40	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:23:14]	0.51	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:23:22]	0.59	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:23:22]	0.50	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:23:33]	0.48	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:23:33]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:23:40]	0.42	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:23:40]	0.50	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:23:41]	0.41	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:23:41]	0.48	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:24:01]	0.55	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:24:01]	0.50	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:24:06]	0.60	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:24:06]	0.51	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:24:10]	0.39	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:24:10]	0.49	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:24:32]	0.47	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:24:32]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:24:39]	0.42	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:24:39]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:25:17]	0.56	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:25:17]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:25:30]	0.44	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:25:30]	0.50	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:25:47]	0.55	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:25:47]	0.50	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:26:14]	0.60	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:26:14]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:26:24]	0.65	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:26:24]	0.51	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:26:36]	0.44	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:26:36]	0.51	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:26:44]	0.40	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:26:44]	0.50	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:36:11]	0.57	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:36:11]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:36:39]	0.53	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:36:39]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:37:00]	0.53	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:37:00]	0.50	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:37:24]	0.56	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:37:24]	0.51	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:38:00]	0.52	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:38:00]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:38:14]	0.58	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:38:14]	0.53	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:38:45]	0.53	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:38:45]	0.50	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:48:28]	0.57	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:48:28]	0.55	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:48:44]	0.41	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:48:44]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:51:11]	0.55	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:51:11]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:51:52]	0.56	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:51:52]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:51:59]	2.95	/mybox/config/inviteDelProc	MEM01	DELETE FROM invite WHERE invite_sq = :invite_sq
+[2009-08-20 14:51:59]	0.63	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:51:59]	0.61	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:52:00]	0.40	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:52:00]	0.48	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:54:41]	1.90	/mybox/config/Inviteproc	MEM01	INSERT INTO invite (invite_id, invite_email, recieve_email, invite_message, share_mp) VALUES (:invite_id, :invite_email, :recieve_email, :invite_message, :share_mp)
+[2009-08-20 14:54:41]	0.97	/mybox/config/Inviteproc	MEM01	INSERT INTO invite (invite_id, invite_email, recieve_email, invite_message, share_mp) VALUES (:invite_id, :invite_email, :recieve_email, :invite_message, :share_mp)
+[2009-08-20 14:55:09]	2.58	/mybox/config/Inviteproc	MEM01	INSERT INTO invite (invite_id, invite_email, recieve_email, invite_message, share_mp) VALUES (:invite_id, :invite_email, :recieve_email, :invite_message, :share_mp)
+[2009-08-20 14:55:09]	0.90	/mybox/config/Inviteproc	MEM01	INSERT INTO invite (invite_id, invite_email, recieve_email, invite_message, share_mp) VALUES (:invite_id, :invite_email, :recieve_email, :invite_message, :share_mp)
+[2009-08-20 14:55:10]	0.58	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:55:10]	0.76	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:55:20]	2.83	/mybox/config/inviteDelProc	MEM01	DELETE FROM invite WHERE invite_sq = :invite_sq
+[2009-08-20 14:55:20]	0.89	/mybox/config/inviteDelProc	MEM01	DELETE FROM invite WHERE invite_sq = :invite_sq
+[2009-08-20 14:55:20]	0.56	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:55:20]	0.65	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 14:58:47]	0.56	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 14:58:47]	0.53	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:00:43]	0.56	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:00:43]	0.53	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:01:59]	0.52	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:01:59]	0.54	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:02:30]	0.56	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:02:30]	0.54	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:02:39]	0.47	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:02:39]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:03:16]	0.53	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:03:16]	0.53	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:03:47]	0.57	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:03:47]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:03:55]	0.43	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:03:55]	0.51	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:04:04]	0.53	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:04:04]	0.53	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:04:40]	0.56	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:04:40]	0.53	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:04:41]	0.38	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:04:41]	0.51	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:04:46]	0.41	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:04:46]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:04:47]	0.39	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:04:47]	0.51	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:04:54]	0.44	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:04:54]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:04:58]	0.56	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:04:58]	0.53	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:04:59]	0.40	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:04:59]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:05:37]	0.60	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:05:37]	0.53	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:05:40]	11.14	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-20 15:05:47]	11.11	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-20 15:05:49]	0.66	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-20 15:05:49]	2.78	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, profile_image = :profile_image, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page, update_dt = now() WHERE user_id = :user_id
+[2009-08-20 15:05:49]	0.59	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-20 15:06:13]	0.55	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:06:13]	0.53	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:06:26]	0.55	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:06:26]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:14:42]	0.56	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:14:42]	0.55	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:18:54]	0.53	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:18:54]	0.55	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:18:57]	0.55	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:18:57]	0.53	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:19:03]	0.54	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:19:03]	0.54	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:20:21]	0.55	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:20:21]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:21:39]	0.58	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:21:39]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:22:20]	0.88	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:22:20]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:24:47]	0.56	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:24:47]	0.53	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:25:16]	0.57	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:25:16]	0.54	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:25:57]	2.51	/mybox/config/Inviteproc	MEM01	INSERT INTO invite (invite_id, invite_email, recieve_email, invite_message, share_mp) VALUES (:invite_id, :invite_email, :recieve_email, :invite_message, :share_mp)
+[2009-08-20 15:25:57]	0.92	/mybox/config/Inviteproc	MEM01	INSERT INTO invite (invite_id, invite_email, recieve_email, invite_message, share_mp) VALUES (:invite_id, :invite_email, :recieve_email, :invite_message, :share_mp)
+[2009-08-20 15:25:58]	0.67	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:25:58]	0.78	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:26:51]	0.43	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:26:51]	0.62	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:27:08]	0.54	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:27:08]	0.71	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:27:16]	0.40	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:27:16]	0.61	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:27:23]	0.40	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:27:23]	0.59	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:27:41]	0.55	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:27:41]	0.62	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:27:56]	0.55	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:27:56]	0.67	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:28:02]	0.55	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:28:02]	0.63	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:28:04]	0.42	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:28:04]	0.61	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:28:16]	0.48	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:28:16]	0.61	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:28:22]	0.44	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:28:22]	0.62	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:28:35]	0.46	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:28:35]	0.62	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:28:45]	0.41	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:28:45]	0.60	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:28:54]	0.45	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:28:54]	0.63	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:29:04]	0.52	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:29:04]	0.62	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:29:16]	0.54	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:29:16]	0.62	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:29:26]	0.41	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:29:26]	0.61	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:29:30]	0.41	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:29:30]	0.60	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 15:59:57]	0.55	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 15:59:57]	0.63	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 16:00:14]	0.55	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 16:00:14]	0.62	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id
+[2009-08-20 16:04:21]	0.54	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 16:04:21]	0.97	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-20 16:04:27]	0.45	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 16:04:27]	0.78	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-20 16:04:28]	0.41	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 16:04:28]	0.60	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-20 16:04:30]	0.40	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 16:04:30]	0.55	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-20 16:16:48]	1.49	/admin/authByOfficer	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-20 16:16:48]	1.09	/admin/authByOfficer	MEM01	SELECT menu_gb FROM admin_auth WHERE user_id = :user_id
+[2009-08-20 16:16:48]	0.55	/admin/authByOfficer	MEM01	SELECT user_id, nate_id, realname, officer_dt, last_access_dt FROM admin_officer WHERE officer_fl = 1
+[2009-08-20 16:16:48]	0.45	/admin/authByMenu	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-20 16:16:48]	0.33	/admin/authByMenu	MEM01	SELECT menu_gb FROM admin_auth WHERE user_id = :user_id
+[2009-08-20 16:16:48]	0.40	/admin/authByMenu	MEM01	SELECT user_id, nate_id, realname, officer_dt, last_access_dt FROM admin_officer WHERE officer_fl = 1
+[2009-08-20 16:16:48]	0.53	/admin/authByMenu	MEM01	SELECT user_id FROM admin_auth WHERE menu_gb = :menu_gb
+[2009-08-20 16:16:49]	0.43	/admin/officer	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-20 16:16:49]	0.32	/admin/officer	MEM01	SELECT menu_gb FROM admin_auth WHERE user_id = :user_id
+[2009-08-20 16:16:49]	0.39	/admin/officer	MEM01	SELECT user_id, nate_id, realname, officer_dt, last_access_dt FROM admin_officer WHERE officer_fl = 1
+[2009-08-20 16:16:50]	0.40	/admin/mp/trash	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-20 16:16:50]	0.47	/admin/mp/trash	MEM01	SELECT menu_gb FROM admin_auth WHERE user_id = :user_id
+[2009-08-20 16:16:50]	0.99	/admin/mp/trash	MEM01	SELECT count(*) cnt FROM mp_police
+[2009-08-20 16:16:50]	0.55	/admin/mp/trash	MEM01	SELECT mp_police.mp_sq, mp_police.mp_nm, mp_police.creator_id, creator_nick, status_gb, reason_gb, mp_police.content, mp_police.update_dt, mp_police.officer_id, admin_officer.realname, admin_officer.nate_id FROM mp_police LEFT JOIN memory_piece ON mp_police.mp_sq = memory_piece.mp_sq LEFT JOIN admin_officer ON mp_police.officer_id = admin_officer.user_id LIMIT :offset, :limit
+[2009-08-20 16:16:52]	0.55	/admin/mp/trash	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-20 16:16:52]	0.34	/admin/mp/trash	MEM01	SELECT menu_gb FROM admin_auth WHERE user_id = :user_id
+[2009-08-20 16:16:52]	0.29	/admin/mp/trash	MEM01	SELECT count(*) cnt FROM mp_police
+[2009-08-20 16:16:52]	0.35	/admin/mp/trash	MEM01	SELECT mp_police.mp_sq, mp_police.mp_nm, mp_police.creator_id, creator_nick, status_gb, reason_gb, mp_police.content, mp_police.update_dt, mp_police.officer_id, admin_officer.realname, admin_officer.nate_id FROM mp_police LEFT JOIN memory_piece ON mp_police.mp_sq = memory_piece.mp_sq LEFT JOIN admin_officer ON mp_police.officer_id = admin_officer.user_id LIMIT :offset, :limit
+[2009-08-20 16:59:55]	0.54	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 16:59:55]	0.45	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-20 16:59:57]	0.56	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 16:59:57]	0.53	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-20 16:59:59]	0.41	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 16:59:59]	0.44	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-20 17:00:01]	0.55	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 17:00:01]	0.53	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-20 17:33:30]	0.92	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 17:33:53]	0.52	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 17:35:36]	0.55	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 17:35:47]	0.41	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 17:36:00]	0.54	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 17:37:18]	0.55	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 17:37:26]	0.43	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 17:37:27]	0.38	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 17:39:21]	0.56	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 17:39:28]	0.42	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 17:40:58]	0.88	/mybox/config/Invite	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-20 17:40:58]	0.35	/mybox/config/Invite	MEM01	SELECT menu_gb FROM admin_auth WHERE user_id = :user_id
+[2009-08-20 17:40:58]	0.31	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 17:45:41]	0.55	/mybox/config/Invite	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-20 17:45:41]	0.35	/mybox/config/Invite	MEM01	SELECT menu_gb FROM admin_auth WHERE user_id = :user_id
+[2009-08-20 17:45:41]	0.31	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 17:45:41]	0.41	/mybox/config/Invite	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-20 17:45:41]	0.33	/mybox/config/Invite	MEM01	SELECT menu_gb FROM admin_auth WHERE user_id = :user_id
+[2009-08-20 17:45:41]	0.28	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 17:45:42]	0.38	/mybox/config/Invite	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-20 17:45:42]	0.36	/mybox/config/Invite	MEM01	SELECT menu_gb FROM admin_auth WHERE user_id = :user_id
+[2009-08-20 17:45:42]	0.30	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 17:45:43]	0.38	/mybox/config/Invite	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-20 17:45:43]	0.33	/mybox/config/Invite	MEM01	SELECT menu_gb FROM admin_auth WHERE user_id = :user_id
+[2009-08-20 17:45:43]	0.28	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 17:46:10]	0.54	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 17:46:10]	0.80	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-20 17:46:13]	0.40	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 17:46:13]	0.66	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-20 17:49:35]	0.56	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 17:49:35]	0.51	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-20 17:49:45]	0.40	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 17:49:45]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-20 17:49:46]	0.38	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 17:49:46]	0.51	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-20 17:49:50]	0.54	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 17:49:50]	0.53	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-20 17:49:57]	0.55	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 17:49:57]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-20 17:49:58]	0.43	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 17:49:58]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-20 17:50:12]	0.57	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 17:50:12]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-20 17:50:42]	0.54	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 17:50:42]	0.56	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-20 17:51:00]	0.56	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 17:51:00]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-20 17:51:30]	0.57	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 17:51:30]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-20 17:51:39]	0.55	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 17:51:39]	0.54	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-20 17:59:05]	0.54	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 17:59:05]	0.53	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-20 17:59:17]	3.24	/mybox/config/Inviteproc	MEM01	INSERT INTO invite (invite_id, invite_email, recieve_email, invite_message, share_mp) VALUES (:invite_id, :invite_email, :recieve_email, :invite_message, :share_mp)
+[2009-08-20 17:59:17]	1.01	/mybox/config/Inviteproc	MEM01	INSERT INTO invite (invite_id, invite_email, recieve_email, invite_message, share_mp) VALUES (:invite_id, :invite_email, :recieve_email, :invite_message, :share_mp)
+[2009-08-20 17:59:18]	0.61	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 17:59:18]	0.69	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-20 18:01:27]	0.56	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 18:01:27]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-20 18:01:35]	2.42	/mybox/config/Inviteproc	MEM01	INSERT INTO invite (invite_id, invite_email, recieve_email, invite_message, share_mp) VALUES (:invite_id, :invite_email, :recieve_email, :invite_message, :share_mp)
+[2009-08-20 18:01:35]	1.06	/mybox/config/Inviteproc	MEM01	INSERT INTO invite (invite_id, invite_email, recieve_email, invite_message, share_mp) VALUES (:invite_id, :invite_email, :recieve_email, :invite_message, :share_mp)
+[2009-08-20 18:01:51]	2.22	/mybox/config/Inviteproc	MEM01	INSERT INTO invite (invite_id, invite_email, recieve_email, invite_message, share_mp) VALUES (:invite_id, :invite_email, :recieve_email, :invite_message, :share_mp)
+[2009-08-20 18:01:51]	1.23	/mybox/config/Inviteproc	MEM01	INSERT INTO invite (invite_id, invite_email, recieve_email, invite_message, share_mp) VALUES (:invite_id, :invite_email, :recieve_email, :invite_message, :share_mp)
+[2009-08-20 18:01:52]	0.61	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 18:01:52]	0.67	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-20 18:01:54]	0.40	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 18:01:54]	0.74	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-20 18:01:55]	0.38	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 18:01:55]	0.62	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-20 18:01:59]	0.53	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 18:01:59]	0.56	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-20 18:05:22]	3.65	/mybox/config/Inviteproc	MEM01	INSERT INTO invite (invite_id, invite_email, recieve_email, invite_message, share_mp) VALUES (:invite_id, :invite_email, :recieve_email, :invite_message, :share_mp)
+[2009-08-20 18:05:23]	0.64	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 18:05:23]	0.67	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-20 18:18:06]	0.54	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 18:18:06]	0.55	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-20 18:18:09]	0.40	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 18:18:09]	0.84	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-20 18:18:10]	0.53	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 18:18:10]	0.82	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-20 18:18:28]	0.55	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 18:18:28]	0.51	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-20 18:18:33]	0.40	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 18:18:33]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-20 18:18:35]	0.38	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-20 18:18:35]	0.51	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 10:53:36]	0.99	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-21 11:04:08]	0.59	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-21 11:12:54]	0.61	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-21 11:12:55]	11.09	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-21 11:13:11]	0.61	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-21 11:13:12]	0.39	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-21 11:13:18]	11.22	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-21 11:13:36]	0.56	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-21 11:13:37]	0.38	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-21 11:13:41]	0.46	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-21 11:13:44]	0.40	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-21 11:24:19]	0.60	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-21 11:24:20]	0.66	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-21 11:24:20]	2.65	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, profile_image = :profile_image, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page, update_dt = now() WHERE user_id = :user_id
+[2009-08-21 11:24:20]	0.58	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-21 11:24:56]	0.59	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-21 11:25:13]	0.59	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-21 11:25:16]	0.73	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-21 11:25:16]	2.47	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, profile_image = :profile_image, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page, update_dt = now() WHERE user_id = :user_id
+[2009-08-21 11:25:16]	0.58	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-21 11:25:27]	0.50	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-21 11:25:29]	0.67	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-21 11:25:29]	2.95	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, profile_image = :profile_image, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page, update_dt = now() WHERE user_id = :user_id
+[2009-08-21 11:25:29]	0.58	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-21 11:25:39]	0.51	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-21 11:25:42]	0.64	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-21 11:25:42]	2.48	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, profile_image = :profile_image, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page, update_dt = now() WHERE user_id = :user_id
+[2009-08-21 11:25:42]	0.58	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-21 11:25:55]	0.77	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-21 11:25:55]	3.14	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, profile_image = :profile_image, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page, update_dt = now() WHERE user_id = :user_id
+[2009-08-21 11:25:55]	0.61	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-21 11:26:14]	0.61	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-21 11:28:19]	0.60	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-21 11:28:48]	0.61	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-21 11:28:51]	0.73	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-21 11:28:51]	2.23	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, profile_image = :profile_image, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page, update_dt = now() WHERE user_id = :user_id
+[2009-08-21 11:28:51]	0.59	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-21 11:28:54]	0.55	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-21 11:28:54]	2.58	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, profile_image = :profile_image, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page, update_dt = now() WHERE user_id = :user_id
+[2009-08-21 11:28:54]	0.56	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-21 11:29:00]	0.61	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-21 11:29:01]	0.76	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-21 11:29:01]	0.98	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, profile_image = :profile_image, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page, update_dt = now() WHERE user_id = :user_id
+[2009-08-21 11:29:01]	0.59	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-21 11:29:04]	0.54	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-21 11:29:04]	2.52	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, profile_image = :profile_image, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page, update_dt = now() WHERE user_id = :user_id
+[2009-08-21 11:29:04]	0.58	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-21 11:29:15]	0.50	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-21 11:29:46]	0.55	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-21 11:37:15]	0.83	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-21 11:38:13]	0.54	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 11:38:13]	0.56	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 11:38:31]	0.55	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 11:38:31]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 11:39:07]	0.53	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 11:39:07]	0.53	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 11:39:08]	0.39	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 11:39:08]	0.50	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 11:39:22]	0.53	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-21 11:39:24]	0.42	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 11:39:24]	0.51	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 11:39:29]	0.65	/mybox/config/blogsync	MEM01	SELECT count(*) cnt FROM user_blogsync
+[2009-08-21 11:39:29]	0.62	/mybox/config/blogsync	MEM01	SELECT blog_seq, blog_id, api_id, blog_user_id, api_key, blog_password, category_nm, mp_cnt, insert_dt FROM user_blogsync WHERE user_id = :user_id ORDER BY blog_seq DESC LIMIT :offset, :limit
+[2009-08-21 11:39:35]	0.73	/mybox/config/Blogreg	MEM01	SELECT blog_seq, blog_id, api_id, blog_user_id, api_key, blog_password, category_nm, mp_cnt, insert_dt FROM user_blogsync WHERE user_id = :user_id and blog_seq = :blog_seq
+[2009-08-21 11:39:37]	0.43	/mybox/config/Blogreg	MEM01	SELECT blog_seq, blog_id, api_id, blog_user_id, api_key, blog_password, category_nm, mp_cnt, insert_dt FROM user_blogsync WHERE user_id = :user_id and blog_seq = :blog_seq
+[2009-08-21 11:39:45]	0.64	/mybox/config/Blogreg	MEM01	SELECT blog_seq, blog_id, api_id, blog_user_id, api_key, blog_password, category_nm, mp_cnt, insert_dt FROM user_blogsync WHERE user_id = :user_id and blog_seq = :blog_seq
+[2009-08-21 11:39:47]	0.62	/mybox/config/Blogreg	MEM01	SELECT blog_seq, blog_id, api_id, blog_user_id, api_key, blog_password, category_nm, mp_cnt, insert_dt FROM user_blogsync WHERE user_id = :user_id and blog_seq = :blog_seq
+[2009-08-21 11:39:48]	0.57	/mybox/config/Blogreg	MEM01	SELECT blog_seq, blog_id, api_id, blog_user_id, api_key, blog_password, category_nm, mp_cnt, insert_dt FROM user_blogsync WHERE user_id = :user_id and blog_seq = :blog_seq
+[2009-08-21 11:39:49]	0.48	/mybox/config/Blogreg	MEM01	SELECT blog_seq, blog_id, api_id, blog_user_id, api_key, blog_password, category_nm, mp_cnt, insert_dt FROM user_blogsync WHERE user_id = :user_id and blog_seq = :blog_seq
+[2009-08-21 11:39:50]	0.63	/mybox/config/Blogreg	MEM01	SELECT blog_seq, blog_id, api_id, blog_user_id, api_key, blog_password, category_nm, mp_cnt, insert_dt FROM user_blogsync WHERE user_id = :user_id and blog_seq = :blog_seq
+[2009-08-21 11:39:52]	0.60	/mybox/config/Blogreg	MEM01	SELECT blog_seq, blog_id, api_id, blog_user_id, api_key, blog_password, category_nm, mp_cnt, insert_dt FROM user_blogsync WHERE user_id = :user_id and blog_seq = :blog_seq
+[2009-08-21 11:39:53]	0.55	/mybox/config/Blogreg	MEM01	SELECT blog_seq, blog_id, api_id, blog_user_id, api_key, blog_password, category_nm, mp_cnt, insert_dt FROM user_blogsync WHERE user_id = :user_id and blog_seq = :blog_seq
+[2009-08-21 13:45:39]	0.94	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 13:45:39]	0.54	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 13:46:32]	0.56	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 13:46:32]	0.56	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 13:46:32]	0.38	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 13:46:32]	0.51	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 13:46:33]	0.37	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 13:46:33]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 13:49:51]	0.90	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 13:49:51]	0.55	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 13:49:55]	3.55	/mybox/config/inviteDelProc	MEM01	DELETE FROM invite WHERE invite_sq = :invite_sq
+[2009-08-21 13:49:55]	0.56	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 13:49:55]	0.71	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 13:59:12]	0.55	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 13:59:12]	0.54	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 14:48:34]	1.04	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-21 15:01:51]	0.78	/mybox/config/Blogsync	MEM01	SELECT count(*) cnt FROM user_blogsync
+[2009-08-21 15:01:51]	0.64	/mybox/config/Blogsync	MEM01	SELECT blog_seq, blog_id, api_id, blog_user_id, api_key, blog_password, category_nm, mp_cnt, insert_dt FROM user_blogsync WHERE user_id = :user_id ORDER BY blog_seq DESC LIMIT :offset, :limit
+[2009-08-21 15:02:03]	0.84	/mybox/config/invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 15:02:03]	0.71	/mybox/config/invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 15:02:05]	0.46	/mybox/config/invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 15:02:05]	0.54	/mybox/config/invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 15:30:41]	0.76	/mybox/config/invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 15:30:41]	0.69	/mybox/config/invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 15:33:23]	0.57	/mybox/config/invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 15:33:23]	0.92	/mybox/config/invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 15:34:59]	11.77	/mybox/config/invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 15:34:59]	11.35	/mybox/config/invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 15:35:15]	0.44	/mybox/config/invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 15:35:15]	0.65	/mybox/config/invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 15:35:16]	0.38	/mybox/config/invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 15:35:16]	0.52	/mybox/config/invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 15:35:28]	0.42	/mybox/config/invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 15:35:28]	0.52	/mybox/config/invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 15:35:36]	0.53	/mybox/config/invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 15:35:36]	0.56	/mybox/config/invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 15:35:47]	0.55	/mybox/config/invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 15:35:47]	0.55	/mybox/config/invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 15:36:55]	0.55	/mybox/config/invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 15:36:55]	0.54	/mybox/config/invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 15:37:03]	0.54	/mybox/config/invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 15:37:03]	0.54	/mybox/config/invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 15:37:37]	0.66	/mybox/config/invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 15:37:37]	0.67	/mybox/config/invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 15:37:48]	3.07	/mybox/config/inviteDelProc	MEM01	DELETE FROM invite WHERE invite_sq = :invite_sq
+[2009-08-21 15:37:48]	0.84	/mybox/config/inviteDelProc	MEM01	DELETE FROM invite WHERE invite_sq = :invite_sq
+[2009-08-21 15:37:48]	0.66	/mybox/config/inviteDelProc	MEM01	DELETE FROM invite WHERE invite_sq = :invite_sq
+[2009-08-21 15:37:48]	0.65	/mybox/config/inviteDelProc	MEM01	DELETE FROM invite WHERE invite_sq = :invite_sq
+[2009-08-21 15:37:48]	0.55	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 15:37:48]	0.68	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 15:46:06]	0.53	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 15:46:06]	0.57	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 15:51:38]	0.53	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 15:51:38]	0.62	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 15:51:47]	0.40	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 15:51:47]	0.62	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 15:52:38]	0.52	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 15:52:38]	0.63	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 15:53:12]	0.57	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 15:53:12]	0.53	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 15:54:23]	0.42	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 15:54:23]	0.62	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 15:54:58]	0.51	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 15:54:58]	0.63	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 15:55:01]	3.26	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 15:55:01]	0.54	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 15:55:38]	0.54	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 15:55:38]	0.63	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 15:55:55]	0.59	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 15:55:55]	0.63	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 15:56:07]	0.54	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 15:56:07]	0.63	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 15:56:24]	0.42	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 15:56:24]	0.62	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 15:56:25]	0.40	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 15:56:25]	0.54	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 15:56:54]	0.57	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 15:56:54]	0.62	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 15:57:16]	0.41	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 15:57:16]	0.61	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 15:57:43]	0.42	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 15:57:43]	0.63	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 15:58:36]	0.56	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 15:58:36]	0.65	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 15:59:03]	0.54	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 15:59:03]	0.62	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 15:59:24]	0.43	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 15:59:24]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 15:59:26]	0.38	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 15:59:26]	0.52	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 15:59:48]	0.40	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 15:59:48]	0.54	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 16:00:20]	0.42	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 16:00:20]	0.64	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 16:00:51]	0.50	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 16:00:51]	0.63	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 16:01:14]	0.53	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 16:01:14]	0.83	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 16:03:03]	0.56	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 16:03:03]	0.62	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 16:03:05]	0.40	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 16:03:05]	0.53	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 16:03:20]	0.40	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 16:03:20]	0.62	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 16:03:37]	0.51	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 16:03:37]	0.61	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 16:03:38]	0.39	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 16:03:38]	0.53	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 16:03:48]	0.44	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 16:03:48]	0.67	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 16:04:04]	0.53	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 16:04:04]	0.54	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 16:04:50]	0.42	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 16:04:50]	0.62	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 16:05:17]	0.56	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 16:05:17]	0.62	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 16:05:24]	0.47	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 16:05:24]	0.54	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 16:08:23]	0.52	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 16:08:23]	0.55	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 16:08:31]	0.52	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-21 16:08:31]	0.83	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-21 16:58:10]	1.04	/mybox/config/Blogsync	MEM01	SELECT count(*) cnt FROM user_blogsync
+[2009-08-21 16:58:10]	0.66	/mybox/config/Blogsync	MEM01	SELECT blog_seq, blog_id, api_id, blog_user_id, api_key, blog_password, category_nm, mp_cnt, insert_dt FROM user_blogsync WHERE user_id = :user_id ORDER BY blog_seq DESC LIMIT :offset, :limit
+[2009-08-21 16:58:16]	0.86	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-21 16:58:29]	0.65	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-21 16:58:29]	2.62	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, profile_image = :profile_image, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page, update_dt = now() WHERE user_id = :user_id
+[2009-08-21 16:58:29]	0.58	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-21 16:58:31]	0.57	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-21 16:58:31]	1.87	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, profile_image = :profile_image, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page, update_dt = now() WHERE user_id = :user_id
+[2009-08-21 16:58:31]	0.56	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-21 16:58:33]	13.34	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-21 16:58:34]	0.55	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-21 16:58:44]	11.02	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-21 16:58:48]	10.89	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-21 16:58:52]	0.66	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-21 16:58:52]	2.05	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, profile_image = :profile_image, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page, update_dt = now() WHERE user_id = :user_id
+[2009-08-21 16:58:52]	0.57	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-21 16:58:58]	10.92	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-21 16:58:59]	0.54	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-21 18:00:03]	3.59	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-21 18:12:29]	1.15	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-21 18:12:31]	0.50	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-21 18:12:32]	14.98	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-21 18:14:19]	0.62	/mybox/config/basicProc	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-21 18:14:27]	0.50	/mybox/config/basicProc	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-21 18:15:14]	0.62	/mybox/config/basicProc	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-21 18:15:15]	0.45	/mybox/config/basicProc	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-21 18:15:24]	11.40	/mybox/config/basicProc	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-21 18:16:37]	0.63	/mybox/config/basicProc	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-21 18:16:37]	0.52	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-21 18:16:37]	1.91	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, profile_image = :profile_image, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page, update_dt = now() WHERE user_id = :user_id
+[2009-08-21 18:16:37]	0.78	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-21 18:36:57]	0.92	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-21 18:48:56]	0.90	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-24 09:41:12]	1.60	/admin/index	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-24 09:41:12]	3.26	/admin/index	MEM01	UPDATE admin_officer SET last_access_dt = now() WHERE user_id = :user_id
+[2009-08-24 09:41:12]	1.81	/admin/index	MEM01	INSERT INTO admin_log (officer_id, action_gb, arg1, arg2) VALUES (:officer_id, :action_gb, :arg1, :arg2)
+[2009-08-24 09:41:12]	0.80	/admin/leftMenu	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-24 09:41:12]	0.44	/admin/topMenu	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-24 09:41:12]	0.43	/admin/home	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-24 09:41:12]	1.36	/admin/leftMenu	MEM01	SELECT menu_gb FROM admin_auth WHERE user_id = :user_id
+[2009-08-24 09:41:20]	0.65	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-24 13:54:05]	11.25	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-24 13:54:12]	0.67	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-24 15:39:26]	1.13	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-24 17:55:35]	0.81	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-25 09:46:38]	1.10	/admin/index	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-25 09:46:38]	2.48	/admin/index	MEM01	UPDATE admin_officer SET last_access_dt = now() WHERE user_id = :user_id
+[2009-08-25 09:46:38]	1.07	/admin/index	MEM01	INSERT INTO admin_log (officer_id, action_gb, arg1, arg2) VALUES (:officer_id, :action_gb, :arg1, :arg2)
+[2009-08-25 09:46:38]	3.09	/admin/topMenu	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-25 09:46:38]	0.45	/admin/leftMenu	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-25 09:46:38]	0.37	/admin/leftMenu	MEM01	SELECT menu_gb FROM admin_auth WHERE user_id = :user_id
+[2009-08-25 09:46:38]	0.45	/admin/home	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-25 09:49:05]	0.67	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-25 14:10:54]	0.93	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-25 16:43:56]	0.91	/admin/Index	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-25 16:43:56]	2.35	/admin/Index	MEM01	UPDATE admin_officer SET last_access_dt = now() WHERE user_id = :user_id
+[2009-08-25 16:43:56]	1.04	/admin/Index	MEM01	INSERT INTO admin_log (officer_id, action_gb, arg1, arg2) VALUES (:officer_id, :action_gb, :arg1, :arg2)
+[2009-08-25 16:43:57]	0.68	/admin/leftMenu	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-25 16:43:57]	0.46	/admin/topMenu	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-25 16:43:57]	0.43	/admin/home	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-25 16:43:57]	0.45	/admin/leftMenu	MEM01	SELECT menu_gb FROM admin_auth WHERE user_id = :user_id
+[2009-08-25 16:46:19]	0.67	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-25 16:50:53]	0.59	/admin/index	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-25 16:50:53]	1.77	/admin/index	MEM01	UPDATE admin_officer SET last_access_dt = now() WHERE user_id = :user_id
+[2009-08-25 16:50:53]	0.86	/admin/index	MEM01	INSERT INTO admin_log (officer_id, action_gb, arg1, arg2) VALUES (:officer_id, :action_gb, :arg1, :arg2)
+[2009-08-25 16:50:54]	0.66	/admin/leftMenu	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-25 16:50:54]	0.46	/admin/topMenu	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-25 16:50:54]	0.37	/admin/leftMenu	MEM01	SELECT menu_gb FROM admin_auth WHERE user_id = :user_id
+[2009-08-25 16:50:54]	0.43	/admin/home	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-26 10:48:18]	0.91	/admin/index	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-26 10:48:18]	3.15	/admin/index	MEM01	UPDATE admin_officer SET last_access_dt = now() WHERE user_id = :user_id
+[2009-08-26 10:48:18]	0.73	/admin/index	MEM01	INSERT INTO admin_log (officer_id, action_gb, arg1, arg2) VALUES (:officer_id, :action_gb, :arg1, :arg2)
+[2009-08-26 10:48:19]	0.77	/admin/home	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-26 10:48:19]	0.55	/admin/topMenu	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-26 10:48:19]	0.43	/admin/leftMenu	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-26 10:48:19]	0.38	/admin/leftMenu	MEM01	SELECT menu_gb FROM admin_auth WHERE user_id = :user_id
+[2009-08-26 13:26:54]	0.92	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-26 18:15:19]	0.87	/admin/index	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-26 18:15:19]	2.16	/admin/index	MEM01	UPDATE admin_officer SET last_access_dt = now() WHERE user_id = :user_id
+[2009-08-26 18:15:19]	0.86	/admin/index	MEM01	INSERT INTO admin_log (officer_id, action_gb, arg1, arg2) VALUES (:officer_id, :action_gb, :arg1, :arg2)
+[2009-08-26 18:15:20]	0.78	/admin/leftMenu	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-26 18:15:20]	0.39	/admin/leftMenu	MEM01	SELECT menu_gb FROM admin_auth WHERE user_id = :user_id
+[2009-08-26 18:15:20]	0.44	/admin/topMenu	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-26 18:15:20]	0.45	/admin/home	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-26 18:15:36]	0.59	/admin/index	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-26 18:15:36]	2.09	/admin/index	MEM01	UPDATE admin_officer SET last_access_dt = now() WHERE user_id = :user_id
+[2009-08-26 18:15:36]	0.81	/admin/index	MEM01	INSERT INTO admin_log (officer_id, action_gb, arg1, arg2) VALUES (:officer_id, :action_gb, :arg1, :arg2)
+[2009-08-26 18:15:36]	0.67	/admin/leftMenu	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-26 18:15:36]	0.35	/admin/leftMenu	MEM01	SELECT menu_gb FROM admin_auth WHERE user_id = :user_id
+[2009-08-26 18:15:36]	0.46	/admin/topMenu	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-26 18:15:36]	0.43	/admin/home	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-26 18:34:16]	0.68	/admin/index	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-26 18:34:16]	2.85	/admin/index	MEM01	UPDATE admin_officer SET last_access_dt = now() WHERE user_id = :user_id
+[2009-08-26 18:34:16]	0.80	/admin/index	MEM01	INSERT INTO admin_log (officer_id, action_gb, arg1, arg2) VALUES (:officer_id, :action_gb, :arg1, :arg2)
+[2009-08-26 18:34:16]	0.78	/admin/home	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-26 18:34:16]	0.46	/admin/topMenu	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-26 18:34:16]	0.44	/admin/leftMenu	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-26 18:34:16]	0.37	/admin/leftMenu	MEM01	SELECT menu_gb FROM admin_auth WHERE user_id = :user_id
+[2009-08-27 14:28:17]	1.14	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-27 14:28:17]	0.76	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-27 14:28:25]	0.51	/mybox/config/Invite	MEM01	SELECT COUNT(invite_sq) AS cnt FROM invite
+[2009-08-27 14:28:25]	0.55	/mybox/config/Invite	MEM01	SELECT invite_sq, invite_id, invite_email, recieve_email, invite_message, share_mp, insert_dt, visit_fl FROM invite WHERE invite_id = :invite_id LIMIT :offset, :limit
+[2009-08-27 15:19:24]	1.14	/home/mong/public_html/memory/~mong/memory/test.php	MEM01	SELECT * FROM memory_piece WHERE mp_sq = :mp_sq
+[2009-08-27 15:40:23]	0.91	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-27 16:36:01]	0.91	/home/mong/public_html/memory/~mong/memory/test.php	MEM01	SELECT * FROM memory_piece WHERE mp_sq = :mp_sq
+[2009-08-27 17:25:42]	0.64	/admin/index	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-27 17:25:42]	2.35	/admin/index	MEM01	UPDATE admin_officer SET last_access_dt = now() WHERE user_id = :user_id
+[2009-08-27 17:25:42]	0.81	/admin/index	MEM01	INSERT INTO admin_log (officer_id, action_gb, arg1, arg2) VALUES (:officer_id, :action_gb, :arg1, :arg2)
+[2009-08-27 17:25:42]	0.77	/admin/topMenu	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-27 17:25:42]	0.43	/admin/home	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-27 17:25:42]	0.43	/admin/leftMenu	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-27 17:25:42]	0.42	/admin/leftMenu	MEM01	SELECT menu_gb FROM admin_auth WHERE user_id = :user_id
+[2009-08-27 17:25:53]	0.63	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-27 17:28:29]	0.66	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-27 17:30:34]	0.61	/mybox/config/basicProc	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-27 17:30:34]	0.60	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-27 17:30:34]	2.83	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, profile_image = :profile_image, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page, update_dt = now() WHERE user_id = :user_id
+[2009-08-27 17:30:34]	0.79	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-27 17:30:35]	0.51	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-27 18:36:24]	1.26	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-27 18:37:59]	15.67	/mybox/config/basicProc	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-27 18:37:59]	0.61	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-27 18:37:59]	2.43	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, profile_image = :profile_image, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page, update_dt = now() WHERE user_id = :user_id
+[2009-08-27 18:37:59]	0.77	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-27 18:38:01]	11.29	/mybox/config/basicProc	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-27 18:38:01]	0.52	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-27 18:38:01]	2.36	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, profile_image = :profile_image, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page, update_dt = now() WHERE user_id = :user_id
+[2009-08-27 18:38:01]	0.65	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-27 18:39:15]	11.04	/mybox/config/basicProc	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-27 18:39:15]	0.42	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-27 18:39:15]	2.48	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, profile_image = :profile_image, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page, update_dt = now() WHERE user_id = :user_id
+[2009-08-27 18:39:15]	0.81	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-27 18:39:58]	11.22	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-27 18:40:00]	0.55	/mybox/config/basicProc	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-27 18:40:00]	0.56	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-27 18:40:00]	2.42	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, profile_image = :profile_image, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page, update_dt = now() WHERE user_id = :user_id
+[2009-08-27 18:40:00]	0.76	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-27 18:40:01]	0.68	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-27 18:40:02]	0.51	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-27 18:51:16]	11.37	/mybox/config/basicProc	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-27 18:51:16]	0.43	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-27 18:51:16]	3.19	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, profile_image = :profile_image, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page, update_dt = now() WHERE user_id = :user_id
+[2009-08-27 18:51:16]	0.81	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-27 18:53:47]	11.21	/mybox/config/basicProc	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-27 18:53:47]	0.54	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-27 18:53:47]	2.14	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, profile_image = :profile_image, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page, update_dt = now() WHERE user_id = :user_id
+[2009-08-27 18:53:47]	0.76	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-27 18:54:31]	0.62	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-27 18:54:39]	0.64	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-27 18:55:03]	0.66	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-27 18:55:14]	0.61	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-27 18:55:15]	0.53	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-27 18:55:49]	0.64	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-27 18:55:50]	0.50	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-27 18:56:06]	0.65	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-27 18:56:24]	0.72	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-27 18:56:25]	0.52	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-27 18:56:39]	11.31	/mybox/config/basicProc	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-27 18:56:39]	0.53	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-27 18:56:39]	2.85	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, profile_image = :profile_image, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page, update_dt = now() WHERE user_id = :user_id
+[2009-08-27 18:56:39]	0.64	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-27 19:00:49]	11.31	/mybox/config/basicProc	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-27 19:00:49]	0.53	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-27 19:00:49]	2.36	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, profile_image = :profile_image, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page, update_dt = now() WHERE user_id = :user_id
+[2009-08-27 19:00:49]	0.80	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-27 19:25:09]	11.36	/mybox/config/duplicate	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-27 19:25:10]	0.49	/mybox/config/basicProc	MEM01	SELECT COUNT(nickname) AS nickcnt FROM user WHERE user_id <> :user_id AND nickname = :nickname
+[2009-08-27 19:25:10]	0.43	/mybox/config/basicProc	MEM01	SELECT user_id FROM user WHERE user_id = :user_id
+[2009-08-27 19:25:10]	2.67	/mybox/config/basicProc	MEM01	UPDATE user SET nick_enable_fl = :nick_enable_fl, profile_image = :profile_image, nickname = :nickname, homepage = :homepage, homepage_link_fl = :homepage_link_fl, view_per_page = :view_per_page, update_dt = now() WHERE user_id = :user_id
+[2009-08-27 19:25:10]	0.81	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-28 10:42:09]	0.94	/mybox/config/basic	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt FROM user WHERE user_id = :user_id
+[2009-08-28 10:42:20]	0.87	/admin/index	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-28 10:42:20]	3.22	/admin/index	MEM01	UPDATE admin_officer SET last_access_dt = now() WHERE user_id = :user_id
+[2009-08-28 10:42:20]	0.88	/admin/index	MEM01	INSERT INTO admin_log (officer_id, action_gb, arg1, arg2) VALUES (:officer_id, :action_gb, :arg1, :arg2)
+[2009-08-28 10:42:28]	0.87	/admin/topMenu	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-28 10:42:28]	0.44	/admin/leftMenu	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1
+[2009-08-28 10:42:28]	0.54	/admin/leftMenu	MEM01	SELECT menu_gb FROM admin_auth WHERE user_id = :user_id
+[2009-08-28 10:42:29]	0.44	/admin/home	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = :user_id and officer_fl = 1

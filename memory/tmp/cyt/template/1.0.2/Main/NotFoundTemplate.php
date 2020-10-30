@@ -1,0 +1,1 @@
+<?php /* /home/mong/project/memory/template/Main/NotFound.tpl */ class Main_NotFoundTemplate extends Podo_Template_Base { const HAVE_CDATA = FALSE; public function printHead($p_intLine, $p_intCol) { ?>Not Found<?php } public function printTail($p_intLine, $p_intCol) { ?><?php } } ?>

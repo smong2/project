@@ -1,0 +1,1 @@
+<?php /* /home/mong/project/memory/template/Main/Index.tpl */ class Main_IndexTemplate extends Podo_Template_Base { const HAVE_CDATA = FALSE; public function printHead($p_intLine, $p_intCol) { ?>Index Page<?php } public function printTail($p_intLine, $p_intCol) { ?><?php } } ?>

@@ -1,0 +1,52 @@
+8
+
+dir
+73
+svn://svn.stdev.cyworld.com/memory/trunk/config/template
+svn://svn.stdev.cyworld.com/memory
+
+
+
+2009-06-23T04:46:13.393305Z
+17
+teeroz
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+51c83f4d-3035-44c2-8cf4-53d96a979598
+
+common_base.inc.php
+file
+
+
+
+
+2009-07-15T07:56:52.000000Z
+4088870fd516d3551cdf447ba51c503f
+2009-06-23T04:46:13.393305Z
+17
+teeroz
+
+dev.cfg
+file
+
+
+
+
+2009-07-15T07:56:52.000000Z
+dfec0c1b06331c3b8af2f25f0b2e4fe8
+2009-06-19T04:28:36.561915Z
+8
+teeroz
+

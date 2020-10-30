@@ -1,0 +1,128 @@
+[2009-08-19 09:37:00]	0.00	/mybox/config/duplicate	192.168.248.155	MEM01	SELECT COUNT(nickname) AS nickcnt
+					 FROM user WHERE user_id <> '00002414321' AND
+					 					  nickname = '131312'
+[2009-08-19 09:37:04]	0.00	/mybox/config/duplicate	192.168.248.155	MEM01	SELECT COUNT(nickname) AS nickcnt
+					 FROM user WHERE user_id <> '00002414321' AND
+					 					  nickname = '121'
+[2009-08-19 09:37:07]	0.00	/mybox/config/duplicate	192.168.248.155	MEM01	SELECT COUNT(nickname) AS nickcnt
+					 FROM user WHERE user_id <> '00002414321' AND
+					 					  nickname = '12112312313'
+[2009-08-19 09:37:09]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 09:37:11]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 09:37:12]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 09:37:23]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 09:37:24]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 09:37:25]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 09:37:25]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 09:56:09]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 09:56:09]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 10:32:25]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 10:32:26]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 10:41:17]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 11:02:09]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 11:02:10]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 11:02:11]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 11:02:11]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 11:02:12]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 11:02:12]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 11:02:13]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 11:02:13]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 11:02:14]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 11:02:14]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 11:02:15]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 11:02:16]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 11:04:36]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 11:04:40]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 11:04:41]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 11:04:41]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 11:04:42]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 11:05:25]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 11:05:26]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 11:05:27]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 11:05:28]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 11:05:29]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 11:05:31]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 11:05:33]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 11:06:27]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 11:06:28]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 11:06:28]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 11:06:29]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 11:06:30]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 11:06:45]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 11:06:46]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 11:06:46]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 11:07:08]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 11:07:09]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 11:07:09]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 11:07:10]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 11:07:10]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 11:07:11]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 11:07:11]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-19 11:07:12]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-21 14:11:12]	0.00	/admin/index	192.168.248.155	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = '00002414321' and officer_fl = 1
+[2009-08-21 14:11:21]	0.00	/admin/index	192.168.248.155	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = '00002414321' and officer_fl = 1
+[2009-08-21 14:12:01]	0.00	/admin/index	192.168.248.155	MEM01	SELECT count(*) cnt FROM admin_officer WHERE user_id = '00002414321' and officer_fl = 1
+[2009-08-21 14:12:19]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-21 14:16:52]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-21 14:27:51]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-21 14:40:37]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-21 14:47:55]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'
+[2009-08-21 14:48:02]	0.00	/mybox/config/basic	192.168.248.155	MEM01	SELECT user_id, nick_enable_fl, nickname, homepage_link_fl, homepage, view_per_page, profile_image, insert_dt
+				  FROM user WHERE user_id = '00002414321'

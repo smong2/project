@@ -1,0 +1,52 @@
+8
+
+dir
+73
+svn://svn.stdev.cyworld.com/memory/trunk/template/Main
+svn://svn.stdev.cyworld.com/memory
+
+
+
+2009-06-09T02:22:00.006344Z
+2
+teeroz
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+51c83f4d-3035-44c2-8cf4-53d96a979598
+
+Index.tpl
+file
+
+
+
+
+2009-07-15T07:56:52.000000Z
+742d6d5dedaf7e2b0bc22d571a9bee8b
+2009-06-09T02:22:00.006344Z
+2
+teeroz
+
+NotFound.tpl
+file
+
+
+
+
+2009-07-15T07:56:52.000000Z
+ef81e41d11c9e7193ddd3d470dbb3eda
+2009-06-09T02:22:00.006344Z
+2
+teeroz
+
